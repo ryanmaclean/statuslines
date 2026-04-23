@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test output
+tests/output/
+*.log
+
+# Temporary files
+tmp/
+.tmp/

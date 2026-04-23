@@ -1,0 +1,6 @@
+# .shellcheckrc
+#
+# SC1091: Not following source — all `source` calls use dynamic path variables
+# (e.g. $_STATUSLINE_SCRIPT_DIR) that cannot be statically resolved at lint time.
+# The sourced files are all within this repository and are correct at runtime.
+disable=SC1091

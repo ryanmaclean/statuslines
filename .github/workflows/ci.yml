@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ShellCheck
+        run: sudo apt-get update -q && sudo apt-get install -y shellcheck
+
+      - name: Lint scripts
+        run: |
+          shellcheck -x scripts/shared/*.sh
+          shellcheck -x scripts/claude-code/*.sh
+          shellcheck -x scripts/codex/*.sh
+          shellcheck -x scripts/opencode/*.sh
+          shellcheck -x examples/claude-code/*.sh
+          shellcheck -x examples/codex/*.sh
+          shellcheck -x examples/opencode/*.sh
+          shellcheck -x tests/*.sh
+
+  test:
+    name: Tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run shared tests
+        run: bash tests/test_shared.sh
+
+      - name: Run Claude Code tests
+        run: bash tests/test_claude_code.sh
+
+      - name: Run Codex tests
+        run: bash tests/test_codex.sh
+
+      - name: Run OpenCode tests
+        run: bash tests/test_opencode.sh
