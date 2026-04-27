@@ -17,7 +17,8 @@
     "statusline-pup-claude": "./pup/claude/statusline.js",
     "statusline-pup-opencode": "./pup/opencode/statusline.js",
     "statusline-pup-codex-hud": "./pup/codex/hud.js",
-    "statusline-pup": "./pup/cli.js"
+    "statusline-pup": "./pup/cli.js",
+    "statuslines": "./bin/statuslines.js"
   },
   "scripts": {
     "test": "node --test tests/"

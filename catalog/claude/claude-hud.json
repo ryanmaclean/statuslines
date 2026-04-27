@@ -1,0 +1,14 @@
+{
+  "slug": "claude-hud",
+  "name": "claude-hud",
+  "repo": "https://github.com/jarrodwatts/claude-hud",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "typescript",
+  "description": "Claude Code plugin/statusline that surfaces context usage, active tools, running subagents, todo progress, and rate-limit windows using the native statusline API.",
+  "install": { "type": "manual" },
+  "configs": {},
+  "tags": ["tools", "agents", "todos", "rate-limits"],
+  "notes": "Distributed as a Claude Code plugin; see upstream README for the current install command."
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "tokscale",
+  "name": "tokscale",
+  "repo": "https://github.com/junhoyeo/tokscale",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude", "opencode", "gemini", "codex"],
+  "language": "typescript",
+  "description": "Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.",
+  "install": { "type": "npx", "package": "tokscale" },
+  "configs": {},
+  "tags": ["tokens", "cost", "multi-cli", "data-source"],
+  "notes": "Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself."
+}
