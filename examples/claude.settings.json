@@ -1,0 +1,20 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/claude/statusline.js",
+    "padding": 0
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/claude/context-monitor.js"
+          }
+        ]
+      }
+    ]
+  }
+}

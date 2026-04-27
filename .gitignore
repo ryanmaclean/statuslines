@@ -1,0 +1,14 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+.env
+.env.local
+
+# local test artifacts
+/tmp-test/
+*.log
+
+# editor
+.vscode/
+.idea/
+*.swp
