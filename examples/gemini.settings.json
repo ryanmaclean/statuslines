@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "AfterTool": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/gemini/context-monitor.js"
+          }
+        ]
+      }
+    ]
+  }
+}
