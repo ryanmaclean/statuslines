@@ -5,7 +5,7 @@ Statusline scripts for Claude Code, OpenCode, Gemini CLI, and Codex CLI.
 Two flavors live side-by-side:
 
 - **`gsd/`** — context-health style, modeled after [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done): renders model · dir · git · context-bar, and injects WARNING/CRITICAL messages into the agent loop as the context window fills.
-- **`pup/`** — Datadog observability, surfaces signals from [datadog-labs/pup](https://github.com/datadog-labs/pup) (monitor states, incidents, deploy markers). *Not built yet — Phase 3.*
+- **`pup/`** — Datadog observability, surfaces recent **events** from [datadog-labs/pup](https://github.com/datadog-labs/pup) (last 5 min by default), grouped by `alert_type`.
 
 The two are complementary, not competing: GSD watches *agent* health, pup watches *production* health. Both can run at once.
 
@@ -66,12 +66,57 @@ For Gemini there's no statusline to write a bridge file, so the hook estimates t
 
 For Codex there's no PostToolUse hook *and* no custom-command statusline, so the HUD daemon polls `~/.codex/sessions/**/rollout-*.jsonl` for `token_count` events and renders to either tmux's `status-right` or stdout.
 
+## pup flavor — how API calls stay bounded
+
+The pup statuslines never call `pup` from the render path. They read a TTL-gated cache:
+
+1. Render reads `${TMPDIR}/statuslines-pup-events.json`.
+2. If the cache is **fresher than `ttl_seconds`** (default 60s), it's used as-is.
+3. If stale, the render acquires a lockfile (`O_EXCL`); if another render holds the lock, it waits ≤250ms, then falls back to the stale cache rather than queueing more API calls.
+4. The lock holder shells out to `pup events list --duration 5m --output json` once, atomically writes the result, releases the lock.
+5. Errors (auth, rate-limit, ENOENT) are written into the cache and surfaced in the bar (`pup:auth?`, `pup:rate-limited`, `pup:not installed`) — no retry storms.
+6. Every fetch is logged to `${TMPDIR}/statuslines-pup.log`.
+
+Cache age is shown in the bar (e.g. `pup:✓3 ⚠1 ✗0 (45s)`); past 5min it's marked `(stale)` and dimmed.
+
+### Config
+
+`~/.config/statuslines/pup.json` (or `STATUSLINES_PUP_*` env vars):
+
+| key | default | meaning |
+|---|---|---|
+| `ttl_seconds` | `60` | min seconds between `pup` calls |
+| `duration` | `"5m"` | window passed to `pup events list --duration` |
+| `tags` | `null` | passed as `--tags` |
+| `priority` | `null` | `normal` / `low` |
+| `alert_type` | `null` | `error` / `warning` / `info` / `success` / `user_update` |
+| `sources` | `null` | passed as `--sources` |
+| `max_events` | `50` | passed as `--limit` |
+| `pup_bin` | `"pup"` | override binary path |
+
+A starter file lives at `examples/pup.config.json`. Seed it with `./install/install-pup.sh --seed-config`.
+
+### Quick start (pup)
+
+```sh
+brew tap datadog-labs/pack && brew install datadog-labs/pack/pup
+pup auth login
+./install/install-pup.sh --all --seed-config
+node ./pup/cli.js fetch    # warm cache
+node ./pup/cli.js show     # preview segment
+```
+
+For Codex (no native command-statusline yet):
+```sh
+tmux new-session -d -s codex 'node ./pup/codex/hud.js watch'
+```
+
 ## Roadmap
 
-- Phase 1 (this PR): GSD-style implementation across all four CLIs. ✅
+- Phase 1: GSD-style across all four CLIs. ✅
 - Phase 2: example configs + installer. ✅
-- Phase 3: `pup/` mirror — Datadog observability metrics in each statusline.
-- Phase 4: side-by-side comparison doc once both flavors exist.
+- Phase 3: `pup/` flavor — events with TTL-gated cache. ✅
+- Phase 4: side-by-side comparison doc; richer pup segments (monitors, incidents) behind opt-in flags.
 
 ## License
 

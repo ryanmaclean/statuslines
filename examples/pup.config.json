@@ -1,0 +1,10 @@
+{
+  "ttl_seconds": 60,
+  "duration": "5m",
+  "tags": "env:prod",
+  "priority": "normal",
+  "alert_type": null,
+  "sources": null,
+  "max_events": 50,
+  "pup_bin": "pup"
+}

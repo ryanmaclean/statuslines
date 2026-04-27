@@ -13,7 +13,11 @@
     "statusline-gsd-opencode": "./gsd/opencode/statusline.js",
     "statusline-gsd-opencode-monitor": "./gsd/opencode/context-monitor.js",
     "statusline-gsd-gemini-monitor": "./gsd/gemini/context-monitor.js",
-    "statusline-gsd-codex-hud": "./gsd/codex/hud.js"
+    "statusline-gsd-codex-hud": "./gsd/codex/hud.js",
+    "statusline-pup-claude": "./pup/claude/statusline.js",
+    "statusline-pup-opencode": "./pup/opencode/statusline.js",
+    "statusline-pup-codex-hud": "./pup/codex/hud.js",
+    "statusline-pup": "./pup/cli.js"
   },
   "scripts": {
     "test": "node --test tests/"
