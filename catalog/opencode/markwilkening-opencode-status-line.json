@@ -1,0 +1,18 @@
+{
+  "slug": "markwilkening-opencode-status-line",
+  "name": "opencode-status-line",
+  "repo": "https://github.com/markwilkening21/opencode-status-line",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["opencode"],
+  "language": "shell",
+  "description": "Lightweight, fast status line for OpenCode CLI.",
+  "install": { "type": "git", "clone_dir": "markwilkening-opencode-status-line" },
+  "configs": {
+    "opencode": {
+      "statusLine": { "type": "command", "command": "${INSTALL_DIR}/statusline.sh" }
+    }
+  },
+  "tags": ["lightweight", "shell"],
+  "notes": "Verify the entry script name in the upstream repo before relying on the configured command."
+}

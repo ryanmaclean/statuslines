@@ -1,0 +1,14 @@
+{
+  "slug": "capedbitmap-codex-hud",
+  "name": "codex-hud (Capedbitmap)",
+  "repo": "https://github.com/Capedbitmap/codex-hud",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "redistributable": false,
+  "host_clis": ["codex"],
+  "language": "swift",
+  "description": "macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.",
+  "install": { "type": "manual" },
+  "configs": {},
+  "tags": ["macos", "menu-bar", "account-rotation"],
+  "notes": "Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries."
+}

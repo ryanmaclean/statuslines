@@ -1,0 +1,18 @@
+{
+  "slug": "b-open-statusline",
+  "name": "b-open-io/statusline",
+  "repo": "https://github.com/b-open-io/statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "typescript",
+  "description": "Claude Code statusline that auto-detects the active model's context window (1M for [1m] suffixed models, 200k otherwise) with widgets for tokens, git, and a 5-hour block timer.",
+  "install": { "type": "git", "clone_dir": "b-open-statusline" },
+  "configs": {
+    "claude": {
+      "statusLine": { "type": "command", "command": "node ${INSTALL_DIR}/index.js", "padding": 0 }
+    }
+  },
+  "tags": ["tokens", "context-window", "block-timer"],
+  "notes": "Run `npm install` in the cloned directory before first use; check the upstream README for the current entry point if `index.js` has moved."
+}

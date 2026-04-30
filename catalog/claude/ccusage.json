@@ -1,0 +1,14 @@
+{
+  "slug": "ccusage",
+  "name": "ccusage",
+  "repo": "https://github.com/ryoppippi/ccusage",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude", "codex"],
+  "language": "typescript",
+  "description": "Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.",
+  "install": { "type": "npx", "package": "ccusage" },
+  "configs": {},
+  "tags": ["tokens", "cost", "data-source"],
+  "notes": "Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments."
+}

@@ -111,12 +111,29 @@ For Codex (no native command-statusline yet):
 tmux new-session -d -s codex 'node ./pup/codex/hud.js watch'
 ```
 
+## Catalog of third-party statuslines
+
+In addition to our two flavors, this repo maintains a curated catalog of other statuslines and related tools across all four CLIs. Each entry is a JSON file under `catalog/<cli>/<slug>.json` with a verified license, a one-sentence description, and an install recipe. Entries with OSI-permissive licenses ship a runnable install/configure command; non-redistributable entries are listed for reference but skipped by `configure`.
+
+```sh
+node bin/statuslines.js list                          # all entries
+node bin/statuslines.js list --cli=claude --redistributable
+node bin/statuslines.js show ccstatusline             # full metadata
+node bin/statuslines.js configure ccstatusline --cli=claude --dry-run
+node bin/statuslines.js configure ccstatusline --cli=claude
+node bin/statuslines.js doctor                        # validate every entry
+node bin/statuslines.js render-readme                 # refresh catalog/README.md
+```
+
+See [catalog/README.md](catalog/README.md) for the rendered table and per-entry detail; [catalog/SCHEMA.md](catalog/SCHEMA.md) for the entry format and the rules for adding one.
+
 ## Roadmap
 
 - Phase 1: GSD-style across all four CLIs. ✅
 - Phase 2: example configs + installer. ✅
 - Phase 3: `pup/` flavor — events with TTL-gated cache. ✅
-- Phase 4: side-by-side comparison doc; richer pup segments (monitors, incidents) behind opt-in flags.
+- Phase 4: catalog of third-party statuslines with install/configure CLI. ✅
+- Phase 5: side-by-side comparison doc once both flavors have real-use feedback; richer pup segments (monitors, incidents) behind opt-in flags.
 
 ## License
 
