@@ -1,0 +1,46 @@
+name: catalog-manifest-verify
+
+# PR-blocking. Recomputes catalog hashes and verifies the hybrid
+# Ed25519 + ML-DSA-65 signature in catalog/MANIFEST.sig.json against the
+# public keys listed in catalog/MAINTAINERS.md. No secrets needed; CI never
+# sees the private signing key.
+#
+# This intentionally fails on the bootstrap state (TEMPLATE placeholders) so
+# that an unsigned manifest cannot be merged without a maintainer signing it.
+
+on:
+  pull_request:
+    paths:
+      - 'catalog/**'
+      - 'scripts/manifest.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/catalog-manifest-verify.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'catalog/**'
+      - 'scripts/manifest.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify manifest hashes and signature
+        run: node scripts/manifest.mjs verify
