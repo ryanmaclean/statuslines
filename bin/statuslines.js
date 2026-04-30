@@ -57,10 +57,10 @@ function validate(entry) {
     errs.push(`redistributable=true but license '${entry.license}' is not in the permissive allowlist`);
   }
   if (entry.install) {
-    const ok = ["npx", "npm-global", "cargo", "brew", "git", "manual"];
+    const ok = ["npx", "npm-global", "cargo", "brew", "git", "manual", "opencode-plugin"];
     if (!ok.includes(entry.install.type)) errs.push(`invalid install.type: ${entry.install.type}`);
     if (entry.install.type === "git" && !entry.install.clone_dir) errs.push("install.type=git requires clone_dir");
-    if (["npx","npm-global"].includes(entry.install.type) && !entry.install.package) errs.push("install.type=npx/npm-global requires package");
+    if (["npx","npm-global","opencode-plugin"].includes(entry.install.type) && !entry.install.package) errs.push("install.type=npx/npm-global/opencode-plugin requires package");
   }
   if (entry.configs) {
     for (const cli of Object.keys(entry.configs)) {
@@ -181,14 +181,15 @@ function cmdConfigure(args) {
     if (dryRun) process.stdout.write(`would run: cargo install ${e.install.package}\n`);
     else { const r = spawnSync("cargo", ["install", e.install.package], { stdio: "inherit" }); if (r.status !== 0) process.exit(r.status ?? 1); }
   } else if (e.install.type === "brew") {
-    if (e.install.tap && !dryRun) {
-      const r = spawnSync("brew", ["tap", e.install.tap], { stdio: "inherit" });
-      if (r.status !== 0) process.exit(r.status ?? 1);
-    }
-    if (dryRun) process.stdout.write(`would run: brew install ${e.install.formula ?? e.install.package}\n`);
-    else { const r = spawnSync("brew", ["install", e.install.formula ?? e.install.package], { stdio: "inherit" }); if (r.status !== 0) process.exit(r.status ?? 1); }
+    const target = e.install.tap
+      ? `${e.install.tap}/${e.install.formula ?? e.install.package}`
+      : (e.install.formula ?? e.install.package);
+    if (dryRun) process.stdout.write(`would run: brew install ${target}\n`);
+    else { const r = spawnSync("brew", ["install", target], { stdio: "inherit" }); if (r.status !== 0) process.exit(r.status ?? 1); }
   } else if (e.install.type === "npx") {
     /* nothing to install — npx invokes at run time */
+  } else if (e.install.type === "opencode-plugin") {
+    /* nothing to install — OpenCode loads from npm at session start */
   }
 
   const expanded = installDir ? expandInstallDir(snippet, installDir) : snippet;
@@ -239,6 +240,7 @@ function renderReadme() {
     else if (e.install?.type === "cargo") lines.push(`- **Install:** \`cargo install ${e.install.package}\``);
     else if (e.install?.type === "brew") lines.push(`- **Install:** \`brew install ${e.install.formula ?? e.install.package}\`${e.install.tap ? ` (tap: \`${e.install.tap}\`)` : ""}`);
     else if (e.install?.type === "git") lines.push(`- **Install:** \`git clone\` (handled by \`bin/statuslines.js configure\`)`);
+    else if (e.install?.type === "opencode-plugin") lines.push(`- **Install:** OpenCode loads \`${e.install.package}\` from npm at session start (added via \`opencode.json\` \`plugin\` array)`);
     else lines.push(`- **Install:** see upstream`);
     if (e.redistributable && e.configs && Object.keys(e.configs).length) {
       lines.push(`- **Configure:** \`node bin/statuslines.js configure ${e.slug} --cli=<${Object.keys(e.configs).join("|")}>\``);

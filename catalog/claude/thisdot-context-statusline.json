@@ -1,0 +1,18 @@
+{
+  "slug": "thisdot-context-statusline",
+  "name": "@this-dot/claude-code-context-status-line",
+  "repo": "https://github.com/thisdot/claude-code-context-status-line",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "typescript",
+  "description": "Claude Code statusline that parses session JSONL transcripts to compute input + cache-creation + cache-read tokens for an accurate context-window display.",
+  "install": { "type": "npx", "package": "@this-dot/claude-code-context-status-line" },
+  "configs": {
+    "claude": {
+      "statusLine": { "type": "command", "command": "npx -y @this-dot/claude-code-context-status-line" }
+    }
+  },
+  "tags": ["tokens", "context-window", "cache-aware"],
+  "notes": "Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session."
+}

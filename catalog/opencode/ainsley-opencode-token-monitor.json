@@ -1,0 +1,18 @@
+{
+  "slug": "ainsley-opencode-token-monitor",
+  "name": "opencode-token-monitor",
+  "repo": "https://github.com/Ainsley0917/opencode-token-monitor",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["opencode"],
+  "language": "typescript",
+  "description": "OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.",
+  "install": { "type": "opencode-plugin", "package": "opencode-token-monitor" },
+  "configs": {
+    "opencode": {
+      "plugin": ["opencode-token-monitor@latest"]
+    }
+  },
+  "tags": ["tokens", "cost", "plugin", "toasts"],
+  "notes": "Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured."
+}

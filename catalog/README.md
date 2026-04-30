@@ -6,18 +6,32 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 | Slug | Name | Targets | License | Lang | Status | Install |
 |---|---|---|---|---|---|---|
+| `ainsley-opencode-token-monitor` | [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor) | opencode | MIT | typescript | ok | opencode-plugin |
 | `b-open-statusline` | [b-open-io/statusline](https://github.com/b-open-io/statusline) | claude | MIT | typescript | ok | git |
 | `capedbitmap-codex-hud` | [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud) | codex | PolyForm-Noncommercial-1.0.0 | swift | ref | manual |
 | `ccometixline` | [CCometixLine](https://github.com/Haleclipse/CCometixLine) | claude | MIT | rust | ok | manual |
 | `ccstatusline` | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | claude | MIT | typescript | ok | npx |
 | `ccusage` | [ccusage](https://github.com/ryoppippi/ccusage) | claude, codex | MIT | typescript | ok | npx |
 | `claude-hud` | [claude-hud](https://github.com/jarrodwatts/claude-hud) | claude | MIT | typescript | ok | manual |
+| `felipeelias-claude-statusline` | [claude-statusline (Felipe Elias)](https://github.com/felipeelias/claude-statusline) | claude | MIT | go | ok | brew |
+| `fredrikaverpil-claudeline` | [claudeline (Fredrik Averpil)](https://github.com/fredrikaverpil/claudeline) | claude | MIT | go | ok | manual |
 | `fwyc-codex-hud` | [codex-hud (fwyc0573)](https://github.com/fwyc0573/codex-hud) | codex | MIT | typescript | ok | manual |
+| `lucasilverentand-claudeline` | [claudeline (Luca Silverentand)](https://github.com/lucasilverentand/claudeline) | claude | MIT | typescript | ok | npx |
 | `markwilkening-opencode-status-line` | [opencode-status-line](https://github.com/markwilkening21/opencode-status-line) | opencode | MIT | shell | ok | git |
 | `opencode-quota` | [opencode-quota](https://github.com/slkiser/opencode-quota) | opencode | MIT | typescript | ok | manual |
+| `thisdot-context-statusline` | [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line) | claude | MIT | typescript | ok | npx |
 | `tokscale` | [tokscale](https://github.com/junhoyeo/tokscale) | claude, opencode, gemini, codex | MIT | typescript | ok | npx |
 
 ## Per-entry detail
+
+### `ainsley-opencode-token-monitor` — [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor)
+
+- **License:** MIT
+- **Targets:** opencode
+- **Description:** OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.
+- **Notes:** Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.
+- **Install:** OpenCode loads `opencode-token-monitor` from npm at session start (added via `opencode.json` `plugin` array)
+- **Configure:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
 
 ### `b-open-statusline` — [b-open-io/statusline](https://github.com/b-open-io/statusline)
 
@@ -68,6 +82,23 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Notes:** Distributed as a Claude Code plugin; see upstream README for the current install command.
 - **Install:** see upstream
 
+### `felipeelias-claude-statusline` — [claude-statusline (Felipe Elias)](https://github.com/felipeelias/claude-statusline)
+
+- **License:** MIT
+- **Targets:** claude
+- **Description:** Go binary statusline for Claude Code with module-based config, OSC 8 hyperlinks, and theme presets (catppuccin, tokyo-night, gruvbox-rainbow, and others).
+- **Notes:** Brew install drops a `claude-statusline` binary on PATH. Alternative install: `go install github.com/felipeelias/claude-statusline@latest`. Customize via `~/.config/claude-statusline/config.toml` (see upstream).
+- **Install:** `brew install claude-statusline` (tap: `felipeelias/tap`)
+- **Configure:** `node bin/statuslines.js configure felipeelias-claude-statusline --cli=<claude>`
+
+### `fredrikaverpil-claudeline` — [claudeline (Fredrik Averpil)](https://github.com/fredrikaverpil/claudeline)
+
+- **License:** MIT
+- **Targets:** claude
+- **Description:** Minimalistic Go statusline for Claude Code distributed as a Claude Code plugin; the plugin's `/claudeline:setup` slash command downloads the binary and patches settings.json.
+- **Notes:** Install flow runs entirely inside Claude Code: `/plugin marketplace add fredrikaverpil/claudeline` → `/plugin install claudeline@claudeline` → `/claudeline:setup`. The setup command writes `{"statusLine":{"type":"command","command":"claudeline"}}` itself, so we don't ship a `configs.claude` patch. Manual fallback: `go install github.com/fredrikaverpil/claudeline@latest`, then add the same snippet by hand.
+- **Install:** see upstream
+
 ### `fwyc-codex-hud` — [codex-hud (fwyc0573)](https://github.com/fwyc0573/codex-hud)
 
 - **License:** MIT
@@ -75,6 +106,15 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Description:** Real-time tmux statusline HUD for OpenAI Codex CLI with session/context usage, git status, and tool-activity monitoring; includes --kill / --list / --attach / --self-check subcommands.
 - **Notes:** Codex CLI has no native command-statusline yet, so this runs as an external HUD — start it under tmux per upstream docs.
 - **Install:** see upstream
+
+### `lucasilverentand-claudeline` — [claudeline (Luca Silverentand)](https://github.com/lucasilverentand/claudeline)
+
+- **License:** MIT
+- **Targets:** claude
+- **Description:** Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.
+- **Notes:** Distinct from fredrikaverpil/claudeline (Go binary) despite the shared name. The package's `--install` flag patches settings.json automatically; the configs.claude here is the same snippet that flag would write.
+- **Install:** `npx -y claudeline@latest`
+- **Configure:** `node bin/statuslines.js configure lucasilverentand-claudeline --cli=<claude>`
 
 ### `markwilkening-opencode-status-line` — [opencode-status-line](https://github.com/markwilkening21/opencode-status-line)
 
@@ -92,6 +132,15 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Description:** OpenCode quota and token-usage display with zero context-window pollution; supports providers including OpenCode Go, Cursor, GitHub Copilot, and others.
 - **Notes:** Follow upstream README for the current install path; project surface evolves quickly.
 - **Install:** see upstream
+
+### `thisdot-context-statusline` — [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line)
+
+- **License:** MIT
+- **Targets:** claude
+- **Description:** Claude Code statusline that parses session JSONL transcripts to compute input + cache-creation + cache-read tokens for an accurate context-window display.
+- **Notes:** Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session.
+- **Install:** `npx -y @this-dot/claude-code-context-status-line@latest`
+- **Configure:** `node bin/statuslines.js configure thisdot-context-statusline --cli=<claude>`
 
 ### `tokscale` — [tokscale](https://github.com/junhoyeo/tokscale)
 

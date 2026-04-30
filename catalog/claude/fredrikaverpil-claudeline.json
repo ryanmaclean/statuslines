@@ -1,0 +1,14 @@
+{
+  "slug": "fredrikaverpil-claudeline",
+  "name": "claudeline (Fredrik Averpil)",
+  "repo": "https://github.com/fredrikaverpil/claudeline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "go",
+  "description": "Minimalistic Go statusline for Claude Code distributed as a Claude Code plugin; the plugin's `/claudeline:setup` slash command downloads the binary and patches settings.json.",
+  "install": { "type": "manual" },
+  "configs": {},
+  "tags": ["go", "context-bar", "plugin-marketplace"],
+  "notes": "Install flow runs entirely inside Claude Code: `/plugin marketplace add fredrikaverpil/claudeline` → `/plugin install claudeline@claudeline` → `/claudeline:setup`. The setup command writes `{\"statusLine\":{\"type\":\"command\",\"command\":\"claudeline\"}}` itself, so we don't ship a `configs.claude` patch. Manual fallback: `go install github.com/fredrikaverpil/claudeline@latest`, then add the same snippet by hand."
+}
