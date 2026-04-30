@@ -1,8 +1,10 @@
 # statuslines
 
+**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)
+
 > A curated catalog of statuslines for Claude Code, OpenCode, Gemini CLI,
-> and Codex CLI — plus two reference flavors (`gsd/`, `pup/`) that ship
-> in-repo.
+> and Codex CLI — plus an in-repo reference flavor (`pup/`) wired to
+> Datadog.
 
 *One pattern, four agent CLIs, dozens of statuslines.*
 
@@ -23,7 +25,6 @@
   - [Codex CLI](#codex-cli)
 - [Catalog CLI](#catalog-cli)
 - [In-repo flavors](#in-repo-flavors)
-  - [GSD — context-health](#gsd--context-health)
   - [pup — Datadog observability](#pup--datadog-observability)
 - [Support matrix](#support-matrix)
 - [Layout](#layout)
@@ -42,15 +43,14 @@ node bin/statuslines.js list
 node bin/statuslines.js list --cli=claude --redistributable
 node bin/statuslines.js show ccstatusline
 
-# install one of the in-repo flavors
-./install/install-gsd.sh --all          # Claude + OpenCode + Gemini
+# install the in-repo pup flavor
 ./install/install-pup.sh --all --seed-config
 ```
 
 Codex CLI has no native command-statusline yet — start the HUD under tmux:
 
 ```sh
-tmux new-session -d -s codex 'node ./gsd/codex/hud.js watch'
+tmux new-session -d -s codex 'node ./pup/codex/hud.js watch'
 ```
 
 ## Catalog
@@ -126,45 +126,8 @@ remain listed for reference only.
 
 ## In-repo flavors
 
-Two reference statuslines live alongside the catalog. They are
-complementary, not competing: GSD watches *agent* health, pup watches
-*production* health. Both can run at once.
-
-### GSD — context-health
-
-Modeled after [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done):
-renders model · dir · git · context-bar, and injects WARNING/CRITICAL
-messages into the agent loop as the context window fills.
-
-How the GSD pattern works:
-
-1. The statusline script reads JSON on stdin (per the host CLI's
-   contract), renders one line of output, and writes a
-   freshness-stamped JSON file at
-   `${TMPDIR}/statuslines-<tool>-ctx-<session>.json`.
-2. The after-tool hook reads that bridge file, fires `WARNING` at ≤35%
-   remaining and `CRITICAL` at ≤25% remaining, and emits an
-   `additionalContext` payload back into the agent loop.
-3. The hook debounces to one warning per 5 tool calls — except CRITICAL
-   escalation, which bypasses the debounce.
-4. Bridge entries older than 60 seconds are ignored (stale-data guard).
-
-For Gemini there's no statusline to write a bridge file, so the hook
-estimates token usage from `transcript_path` directly (preferring
-`usageMetadata.totalTokenCount` lines, falling back to `chars/4`).
-
-For Codex there's no PostToolUse hook *and* no custom-command
-statusline, so the HUD daemon polls
-`~/.codex/sessions/**/rollout-*.jsonl` for `token_count` events and
-renders to either tmux's `status-right` or stdout.
-
-```sh
-./install/install-gsd.sh --all
-./install/install-gsd.sh --claude
-./install/install-gsd.sh --opencode
-./install/install-gsd.sh --gemini
-tmux new-session -d -s codex 'node ./gsd/codex/hud.js watch'
-```
+One reference statusline lives alongside the catalog: `pup/`, which
+surfaces Datadog event health into the bar.
 
 ### pup — Datadog observability
 
@@ -225,10 +188,10 @@ tmux new-session -d -s codex 'node ./pup/codex/hud.js watch'
 
 | CLI | Custom statusline | After-tool hook | Approach |
 |---|---|---|---|
-| Claude Code | yes (`statusLine.command`) | yes (`PostToolUse`) | `gsd/claude/statusline.js` + `context-monitor.js` |
-| OpenCode | yes (`statusLine.command`) | yes (plugin `tool.execute.after`) | `gsd/opencode/statusline.js` + `context-monitor.js` |
-| Gemini CLI | **no** ([#8191](https://github.com/google-gemini/gemini-cli/issues/8191)) | yes (`AfterTool`) | hook only — `gsd/gemini/context-monitor.js` |
-| Codex CLI | only built-in items ([#14043](https://github.com/openai/codex/issues/14043), [#17827](https://github.com/openai/codex/issues/17827)) | yes (`~/.codex/hooks/`) | external HUD daemon — `gsd/codex/hud.js` |
+| Claude Code | yes (`statusLine.command`) | yes (`PostToolUse`) | `pup/claude/statusline.js` + `context-monitor.js` |
+| OpenCode | yes (`statusLine.command`) | yes (plugin `tool.execute.after`) | `pup/opencode/statusline.js` + `context-monitor.js` |
+| Gemini CLI | **no** ([#8191](https://github.com/google-gemini/gemini-cli/issues/8191)) | yes (`AfterTool`) | not shipped in-repo (see catalog for third-party options) |
+| Codex CLI | only built-in items ([#14043](https://github.com/openai/codex/issues/14043), [#17827](https://github.com/openai/codex/issues/17827)) | yes (`~/.codex/hooks/`) | external HUD daemon — `pup/codex/hud.js` |
 
 ## Layout
 
@@ -240,11 +203,6 @@ catalog/            third-party entries — one JSON per slug, per CLI
   gemini/           Gemini CLI targets
   codex/            Codex CLI targets
   multi/            entries that target more than one CLI
-gsd/                context-health implementation
-  claude/           statusline + PostToolUse monitor
-  opencode/         statusline + plugin monitor
-  gemini/           AfterTool monitor (no statusline upstream)
-  codex/            HUD daemon (tmux-aware, polls ~/.codex/sessions)
 pup/                Datadog observability flavor
 examples/           paste-in config snippets per CLI
 install/            installer scripts
@@ -287,14 +245,34 @@ Curated lists worth knowing about — link only, no copying:
 
 ## Roadmap
 
-- Phase 1: GSD-style across all four CLIs. ✅
-- Phase 2: example configs + installer. ✅
-- Phase 3: `pup/` flavor — events with TTL-gated cache. ✅
-- Phase 4: catalog of third-party statuslines with install/configure
-  CLI. ✅
-- Phase 5: side-by-side comparison doc once both flavors have real-use
-  feedback; richer pup segments (monitors, incidents) behind opt-in
-  flags.
+Shipped:
+
+- Context-health pattern across all four supported CLIs.
+- Example configs and installer scripts.
+- `pup/` Datadog flavor with TTL-gated cache and lockfile-coordinated fetches.
+- Catalog of third-party statuslines with `list` / `show` / `configure` /
+  `doctor` / `audit` commands.
+- Schema-level supply-chain hardening: pinned versions and integrity hashes,
+  refusal of `curl|sh` / `eval(` / `@latest` patterns, `--ignore-scripts`
+  by default on `npx` / `npm-global` recipes.
+- OpenBSD-style quarantine: flagged entries vanish from `list` / `show` /
+  `configure` and the rendered READMEs; the forensic record lives in
+  `catalog/QUARANTINE.md`.
+- Daily liveness probe (repo + npm registry version match + license drift)
+  and weekly Socket.dev malicious-package feed.
+- Datadog SAST / SCA / SAIST workflows, secret-gated so the repo is safe
+  to fork before keys land.
+- Per-entry capability declarations (`network`, `child_process`,
+  `filesystem_write`, `env_read`) with sandbox verification under
+  firejail + strace.
+- SLSA build-provenance probe and weekly transitive-dependency lockfile
+  re-verification on every redistributable npm-backed entry.
+
+Next:
+
+- Tarball diff bot on every version-bump PR.
+- Hybrid Ed25519 + SLH-DSA signing on catalog entries.
+- Richer `pup/` segments (monitors, incidents) behind opt-in flags.
 
 ## License
 

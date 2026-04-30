@@ -1,5 +1,7 @@
 # Catalog entry schema
 
+**Languages:** English · [Français](./SCHEMA.fr.md) · [日本語](./SCHEMA.ja.md)
+
 Each `catalog/<cli>/<slug>.json` is a single entry.
 
 ```json

@@ -297,6 +297,8 @@ function renderReadme() {
   const lines = [];
   lines.push("# Catalog");
   lines.push("");
+  lines.push("**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)");
+  lines.push("");
   lines.push("Third-party statuslines and related tools for Claude Code, OpenCode, Gemini CLI, and Codex CLI. Generated from `catalog/<cli>/<slug>.json` — do not edit by hand.");
   lines.push("");
   lines.push("Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **ref** = listed for reference; install per upstream.");
@@ -455,6 +457,8 @@ function cmdRenderQuarantine() {
   const quarantined = all.filter(isQuarantined).sort((a, b) => a.slug.localeCompare(b.slug));
   const lines = [];
   lines.push("# Quarantine");
+  lines.push("");
+  lines.push("**Languages:** English · [Français](./QUARANTINE.fr.md) · [日本語](./QUARANTINE.ja.md)");
   lines.push("");
   lines.push("Entries the catalog has hidden from `list`, `show`, `configure`, and the rendered READMEs because an automated security check fired or a maintainer flagged them.");
   lines.push("");

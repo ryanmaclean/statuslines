@@ -1,6 +1,6 @@
 name: datadog-sast-self
 
-# Rule-based SAST on our own code (gsd/, pup/, bin/, lib/, scripts/, install/).
+# Rule-based SAST on our own code (pup/, bin/, lib/, scripts/, install/).
 # Catalog upstream code is scanned separately by catalog-sast.yml (Phase E).
 # Fails closed when DD_API_KEY is missing — fork PRs and unconfigured repos
 # get a clear warning, not a broken pipeline.

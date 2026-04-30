@@ -54,7 +54,7 @@ if [[ $SEED -eq 1 ]]; then
 fi
 
 if [[ $DO_CLAUDE -eq 1 ]]; then
-  patch=$(jq -n --arg sl "node $ROOT/pup/claude/statusline.js" --arg cm "node $ROOT/gsd/claude/context-monitor.js" '{
+  patch=$(jq -n --arg sl "node $ROOT/pup/claude/statusline.js" --arg cm "node $ROOT/pup/claude/context-monitor.js" '{
     statusLine: { type: "command", command: $sl, padding: 0 },
     hooks: { PostToolUse: [ { matcher: "*", hooks: [ { type: "command", command: $cm } ] } ] }
   }')
@@ -62,7 +62,7 @@ if [[ $DO_CLAUDE -eq 1 ]]; then
 fi
 
 if [[ $DO_OPENCODE -eq 1 ]]; then
-  patch=$(jq -n --arg sl "node $ROOT/pup/opencode/statusline.js" --arg pl "$ROOT/gsd/opencode/context-monitor.js" '{
+  patch=$(jq -n --arg sl "node $ROOT/pup/opencode/statusline.js" --arg pl "$ROOT/pup/opencode/context-monitor.js" '{
     statusLine: { type: "command", command: $sl },
     plugin: [ $pl ]
   }')

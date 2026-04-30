@@ -2,11 +2,11 @@
 # openai/codex#14043 and #17827). Until then, run the HUD as a
 # tmux side process — start it once per shell:
 #
-#   tmux new-session -d -s codex 'node /ABSOLUTE/PATH/TO/statuslines/gsd/codex/hud.js watch'
+#   tmux new-session -d -s codex 'node /ABSOLUTE/PATH/TO/statuslines/pup/codex/hud.js watch'
 #
 # Or print once for a non-tmux session:
 #
-#   node /ABSOLUTE/PATH/TO/statuslines/gsd/codex/hud.js once
+#   node /ABSOLUTE/PATH/TO/statuslines/pup/codex/hud.js once
 #
 # Configure Codex's built-in statusline via /statusline inside the TUI;
 # this writes to tui.status_line below.

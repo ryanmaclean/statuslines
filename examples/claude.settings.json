@@ -1,7 +1,7 @@
 {
   "statusLine": {
     "type": "command",
-    "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/claude/statusline.js",
+    "command": "node /ABSOLUTE/PATH/TO/statuslines/pup/claude/statusline.js",
     "padding": 0
   },
   "hooks": {
@@ -11,7 +11,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/claude/context-monitor.js"
+            "command": "node /ABSOLUTE/PATH/TO/statuslines/pup/claude/context-monitor.js"
           }
         ]
       }
