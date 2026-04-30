@@ -1,0 +1,48 @@
+name: catalog-doctor
+
+# Schema validator. Refuses unpinned versions, dangerous install patterns,
+# and quarantine entries missing a reason. Runs on every PR + push to main.
+# No secrets needed.
+
+on:
+  pull_request:
+    paths:
+      - 'catalog/**'
+      - 'bin/statuslines.js'
+      - '.github/workflows/catalog-doctor.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'catalog/**'
+      - 'bin/statuslines.js'
+
+permissions:
+  contents: read
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run doctor
+        run: node bin/statuslines.js doctor
+
+      - name: Verify rendered docs are in sync
+        run: |
+          node bin/statuslines.js render-readme
+          node bin/statuslines.js render-top-readme
+          node bin/statuslines.js render-quarantine
+          if ! git diff --quiet -- catalog/README.md README.md catalog/QUARANTINE.md; then
+            echo "::error::Generated docs are out of sync. Run:"
+            echo "  node bin/statuslines.js render-readme"
+            echo "  node bin/statuslines.js render-top-readme"
+            echo "  node bin/statuslines.js render-quarantine"
+            git --no-pager diff -- catalog/README.md README.md catalog/QUARANTINE.md
+            exit 1
+          fi

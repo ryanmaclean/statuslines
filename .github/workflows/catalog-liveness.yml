@@ -1,0 +1,74 @@
+name: catalog-liveness
+
+# Daily probe of every catalog entry's upstream:
+#   - npm registry resolves the pinned version
+#   - integrity hash matches what we recorded
+#   - npm-reported license matches our license
+#   - upstream repo is reachable
+# Opens a tracking issue on drift; does not auto-quarantine (humans
+# decide whether to flip the flag, per Phase A policy).
+# No secrets needed.
+
+on:
+  schedule:
+    - cron: '37 4 * * *'   # daily 04:37 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  liveness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Probe upstreams
+        id: probe
+        run: |
+          node scripts/catalog-liveness.mjs > /tmp/liveness.md
+          if grep -q '^- ' /tmp/liveness.md; then
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "drift=false" >> "$GITHUB_OUTPUT"
+          fi
+          cat /tmp/liveness.md
+
+      - name: Open or update tracking issue
+        if: steps.probe.outputs.drift == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('/tmp/liveness.md', 'utf8');
+            const title = 'catalog-liveness: drift detected';
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'catalog-liveness',
+            });
+            const existing = issues.data.find(i => i.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: body,
+              });
+              core.notice(`Updated issue #${existing.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['catalog-liveness'],
+              });
+              core.notice(`Opened issue #${created.data.number}`);
+            }

@@ -1,0 +1,99 @@
+name: Datadog SAIST (self-scan via Ollama Cloud)
+
+on:
+  pull_request:
+    paths:
+      - "**/*.py"
+      - "**/*.go"
+      - ".github/workflows/datadog-saist-self.yml"
+  push:
+    branches: [main]
+    paths:
+      - "**/*.py"
+      - "**/*.go"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # Required only if you later switch to `github/codeql-action/upload-sarif`.
+  # security-events: write
+
+jobs:
+  saist:
+    name: SAIST scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # SAIST reads OPENAI_API_KEY + OPENAI_BASE_URL (see internal/clients/auth.go).
+      # GetHost() returns the host as-is and openai.go appends "/v1", so we pass
+      # the bare host here; the final URL becomes https://ollama.com/v1.
+      OPENAI_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
+      OPENAI_BASE_URL: https://ollama.com
+      # Ollama Cloud model IDs (pick whatever you prefer from `GET /v1/models`):
+      SAIST_DETECTION_MODEL: gpt-oss:120b
+      SAIST_VALIDATION_MODEL: gpt-oss:20b
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check OLLAMA_API_KEY secret presence (fail-open)
+        id: secret_check
+        run: |
+          if [ -z "${OPENAI_API_KEY}" ]; then
+            echo "::warning title=SAIST skipped::OLLAMA_API_KEY secret is not set; skipping SAIST scan."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Detect Python/Go files
+        if: steps.secret_check.outputs.skip != 'true'
+        id: lang_check
+        run: |
+          set -euo pipefail
+          count=$(git ls-files -- '*.py' '*.go' | wc -l | tr -d ' ')
+          echo "count=${count}" >> "$GITHUB_OUTPUT"
+          if [ "${count}" -eq 0 ]; then
+            echo "::notice title=SAIST skipped::No .py or .go files tracked in this repo; nothing for SAIST to analyze."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Found ${count} Python/Go files; proceeding."
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set up Go
+        if: steps.secret_check.outputs.skip != 'true' && steps.lang_check.outputs.skip != 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+          cache: false
+
+      - name: Install datadog-saist
+        if: steps.secret_check.outputs.skip != 'true' && steps.lang_check.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          go install github.com/DataDog/datadog-saist/cmd/datadog-saist@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Run SAIST
+        if: steps.secret_check.outputs.skip != 'true' && steps.lang_check.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p saist-out
+          datadog-saist \
+            --directory "${GITHUB_WORKSPACE}" \
+            --output saist-out/results.sarif \
+            --detection-model "${SAIST_DETECTION_MODEL}" \
+            --validation-model "${SAIST_VALIDATION_MODEL}" \
+            --request-timeout-sec 120 \
+            --file-concurrency 8
+
+      - name: Upload SARIF artifact
+        if: always() && steps.secret_check.outputs.skip != 'true' && steps.lang_check.outputs.skip != 'true' && hashFiles('saist-out/results.sarif') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: datadog-saist-sarif
+          path: saist-out/results.sarif
+          if-no-files-found: warn
+          retention-days: 30

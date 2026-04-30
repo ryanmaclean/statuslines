@@ -1,0 +1,45 @@
+schema-version: v1.0
+
+# Datadog Static Analysis configuration.
+# Used by .github/workflows/datadog-sast-self.yml and any local invocation
+# of `datadog-static-analyzer`. Only takes effect when the SAST workflow
+# runs (which itself fails closed if DD_API_KEY is unset).
+
+sast:
+  # Enable the curated default rulesets, plus language-specific extras.
+  use-default-rulesets: true
+  use-rulesets:
+    - javascript-best-practices
+    - javascript-code-style
+    - javascript-common-security
+    - javascript-express
+    - javascript-node-security
+    - typescript-best-practices
+    - typescript-code-style
+    - typescript-common-security
+    - typescript-node-security
+    - rust-best-practices
+    - rust-code-style
+    - go-best-practices
+    - go-security
+    - bash-best-practices
+    - docker-best-practices
+
+  # Skip vendored / generated / fixture content.
+  paths-ignore:
+    - 'node_modules/**'
+    - 'tmp-test/**'
+    - 'examples/**'   # paste-in snippets, not executed code
+    - '**/*.min.js'
+    - '**/*.min.css'
+
+  # Catalog JSON entries are metadata, not source code we run.
+  # The catalog upstream code lives in third-party repos and is scanned
+  # separately by catalog-sast.yml (Phase E).
+  paths-only:
+    - 'gsd/**'
+    - 'pup/**'
+    - 'lib/**'
+    - 'bin/**'
+    - 'scripts/**'
+    - 'install/**'

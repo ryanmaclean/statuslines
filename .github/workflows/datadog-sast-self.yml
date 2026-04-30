@@ -1,0 +1,48 @@
+name: datadog-sast-self
+
+# Rule-based SAST on our own code (gsd/, pup/, bin/, lib/, scripts/, install/).
+# Catalog upstream code is scanned separately by catalog-sast.yml (Phase E).
+# Fails closed when DD_API_KEY is missing — fork PRs and unconfigured repos
+# get a clear warning, not a broken pipeline.
+
+on:
+  pull_request:
+  schedule:
+    - cron: '17 6 * * *'   # daily 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: read
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+    env:
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_APP_KEY: ${{ secrets.DD_APP_KEY }}
+      DD_SITE: ${{ vars.DD_SITE || 'datadoghq.com' }}
+    steps:
+      - name: Check secret
+        if: ${{ env.DD_API_KEY == '' }}
+        run: |
+          echo "::warning::DD_API_KEY not set; skipping Datadog SAST."
+          echo "To enable, set DD_API_KEY + DD_APP_KEY in repository secrets."
+
+      - name: Checkout
+        if: ${{ env.DD_API_KEY != '' }}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # required for diff-aware scanning
+
+      - name: Run Datadog Static Analyzer
+        if: ${{ env.DD_API_KEY != '' }}
+        uses: DataDog/datadog-static-analyzer-github-action@v3
+        with:
+          dd_api_key: ${{ env.DD_API_KEY }}
+          dd_app_key: ${{ env.DD_APP_KEY }}
+          dd_site: ${{ env.DD_SITE }}
+          diff_aware: true
+          secrets_enabled: false
+          static_analysis_enabled: true

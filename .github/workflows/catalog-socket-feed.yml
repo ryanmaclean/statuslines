@@ -1,0 +1,71 @@
+name: catalog-socket-feed
+
+# Daily Socket.dev sweep:
+#   - For every catalog entry with install.type in {npx, npm-global,
+#     opencode-plugin} and a pinned version, ask Socket.dev whether it has
+#     supply-chain alerts at severity high/critical.
+#   - Findings are written into security.socket_alerts; high/critical hits
+#     also flip security.quarantined.
+#   - If anything changed, opens a PR (humans review the quarantine).
+#
+# Fails closed: if SOCKET_API_TOKEN is not configured we exit 0 with a
+# warning rather than failing the workflow — Socket scanning is advisory and
+# we do not want missing-secret to block the daily catalog cadence.
+
+on:
+  schedule:
+    - cron: '53 5 * * *'   # daily 05:53 UTC, offset from catalog-liveness
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  socket-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check SOCKET_API_TOKEN is configured
+        id: gate
+        env:
+          SOCKET_API_TOKEN: ${{ secrets.SOCKET_API_TOKEN }}
+        run: |
+          if [ -z "${SOCKET_API_TOKEN:-}" ]; then
+            echo "::warning::SOCKET_API_TOKEN is not set; skipping Socket.dev sweep."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run socket-feed
+        if: steps.gate.outputs.skip == 'false'
+        env:
+          SOCKET_API_TOKEN: ${{ secrets.SOCKET_API_TOKEN }}
+        run: node scripts/socket-feed.mjs
+
+      - name: Open PR if catalog changed
+        if: steps.gate.outputs.skip == 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/socket-feed
+          commit-message: 'chore(catalog): refresh Socket.dev alerts'
+          title: 'catalog: Socket.dev alert refresh'
+          body: |
+            Automated update from `catalog-socket-feed`.
+
+            For each npm-backed catalog entry, this workflow records the latest
+            Socket.dev issue list under `security.socket_alerts`. Entries with
+            any alert at severity `high` or `critical` are quarantined
+            (`security.quarantined: true`) — review before merging and decide
+            whether the finding warrants removal, version-pin advance, or a
+            documented exception.
+          labels: |
+            catalog
+            security
+          delete-branch: true
