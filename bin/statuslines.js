@@ -257,6 +257,54 @@ function cmdRenderReadme() {
   process.stdout.write(`wrote ${out}\n`);
 }
 
+function renderTopReadmeBlocks() {
+  const entries = loadAll().sort((a, b) => a.slug.localeCompare(b.slug));
+  const byCli = { claude: [], opencode: [], gemini: [], codex: [] };
+  for (const e of entries) {
+    for (const cli of e.host_clis) {
+      if (byCli[cli]) byCli[cli].push(e);
+    }
+  }
+  const cliLabels = { claude: "Claude Code", opencode: "OpenCode", gemini: "Gemini CLI", codex: "Codex CLI" };
+  const lines = [];
+  for (const cli of ["claude", "opencode", "gemini", "codex"]) {
+    lines.push(`### ${cliLabels[cli]}`);
+    lines.push("");
+    if (byCli[cli].length === 0) {
+      lines.push(`*No catalog entries for ${cliLabels[cli]} yet.*`);
+      lines.push("");
+      continue;
+    }
+    for (const e of byCli[cli]) {
+      const tag = e.redistributable ? "" : " `(ref)`";
+      lines.push(`- [**${e.name}**](${e.repo}) — ${e.license}${tag} — ${e.description}`);
+    }
+    lines.push("");
+  }
+  return { catalog: lines.join("\n").trimEnd() + "\n", count: entries.length };
+}
+
+function replaceBetweenMarkers(raw, start, end, replacement) {
+  const re = new RegExp(`${start.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]*?${end.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`);
+  if (!re.test(raw)) {
+    process.stderr.write(`README.md is missing markers ${start} ... ${end}\n`);
+    process.exit(1);
+  }
+  return raw.replace(re, `${start}\n${replacement}\n${end}`);
+}
+
+function cmdRenderTopReadme() {
+  const readmePath = join(ROOT, "README.md");
+  if (!existsSync(readmePath)) { process.stderr.write(`README.md not found at ${readmePath}\n`); process.exit(1); }
+  let raw = readFileSync(readmePath, "utf8");
+  const { catalog, count } = renderTopReadmeBlocks();
+  raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
+  const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
+  raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
+  writeFileSync(readmePath, raw);
+  process.stdout.write(`wrote ${readmePath} (${count} entries)\n`);
+}
+
 function cmdHelp() {
   process.stdout.write(`Usage: statuslines <command> [options]
 
@@ -271,6 +319,8 @@ Commands:
                        --dry-run
   doctor               Validate every catalog entry
   render-readme        Regenerate catalog/README.md from entries
+  render-top-readme    Regenerate the catalog section + count badge
+                       in the top-level README.md (between markers)
   help                 Show this message
 `);
 }
@@ -283,6 +333,7 @@ switch (cmd) {
   case "configure":     cmdConfigure(rest); break;
   case "doctor":        cmdDoctor(); break;
   case "render-readme": cmdRenderReadme(); break;
+  case "render-top-readme": cmdRenderTopReadme(); break;
   case "help":
   case "--help":
   case "-h":
