@@ -9,6 +9,11 @@
   ],
   "language": "shell",
   "description": "Lightweight, fast status line for OpenCode CLI.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/markwilkening21/opencode-status-line",
+    "alt": "opencode-status-line repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "git",
     "clone_dir": "markwilkening-opencode-status-line"

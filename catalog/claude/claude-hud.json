@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "Claude Code plugin/statusline that surfaces context usage, active tools, running subagents, todo progress, and rate-limit windows using the native statusline API.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/jarrodwatts/claude-hud/HEAD/claude-hud-preview-5-2.png",
+    "alt": "claude-hud in action",
+    "source": "readme"
+  },
   "install": {
     "type": "manual"
   },

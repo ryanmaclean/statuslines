@@ -9,6 +9,11 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with persistent stats tracking, prebuilt binaries for Linux/macOS/Windows, and 11 themes; referenced by the official Claude Code docs.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/hagan/claudia-statusline/HEAD/statusline.png",
+    "alt": "claudia-statusline with cost, git, context",
+    "source": "readme"
+  },
   "install": {
     "type": "manual"
   },

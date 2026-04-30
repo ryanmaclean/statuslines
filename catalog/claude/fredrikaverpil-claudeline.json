@@ -9,6 +9,11 @@
   ],
   "language": "go",
   "description": "Minimalistic Go statusline for Claude Code distributed as a Claude Code plugin; the plugin's `/claudeline:setup` slash command downloads the binary and patches settings.json.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/fredrikaverpil/claudeline",
+    "alt": "claudeline repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "manual"
   },

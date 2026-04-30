@@ -9,6 +9,11 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with starship-like configuration and module-based composition.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/sotayamashita/claude-code-statusline",
+    "alt": "claude-code-statusline (Rust) repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "manual"
   },

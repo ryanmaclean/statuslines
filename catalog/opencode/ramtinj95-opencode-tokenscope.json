@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/ramtinJ95/opencode-tokenscope",
+    "alt": "opencode-tokenscope repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "opencode-plugin",
     "package": "@ramtinj95/opencode-tokenscope",

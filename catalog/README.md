@@ -37,6 +37,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `ainsley-opencode-token-monitor` — [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor)
 
+<a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="https://opengraph.githubassets.com/1/Ainsley0917/opencode-token-monitor" width="480"></a>
+
 - **License:** MIT
 - **Targets:** opencode
 - **Description:** OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.
@@ -45,6 +47,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
 
 ### `b-open-statusline` — [b-open-io/statusline](https://github.com/b-open-io/statusline)
+
+<a href="https://github.com/b-open-io/statusline"><img alt="b-open-io/statusline repo preview" src="https://opengraph.githubassets.com/1/b-open-io/statusline" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -55,6 +59,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `capedbitmap-codex-hud` — [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud)
 
+<a href="https://github.com/Capedbitmap/codex-hud"><img alt="codex-hud menu bar with account status" src="https://raw.githubusercontent.com/Capedbitmap/codex-hud/HEAD/docs/images/codex-hud-menu.png" width="480"></a>
+
 - **License:** PolyForm-Noncommercial-1.0.0 (not redistributable; reference only)
 - **Targets:** codex
 - **Description:** macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.
@@ -62,6 +68,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `ccometixline` — [CCometixLine](https://github.com/Haleclipse/CCometixLine)
+
+<a href="https://github.com/Haleclipse/CCometixLine"><img alt="CCometixLine statusline screenshot" src="https://raw.githubusercontent.com/Haleclipse/CCometixLine/HEAD/assets/img1.png" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -71,6 +79,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `ccstatusline` — [ccstatusline](https://github.com/sirmalloc/ccstatusline)
 
+<a href="https://github.com/sirmalloc/ccstatusline"><img alt="ccstatusline demo animation" src="https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.
@@ -78,6 +88,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
 
 ### `ccusage` — [ccusage](https://github.com/ryoppippi/ccusage)
+
+<a href="https://github.com/ryoppippi/ccusage"><img alt="ccusage terminal screenshot" src="https://cdn.jsdelivr.net/gh/ryoppippi/ccusage@main/docs/public/screenshot.png" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, codex
@@ -87,6 +99,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `claude-hud` — [claude-hud](https://github.com/jarrodwatts/claude-hud)
 
+<a href="https://github.com/jarrodwatts/claude-hud"><img alt="claude-hud in action" src="https://raw.githubusercontent.com/jarrodwatts/claude-hud/HEAD/claude-hud-preview-5-2.png" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Claude Code plugin/statusline that surfaces context usage, active tools, running subagents, todo progress, and rate-limit windows using the native statusline API.
@@ -94,6 +108,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `daniel3303-claude-statusline` — [ClaudeCodeStatusLine (Daniel Graczer)](https://github.com/daniel3303/ClaudeCodeStatusLine)
+
+<a href="https://github.com/daniel3303/ClaudeCodeStatusLine"><img alt="Status line showing model, tokens, rate limits" src="https://raw.githubusercontent.com/daniel3303/ClaudeCodeStatusLine/HEAD/screenshot.png" width="480"></a>
 
 - **License:** MIT (not redistributable; reference only)
 - **Targets:** claude
@@ -103,6 +119,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `dwillitzer-claude-statusline` — [claude-statusline (dwillitzer)](https://github.com/dwillitzer/claude-statusline)
 
+<a href="https://github.com/dwillitzer/claude-statusline"><img alt="claude-statusline repo preview" src="https://opengraph.githubassets.com/1/dwillitzer/claude-statusline" width="480"></a>
+
 - **License:** MIT (not redistributable; reference only)
 - **Targets:** claude
 - **Description:** Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).
@@ -110,6 +128,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `felipeelias-claude-statusline` — [claude-statusline (Felipe Elias)](https://github.com/felipeelias/claude-statusline)
+
+<a href="https://github.com/felipeelias/claude-statusline"><img alt="claude-statusline demo screenshot" src="https://raw.githubusercontent.com/felipeelias/claude-statusline/HEAD/assets/screenshot.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -120,6 +140,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `fredrikaverpil-claudeline` — [claudeline (Fredrik Averpil)](https://github.com/fredrikaverpil/claudeline)
 
+<a href="https://github.com/fredrikaverpil/claudeline"><img alt="claudeline repo preview" src="https://opengraph.githubassets.com/1/fredrikaverpil/claudeline" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Minimalistic Go statusline for Claude Code distributed as a Claude Code plugin; the plugin's `/claudeline:setup` slash command downloads the binary and patches settings.json.
@@ -127,6 +149,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `fwyc-codex-hud` — [codex-hud (fwyc0573)](https://github.com/fwyc0573/codex-hud)
+
+<a href="https://github.com/fwyc0573/codex-hud"><img alt="codex-hud single-session statusline demo" src="https://raw.githubusercontent.com/fwyc0573/codex-hud/HEAD/doc/fig/2a00eaf0-496a-4039-a0ce-87a9453df30d.png" width="480"></a>
 
 - **License:** MIT
 - **Targets:** codex
@@ -136,6 +160,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `hagan-claudia-statusline` — [claudia-statusline](https://github.com/hagan/claudia-statusline)
 
+<a href="https://github.com/hagan/claudia-statusline"><img alt="claudia-statusline with cost, git, context" src="https://raw.githubusercontent.com/hagan/claudia-statusline/HEAD/statusline.png" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Rust statusline for Claude Code with persistent stats tracking, prebuilt binaries for Linux/macOS/Windows, and 11 themes; referenced by the official Claude Code docs.
@@ -143,6 +169,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `joaquinvesapa-sub-agent-statusline` — [opencode-subagent-statusline](https://github.com/Joaquinvesapa/sub-agent-statusline)
+
+<a href="https://github.com/Joaquinvesapa/sub-agent-statusline"><img alt="Subagents Monitor banner" src="https://raw.githubusercontent.com/Joaquinvesapa/sub-agent-statusline/main/assets/subagents_monitor_banner.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** opencode
@@ -152,6 +180,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `kiriketsuki-gemini-statusline` — [gemini-statusline](https://github.com/Kiriketsuki/gemini-statusline)
 
+<a href="https://github.com/Kiriketsuki/gemini-statusline"><img alt="gemini-statusline repo preview" src="https://opengraph.githubassets.com/1/Kiriketsuki/gemini-statusline" width="480"></a>
+
 - **License:** Unspecified (not redistributable; reference only)
 - **Targets:** gemini
 - **Description:** Two-line shell-prompt helper for Gemini CLI showing model, workspace context, git branch, GitHub issue counts, and inbox depth — Gemini CLI has no native statusLine hook so this runs from the user's shell prompt.
@@ -159,6 +189,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `lucasilverentand-claudeline` — [claudeline (Luca Silverentand)](https://github.com/lucasilverentand/claudeline)
+
+<a href="https://github.com/lucasilverentand/claudeline"><img alt="claudeline statusline for Claude Code" src="https://opengraph.githubassets.com/1/lucasilverentand/claudeline" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -169,6 +201,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `markwilkening-opencode-status-line` — [opencode-status-line](https://github.com/markwilkening21/opencode-status-line)
 
+<a href="https://github.com/markwilkening21/opencode-status-line"><img alt="opencode-status-line repo preview" src="https://opengraph.githubassets.com/1/markwilkening21/opencode-status-line" width="480"></a>
+
 - **License:** MIT
 - **Targets:** opencode
 - **Description:** Lightweight, fast status line for OpenCode CLI.
@@ -178,6 +212,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `ndave92-claude-code-status-line` — [claude-code-status-line (ndave92)](https://github.com/ndave92/claude-code-status-line)
 
+<a href="https://github.com/ndave92/claude-code-status-line"><img alt="claude-code-status-line repo preview" src="https://opengraph.githubassets.com/1/ndave92/claude-code-status-line" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Rust statusline for Claude Code with workspace info, git status, model name, context usage, worktree hints, quota timers, and optional API costs.
@@ -185,6 +221,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `opencode-quota` — [opencode-quota](https://github.com/slkiser/opencode-quota)
+
+<a href="https://github.com/slkiser/opencode-quota"><img alt="opencode-quota sidebar" src="https://shawnkiser.com/opencode-quota/sidebar.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** opencode
@@ -194,6 +232,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `owloops-claude-powerline` — [claude-powerline](https://github.com/Owloops/claude-powerline)
 
+<a href="https://github.com/Owloops/claude-powerline"><img alt="claude-powerline TUI demo" src="https://raw.githubusercontent.com/Owloops/claude-powerline/HEAD/images/demo-tui.gif" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.
@@ -201,6 +241,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure owloops-claude-powerline --cli=<claude>`
 
 ### `ramtinj95-opencode-tokenscope` — [opencode-tokenscope](https://github.com/ramtinJ95/opencode-tokenscope)
+
+<a href="https://github.com/ramtinJ95/opencode-tokenscope"><img alt="opencode-tokenscope repo preview" src="https://opengraph.githubassets.com/1/ramtinJ95/opencode-tokenscope" width="480"></a>
 
 - **License:** MIT
 - **Targets:** opencode
@@ -211,6 +253,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `sotayamashita-claude-code-statusline` — [claude-code-statusline (Sam Yamashita)](https://github.com/sotayamashita/claude-code-statusline)
 
+<a href="https://github.com/sotayamashita/claude-code-statusline"><img alt="claude-code-statusline (Rust) repo preview" src="https://opengraph.githubassets.com/1/sotayamashita/claude-code-statusline" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Rust statusline for Claude Code with starship-like configuration and module-based composition.
@@ -218,6 +262,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `thisdot-context-statusline` — [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line)
+
+<a href="https://github.com/thisdot/claude-code-context-status-line"><img alt="claude-code-context-status-line repo preview" src="https://opengraph.githubassets.com/1/thisdot/claude-code-context-status-line" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -227,6 +273,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure thisdot-context-statusline --cli=<claude>`
 
 ### `tokscale` — [tokscale](https://github.com/junhoyeo/tokscale)
+
+<a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="https://raw.githubusercontent.com/junhoyeo/tokscale/HEAD/.github/assets/hero-v2.png" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, opencode, gemini, codex

@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/lucasilverentand/claudeline",
+    "alt": "claudeline statusline for Claude Code",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "npx",
     "package": "claudeline",

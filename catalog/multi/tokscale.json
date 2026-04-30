@@ -12,6 +12,11 @@
   ],
   "language": "typescript",
   "description": "Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/junhoyeo/tokscale/HEAD/.github/assets/hero-v2.png",
+    "alt": "tokscale hero banner",
+    "source": "readme"
+  },
   "install": {
     "type": "npx",
     "package": "tokscale",

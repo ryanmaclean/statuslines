@@ -316,6 +316,11 @@ function renderReadme() {
   for (const e of entries) {
     lines.push(`### \`${e.slug}\` — [${e.name}](${e.repo})`);
     lines.push("");
+    if (e.image?.url) {
+      const alt = (e.image.alt ?? e.name).replace(/\]/g, "\\]");
+      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${e.image.url}" width="480"></a>`);
+      lines.push("");
+    }
     lines.push(`- **License:** ${e.license}${e.redistributable ? "" : " (not redistributable; reference only)"}`);
     lines.push(`- **Targets:** ${e.host_clis.join(", ")}`);
     lines.push(`- **Description:** ${e.description}`);
