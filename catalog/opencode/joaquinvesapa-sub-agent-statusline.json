@@ -4,11 +4,28 @@
   "repo": "https://github.com/Joaquinvesapa/sub-agent-statusline",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["opencode"],
+  "host_clis": [
+    "opencode"
+  ],
   "language": "typescript",
   "description": "OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.",
-  "install": { "type": "opencode-plugin", "package": "opencode-subagent-statusline" },
+  "install": {
+    "type": "opencode-plugin",
+    "package": "opencode-subagent-statusline",
+    "version": "0.5.4",
+    "integrity": "sha512-Ifu+xDVSAkqNkdQPIkBYD0vRNt4cvD/JZNvR8BexKmcxTjXbXixKgcSRtk1hub8ReKCglr3HV+IMDJm75laX7Q=="
+  },
   "configs": {},
-  "tags": ["sidebar", "subagents", "tokens", "tui-plugin"],
-  "notes": "Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {\"$schema\":\"https://opencode.ai/tui.json\",\"plugin\":[\"opencode-subagent-statusline\"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet."
+  "tags": [
+    "sidebar",
+    "subagents",
+    "tokens",
+    "tui-plugin"
+  ],
+  "notes": "Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {\"$schema\":\"https://opencode.ai/tui.json\",\"plugin\":[\"opencode-subagent-statusline\"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  }
 }

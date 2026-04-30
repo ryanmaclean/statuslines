@@ -4,15 +4,33 @@
   "repo": "https://github.com/ramtinJ95/opencode-tokenscope",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["opencode"],
+  "host_clis": [
+    "opencode"
+  ],
   "language": "typescript",
   "description": "OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.",
-  "install": { "type": "opencode-plugin", "package": "@ramtinj95/opencode-tokenscope" },
+  "install": {
+    "type": "opencode-plugin",
+    "package": "@ramtinj95/opencode-tokenscope",
+    "version": "1.6.3",
+    "integrity": "sha512-s4JNz1+zYlJ/3DJrGlP01H8XY5mvENpiYgwR4Dw0Wj+bg9UU4jMt2drzHsBfKrrATPKVl5GGQlLwal4S5O2gZw=="
+  },
   "configs": {
     "opencode": {
-      "plugin": ["@ramtinj95/opencode-tokenscope"]
+      "plugin": [
+        "@ramtinj95/opencode-tokenscope"
+      ]
     }
   },
-  "tags": ["tokens", "cost", "plugin"],
-  "notes": "Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package."
+  "tags": [
+    "tokens",
+    "cost",
+    "plugin"
+  ],
+  "notes": "Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  }
 }

@@ -4,15 +4,35 @@
   "repo": "https://github.com/lucasilverentand/claudeline",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "typescript",
   "description": "Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.",
-  "install": { "type": "npx", "package": "claudeline" },
+  "install": {
+    "type": "npx",
+    "package": "claudeline",
+    "version": "1.11.0",
+    "integrity": "sha512-lOdlocpc3mJyyJ5Ij96IRtZEXMbTYw+AMLBtrLmXa1j0XjLGZ8o5R1mDZ+Et8VgVpWryg6CZMXY9ZpUMU5tslw=="
+  },
   "configs": {
     "claude": {
-      "statusLine": { "type": "command", "command": "npx claudeline run theme:luca", "padding": 0 }
+      "statusLine": {
+        "type": "command",
+        "command": "npx claudeline run theme:luca",
+        "padding": 0
+      }
     }
   },
-  "tags": ["tokens", "themes", "self-install"],
-  "notes": "Distinct from fredrikaverpil/claudeline (Go binary) despite the shared name. The package's `--install` flag patches settings.json automatically; the configs.claude here is the same snippet that flag would write."
+  "tags": [
+    "tokens",
+    "themes",
+    "self-install"
+  ],
+  "notes": "Distinct from fredrikaverpil/claudeline (Go binary) despite the shared name. The package's `--install` flag patches settings.json automatically; the configs.claude here is the same snippet that flag would write.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  }
 }
