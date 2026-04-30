@@ -1,0 +1,14 @@
+{
+  "slug": "daniel3303-claude-statusline",
+  "name": "ClaudeCodeStatusLine (Daniel Graczer)",
+  "repo": "https://github.com/daniel3303/ClaudeCodeStatusLine",
+  "license": "MIT",
+  "redistributable": false,
+  "host_clis": ["claude"],
+  "language": "shell",
+  "description": "Bash + PowerShell statusline for Claude Code showing model, tokens, rate limits, and git status.",
+  "install": { "type": "manual" },
+  "configs": {},
+  "tags": ["shell", "tokens", "rate-limits", "windows-friendly"],
+  "notes": "README declares MIT but the repo has no LICENSE file at the canonical paths as of catalog verification on 2026-04-30, so we treat it as license-unverified and don't ship an automated install. Upstream install: clone into ~/.claude/statusline/ and point statusLine.command at statusline.sh — see upstream INSTALL.md."
+}

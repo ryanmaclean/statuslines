@@ -1,0 +1,18 @@
+{
+  "slug": "ramtinj95-opencode-tokenscope",
+  "name": "opencode-tokenscope",
+  "repo": "https://github.com/ramtinJ95/opencode-tokenscope",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["opencode"],
+  "language": "typescript",
+  "description": "OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.",
+  "install": { "type": "opencode-plugin", "package": "@ramtinj95/opencode-tokenscope" },
+  "configs": {
+    "opencode": {
+      "plugin": ["@ramtinj95/opencode-tokenscope"]
+    }
+  },
+  "tags": ["tokens", "cost", "plugin"],
+  "notes": "Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package."
+}

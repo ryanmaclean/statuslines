@@ -1,0 +1,17 @@
+{
+  "slug": "owloops-claude-powerline",
+  "name": "claude-powerline",
+  "repo": "https://github.com/Owloops/claude-powerline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "typescript",
+  "description": "Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.",
+  "install": { "type": "npx", "package": "@owloops/claude-powerline" },
+  "configs": {
+    "claude": {
+      "statusLine": { "type": "command", "command": "npx -y @owloops/claude-powerline@latest --style=powerline" }
+    }
+  },
+  "tags": ["powerline", "themes", "tokens", "git"]
+}

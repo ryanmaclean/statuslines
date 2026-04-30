@@ -1,0 +1,14 @@
+{
+  "slug": "joaquinvesapa-sub-agent-statusline",
+  "name": "opencode-subagent-statusline",
+  "repo": "https://github.com/Joaquinvesapa/sub-agent-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["opencode"],
+  "language": "typescript",
+  "description": "OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.",
+  "install": { "type": "opencode-plugin", "package": "opencode-subagent-statusline" },
+  "configs": {},
+  "tags": ["sidebar", "subagents", "tokens", "tui-plugin"],
+  "notes": "Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {\"$schema\":\"https://opencode.ai/tui.json\",\"plugin\":[\"opencode-subagent-statusline\"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet."
+}
