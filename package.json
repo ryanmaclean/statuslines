@@ -26,5 +26,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryanmaclean/statuslines.git"
+  },
+  "dependencies": {
+    "@noble/post-quantum": "0.6.1"
   }
 }
