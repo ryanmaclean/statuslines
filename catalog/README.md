@@ -1,5 +1,7 @@
 # Catalog
 
+**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)
+
 Third-party statuslines and related tools for Claude Code, OpenCode, Gemini CLI, and Codex CLI. Generated from `catalog/<cli>/<slug>.json` — do not edit by hand.
 
 Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **ref** = listed for reference; install per upstream.

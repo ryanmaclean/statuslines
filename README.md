@@ -1,5 +1,7 @@
 # statuslines
 
+**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)
+
 > A curated catalog of statuslines for Claude Code, OpenCode, Gemini CLI,
 > and Codex CLI — plus an in-repo reference flavor (`pup/`) wired to
 > Datadog.
@@ -243,13 +245,34 @@ Curated lists worth knowing about — link only, no copying:
 
 ## Roadmap
 
-- Phase 1: context-health pattern across all four CLIs. ✅
-- Phase 2: example configs + installer. ✅
-- Phase 3: `pup/` flavor — events with TTL-gated cache. ✅
-- Phase 4: catalog of third-party statuslines with install/configure
-  CLI. ✅
-- Phase 5: richer pup segments (monitors, incidents) behind opt-in
-  flags.
+Shipped:
+
+- Context-health pattern across all four supported CLIs.
+- Example configs and installer scripts.
+- `pup/` Datadog flavor with TTL-gated cache and lockfile-coordinated fetches.
+- Catalog of third-party statuslines with `list` / `show` / `configure` /
+  `doctor` / `audit` commands.
+- Schema-level supply-chain hardening: pinned versions and integrity hashes,
+  refusal of `curl|sh` / `eval(` / `@latest` patterns, `--ignore-scripts`
+  by default on `npx` / `npm-global` recipes.
+- OpenBSD-style quarantine: flagged entries vanish from `list` / `show` /
+  `configure` and the rendered READMEs; the forensic record lives in
+  `catalog/QUARANTINE.md`.
+- Daily liveness probe (repo + npm registry version match + license drift)
+  and weekly Socket.dev malicious-package feed.
+- Datadog SAST / SCA / SAIST workflows, secret-gated so the repo is safe
+  to fork before keys land.
+- Per-entry capability declarations (`network`, `child_process`,
+  `filesystem_write`, `env_read`) with sandbox verification under
+  firejail + strace.
+- SLSA build-provenance probe and weekly transitive-dependency lockfile
+  re-verification on every redistributable npm-backed entry.
+
+Next:
+
+- Tarball diff bot on every version-bump PR.
+- Hybrid Ed25519 + SLH-DSA signing on catalog entries.
+- Richer `pup/` segments (monitors, incidents) behind opt-in flags.
 
 ## License
 

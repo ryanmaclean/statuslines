@@ -1,5 +1,7 @@
 # Security
 
+**Languages:** English · [Français](./SECURITY.fr.md) · [日本語](./SECURITY.ja.md)
+
 The catalog auto-resolves third-party code into install commands users run
 with full shell privileges. Treating that surface seriously means layered
 defenses, not single-tool reliance.

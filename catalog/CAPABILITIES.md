@@ -1,5 +1,7 @@
 # Capability declarations
 
+**Languages:** English · [Français](./CAPABILITIES.fr.md) · [日本語](./CAPABILITIES.ja.md)
+
 Phase G of the security plan: every redistributable catalog entry declares the *capabilities* it expects to use, and CI runs the install inside a sandbox to confirm the declaration is honest. Think Android permissions for npm — a contributor declares what their tool needs, and the catalog refuses (or quarantines) anything caught reaching for more at install or first run.
 
 ## The four declared dimensions
