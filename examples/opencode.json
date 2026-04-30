@@ -2,9 +2,9 @@
   "$schema": "https://opencode.ai/config.json",
   "statusLine": {
     "type": "command",
-    "command": "node /ABSOLUTE/PATH/TO/statuslines/gsd/opencode/statusline.js"
+    "command": "node /ABSOLUTE/PATH/TO/statuslines/pup/opencode/statusline.js"
   },
   "plugin": [
-    "/ABSOLUTE/PATH/TO/statuslines/gsd/opencode/context-monitor.js"
+    "/ABSOLUTE/PATH/TO/statuslines/pup/opencode/context-monitor.js"
   ]
 }

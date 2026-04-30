@@ -37,7 +37,6 @@ sast:
   # The catalog upstream code lives in third-party repos and is scanned
   # separately by catalog-sast.yml (Phase E).
   paths-only:
-    - 'gsd/**'
     - 'pup/**'
     - 'lib/**'
     - 'bin/**'
