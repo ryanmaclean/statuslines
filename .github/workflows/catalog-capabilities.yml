@@ -1,0 +1,134 @@
+name: catalog-capabilities
+
+# Phase G — sandboxed install verification.
+#
+# For every redistributable npm-backed catalog entry, this job runs the
+# install/invoke step inside firejail with strace and compares the
+# observed behavior (network, child_process, filesystem_write) against
+# the entry's declared `capabilities` block.
+#
+# Anything that exceeds its declaration is automatically quarantined.
+# Anything that matches has its `capabilities.verified_at` and
+# `capabilities.verification_method` refreshed. If the catalog changed,
+# we open a `bot/capabilities-refresh` PR.
+#
+# Capability scans are slower than SAST (firejail spin-up + strace
+# parsing), so the job timeout is bumped to 90 minutes.
+
+on:
+  schedule:
+    - cron: '11 9 * * 3'   # weekly Wed 09:11 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  capabilities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install firejail + strace
+        # ubuntu-latest does not ship firejail; install it explicitly so
+        # the verify script can sandbox cleanly. strace ships in the
+        # base image but we re-install for belt-and-suspenders.
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y firejail strace
+          firejail --version
+          strace -V
+
+      - name: Verify capabilities for every redistributable entry
+        id: verify
+        run: |
+          set -uo pipefail
+          mkdir -p /tmp/cap-reports
+          changed=0
+          violations=0
+          today=$(date -u +%Y-%m-%d)
+          for f in catalog/*/*.json; do
+            slug=$(node -e "console.log(require('./'+process.argv[1]).slug)" "$f")
+            redist=$(node -e "console.log(require('./'+process.argv[1]).redistributable === true)" "$f")
+            itype=$(node -e "console.log((require('./'+process.argv[1]).install||{}).type||'')" "$f")
+            if [ "$redist" != "true" ]; then continue; fi
+            if [ "$itype" = "manual" ] || [ "$itype" = "brew" ] || [ "$itype" = "cargo" ]; then continue; fi
+            echo "::group::verify $slug ($itype)"
+            set +e
+            node scripts/verify-capabilities.mjs "$slug" > "/tmp/cap-reports/${slug}.json"
+            rc=$?
+            set -e
+            cat "/tmp/cap-reports/${slug}.json" || true
+            echo "::endgroup::"
+            # rc=1 means observed exceeds declared → quarantine
+            node -e '
+              const fs = require("fs");
+              const path = process.argv[1];
+              const reportPath = process.argv[2];
+              const today = process.argv[3];
+              const rc = Number(process.argv[4]);
+              const entry = JSON.parse(fs.readFileSync(path, "utf8"));
+              entry.capabilities = entry.capabilities || {};
+              const before = JSON.stringify(entry);
+              const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+              if (rc === 1 && report.exceeds_declared) {
+                entry.security = entry.security || {};
+                entry.security.quarantined = true;
+                entry.security.quarantine_reason =
+                  "capabilities: observed " + JSON.stringify(report.observed) +
+                  " exceeds declared " + JSON.stringify({
+                    network: entry.capabilities.network,
+                    child_process: entry.capabilities.child_process,
+                    filesystem_write: entry.capabilities.filesystem_write,
+                  });
+                entry.security.quarantined_at = today;
+              } else {
+                entry.capabilities.verified_at = today;
+                entry.capabilities.verification_method = report.verification_method || "sandbox-strace";
+              }
+              if (JSON.stringify(entry) !== before) {
+                fs.writeFileSync(path, JSON.stringify(entry, null, 2) + "\n");
+              }
+            ' "$f" "/tmp/cap-reports/${slug}.json" "$today" "$rc"
+            if [ "$rc" -eq 1 ]; then violations=$((violations + 1)); fi
+          done
+          echo "violations=$violations" >> "$GITHUB_OUTPUT"
+          if ! git diff --quiet; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR if catalog changed
+        if: steps.verify.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/capabilities-refresh
+          commit-message: 'chore(catalog): refresh capability verifications'
+          title: 'catalog: capability verification refresh'
+          body: |
+            Automated update from `catalog-capabilities`.
+
+            For each redistributable npm-backed entry, the workflow ran
+            the install inside `firejail` + `strace` and compared the
+            observed behavior to the entry's declared `capabilities`
+            block. Entries that match had their `capabilities.verified_at`
+            and `capabilities.verification_method` refreshed; entries
+            that exceeded their declarations have been quarantined
+            (`security.quarantined: true`).
+
+            Violations this run: ${{ steps.verify.outputs.violations }}
+
+            Review before merging — a quarantine here means a contributor
+            either declared too narrowly or the upstream changed
+            behavior; both deserve a human eye.
+          labels: |
+            catalog
+            security
+          delete-branch: true

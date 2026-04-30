@@ -71,6 +71,7 @@ function findBySlug(slug, { includeQuarantined = false } = {}) {
 
 function validate(entry) {
   const errs = [];
+  const warns = [];
   for (const k of REQUIRED) if (!(k in entry)) errs.push(`missing field: ${k}`);
   if (entry.host_clis) {
     for (const c of entry.host_clis) {
@@ -108,7 +109,26 @@ function validate(entry) {
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {
     errs.push(`security.quarantined=true requires security.quarantine_reason`);
   }
-  return errs;
+  // Phase G — capabilities. Warning, not error, during rollout. When the
+  // backfill completes for every redistributable entry the warning will
+  // be promoted to a hard error.
+  if (entry.redistributable === true && !entry.capabilities) {
+    warns.push(`redistributable=true but no capabilities block (will become an error after Phase G rollout)`);
+  } else if (entry.capabilities) {
+    const c = entry.capabilities;
+    for (const k of ["network", "child_process", "filesystem_write"]) {
+      if (k in c && typeof c[k] !== "boolean") errs.push(`capabilities.${k} must be boolean`);
+    }
+    if ("env_read" in c && !Array.isArray(c.env_read)) errs.push(`capabilities.env_read must be an array of strings`);
+    const validMethods = ["declared", "sandbox-strace", "sandbox-bpf", "skipped"];
+    if ("verification_method" in c && c.verification_method !== null && !validMethods.includes(c.verification_method)) {
+      errs.push(`capabilities.verification_method must be one of: ${validMethods.join(", ")}`);
+    }
+    if (Array.isArray(c.env_read) && c.env_read.includes("*") && !entry.notes) {
+      warns.push(`capabilities.env_read includes "*" without a notes field justifying the wildcard`);
+    }
+  }
+  return { errs, warns };
 }
 
 function cmdList(args) {
@@ -143,15 +163,27 @@ function cmdShow(args) {
 
 function cmdDoctor() {
   let bad = 0;
+  let warned = 0;
   for (const f of listEntryFiles()) {
     let entry;
     try { entry = loadEntry(f); }
     catch (e) { process.stderr.write(`PARSE  ${f}: ${e.message}\n`); bad++; continue; }
-    const errs = validate(entry);
-    if (errs.length) { bad++; for (const m of errs) process.stderr.write(`ERR    ${entry.slug ?? f}: ${m}\n`); }
-    else process.stdout.write(`ok     ${entry.slug}\n`);
+    const { errs, warns } = validate(entry);
+    if (errs.length) {
+      bad++;
+      for (const m of errs) process.stderr.write(`ERR    ${entry.slug ?? f}: ${m}\n`);
+    } else {
+      process.stdout.write(`ok     ${entry.slug}\n`);
+    }
+    for (const w of warns) {
+      warned++;
+      process.stderr.write(`WARN   ${entry.slug ?? f}: ${w}\n`);
+    }
   }
-  process.stderr.write(`${bad === 0 ? "all entries valid" : `${bad} problem(s)`}\n`);
+  const summary = bad === 0
+    ? `all entries valid${warned ? ` (${warned} warning${warned === 1 ? "" : "s"})` : ""}`
+    : `${bad} problem(s)${warned ? `, ${warned} warning(s)` : ""}`;
+  process.stderr.write(`${summary}\n`);
   process.exit(bad === 0 ? 0 : 1);
 }
 
@@ -457,6 +489,18 @@ function cmdRenderTopReadme() {
   process.stdout.write(`wrote ${readmePath} (${count} entries)\n`);
 }
 
+function cmdVerifyCapabilities(args) {
+  const slug = args.find((a) => !a.startsWith("--"));
+  if (!slug) {
+    process.stderr.write("usage: statuslines verify-capabilities <slug> [--dry-run]\n");
+    process.exit(2);
+  }
+  const script = join(ROOT, "scripts/verify-capabilities.mjs");
+  const passthrough = [script, slug, ...args.filter((a) => a.startsWith("--"))];
+  const r = spawnSync(process.execPath, passthrough, { stdio: "inherit" });
+  process.exit(r.status ?? 1);
+}
+
 function cmdHelp() {
   process.stdout.write(`Usage: statuslines <command> [options]
 
@@ -474,6 +518,12 @@ Commands:
                        backfill install.version, install.integrity, and
                        security.has_install_scripts on each entry. Use
                        --dry-run to preview without writing.
+  verify-capabilities <slug>
+                       Run the entry's install in a firejail/strace
+                       sandbox and emit a JSON report comparing observed
+                       behavior against the declared capabilities block.
+                       Use --dry-run to print a canned report shape
+                       without sandboxing.
   render-readme        Regenerate catalog/README.md from entries
   render-top-readme    Regenerate the catalog section + count badge
                        in the top-level README.md (between markers)
@@ -499,6 +549,7 @@ switch (cmd) {
   case "render-top-readme": cmdRenderTopReadme(); break;
   case "render-quarantine": cmdRenderQuarantine(); break;
   case "audit":         await cmdAudit(rest); break;
+  case "verify-capabilities": cmdVerifyCapabilities(rest); break;
   case "help":
   case "--help":
   case "-h":

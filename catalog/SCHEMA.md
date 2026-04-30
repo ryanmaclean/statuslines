@@ -98,3 +98,31 @@ This is the OpenBSD-style "secure by default" stance: hidden, not warned-about. 
 5. For `redistributable: true` entries, run `node bin/statuslines.js audit <slug>` to populate `install.version`, `install.integrity`, and `security.has_install_scripts`.
 6. Run `node bin/statuslines.js doctor` to validate, then `render-readme` and `render-top-readme` to refresh the generated tables.
 7. Open a PR.
+
+## Capabilities
+
+Every redistributable entry declares the capabilities its install or first run-time invocation expects to use. The full rationale, sandbox model, and contributor workflow live in [`catalog/CAPABILITIES.md`](./CAPABILITIES.md); this section documents the schema field only.
+
+Shape (added inline at the top level of the entry, alongside `install`, `configs`, etc.):
+
+```json
+"capabilities": {
+  "network": true,
+  "child_process": true,
+  "filesystem_write": false,
+  "env_read": ["HOME", "PATH"],
+  "verified_at": null,
+  "verification_method": "declared"
+}
+```
+
+- **capabilities.network**: `boolean` — does the install or first run-time invocation make outbound network calls? Almost always `true` for npm-backed entries (registry fetch, telemetry, license check).
+- **capabilities.child_process**: `boolean` — does the entry spawn child processes other than the binary itself? `true` for git installs and most npm packages.
+- **capabilities.filesystem_write**: `boolean` — does it write outside the safe roots `$HOME/.cache`, `$TMPDIR`, and the install dir? Writes inside those roots are allowed and don't require this flag. Default: `false`.
+- **capabilities.env_read**: `string[]` — environment variable names the entry expects to read. Use `["*"]` for "any"; the entry must then carry a `notes` field justifying the wildcard.
+- **capabilities.verified_at**: ISO date string or `null`. Last time the sandbox observed behavior matching the declaration. `null` means declared but not yet verified by `catalog-capabilities`.
+- **capabilities.verification_method**: one of `"declared"`, `"sandbox-strace"`, `"sandbox-bpf"`, `"skipped"`. `"declared"` is the bootstrap default; the workflow rewrites this to `"sandbox-strace"` when an observation matches.
+
+Validator behavior during the rollout: `bin/statuslines.js doctor` emits a *warning* (not an error) when `capabilities` is missing on a `redistributable: true` entry. Once every entry is backfilled, the warning becomes a hard error.
+
+The matching CLI subcommand is `node bin/statuslines.js verify-capabilities <slug> [--dry-run]`, which delegates to `scripts/verify-capabilities.mjs` and emits a JSON report comparing observed-vs-declared.

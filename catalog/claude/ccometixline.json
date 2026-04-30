@@ -4,11 +4,30 @@
   "repo": "https://github.com/Haleclipse/CCometixLine",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "rust",
   "description": "Fast Rust-based Claude Code statusline with an interactive TUI configurator, git integration, and usage tracking.",
-  "install": { "type": "manual" },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["rust", "fast", "tui-config"],
-  "notes": "No verified package-manager install; follow upstream build/release instructions."
+  "tags": [
+    "rust",
+    "fast",
+    "tui-config"
+  ],
+  "notes": "No verified package-manager install; follow upstream build/release instructions.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

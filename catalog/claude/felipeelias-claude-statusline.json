@@ -4,15 +4,40 @@
   "repo": "https://github.com/felipeelias/claude-statusline",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "go",
   "description": "Go binary statusline for Claude Code with module-based config, OSC 8 hyperlinks, and theme presets (catppuccin, tokyo-night, gruvbox-rainbow, and others).",
-  "install": { "type": "brew", "tap": "felipeelias/tap", "formula": "claude-statusline" },
+  "install": {
+    "type": "brew",
+    "tap": "felipeelias/tap",
+    "formula": "claude-statusline"
+  },
   "configs": {
     "claude": {
-      "statusLine": { "type": "command", "command": "claude-statusline prompt" }
+      "statusLine": {
+        "type": "command",
+        "command": "claude-statusline prompt"
+      }
     }
   },
-  "tags": ["go", "themes", "modules", "hyperlinks"],
-  "notes": "Brew install drops a `claude-statusline` binary on PATH. Alternative install: `go install github.com/felipeelias/claude-statusline@latest`. Customize via `~/.config/claude-statusline/config.toml` (see upstream)."
+  "tags": [
+    "go",
+    "themes",
+    "modules",
+    "hyperlinks"
+  ],
+  "notes": "Brew install drops a `claude-statusline` binary on PATH. Alternative install: `go install github.com/felipeelias/claude-statusline@latest`. Customize via `~/.config/claude-statusline/config.toml` (see upstream).",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

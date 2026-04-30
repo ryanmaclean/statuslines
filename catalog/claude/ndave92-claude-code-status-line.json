@@ -4,11 +4,30 @@
   "repo": "https://github.com/ndave92/claude-code-status-line",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with workspace info, git status, model name, context usage, worktree hints, quota timers, and optional API costs.",
-  "install": { "type": "manual" },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["rust", "quota-timer", "worktree"],
-  "notes": "Recommended install is a self-installing slash command: download `.claude/commands/install-statusline.md` from the upstream repo, restart Claude Code, and run `/install-statusline`. The crate `claude-code-status-line` is not published on crates.io as of catalog verification on 2026-04-30."
+  "tags": [
+    "rust",
+    "quota-timer",
+    "worktree"
+  ],
+  "notes": "Recommended install is a self-installing slash command: download `.claude/commands/install-statusline.md` from the upstream repo, restart Claude Code, and run `/install-statusline`. The crate `claude-code-status-line` is not published on crates.io as of catalog verification on 2026-04-30.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

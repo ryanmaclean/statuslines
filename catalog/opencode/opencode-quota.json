@@ -4,11 +4,30 @@
   "repo": "https://github.com/slkiser/opencode-quota",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["opencode"],
+  "host_clis": [
+    "opencode"
+  ],
   "language": "typescript",
   "description": "OpenCode quota and token-usage display with zero context-window pollution; supports providers including OpenCode Go, Cursor, GitHub Copilot, and others.",
-  "install": { "type": "manual" },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["tokens", "quota", "multi-provider"],
-  "notes": "Follow upstream README for the current install path; project surface evolves quickly."
+  "tags": [
+    "tokens",
+    "quota",
+    "multi-provider"
+  ],
+  "notes": "Follow upstream README for the current install path; project surface evolves quickly.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

@@ -33,5 +33,16 @@
     "has_install_scripts": false,
     "license_observed": "MIT",
     "last_audit": "2026-04-30"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
   }
 }
