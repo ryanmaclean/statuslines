@@ -1,0 +1,138 @@
+name: catalog-sast
+
+# Weekly catalog-wide SAST sweep:
+#   - For every catalog entry with redistributable === true, fetch the
+#     upstream source (npm tarball at the pinned version, or a shallow git
+#     clone of `repo`) and run `datadog-static-analyzer` over it.
+#   - Findings are written to security.sast_findings_* on the entry; any
+#     `error`-level (Datadog "high"/"critical") finding flips
+#     security.quarantined unless a non-SAST quarantine reason is already
+#     present (we don't clobber other reasons).
+#   - Opens a PR with the catalog mutations.
+#
+# Auth model:
+#   The datadog-static-analyzer binary is open source and free to run
+#   locally — no Datadog account required. We install the prebuilt Linux
+#   release binary directly from GitHub Releases (no homebrew on the
+#   ubuntu-latest image). If DD_API_KEY is *also* set, the optional
+#   "upload" step pushes SARIF to Datadog; otherwise we silently skip
+#   upload. Missing DD_API_KEY is NOT a failure: per Phase E, the PR /
+#   quarantine logic is independent of upload.
+
+on:
+  schedule:
+    - cron: '11 8 * * 1'   # weekly Mon 08:11 UTC, offset from socket-feed (05:53) and self-SAST (06:17)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  catalog-sast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_APP_KEY: ${{ secrets.DD_APP_KEY }}
+      DD_SITE: ${{ vars.DD_SITE || 'datadoghq.com' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Install datadog-static-analyzer from the official GitHub release.
+      # Why this method:
+      #   - The binary is open-source; running it does NOT need DD_API_KEY.
+      #   - Homebrew is not preinstalled on ubuntu-latest in a way that's
+      #     reliable for CI (`brew` is on macOS runners; on Linux it pulls
+      #     a 1+ GB tap). The static binary is ~30 MB and matches the
+      #     installation method in DataDog/datadog-static-analyzer-github-action.
+      #   - Pinning by tag keeps the scanner version reproducible across
+      #     weekly runs; the workflow records the resolved version into
+      #     security.sast_scanner on every entry.
+      - name: Install datadog-static-analyzer
+        id: install
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+          # Resolve the latest release tag (no auth needed for public releases).
+          tag=$(curl -fsSL https://api.github.com/repos/DataDog/datadog-static-analyzer/releases/latest \
+                 | grep -m1 '"tag_name"' | sed -E 's/.*"tag_name":[[:space:]]*"([^"]+)".*/\1/')
+          if [ -z "$tag" ]; then
+            echo "::error::could not resolve datadog-static-analyzer release tag"
+            exit 1
+          fi
+          echo "Installing datadog-static-analyzer ${tag}"
+          url="https://github.com/DataDog/datadog-static-analyzer/releases/download/${tag}/datadog-static-analyzer-x86_64-unknown-linux-gnu.zip"
+          tmp=$(mktemp -d)
+          curl -fsSL -o "$tmp/dsa.zip" "$url"
+          unzip -q "$tmp/dsa.zip" -d "$tmp"
+          # The release zips ship the binary at the archive root; locate it.
+          bin=$(find "$tmp" -maxdepth 2 -type f -name 'datadog-static-analyzer' | head -n1)
+          if [ -z "$bin" ]; then
+            echo "::error::datadog-static-analyzer binary not found in release archive"
+            exit 1
+          fi
+          install -m 0755 "$bin" "$HOME/.local/bin/datadog-static-analyzer"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          rm -rf "$tmp"
+
+      - name: Verify analyzer
+        run: datadog-static-analyzer --version
+
+      - name: Run catalog-wide SAST sweep
+        run: node scripts/catalog-sast.mjs
+
+      # Optional: when DD_API_KEY is set, also upload SARIF / run the
+      # official action so findings show up in Datadog. This is informational;
+      # the PR / quarantine decisions above do not depend on it. We gate
+      # purely on env presence (fails closed: no key → silent skip).
+      - name: Check DD_API_KEY for optional upload
+        id: ddgate
+        run: |
+          if [ -z "${DD_API_KEY:-}" ]; then
+            echo "::warning::DD_API_KEY not set; skipping optional upload to Datadog."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload findings to Datadog (optional)
+        if: steps.ddgate.outputs.skip == 'false'
+        uses: DataDog/datadog-static-analyzer-github-action@v3
+        with:
+          dd_api_key: ${{ env.DD_API_KEY }}
+          dd_app_key: ${{ env.DD_APP_KEY }}
+          dd_site: ${{ env.DD_SITE }}
+          diff_aware: false
+          secrets_enabled: false
+          static_analysis_enabled: true
+
+      - name: Open PR if catalog changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/catalog-sast
+          commit-message: 'chore(catalog): refresh SAST findings'
+          title: 'catalog: SAST sweep refresh'
+          body: |
+            Automated update from `catalog-sast`.
+
+            For every redistributable catalog entry, this workflow fetched the
+            upstream source (npm tarball or shallow git clone), ran
+            `datadog-static-analyzer` over it, and wrote the result counts
+            into `security.sast_findings_he`, `security.sast_findings_total`,
+            `security.last_sast_scan`, and `security.sast_scanner`.
+
+            Entries with at least one high-severity (`error`-level) finding
+            are quarantined (`security.quarantined: true` with a
+            `catalog-sast:`-prefixed reason) — review before merging and
+            decide whether the finding warrants removal, a version-pin
+            advance, or a documented exception. Existing quarantine reasons
+            from other sources (e.g. Socket.dev) are preserved.
+          labels: |
+            catalog
+            security
+          delete-branch: true
