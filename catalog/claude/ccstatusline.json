@@ -13,7 +13,8 @@
     "type": "npx",
     "package": "ccstatusline",
     "version": "2.2.12",
-    "integrity": "sha512-vnwvzi9NT7WA2g9aFs3gI40X9xZvBTyqmQlrFfX2Jd9r7UNL9mu1NV9/t/OOrGZDl5W1DdMKzqFybLjEqQ1KJg=="
+    "integrity": "sha512-vnwvzi9NT7WA2g9aFs3gI40X9xZvBTyqmQlrFfX2Jd9r7UNL9mu1NV9/t/OOrGZDl5W1DdMKzqFybLjEqQ1KJg==",
+    "deps_lock_sha256": "f1dff32d07c8e86942f63fe2a8f4bef919669630657c8ab37a1f916a0a370161"
   },
   "configs": {
     "claude": {

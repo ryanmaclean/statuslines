@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "slug": "ramtinj95-opencode-tokenscope",
+  "package": "@ramtinj95/opencode-tokenscope",
+  "version": "1.6.3",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "@huggingface/tokenizers@0.1.3": "sha512-8rF/RRT10u+kn7YuUbUg0OF30K8rjTc78aHpxT+qJ1uWSqxT1MHi8+9ltwYfkFYJzT/oS+qw3JVfHtNMGAdqyA==",
+    "@ramtinj95/opencode-tokenscope@1.6.3": "sha512-s4JNz1+zYlJ/3DJrGlP01H8XY5mvENpiYgwR4Dw0Wj+bg9UU4jMt2drzHsBfKrrATPKVl5GGQlLwal4S5O2gZw==",
+    "base64-js@1.5.1": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==",
+    "js-tiktoken@1.0.21": "sha512-biOj/6M5qdgx5TKjDnFT1ymSpM5tbd3ylwDtrQvFQSu0Z7bBYko2dF+W/aUkXUPuk6IVpRxk/3Q2sHOzGlS36g=="
+  }
+}

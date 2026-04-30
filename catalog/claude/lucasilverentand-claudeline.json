@@ -13,7 +13,8 @@
     "type": "npx",
     "package": "claudeline",
     "version": "1.11.0",
-    "integrity": "sha512-lOdlocpc3mJyyJ5Ij96IRtZEXMbTYw+AMLBtrLmXa1j0XjLGZ8o5R1mDZ+Et8VgVpWryg6CZMXY9ZpUMU5tslw=="
+    "integrity": "sha512-lOdlocpc3mJyyJ5Ij96IRtZEXMbTYw+AMLBtrLmXa1j0XjLGZ8o5R1mDZ+Et8VgVpWryg6CZMXY9ZpUMU5tslw==",
+    "deps_lock_sha256": "732659a5cbfe7114fc979399c1630471bf69b32e253b106142a601b56b7203a4"
   },
   "configs": {
     "claude": {

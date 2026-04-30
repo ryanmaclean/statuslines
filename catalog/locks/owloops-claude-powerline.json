@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "slug": "owloops-claude-powerline",
+  "package": "@owloops/claude-powerline",
+  "version": "1.26.0",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "@owloops/claude-powerline@1.26.0": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ=="
+  }
+}

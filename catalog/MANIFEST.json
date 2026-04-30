@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-04-30T20:44:08.537Z",
+  "generated_at": "2026-04-30T21:10:16.942Z",
   "entries": [
     {
       "slug": "ainsley-opencode-token-monitor",
       "path": "catalog/opencode/ainsley-opencode-token-monitor.json",
-      "sha256": "26b9caab5230e4157fc7cf2fc3876e9362b1c6b260428721e71365e7f6b8c986"
+      "sha256": "09115445a370e933d109d7f8b7242eae84ef182a3587ee0fbe7c36c9e0a9d5aa"
     },
     {
       "slug": "b-open-statusline",
@@ -25,12 +25,12 @@
     {
       "slug": "ccstatusline",
       "path": "catalog/claude/ccstatusline.json",
-      "sha256": "a8f49c674489a75676a9d6bb61425b1abff5ee08c5d037a3dfd4c765004a6d4a"
+      "sha256": "323cfcb82cad169bc7dcf51c9f25233b11525c8e211dd0f402fd6e67f666bed2"
     },
     {
       "slug": "ccusage",
       "path": "catalog/claude/ccusage.json",
-      "sha256": "606347e512a58b44ebac207fd3a8573e11e55ed3c151a8eda3e7139526b353fe"
+      "sha256": "074852295e8c0e72d157a81eff0d2065250c6e2ad58932b4b27cc8b33decdda8"
     },
     {
       "slug": "claude-hud",
@@ -70,7 +70,7 @@
     {
       "slug": "joaquinvesapa-sub-agent-statusline",
       "path": "catalog/opencode/joaquinvesapa-sub-agent-statusline.json",
-      "sha256": "48de347fb78eed70776240b67a4b744ddff01d67661244c7a1fc255fb4241806"
+      "sha256": "d7c6aa77f78366affa30c46d01965e64db87dce8105bff353e46c08616e6e2fb"
     },
     {
       "slug": "kiriketsuki-gemini-statusline",
@@ -80,7 +80,7 @@
     {
       "slug": "lucasilverentand-claudeline",
       "path": "catalog/claude/lucasilverentand-claudeline.json",
-      "sha256": "f8b045c2dd31c340675709dddb8ba08f267f7110c2744f937151b190061fe913"
+      "sha256": "4b8a0c65c03568c76bc5599e71bf73ed654364299a14a374493dd94677d2915c"
     },
     {
       "slug": "markwilkening-opencode-status-line",
@@ -100,12 +100,12 @@
     {
       "slug": "owloops-claude-powerline",
       "path": "catalog/claude/owloops-claude-powerline.json",
-      "sha256": "7b4b9879eeeb4de42be55c7662e9b7bfef985ca23881729f41e34c44f4189997"
+      "sha256": "06d3a0ffaed1172fd4c84b9aeec0895d57d36b220573063b9d485031a54589fd"
     },
     {
       "slug": "ramtinj95-opencode-tokenscope",
       "path": "catalog/opencode/ramtinj95-opencode-tokenscope.json",
-      "sha256": "adb4db3d7eea754d6f10e2ba7fa02730b97fd076dc971051609d8e047d1e6380"
+      "sha256": "4315ef909a5832b3bf1270d9ad537dbad6a133f7bb8cc8e555cf2226f1b7139d"
     },
     {
       "slug": "sotayamashita-claude-code-statusline",
@@ -115,12 +115,12 @@
     {
       "slug": "thisdot-context-statusline",
       "path": "catalog/claude/thisdot-context-statusline.json",
-      "sha256": "19a286662008b494bd45429c4c8d4691a3f665ac2f4012946dc80f4d36f2c51a"
+      "sha256": "e7a63b929ae6e57a0be537c53b323d402450fb7dfe964f8bcd7c058d6f1d5d44"
     },
     {
       "slug": "tokscale",
       "path": "catalog/multi/tokscale.json",
-      "sha256": "44cdb66cb35557ae63dc080969750d08ade65a2c3d168f52adbe3aad616eec25"
+      "sha256": "7cb2fde5b7c53ed6d70e45e0afea0d9e6fc6176d7e5e94b23394b9dbf1970fb9"
     }
   ]
 }

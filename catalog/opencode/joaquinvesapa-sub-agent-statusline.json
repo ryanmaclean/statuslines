@@ -13,7 +13,8 @@
     "type": "opencode-plugin",
     "package": "opencode-subagent-statusline",
     "version": "0.5.4",
-    "integrity": "sha512-Ifu+xDVSAkqNkdQPIkBYD0vRNt4cvD/JZNvR8BexKmcxTjXbXixKgcSRtk1hub8ReKCglr3HV+IMDJm75laX7Q=="
+    "integrity": "sha512-Ifu+xDVSAkqNkdQPIkBYD0vRNt4cvD/JZNvR8BexKmcxTjXbXixKgcSRtk1hub8ReKCglr3HV+IMDJm75laX7Q==",
+    "deps_lock_sha256": "91cee44da52833f347407f99cd2f9049ad0dc0aee6a7c9e6a89994670594f603"
   },
   "configs": {},
   "tags": [

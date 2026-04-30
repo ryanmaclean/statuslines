@@ -13,7 +13,8 @@
     "type": "npx",
     "package": "@this-dot/claude-code-context-status-line",
     "version": "0.2.2",
-    "integrity": "sha512-Bf1FS9RRQaTrOYVWJncEgfMPLYMCzVT83H9P6q4KaQMi9GlhQLt3IxV/AzvsaicKZ5KLzGARD1ebdttjGI6aig=="
+    "integrity": "sha512-Bf1FS9RRQaTrOYVWJncEgfMPLYMCzVT83H9P6q4KaQMi9GlhQLt3IxV/AzvsaicKZ5KLzGARD1ebdttjGI6aig==",
+    "deps_lock_sha256": "8bb0c3438306bac45dd685362fc2095eec79a4bcc93adf55b2763c30fa538f03"
   },
   "configs": {
     "claude": {

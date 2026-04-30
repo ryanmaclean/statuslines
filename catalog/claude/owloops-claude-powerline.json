@@ -13,7 +13,8 @@
     "type": "npx",
     "package": "@owloops/claude-powerline",
     "version": "1.26.0",
-    "integrity": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ=="
+    "integrity": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ==",
+    "deps_lock_sha256": "95e2ecbc5e275aa5e16ae2371f44b5146599296021fe7b58101d71d37bc66faf"
   },
   "configs": {
     "claude": {

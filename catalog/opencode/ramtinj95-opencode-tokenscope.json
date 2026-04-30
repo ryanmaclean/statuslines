@@ -13,7 +13,8 @@
     "type": "opencode-plugin",
     "package": "@ramtinj95/opencode-tokenscope",
     "version": "1.6.3",
-    "integrity": "sha512-s4JNz1+zYlJ/3DJrGlP01H8XY5mvENpiYgwR4Dw0Wj+bg9UU4jMt2drzHsBfKrrATPKVl5GGQlLwal4S5O2gZw=="
+    "integrity": "sha512-s4JNz1+zYlJ/3DJrGlP01H8XY5mvENpiYgwR4Dw0Wj+bg9UU4jMt2drzHsBfKrrATPKVl5GGQlLwal4S5O2gZw==",
+    "deps_lock_sha256": "00b37af61a6c870d39e5ac8889718edcf5e9fa7e7b32b65497f477b40f421b4a"
   },
   "configs": {
     "opencode": {

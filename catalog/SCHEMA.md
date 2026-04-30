@@ -152,3 +152,21 @@ Phase I supply-chain hardening: for every redistributable npm-backed entry, `scr
 Phase I is **advisory**. `doctor` does NOT refuse entries with `available: false`, because plenty of legitimate upstreams have not yet adopted provenance publishing. The weekly `catalog-provenance` workflow opens a PR when results change; a future phase can promote a sustained `available: true` baseline into a `doctor` requirement.
 
 Maintainers wondering why their package shows `available: false`: enable provenance by publishing from a GitHub Actions workflow with `npm publish --provenance` (and `id-token: write` on the job). See [`docs.npmjs.com/generating-provenance-statements`](https://docs.npmjs.com/generating-provenance-statements).
+
+## Dependency lockfile
+
+Phase J: `install.integrity` pins the *top-level* tarball, but `npx -y pkg@1.2.3` still resolves transitive deps at install time from `package.json` ranges. A maintainer takeover of `lodash@^4.0.0` could ship a fresh malicious version even though our top-level pin is fine. To detect that, we snapshot each redistributable npm entry's full transitive closure once and re-verify weekly.
+
+```json
+"install": {
+  ...,
+  "deps_lock_sha256": "<hex>"
+}
+```
+
+- The lockfile content lives at `catalog/locks/<slug>.json` (not inline in the entry, because lockfiles are large and would dominate the entry JSON visually). Shape: `{ schema_version, slug, package, version, captured_at, deps: { "<name>@<version>": "<sri>" } }`. Sorted keys throughout; deduped to one resolved version per package name.
+- **install.deps_lock_sha256** is `sha256(canonicalize(lockfile))` over sorted-key, no-whitespace JSON. It lets the manifest signature transitively cover the lockfile's identity.
+- `scripts/deps-capture.mjs` populates both the lockfile and the hash; `scripts/deps-verify.mjs` re-resolves against the live registry and reports drift in four buckets — *added* and *integrity-changed-for-same-version* are anomalies, *bumped* and *removed* are info.
+- The weekly `catalog-deps-verify` workflow opens a refresh PR on drift and tags anomalies with `(quarantine candidate)` in the report body.
+
+This is **advisory**: `doctor` does not refuse entries that lack a lockfile or `deps_lock_sha256`. The bootstrap `node scripts/deps-capture.mjs` run populates them for every existing redistributable npm-backed entry; new entries pick them up on the next weekly run or via a manual capture.

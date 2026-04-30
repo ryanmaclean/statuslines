@@ -41,6 +41,7 @@ function listEntryFiles() {
   if (!existsSync(CATALOG)) return out;
   for (const group of readdirSync(CATALOG, { withFileTypes: true })) {
     if (!group.isDirectory()) continue;
+    if (group.name === "locks") continue; // Phase J: per-entry transitive-dep lockfiles, not entries
     const dir = join(CATALOG, group.name);
     for (const f of readdirSync(dir)) {
       if (f.endsWith(".json")) out.push(join(dir, f));

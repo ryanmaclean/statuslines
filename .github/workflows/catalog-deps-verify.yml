@@ -1,0 +1,62 @@
+name: catalog-deps-verify
+
+# Phase J: weekly verification that each redistributable npm entry's
+# transitive dependency closure (catalog/locks/<slug>.json) still matches
+# what the live registry would resolve. Drift surfaces as a markdown report
+# and a draft PR refreshing the locks; anomalies (new transitive deps, or
+# integrity changes for the same name@version) are flagged but not
+# auto-quarantined yet — this phase is advisory.
+#
+# No secrets needed — uses only the public npm registry.
+
+on:
+  schedule:
+    - cron: '53 11 * * 3'   # weekly Wed 11:53 UTC, offset from existing crons
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deps-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify lockfiles against live registry
+        id: verify
+        run: |
+          node scripts/deps-verify.mjs > /tmp/deps-drift.md
+          if grep -qE '^- |^\*\*' /tmp/deps-drift.md; then
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "drift=false" >> "$GITHUB_OUTPUT"
+          fi
+          if grep -q 'quarantine candidate' /tmp/deps-drift.md; then
+            echo "anomaly=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "anomaly=false" >> "$GITHUB_OUTPUT"
+          fi
+          cat /tmp/deps-drift.md
+
+      - name: Refresh lockfiles
+        if: steps.verify.outputs.drift == 'true'
+        run: node scripts/deps-capture.mjs
+
+      - name: Open PR if locks changed
+        if: steps.verify.outputs.drift == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/deps-refresh
+          commit-message: 'chore(catalog): refresh transitive dep lockfiles'
+          title: 'catalog: transitive dep lockfile drift'
+          body-path: /tmp/deps-drift.md
+          labels: |
+            catalog
+            security
+          delete-branch: true
