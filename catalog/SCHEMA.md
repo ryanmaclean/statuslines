@@ -126,3 +126,29 @@ Shape (added inline at the top level of the entry, alongside `install`, `configs
 Validator behavior during the rollout: `bin/statuslines.js doctor` emits a *warning* (not an error) when `capabilities` is missing on a `redistributable: true` entry. Once every entry is backfilled, the warning becomes a hard error.
 
 The matching CLI subcommand is `node bin/statuslines.js verify-capabilities <slug> [--dry-run]`, which delegates to `scripts/verify-capabilities.mjs` and emits a JSON report comparing observed-vs-declared.
+
+## Attestation
+
+Phase I supply-chain hardening: for every redistributable npm-backed entry, `scripts/provenance-check.mjs` asks the npm registry whether the pinned version carries a Sigstore-signed [SLSA build provenance](https://slsa.dev/spec/v1.0/provenance) attestation (the artifact `npm publish --provenance` produces from a GitHub Actions run). Results land under `security.attestation`:
+
+```json
+"security": {
+  "attestation": {
+    "available": true,
+    "checked_at": "2026-04-30T00:00:00.000Z",
+    "predicate_type": "https://slsa.dev/provenance/v1",
+    "issuer": "https://github.com/actions/runner/github-hosted",
+    "build_workflow": "github.com/<owner>/<repo>/.github/workflows/release.yml@refs/heads/main",
+    "regression": false
+  }
+}
+```
+
+- **available**: `true` iff the registry exposes a SLSA-typed attestation bundle for the pinned version. The npm publish self-attestation alone does not count.
+- **checked_at**: ISO timestamp of the most recent probe.
+- **predicate_type / issuer / build_workflow**: parsed from the DSSE-enveloped in-toto Statement — respectively the predicate URI, the OIDC builder identity (`runDetails.builder.id`), and the canonical `<host>/<owner>/<repo>/<workflow-path>@<ref>` form (from `buildDefinition.externalParameters.workflow`).
+- **regression**: `true` when a previous run recorded `available: true` and the current run finds `available: false`. **This is the high-signal anomaly** — a package that *was* signing builds and stopped is the supply-chain shape worth investigating.
+
+Phase I is **advisory**. `doctor` does NOT refuse entries with `available: false`, because plenty of legitimate upstreams have not yet adopted provenance publishing. The weekly `catalog-provenance` workflow opens a PR when results change; a future phase can promote a sustained `available: true` baseline into a `doctor` requirement.
+
+Maintainers wondering why their package shows `available: false`: enable provenance by publishing from a GitHub Actions workflow with `npm publish --provenance` (and `id-token: write` on the job). See [`docs.npmjs.com/generating-provenance-statements`](https://docs.npmjs.com/generating-provenance-statements).

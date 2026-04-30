@@ -1,0 +1,52 @@
+name: catalog-provenance
+
+# Weekly Sigstore/SLSA build-provenance audit:
+#   - For every redistributable catalog entry with install.type in
+#     {npx, npm-global, opencode-plugin}, ask the npm registry whether
+#     the pinned version was published with `npm publish --provenance`.
+#   - Findings are written to security.attestation on each entry.
+#   - Entries that previously carried `available: true` but now report
+#     `available: false` are flagged with `regression: true` (the
+#     high-signal anomaly).
+#
+# Phase I: advisory only. `doctor` does NOT refuse entries lacking
+# attestations — not every legit upstream publishes provenance yet.
+# A future phase can promote this to a hard check once coverage is
+# high enough.
+#
+# No secrets needed.
+
+on:
+  schedule:
+    - cron: '47 9 * * 4'   # weekly Thu 09:47 UTC, offset from existing crons
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run provenance-check
+        run: node scripts/provenance-check.mjs
+
+      - name: Open PR if catalog changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/provenance-refresh
+          commit-message: 'chore(catalog): refresh npm provenance attestations'
+          title: 'catalog: provenance refresh'
+          body-path: /tmp/provenance.md
+          labels: |
+            catalog
+            security
+            attestation
+          delete-branch: true
