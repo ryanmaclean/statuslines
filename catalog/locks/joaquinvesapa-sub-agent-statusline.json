@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "slug": "joaquinvesapa-sub-agent-statusline",
+  "package": "opencode-subagent-statusline",
+  "version": "0.5.4",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "opencode-subagent-statusline@0.5.4": "sha512-Ifu+xDVSAkqNkdQPIkBYD0vRNt4cvD/JZNvR8BexKmcxTjXbXixKgcSRtk1hub8ReKCglr3HV+IMDJm75laX7Q=="
+  }
+}

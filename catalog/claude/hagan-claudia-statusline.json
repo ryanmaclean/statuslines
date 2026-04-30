@@ -1,0 +1,34 @@
+{
+  "slug": "hagan-claudia-statusline",
+  "name": "claudia-statusline",
+  "repo": "https://github.com/hagan/claudia-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "Rust statusline for Claude Code with persistent stats tracking, prebuilt binaries for Linux/macOS/Windows, and 11 themes; referenced by the official Claude Code docs.",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rust",
+    "prebuilt-binary",
+    "themes",
+    "stats-tracking"
+  ],
+  "notes": "Upstream install is a `curl | bash` quick-install script that auto-configures settings.json. We don't auto-run remote scripts from `bin/statuslines.js configure` — invoke it directly per upstream README. Distinct from the inactive `taskx6004/claudia-statusline` fork.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

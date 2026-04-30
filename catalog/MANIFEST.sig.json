@@ -1,0 +1,8 @@
+{
+  "_comment": "BOOTSTRAP PLACEHOLDER — not a real signature. Until a maintainer signs, `node scripts/manifest.mjs verify` will fail loudly and CI will block PRs. To produce a real signature: (1) `node scripts/keygen.mjs --id <your-id>`, (2) paste the printed row into catalog/MAINTAINERS.md, (3) `node scripts/manifest.mjs build` if catalog changed, (4) `node scripts/manifest.mjs sign --key ~/.config/statuslines/maintainer-<your-id>.json`. The signing key never leaves your machine. CI does not need it; CI only verifies.",
+  "manifest_sha256": "TEMPLATE-replace-with-real-sha256-on-first-sign",
+  "signed_at": "TEMPLATE",
+  "maintainer_id": "TEMPLATE",
+  "ed25519": "replace-me-ed25519",
+  "ml_dsa_65": "replace-me-ml-dsa-65"
+}

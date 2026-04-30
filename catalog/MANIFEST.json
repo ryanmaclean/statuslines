@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-04-30T21:10:16.942Z",
+  "entries": [
+    {
+      "slug": "ainsley-opencode-token-monitor",
+      "path": "catalog/opencode/ainsley-opencode-token-monitor.json",
+      "sha256": "09115445a370e933d109d7f8b7242eae84ef182a3587ee0fbe7c36c9e0a9d5aa"
+    },
+    {
+      "slug": "b-open-statusline",
+      "path": "catalog/claude/b-open-statusline.json",
+      "sha256": "e75396c9fbd285044ac0fc1e9914779923d3289acca5f729364a9356a18fb535"
+    },
+    {
+      "slug": "capedbitmap-codex-hud",
+      "path": "catalog/codex/capedbitmap-codex-hud.json",
+      "sha256": "c77f3dc68d62c75052a470ed729475a964e14c42867c4691d96d999264bbd47c"
+    },
+    {
+      "slug": "ccometixline",
+      "path": "catalog/claude/ccometixline.json",
+      "sha256": "76c07fed70645a02666faac5ca2721eb41d5e8d3591cc396d3ecf6396c6e0db6"
+    },
+    {
+      "slug": "ccstatusline",
+      "path": "catalog/claude/ccstatusline.json",
+      "sha256": "323cfcb82cad169bc7dcf51c9f25233b11525c8e211dd0f402fd6e67f666bed2"
+    },
+    {
+      "slug": "ccusage",
+      "path": "catalog/claude/ccusage.json",
+      "sha256": "074852295e8c0e72d157a81eff0d2065250c6e2ad58932b4b27cc8b33decdda8"
+    },
+    {
+      "slug": "claude-hud",
+      "path": "catalog/claude/claude-hud.json",
+      "sha256": "ccb1e76450a4b0a46f19f7d468bf5da80dea6f59dd2f115bece84d2fa9d3b369"
+    },
+    {
+      "slug": "daniel3303-claude-statusline",
+      "path": "catalog/claude/daniel3303-claude-statusline.json",
+      "sha256": "5133fcf092de0a8ff6b90004803915a79ba6690530eb4388a8b57fa51157f210"
+    },
+    {
+      "slug": "dwillitzer-claude-statusline",
+      "path": "catalog/claude/dwillitzer-claude-statusline.json",
+      "sha256": "fad3d77d34ea9da5ee233dc07fc3d45cdb80b6aba3f520c2e77cc589b0afba73"
+    },
+    {
+      "slug": "felipeelias-claude-statusline",
+      "path": "catalog/claude/felipeelias-claude-statusline.json",
+      "sha256": "e4a10fb120fd960e6b13d333f925c9890e8eb27c3c8a93ab62cbdd0f5c322d91"
+    },
+    {
+      "slug": "fredrikaverpil-claudeline",
+      "path": "catalog/claude/fredrikaverpil-claudeline.json",
+      "sha256": "2eb3bc312dd63b56eb0472e8842800d182286625f746d42a1274078b9fda3aad"
+    },
+    {
+      "slug": "fwyc-codex-hud",
+      "path": "catalog/codex/fwyc-codex-hud.json",
+      "sha256": "1b877485f9d6a96948222d8af98d601505cdee05017d187212296ec168c5131f"
+    },
+    {
+      "slug": "hagan-claudia-statusline",
+      "path": "catalog/claude/hagan-claudia-statusline.json",
+      "sha256": "aca7eb162be523a8f70dd8166f75348ddc3a47cdb7a9dd9baa1dda5ed0a5c1fa"
+    },
+    {
+      "slug": "joaquinvesapa-sub-agent-statusline",
+      "path": "catalog/opencode/joaquinvesapa-sub-agent-statusline.json",
+      "sha256": "d7c6aa77f78366affa30c46d01965e64db87dce8105bff353e46c08616e6e2fb"
+    },
+    {
+      "slug": "kiriketsuki-gemini-statusline",
+      "path": "catalog/gemini/kiriketsuki-gemini-statusline.json",
+      "sha256": "ae578faadb64d3fda6e22838f4b5de1697e8fe51e77257589136dfca969443f4"
+    },
+    {
+      "slug": "lucasilverentand-claudeline",
+      "path": "catalog/claude/lucasilverentand-claudeline.json",
+      "sha256": "4b8a0c65c03568c76bc5599e71bf73ed654364299a14a374493dd94677d2915c"
+    },
+    {
+      "slug": "markwilkening-opencode-status-line",
+      "path": "catalog/opencode/markwilkening-opencode-status-line.json",
+      "sha256": "2d1b03ce8ec36e53a61e7249fcd77e9c039f4e99925331e10712ca40ed159733"
+    },
+    {
+      "slug": "ndave92-claude-code-status-line",
+      "path": "catalog/claude/ndave92-claude-code-status-line.json",
+      "sha256": "26770342cf83adc28bc49cb74c3de180b1782dfcf33ad465d0161a8820c09e02"
+    },
+    {
+      "slug": "opencode-quota",
+      "path": "catalog/opencode/opencode-quota.json",
+      "sha256": "32327fdd652cc927a874933efd77ee5fcb9655ce07c4da91bde3f8808a4ce18c"
+    },
+    {
+      "slug": "owloops-claude-powerline",
+      "path": "catalog/claude/owloops-claude-powerline.json",
+      "sha256": "06d3a0ffaed1172fd4c84b9aeec0895d57d36b220573063b9d485031a54589fd"
+    },
+    {
+      "slug": "ramtinj95-opencode-tokenscope",
+      "path": "catalog/opencode/ramtinj95-opencode-tokenscope.json",
+      "sha256": "4315ef909a5832b3bf1270d9ad537dbad6a133f7bb8cc8e555cf2226f1b7139d"
+    },
+    {
+      "slug": "sotayamashita-claude-code-statusline",
+      "path": "catalog/claude/sotayamashita-claude-code-statusline.json",
+      "sha256": "f6e88dfb1615ff241acaa6870eba0515b63aa14163ec279c36408e1f3e438a11"
+    },
+    {
+      "slug": "thisdot-context-statusline",
+      "path": "catalog/claude/thisdot-context-statusline.json",
+      "sha256": "e7a63b929ae6e57a0be537c53b323d402450fb7dfe964f8bcd7c058d6f1d5d44"
+    },
+    {
+      "slug": "tokscale",
+      "path": "catalog/multi/tokscale.json",
+      "sha256": "7cb2fde5b7c53ed6d70e45e0afea0d9e6fc6176d7e5e94b23394b9dbf1970fb9"
+    }
+  ]
+}

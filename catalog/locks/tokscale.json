@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "slug": "tokscale",
+  "package": "tokscale",
+  "version": "2.0.27",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "@tokscale/cli@2.0.27": "sha512-PuqDPBNAUwXNGYDbxBm2QyUQRyn9F/KurRyI7lb0ostqiZAdUbMC5otiAn6OPqJuwGiFV9xYJTNUdbd3Btu6ag==",
+    "tokscale@2.0.27": "sha512-JHEAhClKkfAFNTcgy5NGn9HjS7l37qeCseYwGU6TyWIiTkvxB8JZY091Ok5WBOV/F94ic4q0p/MOFwScC8uHfA=="
+  }
+}

@@ -1,0 +1,47 @@
+name: datadog-sca-self
+
+# Software Composition Analysis on our own dependencies (just package.json
+# at root for now). Generates a CycloneDX SBOM and uploads to Datadog SCA
+# for vuln scanning + reachability analysis. Fails closed without keys.
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/datadog-sca-self.yml'
+  schedule:
+    - cron: '23 7 * * 1'   # weekly Mon 07:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: read
+
+jobs:
+  sca:
+    runs-on: ubuntu-latest
+    env:
+      DD_API_KEY: ${{ secrets.DD_API_KEY }}
+      DD_APP_KEY: ${{ secrets.DD_APP_KEY }}
+      DD_SITE: ${{ vars.DD_SITE || 'datadoghq.com' }}
+    steps:
+      - name: Check secret
+        if: ${{ env.DD_API_KEY == '' }}
+        run: |
+          echo "::warning::DD_API_KEY not set; skipping Datadog SCA."
+
+      - name: Checkout
+        if: ${{ env.DD_API_KEY != '' }}
+        uses: actions/checkout@v4
+
+      - name: Run Datadog SCA
+        if: ${{ env.DD_API_KEY != '' }}
+        uses: DataDog/datadog-sca-github-action@v4
+        with:
+          dd_api_key: ${{ env.DD_API_KEY }}
+          dd_app_key: ${{ env.DD_APP_KEY }}
+          dd_site: ${{ env.DD_SITE }}
+          reachability: true
+          exit_on_config_failure: false

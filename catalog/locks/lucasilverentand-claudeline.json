@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "slug": "lucasilverentand-claudeline",
+  "package": "claudeline",
+  "version": "1.11.0",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "claudeline@1.11.0": "sha512-lOdlocpc3mJyyJ5Ij96IRtZEXMbTYw+AMLBtrLmXa1j0XjLGZ8o5R1mDZ+Et8VgVpWryg6CZMXY9ZpUMU5tslw==",
+    "commander@12.1.0": "sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA=="
+  }
+}

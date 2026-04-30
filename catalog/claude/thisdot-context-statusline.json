@@ -4,15 +4,46 @@
   "repo": "https://github.com/thisdot/claude-code-context-status-line",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "typescript",
   "description": "Claude Code statusline that parses session JSONL transcripts to compute input + cache-creation + cache-read tokens for an accurate context-window display.",
-  "install": { "type": "npx", "package": "@this-dot/claude-code-context-status-line" },
+  "install": {
+    "type": "npx",
+    "package": "@this-dot/claude-code-context-status-line",
+    "version": "0.2.2",
+    "integrity": "sha512-Bf1FS9RRQaTrOYVWJncEgfMPLYMCzVT83H9P6q4KaQMi9GlhQLt3IxV/AzvsaicKZ5KLzGARD1ebdttjGI6aig==",
+    "deps_lock_sha256": "8bb0c3438306bac45dd685362fc2095eec79a4bcc93adf55b2763c30fa538f03"
+  },
   "configs": {
     "claude": {
-      "statusLine": { "type": "command", "command": "npx -y @this-dot/claude-code-context-status-line" }
+      "statusLine": {
+        "type": "command",
+        "command": "npx --ignore-scripts -y @this-dot/claude-code-context-status-line"
+      }
     }
   },
-  "tags": ["tokens", "context-window", "cache-aware"],
-  "notes": "Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session."
+  "tags": [
+    "tokens",
+    "context-window",
+    "cache-aware"
+  ],
+  "notes": "Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

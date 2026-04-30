@@ -1,0 +1,14 @@
+{
+  "slug": "dwillitzer-claude-statusline",
+  "name": "claude-statusline (dwillitzer)",
+  "repo": "https://github.com/dwillitzer/claude-statusline",
+  "license": "MIT",
+  "redistributable": false,
+  "host_clis": ["claude"],
+  "language": "shell",
+  "description": "Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).",
+  "install": { "type": "manual" },
+  "configs": {},
+  "tags": ["shell", "multi-provider", "tokens"],
+  "notes": "README claims MIT but no LICENSE file is present at catalog verification on 2026-04-30. README's clone command also uses a literal `<repository-url>` placeholder rather than this repo's URL — substitute manually."
+}

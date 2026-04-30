@@ -4,11 +4,43 @@
   "repo": "https://github.com/junhoyeo/tokscale",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude", "opencode", "gemini", "codex"],
+  "host_clis": [
+    "claude",
+    "opencode",
+    "gemini",
+    "codex"
+  ],
   "language": "typescript",
   "description": "Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.",
-  "install": { "type": "npx", "package": "tokscale" },
+  "install": {
+    "type": "npx",
+    "package": "tokscale",
+    "version": "2.0.27",
+    "integrity": "sha512-JHEAhClKkfAFNTcgy5NGn9HjS7l37qeCseYwGU6TyWIiTkvxB8JZY091Ok5WBOV/F94ic4q0p/MOFwScC8uHfA==",
+    "deps_lock_sha256": "bceeaabae86639eb743fbb767b2b9b63b10b429f41ee61662a15a787dc290427"
+  },
   "configs": {},
-  "tags": ["tokens", "cost", "multi-cli", "data-source"],
-  "notes": "Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself."
+  "tags": [
+    "tokens",
+    "cost",
+    "multi-cli",
+    "data-source"
+  ],
+  "notes": "Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

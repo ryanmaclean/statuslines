@@ -4,11 +4,30 @@
   "repo": "https://github.com/fwyc0573/codex-hud",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["codex"],
+  "host_clis": [
+    "codex"
+  ],
   "language": "typescript",
   "description": "Real-time tmux statusline HUD for OpenAI Codex CLI with session/context usage, git status, and tool-activity monitoring; includes --kill / --list / --attach / --self-check subcommands.",
-  "install": { "type": "manual" },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["tmux", "context-bar", "tool-activity"],
-  "notes": "Codex CLI has no native command-statusline yet, so this runs as an external HUD — start it under tmux per upstream docs."
+  "tags": [
+    "tmux",
+    "context-bar",
+    "tool-activity"
+  ],
+  "notes": "Codex CLI has no native command-statusline yet, so this runs as an external HUD — start it under tmux per upstream docs.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

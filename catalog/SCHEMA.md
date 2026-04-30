@@ -1,6 +1,6 @@
 # Catalog entry schema
 
-Each `catalog/<cli>/<slug>.json` is a single entry. All fields below are required unless marked optional.
+Each `catalog/<cli>/<slug>.json` is a single entry.
 
 ```json
 {
@@ -14,37 +14,159 @@ Each `catalog/<cli>/<slug>.json` is a single entry. All fields below are require
   "description": "One sentence (we write this).",
   "install": {
     "type": "npx",
-    "package": "ccstatusline"
+    "package": "ccstatusline",
+    "version": "2.2.12",
+    "integrity": "sha512-..."
   },
   "configs": {
-    "claude": { "statusLine": { "type": "command", "command": "npx -y ccstatusline@latest", "padding": 0 } }
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "npx --ignore-scripts -y ccstatusline@2.2.12",
+        "padding": 0
+      }
+    }
   },
   "tags": ["tokens", "powerline"],
-  "notes": "optional free-form caveats"
+  "notes": "optional free-form caveats",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
 }
 ```
 
 ## Field reference
 
-- **slug**: lowercase, kebab-case, unique within the catalog.
-- **license**: SPDX identifier verified against the upstream repo (must re-check before adding).
-- **redistributable**: `true` only if the license is OSI-permissive enough to recommend (MIT, Apache-2.0, BSD-*, ISC, MPL-2.0). Copyleft (AGPL, GPL) and source-available (PolyForm-NC, BSL) are `false` — we still list them but don't generate install recipes.
+### Identity & licensing
+
+- **slug**: lowercase, kebab-case, unique. Use an `<owner>-<name>` form when two upstreams share a name (e.g. `lucasilverentand-claudeline` vs `fredrikaverpil-claudeline`).
+- **license**: SPDX identifier read from the upstream `LICENSE` file directly. README badges are not authoritative.
+- **redistributable**: `true` only if the license is in the OSI-permissive allowlist (MIT, Apache-2.0, BSD-2/3-Clause, ISC, MPL-2.0, 0BSD). Copyleft (AGPL, GPL) and source-available (PolyForm-NC, BSL) and licenses we couldn't verify (no LICENSE file) → `false`. Non-redistributable entries are still listed for reference but skipped by `configure`.
 - **host_clis**: any of `claude`, `opencode`, `gemini`, `codex`. An entry may target multiple.
-- **install.type**: one of:
-  - `npx`: invoke at run time via `npx -y <package>@latest` — no install step.
-  - `npm-global`: needs `npm i -g <package>`.
-  - `cargo`: needs `cargo install <package>`.
-  - `brew`: needs `brew install <formula>` (with optional `tap`).
-  - `git`: clone to `~/.local/share/statuslines/<slug>` and run from there.
+
+### Install
+
+- **install.type**: one of `npx`, `npm-global`, `cargo`, `brew`, `git`, `manual`, `opencode-plugin`.
+  - `npx`: invoke at run time via `npx --ignore-scripts -y <package>@<version>`. No preinstall step.
+  - `npm-global`: `npm i -g --ignore-scripts <package>@<version>`.
+  - `cargo`: `cargo install <package> --version <version>`.
+  - `brew`: `brew install <tap>/<formula>` (single-step, no separate `brew tap`).
+  - `git`: clone to `~/.local/share/statuslines/<clone_dir>` and run from there.
+  - `opencode-plugin`: OpenCode loads the package from npm at session start when added to `opencode.json`'s `plugin` array. No explicit install command.
   - `manual`: link only — user follows upstream install docs.
-- **configs**: map of `<cli>` → JSON patch merged into that tool's settings file by `bin/statuslines.js configure`.
-- **tags**: free-form labels for filtering.
-- **notes**: optional caveats (rate-limit risks, manual auth required, performance characteristics).
+- **install.package** (npx / npm-global / opencode-plugin): the npm package name, including scope (e.g. `@owloops/claude-powerline`).
+- **install.version**: **required** for `redistributable=true` non-`manual` entries. Pinned semver. `"latest"` is rejected by `doctor`. Backfilled and refreshed by `node bin/statuslines.js audit`.
+- **install.integrity** (npm): the registry's `dist.integrity` SRI string (e.g. `sha512-...`). Captured by `audit`.
+- **install.tap** + **install.formula** (brew): tap (e.g. `felipeelias/tap`) and formula name; `formula` defaults to `package` if omitted.
+- **install.clone_dir** (git): destination subdirectory under `~/.local/share/statuslines/`.
+
+### Configs
+
+- **configs**: map of `<cli>` → JSON patch merged into that tool's settings file by `configure`. Keys must be one of the four `host_clis`.
+- For redistributable entries, `configs.<cli>` may not contain `@latest`, `curl|sh`, `wget|sh`, `eval(`, `base64 -d`, or the literal string `<repository-url>`. `doctor` refuses entries that violate these rules.
+- For `git` install type, the magic token `${INSTALL_DIR}` in any string value is substituted with the clone destination at configure time.
+
+### Security block
+
+- **security.has_install_scripts**: `true` if the upstream npm package declares `preinstall`, `install`, `postinstall`, or `prepare` lifecycle scripts. Detected automatically by `audit`. The default `--ignore-scripts` flag we add to `configure` mitigates the risk; `render-readme` warns when this is `true`.
+- **security.license_observed**: the license string the most recent `audit` saw on the upstream package; should match `license` at the top level. A drift here is a license-regression signal.
+- **security.last_audit**: ISO date of the last `audit` run for this entry.
+- **security.quarantined**: `true` to hide the entry from `list`, `show`, `configure`, and the rendered READMEs. Defaults to `false`.
+- **security.quarantine_reason**: required when `quarantined=true`. Free-form one-line reason.
+- **security.quarantined_at**: ISO date of when the entry was quarantined.
+
+Quarantined entries:
+- Are absent from `bin/statuslines.js list` output unless the env var `STATUSLINES_REVEAL_QUARANTINE=1` is set.
+- Cause `show <slug>` to print `no entry: <slug>` (same as a typo) unless reveal env is set.
+- Cause `configure <slug>` to refuse with `no entry`. With reveal env set, it surfaces the quarantine reason and refuses anyway. To override, set the reveal env *and* pass `--ignore-quarantine`.
+- Are excluded from both `catalog/README.md` and the catalog block in the top README.
+- Are listed in `catalog/QUARANTINE.md` (regenerated by `render-quarantine`).
+
+This is the OpenBSD-style "secure by default" stance: hidden, not warned-about. The forensic record lives in `QUARANTINE.md`.
 
 ## Adding an entry
 
-1. Verify the license at the upstream repo (look at `LICENSE`, not the README).
-2. Confirm install path actually works (npm package exists, brew formula resolves, etc.).
+1. Verify the license at the upstream repo — read the `LICENSE` file directly, not the README badge. If no `LICENSE` file exists at the canonical paths, set `redistributable: false` and `license: "Unspecified"`.
+2. Confirm the install path actually works against the registry (npm package exists at the claimed name and version, brew formula resolves under the tap). For npm: `curl -s https://registry.npmjs.org/<pkg>` and read `dist-tags.latest`.
 3. Write a one-sentence description in your own words. Don't paste from upstream.
-4. Drop the JSON in `catalog/<cli>/<slug>.json`.
-5. Run `node bin/statuslines.js doctor` to validate, then `node bin/statuslines.js render-readme` to refresh `catalog/README.md`.
+4. Drop the JSON at `catalog/<cli>/<slug>.json`.
+5. For `redistributable: true` entries, run `node bin/statuslines.js audit <slug>` to populate `install.version`, `install.integrity`, and `security.has_install_scripts`.
+6. Run `node bin/statuslines.js doctor` to validate, then `render-readme` and `render-top-readme` to refresh the generated tables.
+7. Open a PR.
+
+## Capabilities
+
+Every redistributable entry declares the capabilities its install or first run-time invocation expects to use. The full rationale, sandbox model, and contributor workflow live in [`catalog/CAPABILITIES.md`](./CAPABILITIES.md); this section documents the schema field only.
+
+Shape (added inline at the top level of the entry, alongside `install`, `configs`, etc.):
+
+```json
+"capabilities": {
+  "network": true,
+  "child_process": true,
+  "filesystem_write": false,
+  "env_read": ["HOME", "PATH"],
+  "verified_at": null,
+  "verification_method": "declared"
+}
+```
+
+- **capabilities.network**: `boolean` — does the install or first run-time invocation make outbound network calls? Almost always `true` for npm-backed entries (registry fetch, telemetry, license check).
+- **capabilities.child_process**: `boolean` — does the entry spawn child processes other than the binary itself? `true` for git installs and most npm packages.
+- **capabilities.filesystem_write**: `boolean` — does it write outside the safe roots `$HOME/.cache`, `$TMPDIR`, and the install dir? Writes inside those roots are allowed and don't require this flag. Default: `false`.
+- **capabilities.env_read**: `string[]` — environment variable names the entry expects to read. Use `["*"]` for "any"; the entry must then carry a `notes` field justifying the wildcard.
+- **capabilities.verified_at**: ISO date string or `null`. Last time the sandbox observed behavior matching the declaration. `null` means declared but not yet verified by `catalog-capabilities`.
+- **capabilities.verification_method**: one of `"declared"`, `"sandbox-strace"`, `"sandbox-bpf"`, `"skipped"`. `"declared"` is the bootstrap default; the workflow rewrites this to `"sandbox-strace"` when an observation matches.
+
+Validator behavior during the rollout: `bin/statuslines.js doctor` emits a *warning* (not an error) when `capabilities` is missing on a `redistributable: true` entry. Once every entry is backfilled, the warning becomes a hard error.
+
+The matching CLI subcommand is `node bin/statuslines.js verify-capabilities <slug> [--dry-run]`, which delegates to `scripts/verify-capabilities.mjs` and emits a JSON report comparing observed-vs-declared.
+
+## Attestation
+
+Phase I supply-chain hardening: for every redistributable npm-backed entry, `scripts/provenance-check.mjs` asks the npm registry whether the pinned version carries a Sigstore-signed [SLSA build provenance](https://slsa.dev/spec/v1.0/provenance) attestation (the artifact `npm publish --provenance` produces from a GitHub Actions run). Results land under `security.attestation`:
+
+```json
+"security": {
+  "attestation": {
+    "available": true,
+    "checked_at": "2026-04-30T00:00:00.000Z",
+    "predicate_type": "https://slsa.dev/provenance/v1",
+    "issuer": "https://github.com/actions/runner/github-hosted",
+    "build_workflow": "github.com/<owner>/<repo>/.github/workflows/release.yml@refs/heads/main",
+    "regression": false
+  }
+}
+```
+
+- **available**: `true` iff the registry exposes a SLSA-typed attestation bundle for the pinned version. The npm publish self-attestation alone does not count.
+- **checked_at**: ISO timestamp of the most recent probe.
+- **predicate_type / issuer / build_workflow**: parsed from the DSSE-enveloped in-toto Statement — respectively the predicate URI, the OIDC builder identity (`runDetails.builder.id`), and the canonical `<host>/<owner>/<repo>/<workflow-path>@<ref>` form (from `buildDefinition.externalParameters.workflow`).
+- **regression**: `true` when a previous run recorded `available: true` and the current run finds `available: false`. **This is the high-signal anomaly** — a package that *was* signing builds and stopped is the supply-chain shape worth investigating.
+
+Phase I is **advisory**. `doctor` does NOT refuse entries with `available: false`, because plenty of legitimate upstreams have not yet adopted provenance publishing. The weekly `catalog-provenance` workflow opens a PR when results change; a future phase can promote a sustained `available: true` baseline into a `doctor` requirement.
+
+Maintainers wondering why their package shows `available: false`: enable provenance by publishing from a GitHub Actions workflow with `npm publish --provenance` (and `id-token: write` on the job). See [`docs.npmjs.com/generating-provenance-statements`](https://docs.npmjs.com/generating-provenance-statements).
+
+## Dependency lockfile
+
+Phase J: `install.integrity` pins the *top-level* tarball, but `npx -y pkg@1.2.3` still resolves transitive deps at install time from `package.json` ranges. A maintainer takeover of `lodash@^4.0.0` could ship a fresh malicious version even though our top-level pin is fine. To detect that, we snapshot each redistributable npm entry's full transitive closure once and re-verify weekly.
+
+```json
+"install": {
+  ...,
+  "deps_lock_sha256": "<hex>"
+}
+```
+
+- The lockfile content lives at `catalog/locks/<slug>.json` (not inline in the entry, because lockfiles are large and would dominate the entry JSON visually). Shape: `{ schema_version, slug, package, version, captured_at, deps: { "<name>@<version>": "<sri>" } }`. Sorted keys throughout; deduped to one resolved version per package name.
+- **install.deps_lock_sha256** is `sha256(canonicalize(lockfile))` over sorted-key, no-whitespace JSON. It lets the manifest signature transitively cover the lockfile's identity.
+- `scripts/deps-capture.mjs` populates both the lockfile and the hash; `scripts/deps-verify.mjs` re-resolves against the live registry and reports drift in four buckets — *added* and *integrity-changed-for-same-version* are anomalies, *bumped* and *removed* are info.
+- The weekly `catalog-deps-verify` workflow opens a refresh PR on drift and tags anomalies with `(quarantine candidate)` in the report body.
+
+This is **advisory**: `doctor` does not refuse entries that lack a lockfile or `deps_lock_sha256`. The bootstrap `node scripts/deps-capture.mjs` run populates them for every existing redistributable npm-backed entry; new entries pick them up on the next weekly run or via a manual capture.

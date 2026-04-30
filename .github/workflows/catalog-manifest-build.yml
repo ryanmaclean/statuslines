@@ -1,0 +1,77 @@
+name: catalog-manifest-build
+
+# When catalog/* changes, regenerate catalog/MANIFEST.json and open a PR with
+# the rebuilt unsigned manifest. SIGNING IS NOT DONE HERE — signing requires
+# the maintainer's private key, which by design never enters CI.
+#
+# After this workflow opens its PR, the maintainer must locally run:
+#   node scripts/manifest.mjs sign --key ~/.config/statuslines/maintainer-<id>.json
+# and commit the refreshed catalog/MANIFEST.sig.json on top.
+
+on:
+  pull_request:
+    paths:
+      - 'catalog/**'
+  push:
+    branches: [main]
+    paths:
+      - 'catalog/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  rebuild:
+    # Skip on PRs from forks (GITHUB_TOKEN cannot push to a fork branch).
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild manifest
+        run: node scripts/manifest.mjs build
+
+      - name: Detect drift
+        id: drift
+        run: |
+          if git diff --quiet -- catalog/MANIFEST.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open rebuild PR
+        if: steps.drift.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/manifest-rebuild
+          title: 'chore(catalog): rebuild MANIFEST.json'
+          commit-message: 'chore(catalog): rebuild MANIFEST.json'
+          delete-branch: true
+          add-paths: |
+            catalog/MANIFEST.json
+          body: |
+            The catalog changed and `catalog/MANIFEST.json` is now out of date.
+            This bot has rebuilt the unsigned manifest.
+
+            **Before merging**, a maintainer must re-sign it locally:
+
+            ```
+            node scripts/manifest.mjs sign --key ~/.config/statuslines/maintainer-<id>.json
+            ```
+
+            and push the updated `catalog/MANIFEST.sig.json` to this branch
+            (or include it in their next commit on top of this one).
+
+            CI's `catalog-manifest-verify` job will block merge until the
+            signature is valid against `catalog/MAINTAINERS.md`.

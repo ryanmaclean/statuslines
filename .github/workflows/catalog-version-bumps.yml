@@ -1,0 +1,72 @@
+name: catalog-version-bumps
+
+# Weekly version-bump bot:
+#   - For every catalog entry with install.type in {npx, npm-global,
+#     opencode-plugin}, redistributable=true, and a pinned version, ask the
+#     npm registry whether dist-tags.latest has advanced.
+#   - When it has, download the old + new tarballs and produce a structured
+#     tarball-diff (file list, lifecycle scripts, network domains, binary
+#     blobs, license).
+#   - If the diff is clean, advance the pin in the catalog entry and refresh
+#     security.{has_install_scripts, license_observed, last_audit}.
+#   - If the diff trips a quarantine trigger (new lifecycle script, new
+#     top-level domain, license drift) the pin is left at the old version
+#     and the entry is reported under "quarantined-from-bump" so a human
+#     reviews before the pin advances. (TRIZ #11 cushioning.)
+#
+# Always runs to completion; the PR is the artifact. No secrets needed.
+
+on:
+  schedule:
+    - cron: '37 3 * * 1'   # weekly Mon 03:37 UTC, offset from existing crons
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version-bumps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run version-bumps
+        run: node scripts/version-bumps.mjs
+
+      - name: Detect catalog changes
+        id: changed
+        run: |
+          if git diff --quiet -- catalog/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Stage report as PR body
+        if: steps.changed.outputs.changed == 'true'
+        id: body
+        run: |
+          {
+            echo 'body<<__EOF__'
+            cat /tmp/version-bumps.md
+            echo '__EOF__'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open PR if catalog changed
+        if: steps.changed.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: bot/version-bumps
+          commit-message: 'chore(catalog): weekly version-bump refresh'
+          title: 'catalog: version-bump refresh'
+          body: ${{ steps.body.outputs.body }}
+          labels: |
+            catalog
+            dependencies
+          delete-branch: true

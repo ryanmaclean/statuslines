@@ -1,0 +1,32 @@
+{
+  "slug": "sotayamashita-claude-code-statusline",
+  "name": "claude-code-statusline (Sam Yamashita)",
+  "repo": "https://github.com/sotayamashita/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "Rust statusline for Claude Code with starship-like configuration and module-based composition.",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rust",
+    "starship-style"
+  ],
+  "notes": "Upstream README references `cargo install claude-code-statusline-cli`, but that crate is not published on crates.io as of catalog verification on 2026-04-30. Build from source meanwhile: clone the repo, run `cargo build --release`, point statusLine.command at the resulting binary.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

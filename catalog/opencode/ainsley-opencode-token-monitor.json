@@ -4,15 +4,46 @@
   "repo": "https://github.com/Ainsley0917/opencode-token-monitor",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["opencode"],
+  "host_clis": [
+    "opencode"
+  ],
   "language": "typescript",
   "description": "OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.",
-  "install": { "type": "opencode-plugin", "package": "opencode-token-monitor" },
+  "install": {
+    "type": "opencode-plugin",
+    "package": "opencode-token-monitor",
+    "version": "0.5.0",
+    "integrity": "sha512-Bh9ORa3sdF8hxroEejhSV9npEdAOjdPW9iGArIPFJzwmhbZhkiQqRAqvbTVq4HW4epRcfbh5ePORlBsDM0AQuw==",
+    "deps_lock_sha256": "d49c387e415cf7603ee852b2951f112b8be3f237061f0e58628a600fe03ff240"
+  },
   "configs": {
     "opencode": {
-      "plugin": ["opencode-token-monitor@latest"]
+      "plugin": [
+        "opencode-token-monitor@0.5.0"
+      ]
     }
   },
-  "tags": ["tokens", "cost", "plugin", "toasts"],
-  "notes": "Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured."
+  "tags": [
+    "tokens",
+    "cost",
+    "plugin",
+    "toasts"
+  ],
+  "notes": "Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

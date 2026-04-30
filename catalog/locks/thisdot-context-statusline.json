@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "slug": "thisdot-context-statusline",
+  "package": "@this-dot/claude-code-context-status-line",
+  "version": "0.2.2",
+  "captured_at": "2026-04-30",
+  "deps": {
+    "@this-dot/claude-code-context-status-line@0.2.2": "sha512-Bf1FS9RRQaTrOYVWJncEgfMPLYMCzVT83H9P6q4KaQMi9GlhQLt3IxV/AzvsaicKZ5KLzGARD1ebdttjGI6aig=="
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "owloops-claude-powerline",
+  "name": "claude-powerline",
+  "repo": "https://github.com/Owloops/claude-powerline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "typescript",
+  "description": "Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.",
+  "install": {
+    "type": "npx",
+    "package": "@owloops/claude-powerline",
+    "version": "1.26.0",
+    "integrity": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ==",
+    "deps_lock_sha256": "95e2ecbc5e275aa5e16ae2371f44b5146599296021fe7b58101d71d37bc66faf"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "npx --ignore-scripts -y @owloops/claude-powerline@1.26.0 --style=powerline"
+      }
+    }
+  },
+  "tags": [
+    "powerline",
+    "themes",
+    "tokens",
+    "git"
+  ],
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-04-30"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
