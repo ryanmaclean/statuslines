@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/lucasilverentand/claudeline",
     "alt": "claudeline statusline for Claude Code",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/lucasilverentand-claudeline.png"
   },
   "install": {
     "type": "npx",

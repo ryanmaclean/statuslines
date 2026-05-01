@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/sotayamashita/claude-code-statusline",
     "alt": "claude-code-statusline (Rust) repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/sotayamashita-claude-code-statusline.png"
   },
   "install": {
     "type": "manual"

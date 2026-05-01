@@ -61,6 +61,9 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
 - **image.url**: absolute https URL to a representative screenshot. Prefer a hero/demo image hosted on `raw.githubusercontent.com` or a CDN the upstream README itself uses; fall back to GitHub's auto-generated OpenGraph card at `https://opengraph.githubassets.com/1/<owner>/<repo>` when the upstream README has no usable image. Avoid hot-linking `github.com/user-attachments/...` URLs — they 403 to non-browser clients.
 - **image.alt**: short caption (≤60 chars) used as the rendered image's `alt` text and link title.
 - **image.source**: `"readme"` when sourced from the upstream README, `"og-fallback"` when using the GitHub OpenGraph card. The renderer treats both the same; the field is for provenance.
+- **image.local**: relative path under `catalog/` to the locally committed copy of the image (e.g. `"images/ccstatusline.gif"`). Populated by `scripts/grab-images.mjs`. When present, the renderer prefers this path over `image.url` so that the rendered `catalog/README.md` and its translations display the committed file rather than the upstream URL. `image.url` is retained as the source-of-truth for refresh — re-running `grab-images.mjs` re-downloads from `url` and updates the local copy.
+
+**Validator behavior:** `doctor` warns (not errors) when `image` is absent for `redistributable=true` entries during rollout; the warning will be promoted to a hard error once every redistributable entry has been backfilled. `doctor` immediately rejects `image.url` values that do not start with `https://` or that contain `github.com/user-attachments/` (those URLs 403 to non-browser clients).
 
 ### Install
 

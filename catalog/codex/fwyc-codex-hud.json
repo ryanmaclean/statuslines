@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/fwyc0573/codex-hud/HEAD/doc/fig/2a00eaf0-496a-4039-a0ce-87a9453df30d.png",
     "alt": "codex-hud single-session statusline demo",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/fwyc-codex-hud.png"
   },
   "install": {
     "type": "manual"

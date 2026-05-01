@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/felipeelias/claude-statusline/HEAD/assets/screenshot.webp",
     "alt": "claude-statusline demo screenshot",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/felipeelias-claude-statusline.webp"
   },
   "install": {
     "type": "brew",

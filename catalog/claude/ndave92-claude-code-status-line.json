@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/ndave92/claude-code-status-line",
     "alt": "claude-code-status-line repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/ndave92-claude-code-status-line.png"
   },
   "install": {
     "type": "manual"

@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/daniel3303/ClaudeCodeStatusLine/HEAD/screenshot.png",
     "alt": "Status line showing model, tokens, rate limits",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/daniel3303-claude-statusline.png"
   },
   "install": {
     "type": "manual"

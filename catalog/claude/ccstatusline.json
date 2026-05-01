@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
     "alt": "ccstatusline demo animation",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/ccstatusline.gif"
   },
   "install": {
     "type": "npx",

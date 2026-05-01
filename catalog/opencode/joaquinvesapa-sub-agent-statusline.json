@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/Joaquinvesapa/sub-agent-statusline/main/assets/subagents_monitor_banner.webp",
     "alt": "Subagents Monitor banner",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/joaquinvesapa-sub-agent-statusline.webp"
   },
   "install": {
     "type": "opencode-plugin",

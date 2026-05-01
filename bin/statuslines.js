@@ -110,6 +110,25 @@ function validate(entry) {
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {
     errs.push(`security.quarantined=true requires security.quarantine_reason`);
   }
+  // Phase H — image. Warning, not error, during rollout. When the
+  // backfill completes for every redistributable entry the warning will
+  // be promoted to a hard error.
+  if (entry.redistributable === true && !entry.image) {
+    warns.push(`redistributable=true but no image block (will become an error after Phase H rollout)`);
+  } else if (entry.image) {
+    const img = entry.image;
+    if (typeof img.url !== "string" || !img.url.startsWith("https://")) {
+      errs.push(`image.url must be https://...`);
+    } else if (img.url.includes("github.com/user-attachments/")) {
+      errs.push(`image.url uses github.com/user-attachments/... which 403s to non-browser clients`);
+    }
+    if (typeof img.alt !== "string" || img.alt.length < 1 || img.alt.length > 120) {
+      errs.push(`image.alt must be a string of length 1..120`);
+    }
+    if (img.source !== "readme" && img.source !== "og-fallback") {
+      errs.push(`image.source must be "readme" or "og-fallback"`);
+    }
+  }
   // Phase G — capabilities. Warning, not error, during rollout. When the
   // backfill completes for every redistributable entry the warning will
   // be promoted to a hard error.
@@ -365,9 +384,10 @@ function renderReadme(lang = "en") {
   for (const e of entries) {
     lines.push(`### \`${e.slug}\` — [${e.name}](${e.repo})`);
     lines.push("");
-    if (e.image?.url) {
+    if (e.image?.url || e.image?.local) {
       const alt = (e.image.alt ?? e.name).replace(/\]/g, "\\]");
-      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${e.image.url}" width="480"></a>`);
+      const imgSrc = e.image.local ?? e.image.url;
+      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${imgSrc}" width="480"></a>`);
       lines.push("");
     }
     lines.push(`- **${t.labels.license}:** ${e.license}${e.redistributable ? "" : t.notRedistributable}`);
@@ -576,15 +596,20 @@ function cmdRenderQuarantine() {
 }
 
 function cmdRenderTopReadme() {
-  const readmePath = join(ROOT, "README.md");
-  if (!existsSync(readmePath)) { process.stderr.write(`README.md not found at ${readmePath}\n`); process.exit(1); }
-  let raw = readFileSync(readmePath, "utf8");
   const { catalog, count } = renderTopReadmeBlocks();
-  raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
   const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
-  raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
-  writeFileSync(readmePath, raw);
-  process.stdout.write(`wrote ${readmePath} (${count} entries)\n`);
+  for (const file of ["README.md", "README.fr.md", "README.ja.md"]) {
+    const path = join(ROOT, file);
+    if (!existsSync(path)) {
+      process.stderr.write(`${file} not found; skipping\n`);
+      continue;
+    }
+    let raw = readFileSync(path, "utf8");
+    raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
+    raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
+    writeFileSync(path, raw);
+    process.stdout.write(`wrote ${path} (${count} entries)\n`);
+  }
 }
 
 function cmdVerifyCapabilities(args) {

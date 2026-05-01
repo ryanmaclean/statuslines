@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/fredrikaverpil/claudeline",
     "alt": "claudeline repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/fredrikaverpil-claudeline.png"
   },
   "install": {
     "type": "manual"

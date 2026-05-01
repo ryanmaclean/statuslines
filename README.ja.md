@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-24-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-23-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -70,7 +70,6 @@ tmux new-session -d -s codex 'node ./pup/codex/hud.js watch'
 <!-- catalog:start -->
 ### Claude Code
 
-- [**b-open-io/statusline**](https://github.com/b-open-io/statusline) — MIT — Claude Code statusline that auto-detects the active model's context window (1M for [1m] suffixed models, 200k otherwise) with widgets for tokens, git, and a 5-hour block timer.
 - [**CCometixLine**](https://github.com/Haleclipse/CCometixLine) — MIT — Fast Rust-based Claude Code statusline with an interactive TUI configurator, git integration, and usage tracking.
 - [**ccstatusline**](https://github.com/sirmalloc/ccstatusline) — MIT — Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.
 - [**ccusage**](https://github.com/ryoppippi/ccusage) — MIT — Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.

@@ -6,4 +6,6 @@
 
 環境変数で `STATUSLINES_REVEAL_QUARANTINE=1` を設定すると CLI で表示されます。それでもインストールしたい場合は、`configure` に `--ignore-quarantine` を渡して上書きしてください。
 
-*現在、隔離されているエントリはありません。*
+| Slug | 理由 | 隔離日 |
+|---|---|---|
+| `b-open-statusline` | verbatim mirror of sirmalloc/ccstatusline with 0 divergent commits (GitHub compare confirms); described 1M-context [1m] auto-detect feature is absent from the source code | 2026-05-01 |

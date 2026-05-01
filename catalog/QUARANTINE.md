@@ -6,4 +6,6 @@ Entries the catalog has hidden from `list`, `show`, `configure`, and the rendere
 
 Set `STATUSLINES_REVEAL_QUARANTINE=1` in the environment to reveal these in the CLI; pass `--ignore-quarantine` to `configure` to override and install anyway.
 
-*No entries are currently quarantined.*
+| Slug | Reason | Quarantined since |
+|---|---|---|
+| `b-open-statusline` | verbatim mirror of sirmalloc/ccstatusline with 0 divergent commits (GitHub compare confirms); described 1M-context [1m] auto-detect feature is absent from the source code | 2026-05-01 |

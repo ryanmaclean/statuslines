@@ -13,7 +13,8 @@
   "image": {
     "url": "https://cdn.jsdelivr.net/gh/ryoppippi/ccusage@main/docs/public/screenshot.png",
     "alt": "ccusage terminal screenshot",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/ccusage.png"
   },
   "install": {
     "type": "npx",

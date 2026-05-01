@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/b-open-io/statusline",
     "alt": "b-open-io/statusline repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/b-open-statusline.png"
   },
   "install": {
     "type": "git",
@@ -33,6 +34,11 @@
     "block-timer"
   ],
   "notes": "Run `npm install` in the cloned directory before first use; check the upstream README for the current entry point if `index.js` has moved.",
+  "security": {
+    "quarantined": true,
+    "quarantine_reason": "verbatim mirror of sirmalloc/ccstatusline with 0 divergent commits (GitHub compare confirms); described 1M-context [1m] auto-detect feature is absent from the source code",
+    "quarantined_at": "2026-05-01"
+  },
   "capabilities": {
     "network": true,
     "child_process": true,

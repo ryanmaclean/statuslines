@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/hagan/claudia-statusline/HEAD/statusline.png",
     "alt": "claudia-statusline with cost, git, context",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/hagan-claudia-statusline.png"
   },
   "install": {
     "type": "manual"

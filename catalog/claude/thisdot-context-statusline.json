@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/thisdot/claude-code-context-status-line",
     "alt": "claude-code-context-status-line repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/thisdot-context-statusline.png"
   },
   "install": {
     "type": "npx",

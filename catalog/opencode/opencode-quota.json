@@ -12,7 +12,8 @@
   "image": {
     "url": "https://shawnkiser.com/opencode-quota/sidebar.webp",
     "alt": "opencode-quota sidebar",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/opencode-quota.webp"
   },
   "install": {
     "type": "manual"

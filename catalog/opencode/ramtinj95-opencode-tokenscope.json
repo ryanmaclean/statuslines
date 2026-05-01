@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/ramtinJ95/opencode-tokenscope",
     "alt": "opencode-tokenscope repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/ramtinj95-opencode-tokenscope.png"
   },
   "install": {
     "type": "opencode-plugin",

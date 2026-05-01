@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/dwillitzer/claude-statusline",
     "alt": "claude-statusline repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/dwillitzer-claude-statusline.png"
   },
   "install": {
     "type": "manual"

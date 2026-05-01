@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/Capedbitmap/codex-hud/HEAD/docs/images/codex-hud-menu.png",
     "alt": "codex-hud menu bar with account status",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/capedbitmap-codex-hud.png"
   },
   "install": {
     "type": "manual"

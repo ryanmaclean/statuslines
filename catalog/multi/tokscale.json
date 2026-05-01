@@ -15,7 +15,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/junhoyeo/tokscale/HEAD/.github/assets/hero-v2.png",
     "alt": "tokscale hero banner",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/tokscale.png"
   },
   "install": {
     "type": "npx",

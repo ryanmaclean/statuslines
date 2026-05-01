@@ -12,7 +12,8 @@
   "image": {
     "url": "https://opengraph.githubassets.com/1/Ainsley0917/opencode-token-monitor",
     "alt": "opencode-token-monitor repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/ainsley-opencode-token-monitor.png"
   },
   "install": {
     "type": "opencode-plugin",

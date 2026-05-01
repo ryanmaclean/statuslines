@@ -12,7 +12,8 @@
   "image": {
     "url": "https://raw.githubusercontent.com/Haleclipse/CCometixLine/HEAD/assets/img1.png",
     "alt": "CCometixLine statusline screenshot",
-    "source": "readme"
+    "source": "readme",
+    "local": "images/ccometixline.png"
   },
   "install": {
     "type": "manual"
