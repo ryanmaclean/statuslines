@@ -46,3 +46,14 @@ jobs:
             git --no-pager diff -- catalog/README.md README.md catalog/QUARANTINE.md
             exit 1
           fi
+
+      - name: Check oversized catalog images
+        run: |
+          sudo apt-get install -y imagemagick gifsicle
+          # Advisory: warn if any target image is over its size threshold.
+          # This does not block the workflow — a large image means optimize-images.mjs
+          # needs to be re-run and the result committed, but it is not a schema error.
+          if ! node scripts/optimize-images.mjs --check; then
+            echo "::warning::One or more catalog images exceed their size thresholds."
+            echo "::warning::Run: node scripts/optimize-images.mjs  (then commit the results)"
+          fi

@@ -80,8 +80,8 @@ const TARGETS = [
     name: "ccstatusline.gif",
     srcFile: "ccstatusline.gif",
     dstFile: "ccstatusline.gif",
-    // threshold: 900 KB
-    threshold: 900 * 1024,
+    // threshold: 800 KB — reflects the realistic post-optimization target
+    threshold: 800 * 1024,
     optimize: optimizeCcstatusline,
   },
 ];
@@ -108,12 +108,16 @@ async function fileSize(p) {
 }
 
 function run(cmd, args, opts = {}) {
-  const label = [cmd, ...args].join(" ");
-  console.log(`  $ ${label}`);
+  // Truncate log line when args list is very long (e.g. 900+ frame selectors)
+  const fullLabel = [cmd, ...args].join(" ");
+  const logLabel = fullLabel.length > 200
+    ? fullLabel.slice(0, 197) + "..."
+    : fullLabel;
+  console.log(`  $ ${logLabel}`);
   const r = spawnSync(cmd, args, { encoding: "buffer", ...opts });
   if (r.status !== 0) {
     const stderr = r.stderr ? r.stderr.toString() : "";
-    throw new Error(`Command failed (exit ${r.status}): ${label}\n${stderr}`);
+    throw new Error(`Command failed (exit ${r.status}): ${logLabel}\n${stderr}`);
   }
   return r;
 }
@@ -160,75 +164,78 @@ async function optimizeOwloops(srcPath, tmpOut) {
   // 1205-frame GIF → decimate to ~300 frames (keep every 4th), resize to 960px,
   // quantize to 128 colours.
   //
-  // IM6 strategy: coalesce, then delete frames whose index % 4 != 0,
-  // resize, remap, deconstruct (optimize layers).
+  // Strategy: use gifsicle to delete frames where index%4 != 0, resize, and
+  // apply lossy compression. This avoids ImageMagick's pixel-cache exhaustion
+  // on large multi-frame GIFs.
 
-  const tmp1 = tempPath(".gif");
-  try {
-    // Step 1: coalesce + delete 3 of every 4 frames + resize + remap
-    run(CONVERT, [
-      "-coalesce",
-      srcPath,
-      "-delete", "1-3",   // delete frames 1,2,3 of every 0-indexed group of 4
-      "-resize", "960x>",
-      "-dither", "FloydSteinberg",
-      "-remap", srcPath,  // remap colour palette from original (128-color approx)
-      "-layers", "optimize",
-      tmp1,
-    ]);
-    // Step 2: quantize to 128 colours explicitly
-    run(CONVERT, [
-      tmp1,
-      "-dither", "FloydSteinberg",
-      "-colors", "128",
-      "-layers", "optimize",
-      tmpOut,
-    ]);
-  } finally {
-    try { await unlink(tmp1); } catch (_) {}
+  if (!GIFSICLE) {
+    throw new Error(
+      "gifsicle is required for GIF optimization but was not found.\n" +
+      "  Install with: sudo apt-get install -y gifsicle"
+    );
   }
+
+  // Count total frames to build delete list
+  const infoResult = spawnSync(GIFSICLE, ["--info", srcPath], { encoding: "utf8" });
+  const m = infoResult.stdout.match(/(\d+)\s+images/);
+  const totalFrames = m ? parseInt(m[1], 10) : 1205;
+
+  // Delete frames where index % 4 != 0 (keep every 4th frame: 0,4,8,...)
+  const deleteFrames = [];
+  for (let i = 0; i < totalFrames; i++) {
+    if (i % 4 !== 0) deleteFrames.push(`#${i}`);
+  }
+
+  run(GIFSICLE, [
+    "--no-warnings",
+    srcPath,
+    "--delete", ...deleteFrames,
+    "--resize-width", "960",
+    "--colors", "128",
+    "--lossy=80",
+    "--optimize=3",
+    "-o", tmpOut,
+  ]);
 }
 
 async function optimizeCcstatusline(srcPath, tmpOut) {
-  // 316-frame GIF: decimate every 2nd frame, resize to 960px, 128 colours,
-  // then gifsicle --lossy=80 --optimize=3 final pass.
+  // 316-frame GIF: keep every 3rd frame (delete where index%3 != 0), resize to 960px,
+  // reduce to 64 colours, apply gifsicle lossy=120 pass.
+  //
+  // Frame decimation strategy: keeping every 3rd frame (→ ~106 frames) is required
+  // to hit the <800 KB target. Empirical tests on the 6.7 MB original:
+  //   every 2nd frame (158 frames) + 64c + lossy=120 → ~981 KB  (over target)
+  //   every 3rd frame (106 frames) + 64c + lossy=120 → ~670 KB  (under target)
+  // 64 colors is sufficient for a terminal UI screenshot.
 
-  const tmp1 = tempPath(".gif");
-  const tmp2 = tempPath(".gif");
-  try {
-    // Step 1: coalesce + delete every odd frame + resize + colours
-    run(CONVERT, [
-      "-coalesce",
-      srcPath,
-      "-delete", "1",      // IM6 deletes frame 1 from current sequence, cycling
-      "-resize", "960x>",
-      "-dither", "FloydSteinberg",
-      "-colors", "128",
-      "-layers", "optimize",
-      tmp1,
-    ]);
-
-    if (GIFSICLE) {
-      // Step 2: gifsicle lossy pass
-      run(GIFSICLE, [
-        "--lossy=80",
-        "--optimize=3",
-        "--colors", "128",
-        "-o", tmp2,
-        tmp1,
-      ]);
-      // copy tmp2 → tmpOut
-      const buf = await readFile(tmp2);
-      await writeFile(tmpOut, buf);
-    } else {
-      console.warn("  WARN: gifsicle not available, skipping lossy pass");
-      const buf = await readFile(tmp1);
-      await writeFile(tmpOut, buf);
-    }
-  } finally {
-    try { await unlink(tmp1); } catch (_) {}
-    try { if (existsSync(tmp2)) await unlink(tmp2); } catch (_) {}
+  if (!GIFSICLE) {
+    throw new Error(
+      "gifsicle is required for GIF optimization but was not found.\n" +
+      "  Install with: sudo apt-get install -y gifsicle"
+    );
   }
+
+  // Count total frames
+  const infoResult = spawnSync(GIFSICLE, ["--info", srcPath], { encoding: "utf8" });
+  const m = infoResult.stdout.match(/(\d+)\s+images/);
+  const totalFrames = m ? parseInt(m[1], 10) : 316;
+
+  // Keep frames where index % 3 == 0 (0,3,6,...); delete all others
+  const deleteFrames = [];
+  for (let i = 0; i < totalFrames; i++) {
+    if (i % 3 !== 0) deleteFrames.push(`#${i}`);
+  }
+
+  run(GIFSICLE, [
+    "--no-warnings",
+    srcPath,
+    "--delete", ...deleteFrames,
+    "--resize-width", "960",
+    "--colors", "64",
+    "--lossy=120",
+    "--optimize=3",
+    "-o", tmpOut,
+  ]);
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
