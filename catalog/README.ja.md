@@ -262,7 +262,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `tokscale` — [tokscale](https://github.com/junhoyeo/tokscale)
 
-<a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="images/tokscale.png" width="480"></a>
+<a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="images/tokscale.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude, opencode, gemini, codex

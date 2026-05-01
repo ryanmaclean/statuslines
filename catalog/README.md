@@ -262,7 +262,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `tokscale` — [tokscale](https://github.com/junhoyeo/tokscale)
 
-<a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="images/tokscale.png" width="480"></a>
+<a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="images/tokscale.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, opencode, gemini, codex
