@@ -292,18 +292,67 @@ function cmdConfigure(args) {
   process.stdout.write(`configured ${slug} into ${target}\n`);
 }
 
-function renderReadme() {
+const README_I18N = {
+  en: {
+    title: "# Catalog",
+    nav: "**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)",
+    intro: "Third-party statuslines and related tools for Claude Code, OpenCode, Gemini CLI, and Codex CLI. Generated from `catalog/<cli>/<slug>.json` — do not edit by hand.",
+    legend: "Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **ref** = listed for reference; install per upstream.",
+    tableHeader: "| Slug | Name | Targets | License | Lang | Status | Install |",
+    perEntryHeading: "## Per-entry detail",
+    labels: { license: "License", targets: "Targets", description: "Description", notes: "Notes", install: "Install", headsUp: "Heads-up", configure: "Configure" },
+    notRedistributable: " (not redistributable; reference only)",
+    headsUpText: "package declares lifecycle scripts (preinstall/postinstall/prepare); `configure` runs with `--ignore-scripts`.",
+    seeUpstream: "see upstream",
+    pinnedTo: "pinned to",
+    opencodePluginText: (pkg, ver) => `OpenCode loads \`${pkg}@${ver}\` from npm at session start (added via \`opencode.json\` \`plugin\` array)`,
+    gitInstallText: "`git clone` (handled by `bin/statuslines.js configure`)",
+  },
+  fr: {
+    title: "# Catalogue",
+    nav: "**Langues :** [English](./README.md) · Français · [日本語](./README.ja.md)",
+    intro: "Statuslines tierces et outils apparentés pour Claude Code, OpenCode, Gemini CLI et Codex CLI. Généré depuis `catalog/<cli>/<slug>.json` — ne pas éditer à la main.",
+    legend: "Légende : **ok** = licence OSI-permissive, recettes d'installation/configuration livrées. **ref** = listé pour référence ; installer selon les instructions amont.",
+    tableHeader: "| Slug | Nom | Cibles | Licence | Langage | Statut | Installation |",
+    perEntryHeading: "## Détail par entrée",
+    labels: { license: "Licence", targets: "Cibles", description: "Description", notes: "Notes", install: "Installation", headsUp: "À noter", configure: "Configurer" },
+    notRedistributable: " (non redistribuable ; pour référence uniquement)",
+    headsUpText: "le paquet déclare des scripts de cycle de vie (preinstall/postinstall/prepare) ; `configure` s'exécute avec `--ignore-scripts`.",
+    seeUpstream: "voir en amont",
+    pinnedTo: "épinglé à",
+    opencodePluginText: (pkg, ver) => `OpenCode charge \`${pkg}@${ver}\` depuis npm au démarrage de la session (ajouté via le tableau \`plugin\` de \`opencode.json\`)`,
+    gitInstallText: "`git clone` (géré par `bin/statuslines.js configure`)",
+  },
+  ja: {
+    title: "# カタログ",
+    nav: "**言語：** [English](./README.md) · [Français](./README.fr.md) · 日本語",
+    intro: "Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ statusline と関連ツール。`catalog/<cli>/<slug>.json` から生成されます — 手で編集しないでください。",
+    legend: "凡例：**ok** = OSI 互換ライセンス、インストール／設定レシピ同梱。**ref** = 参照のみ。上流の手順でインストールしてください。",
+    tableHeader: "| Slug | 名称 | 対象 | ライセンス | 言語 | 状況 | インストール |",
+    perEntryHeading: "## エントリ別詳細",
+    labels: { license: "ライセンス", targets: "対象", description: "説明", notes: "備考", install: "インストール", headsUp: "注意", configure: "設定" },
+    notRedistributable: "（再配布不可。参照のみ）",
+    headsUpText: "パッケージはライフサイクルスクリプト（preinstall／postinstall／prepare）を宣言しています。`configure` は `--ignore-scripts` 付きで実行されます。",
+    seeUpstream: "上流を参照",
+    pinnedTo: "固定バージョン",
+    opencodePluginText: (pkg, ver) => `OpenCode がセッション開始時に \`${pkg}@${ver}\` を npm からロードします（\`opencode.json\` の \`plugin\` 配列に追加）`,
+    gitInstallText: "`git clone`（`bin/statuslines.js configure` で処理）",
+  },
+};
+
+function renderReadme(lang = "en") {
+  const t = README_I18N[lang];
   const entries = loadVisible().sort((a, b) => a.slug.localeCompare(b.slug));
   const lines = [];
-  lines.push("# Catalog");
+  lines.push(t.title);
   lines.push("");
-  lines.push("**Languages:** English · [Français](./README.fr.md) · [日本語](./README.ja.md)");
+  lines.push(t.nav);
   lines.push("");
-  lines.push("Third-party statuslines and related tools for Claude Code, OpenCode, Gemini CLI, and Codex CLI. Generated from `catalog/<cli>/<slug>.json` — do not edit by hand.");
+  lines.push(t.intro);
   lines.push("");
-  lines.push("Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **ref** = listed for reference; install per upstream.");
+  lines.push(t.legend);
   lines.push("");
-  lines.push("| Slug | Name | Targets | License | Lang | Status | Install |");
+  lines.push(t.tableHeader);
   lines.push("|---|---|---|---|---|---|---|");
   for (const e of entries) {
     const status = e.redistributable ? "ok" : "ref";
@@ -311,26 +360,31 @@ function renderReadme() {
     lines.push(`| \`${e.slug}\` | [${e.name}](${e.repo}) | ${e.host_clis.join(", ")} | ${e.license} | ${e.language} | ${status} | ${install} |`);
   }
   lines.push("");
-  lines.push("## Per-entry detail");
+  lines.push(t.perEntryHeading);
   lines.push("");
   for (const e of entries) {
     lines.push(`### \`${e.slug}\` — [${e.name}](${e.repo})`);
     lines.push("");
-    lines.push(`- **License:** ${e.license}${e.redistributable ? "" : " (not redistributable; reference only)"}`);
-    lines.push(`- **Targets:** ${e.host_clis.join(", ")}`);
-    lines.push(`- **Description:** ${e.description}`);
-    if (e.notes) lines.push(`- **Notes:** ${e.notes}`);
+    if (e.image?.url) {
+      const alt = (e.image.alt ?? e.name).replace(/\]/g, "\\]");
+      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${e.image.url}" width="480"></a>`);
+      lines.push("");
+    }
+    lines.push(`- **${t.labels.license}:** ${e.license}${e.redistributable ? "" : t.notRedistributable}`);
+    lines.push(`- **${t.labels.targets}:** ${e.host_clis.join(", ")}`);
+    lines.push(`- **${t.labels.description}:** ${e.description}`);
+    if (e.notes) lines.push(`- **${t.labels.notes}:** ${e.notes}`);
     const ver = e.install?.version;
-    if (e.install?.type === "npx") lines.push(`- **Install:** \`npx --ignore-scripts -y ${e.install.package}@${ver ?? "latest"}\``);
-    else if (e.install?.type === "npm-global") lines.push(`- **Install:** \`npm i -g --ignore-scripts ${e.install.package}@${ver ?? "latest"}\``);
-    else if (e.install?.type === "cargo") lines.push(`- **Install:** \`cargo install ${e.install.package}${ver ? ` --version ${ver}` : ""}\``);
-    else if (e.install?.type === "brew") lines.push(`- **Install:** \`brew install ${e.install.formula ?? e.install.package}\`${e.install.tap ? ` (tap: \`${e.install.tap}\`)` : ""}${ver ? ` — pinned to ${ver}` : ""}`);
-    else if (e.install?.type === "git") lines.push(`- **Install:** \`git clone\` (handled by \`bin/statuslines.js configure\`)`);
-    else if (e.install?.type === "opencode-plugin") lines.push(`- **Install:** OpenCode loads \`${e.install.package}@${ver ?? "latest"}\` from npm at session start (added via \`opencode.json\` \`plugin\` array)`);
-    else lines.push(`- **Install:** see upstream`);
-    if (e.security?.has_install_scripts) lines.push(`- **Heads-up:** package declares lifecycle scripts (preinstall/postinstall/prepare); \`configure\` runs with \`--ignore-scripts\`.`);
+    if (e.install?.type === "npx") lines.push(`- **${t.labels.install}:** \`npx --ignore-scripts -y ${e.install.package}@${ver ?? "latest"}\``);
+    else if (e.install?.type === "npm-global") lines.push(`- **${t.labels.install}:** \`npm i -g --ignore-scripts ${e.install.package}@${ver ?? "latest"}\``);
+    else if (e.install?.type === "cargo") lines.push(`- **${t.labels.install}:** \`cargo install ${e.install.package}${ver ? ` --version ${ver}` : ""}\``);
+    else if (e.install?.type === "brew") lines.push(`- **${t.labels.install}:** \`brew install ${e.install.formula ?? e.install.package}\`${e.install.tap ? ` (tap: \`${e.install.tap}\`)` : ""}${ver ? ` — ${t.pinnedTo} ${ver}` : ""}`);
+    else if (e.install?.type === "git") lines.push(`- **${t.labels.install}:** ${t.gitInstallText}`);
+    else if (e.install?.type === "opencode-plugin") lines.push(`- **${t.labels.install}:** ${t.opencodePluginText(e.install.package, ver ?? "latest")}`);
+    else lines.push(`- **${t.labels.install}:** ${t.seeUpstream}`);
+    if (e.security?.has_install_scripts) lines.push(`- **${t.labels.headsUp}:** ${t.headsUpText}`);
     if (e.redistributable && e.configs && Object.keys(e.configs).length) {
-      lines.push(`- **Configure:** \`node bin/statuslines.js configure ${e.slug} --cli=<${Object.keys(e.configs).join("|")}>\``);
+      lines.push(`- **${t.labels.configure}:** \`node bin/statuslines.js configure ${e.slug} --cli=<${Object.keys(e.configs).join("|")}>\``);
     }
     lines.push("");
   }
@@ -338,10 +392,13 @@ function renderReadme() {
 }
 
 function cmdRenderReadme() {
-  const md = renderReadme();
-  const out = join(CATALOG, "README.md");
-  writeFileSync(out, md);
-  process.stdout.write(`wrote ${out}\n`);
+  for (const lang of ["en", "fr", "ja"]) {
+    const md = renderReadme(lang);
+    const file = lang === "en" ? "README.md" : `README.${lang}.md`;
+    const out = join(CATALOG, file);
+    writeFileSync(out, md);
+    process.stdout.write(`wrote ${out}\n`);
+  }
 }
 
 function renderTopReadmeBlocks() {
@@ -452,23 +509,51 @@ async function cmdAudit(args) {
   if (failed > 0) process.exit(1);
 }
 
-function cmdRenderQuarantine() {
+const QUARANTINE_I18N = {
+  en: {
+    title: "# Quarantine",
+    nav: "**Languages:** English · [Français](./QUARANTINE.fr.md) · [日本語](./QUARANTINE.ja.md)",
+    intro: "Entries the catalog has hidden from `list`, `show`, `configure`, and the rendered READMEs because an automated security check fired or a maintainer flagged them.",
+    reveal: (env) => `Set \`${env}=1\` in the environment to reveal these in the CLI; pass \`--ignore-quarantine\` to \`configure\` to override and install anyway.`,
+    none: "*No entries are currently quarantined.*",
+    tableHeader: "| Slug | Reason | Quarantined since |",
+  },
+  fr: {
+    title: "# Quarantaine",
+    nav: "**Langues :** [English](./QUARANTINE.md) · Français · [日本語](./QUARANTINE.ja.md)",
+    intro: "Entrées que le catalogue a masquées de `list`, `show`, `configure` et des READMEs rendus parce qu'une vérification de sécurité automatisée s'est déclenchée ou qu'un mainteneur les a signalées.",
+    reveal: (env) => `Définissez \`${env}=1\` dans l'environnement pour les révéler dans la CLI ; passez \`--ignore-quarantine\` à \`configure\` pour outrepasser et installer malgré tout.`,
+    none: "*Aucune entrée n'est actuellement en quarantaine.*",
+    tableHeader: "| Slug | Raison | En quarantaine depuis |",
+  },
+  ja: {
+    title: "# 隔離",
+    nav: "**言語：** [English](./QUARANTINE.md) · [Français](./QUARANTINE.fr.md) · 日本語",
+    intro: "自動セキュリティチェックが発火した、またはメンテナーが手動でフラグを立てたために、カタログが `list`、`show`、`configure`、生成された README から非表示にしているエントリです。",
+    reveal: (env) => `環境変数で \`${env}=1\` を設定すると CLI で表示されます。それでもインストールしたい場合は、\`configure\` に \`--ignore-quarantine\` を渡して上書きしてください。`,
+    none: "*現在、隔離されているエントリはありません。*",
+    tableHeader: "| Slug | 理由 | 隔離日 |",
+  },
+};
+
+function renderQuarantine(lang = "en") {
+  const t = QUARANTINE_I18N[lang];
   const all = loadAll();
   const quarantined = all.filter(isQuarantined).sort((a, b) => a.slug.localeCompare(b.slug));
   const lines = [];
-  lines.push("# Quarantine");
+  lines.push(t.title);
   lines.push("");
-  lines.push("**Languages:** English · [Français](./QUARANTINE.fr.md) · [日本語](./QUARANTINE.ja.md)");
+  lines.push(t.nav);
   lines.push("");
-  lines.push("Entries the catalog has hidden from `list`, `show`, `configure`, and the rendered READMEs because an automated security check fired or a maintainer flagged them.");
+  lines.push(t.intro);
   lines.push("");
-  lines.push(`Set \`${REVEAL_ENV}=1\` in the environment to reveal these in the CLI; pass \`--ignore-quarantine\` to \`configure\` to override and install anyway.`);
+  lines.push(t.reveal(REVEAL_ENV));
   lines.push("");
   if (quarantined.length === 0) {
-    lines.push("*No entries are currently quarantined.*");
+    lines.push(t.none);
     lines.push("");
   } else {
-    lines.push("| Slug | Reason | Quarantined since |");
+    lines.push(t.tableHeader);
     lines.push("|---|---|---|");
     for (const e of quarantined) {
       const since = e.security?.quarantined_at ?? "—";
@@ -477,9 +562,17 @@ function cmdRenderQuarantine() {
     }
     lines.push("");
   }
-  const out = join(CATALOG, "QUARANTINE.md");
-  writeFileSync(out, lines.join("\n"));
-  process.stdout.write(`wrote ${out} (${quarantined.length} quarantined)\n`);
+  return { md: lines.join("\n"), count: quarantined.length };
+}
+
+function cmdRenderQuarantine() {
+  for (const lang of ["en", "fr", "ja"]) {
+    const { md, count } = renderQuarantine(lang);
+    const file = lang === "en" ? "QUARANTINE.md" : `QUARANTINE.${lang}.md`;
+    const out = join(CATALOG, file);
+    writeFileSync(out, md);
+    process.stdout.write(`wrote ${out} (${count} quarantined)\n`);
+  }
 }
 
 function cmdRenderTopReadme() {

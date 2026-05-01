@@ -4,11 +4,24 @@
   "repo": "https://github.com/Capedbitmap/codex-hud",
   "license": "PolyForm-Noncommercial-1.0.0",
   "redistributable": false,
-  "host_clis": ["codex"],
+  "host_clis": [
+    "codex"
+  ],
   "language": "swift",
   "description": "macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.",
-  "install": { "type": "manual" },
+  "image": {
+    "url": "https://raw.githubusercontent.com/Capedbitmap/codex-hud/HEAD/docs/images/codex-hud-menu.png",
+    "alt": "codex-hud menu bar with account status",
+    "source": "readme"
+  },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["macos", "menu-bar", "account-rotation"],
+  "tags": [
+    "macos",
+    "menu-bar",
+    "account-rotation"
+  ],
   "notes": "Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries."
 }

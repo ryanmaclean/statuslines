@@ -9,6 +9,11 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with workspace info, git status, model name, context usage, worktree hints, quota timers, and optional API costs.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/ndave92/claude-code-status-line",
+    "alt": "claude-code-status-line repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "manual"
   },

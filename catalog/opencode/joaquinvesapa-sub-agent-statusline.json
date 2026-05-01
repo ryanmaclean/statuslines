@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/Joaquinvesapa/sub-agent-statusline/main/assets/subagents_monitor_banner.webp",
+    "alt": "Subagents Monitor banner",
+    "source": "readme"
+  },
   "install": {
     "type": "opencode-plugin",
     "package": "opencode-subagent-statusline",

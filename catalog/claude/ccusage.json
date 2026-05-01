@@ -10,6 +10,11 @@
   ],
   "language": "typescript",
   "description": "Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.",
+  "image": {
+    "url": "https://cdn.jsdelivr.net/gh/ryoppippi/ccusage@main/docs/public/screenshot.png",
+    "alt": "ccusage terminal screenshot",
+    "source": "readme"
+  },
   "install": {
     "type": "npx",
     "package": "ccusage",

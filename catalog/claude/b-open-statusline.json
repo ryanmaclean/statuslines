@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "Claude Code statusline that auto-detects the active model's context window (1M for [1m] suffixed models, 200k otherwise) with widgets for tokens, git, and a 5-hour block timer.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/b-open-io/statusline",
+    "alt": "b-open-io/statusline repo preview",
+    "source": "og-fallback"
+  },
   "install": {
     "type": "git",
     "clone_dir": "b-open-statusline"

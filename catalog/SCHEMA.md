@@ -14,6 +14,11 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
   "host_clis": ["claude"],
   "language": "typescript",
   "description": "One sentence (we write this).",
+  "image": {
+    "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
+    "alt": "ccstatusline demo animation",
+    "source": "readme"
+  },
   "install": {
     "type": "npx",
     "package": "ccstatusline",
@@ -50,6 +55,12 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
 - **license**: SPDX identifier read from the upstream `LICENSE` file directly. README badges are not authoritative.
 - **redistributable**: `true` only if the license is in the OSI-permissive allowlist (MIT, Apache-2.0, BSD-2/3-Clause, ISC, MPL-2.0, 0BSD). Copyleft (AGPL, GPL) and source-available (PolyForm-NC, BSL) and licenses we couldn't verify (no LICENSE file) → `false`. Non-redistributable entries are still listed for reference but skipped by `configure`.
 - **host_clis**: any of `claude`, `opencode`, `gemini`, `codex`. An entry may target multiple.
+
+### Image
+
+- **image.url**: absolute https URL to a representative screenshot. Prefer a hero/demo image hosted on `raw.githubusercontent.com` or a CDN the upstream README itself uses; fall back to GitHub's auto-generated OpenGraph card at `https://opengraph.githubassets.com/1/<owner>/<repo>` when the upstream README has no usable image. Avoid hot-linking `github.com/user-attachments/...` URLs — they 403 to non-browser clients.
+- **image.alt**: short caption (≤60 chars) used as the rendered image's `alt` text and link title.
+- **image.source**: `"readme"` when sourced from the upstream README, `"og-fallback"` when using the GitHub OpenGraph card. The renderer treats both the same; the field is for provenance.
 
 ### Install
 

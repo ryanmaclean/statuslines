@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "OpenCode quota and token-usage display with zero context-window pollution; supports providers including OpenCode Go, Cursor, GitHub Copilot, and others.",
+  "image": {
+    "url": "https://shawnkiser.com/opencode-quota/sidebar.webp",
+    "alt": "opencode-quota sidebar",
+    "source": "readme"
+  },
   "install": {
     "type": "manual"
   },

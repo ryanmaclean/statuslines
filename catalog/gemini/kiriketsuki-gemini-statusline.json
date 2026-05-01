@@ -4,11 +4,24 @@
   "repo": "https://github.com/Kiriketsuki/gemini-statusline",
   "license": "Unspecified",
   "redistributable": false,
-  "host_clis": ["gemini"],
+  "host_clis": [
+    "gemini"
+  ],
   "language": "shell",
   "description": "Two-line shell-prompt helper for Gemini CLI showing model, workspace context, git branch, GitHub issue counts, and inbox depth — Gemini CLI has no native statusLine hook so this runs from the user's shell prompt.",
-  "install": { "type": "manual" },
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/Kiriketsuki/gemini-statusline",
+    "alt": "gemini-statusline repo preview",
+    "source": "og-fallback"
+  },
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
-  "tags": ["shell", "shell-prompt", "first-gemini"],
+  "tags": [
+    "shell",
+    "shell-prompt",
+    "first-gemini"
+  ],
   "notes": "No LICENSE file at the canonical paths as of catalog verification on 2026-04-30; default copyright is all-rights-reserved, so we don't ship install recipes. Worth tracking as the first Gemini-targeted statusline-style helper. Upstream README acknowledges Gemini CLI lacks a native statusLine hook."
 }

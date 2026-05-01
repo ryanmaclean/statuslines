@@ -9,6 +9,11 @@
   ],
   "language": "go",
   "description": "Go binary statusline for Claude Code with module-based config, OSC 8 hyperlinks, and theme presets (catppuccin, tokyo-night, gruvbox-rainbow, and others).",
+  "image": {
+    "url": "https://raw.githubusercontent.com/felipeelias/claude-statusline/HEAD/assets/screenshot.webp",
+    "alt": "claude-statusline demo screenshot",
+    "source": "readme"
+  },
   "install": {
     "type": "brew",
     "tap": "felipeelias/tap",

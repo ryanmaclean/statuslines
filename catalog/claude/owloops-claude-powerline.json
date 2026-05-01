@@ -9,6 +9,11 @@
   ],
   "language": "typescript",
   "description": "Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/Owloops/claude-powerline/HEAD/images/demo-tui.gif",
+    "alt": "claude-powerline TUI demo",
+    "source": "readme"
+  },
   "install": {
     "type": "npx",
     "package": "@owloops/claude-powerline",
