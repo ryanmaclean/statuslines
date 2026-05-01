@@ -11,9 +11,9 @@
   "description": "Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.",
   "image": {
     "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
-    "alt": "ccstatusline demo animation",
-    "source": "readme",
-    "local": "images/ccstatusline.gif"
+    "alt": "ccstatusline — model, context tokens, git branch segments",
+    "source": "termframe-synthetic",
+    "local": "images/ccstatusline.svg"
   },
   "install": {
     "type": "npx",

@@ -11,9 +11,9 @@
   "description": "Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.",
   "image": {
     "url": "https://opengraph.githubassets.com/1/lucasilverentand/claudeline",
-    "alt": "claudeline statusline for Claude Code",
-    "source": "og-fallback",
-    "local": "images/lucasilverentand-claudeline.png"
+    "alt": "claudeline statusline — model, token count, rate-limit bars",
+    "source": "termframe-synthetic",
+    "local": "images/lucasilverentand-claudeline.svg"
   },
   "install": {
     "type": "npx",

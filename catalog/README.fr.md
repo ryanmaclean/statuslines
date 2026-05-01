@@ -67,7 +67,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 ### `ccstatusline` — [ccstatusline](https://github.com/sirmalloc/ccstatusline)
 
-<a href="https://github.com/sirmalloc/ccstatusline"><img alt="ccstatusline demo animation" src="images/ccstatusline.gif" width="480"></a>
+<a href="https://github.com/sirmalloc/ccstatusline"><img alt="ccstatusline — model, context tokens, git branch segments" src="images/ccstatusline.svg" width="480"></a>
 
 - **Licence:** MIT
 - **Cibles:** claude
@@ -178,7 +178,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 ### `lucasilverentand-claudeline` — [claudeline (Luca Silverentand)](https://github.com/lucasilverentand/claudeline)
 
-<a href="https://github.com/lucasilverentand/claudeline"><img alt="claudeline statusline for Claude Code" src="images/lucasilverentand-claudeline.png" width="480"></a>
+<a href="https://github.com/lucasilverentand/claudeline"><img alt="claudeline statusline — model, token count, rate-limit bars" src="images/lucasilverentand-claudeline.svg" width="480"></a>
 
 - **Licence:** MIT
 - **Cibles:** claude
@@ -220,7 +220,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 ### `owloops-claude-powerline` — [claude-powerline](https://github.com/Owloops/claude-powerline)
 
-<a href="https://github.com/Owloops/claude-powerline"><img alt="claude-powerline TUI demo" src="images/owloops-claude-powerline.gif" width="480"></a>
+<a href="https://github.com/Owloops/claude-powerline"><img alt="claude-powerline — powerline segments for dir, model, tokens, cost" src="images/owloops-claude-powerline.svg" width="480"></a>
 
 - **Licence:** MIT
 - **Cibles:** claude

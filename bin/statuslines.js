@@ -125,8 +125,8 @@ function validate(entry) {
     if (typeof img.alt !== "string" || img.alt.length < 1 || img.alt.length > 120) {
       errs.push(`image.alt must be a string of length 1..120`);
     }
-    if (img.source !== "readme" && img.source !== "og-fallback") {
-      errs.push(`image.source must be "readme" or "og-fallback"`);
+    if (img.source !== "readme" && img.source !== "og-fallback" && img.source !== "termframe-synthetic") {
+      errs.push(`image.source must be "readme", "og-fallback", or "termframe-synthetic"`);
     }
   }
   // Phase G — capabilities. Warning, not error, during rollout. When the

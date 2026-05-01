@@ -1,0 +1,72 @@
+<svg height="178.4" width="1379.2" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(32,16)">
+<filter filterUnits="userSpaceOnUse" height="186.4" id="shadow" width="1387.2" x="-32" y="-24">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+<rect fill="#000000c0" filter="url(#shadow)" height="114.4" rx="10" ry="10" width="1315.2" x="4" y="12"/>
+<rect fill="#282c34" height="114.4" rx="10" ry="10" width="1315.2"/>
+<clipPath id="header">
+<rect height="28" width="1315.2"/>
+</clipPath>
+<rect clip-path="url(#header)" fill="#383837" height="56" rx="10" ry="10" width="1315.2"/>
+<line stroke="#000000c0" stroke-width="0.5" x1="0" x2="1315.2" y1="28" y2="28"/><text dominant-baseline="central" fill="#b3b3b3" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="657.6" y="14">bash -c 'npx --ignore-scripts -y @owloops/claude-powerline@1.26.0 --style=powerline &lt; "/home/user/statuslines/scripts/fixtures/claude-statusline-input.json"'</text>
+<g>
+<circle cx="14" cy="14" fill="#ff5f56" r="6" stroke="#ff5f56" stroke-width="0.5"/>
+<circle cx="34" cy="14" fill="#ffbd2e" r="6" stroke="#ffbd2e" stroke-width="0.5"/>
+<circle cx="54" cy="14" fill="#28c941" r="6" stroke="#28c941" stroke-width="0.5"/>
+</g>
+<svg class="terminal" font-family="Liberation Mono, monospace" font-size="12" height="86.4" width="1315.2" y="28">
+<svg fill="#dcdfe4" x="9.6" y="7.2">
+<g>
+<svg height="72" viewBox="0 0 108 6" width="1296">
+<g stroke-width="0.025"/>
+</svg>
+<svg height="14.4" overflow="hidden" width="1296" y="0">
+<text xml:space="preserve" y="0.96em"><tspan> </tspan></text>
+<text textLength="7.2em" x="0.6em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">my-saas-app </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>             </tspan></text>
+<text textLength="1.2em" x="7.8em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4"> </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>               </tspan></text>
+<text textLength="1.2em" x="9em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">✱ </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                 </tspan></text>
+<text textLength="4.2em" x="10.2em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">Sonnet </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                        </tspan></text>
+<text textLength="2.4em" x="14.4em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">4.5 </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                            </tspan></text>
+<text textLength="1.2em" x="16.8em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4"> </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                              </tspan></text>
+<text textLength="1.2em" x="18em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">§ </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                </tspan></text>
+<text textLength="1.2em" x="19.2em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">0 </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                  </tspan></text>
+<text textLength="4.2em" x="20.4em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">tokens </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                         </tspan></text>
+<text textLength="1.2em" x="24.6em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4"> </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                           </tspan></text>
+<text textLength="1.2em" x="25.8em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">☉ </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                             </tspan></text>
+<text textLength="4.2em" x="27em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">$14.26 </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                    </tspan></text>
+<text textLength="2.4em" x="31.2em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">29% </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                        </tspan></text>
+<text textLength="1.2em" x="33.6em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4"> </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                          </tspan></text>
+<text textLength="1.2em" x="34.8em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">◔ </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                            </tspan></text>
+<text textLength="4.2em" x="36em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">74,500 </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                                   </tspan></text>
+<text textLength="3.6em" x="40.2em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4">(55%) </tspan></text>
+<text xml:space="preserve" y="0.96em"><tspan>                                                                         </tspan></text>
+<text textLength="1.2em" x="43.8em" xml:space="preserve" y="0.96em"><tspan fill="#dcdfe4"> </tspan></text>
+<text xml:space="preserve" y="0.96em"></text>
+</svg>
+</g>
+</svg>
+</svg>
+<rect fill="none" height="114.4" rx="10" ry="10" stroke="#000000" stroke-width="0.5" width="1315.2"/>
+<rect fill="none" height="112.4" rx="9" ry="9" stroke="#f0f0f080" stroke-width="0.5" width="1313.2" x="1" y="1"/>
+</g>
+<style>
+
+</style>
+</svg>

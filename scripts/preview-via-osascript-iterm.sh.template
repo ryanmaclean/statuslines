@@ -1,0 +1,337 @@
+#!/usr/bin/env bash
+# =============================================================================
+# preview-via-osascript-iterm.sh.template
+#
+# macOS TUI harness for catalog entries that need a real terminal session.
+#
+# MUST be run on macOS with iTerm2 installed.
+# Does NOT run in CI — requires a graphical session, a real PTY, and a
+# running iTerm2 process.  This file is a TEMPLATE: copy it, fill in the
+# paths at the top, and run it interactively on a macOS workstation.
+#
+# Targets this template explicitly handles (3 representative entries):
+#   1. capedbitmap-codex-hud   — tmux HUD; needs a live tmux session
+#   2. owloops-claude-powerline — powerline; visual multi-line output
+#   3. ainsley-opencode-token-monitor — OpenCode plugin sidebar
+#
+# For entries that only need stdin→stdout (npx-based Claude statuslines),
+# use scripts/preview-via-termframe.mjs instead — it runs offline on Linux.
+#
+# How it works (per-entry):
+#   1. Open an iTerm2 tab via osascript and run the configured command,
+#      piping the synthetic JSON fixture to stdin where applicable.
+#   2. Wait a fixed dwell time so the TUI has time to render.
+#   3. Bring the iTerm2 window to the front and capture the screen region
+#      via macOS `screencapture -l <window-id>` for pixel-perfect output.
+#   4. Crop to the terminal content area using `sips` (built into macOS).
+#   5. Save the PNG to catalog/images/<slug>.png.
+# =============================================================================
+
+set -euo pipefail
+
+# ---------------------------------------------------------------------------
+# CONFIGURE THESE BEFORE RUNNING
+# ---------------------------------------------------------------------------
+
+# Absolute path to this repo on your macOS machine
+REPO_ROOT="${HOME}/projects/statuslines"
+
+# Where to write the output PNGs
+IMAGES_DIR="${REPO_ROOT}/catalog/images"
+
+# Synthetic fixture (same one used by the termframe harness)
+FIXTURE="${REPO_ROOT}/scripts/fixtures/claude-statusline-input.json"
+
+# How long (seconds) to wait for the TUI to fully render before screencapture
+DWELL_SECS=3
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+log() { echo "[$(date +%H:%M:%S)] $*"; }
+
+require_macos() {
+  if [[ "$(uname)" != "Darwin" ]]; then
+    echo "ERROR: This script must run on macOS." >&2
+    exit 1
+  fi
+}
+
+require_iterm() {
+  if ! pgrep -x "iTerm2" >/dev/null 2>&1; then
+    echo "ERROR: iTerm2 is not running.  Launch it first." >&2
+    exit 1
+  fi
+}
+
+# Open a new iTerm2 tab, run CMD inside it, and return the tab's window id.
+# Usage: open_iterm_tab <title> <cmd>
+# Prints the integer window id to stdout; the tab is left open for screencapture.
+open_iterm_tab() {
+  local title="$1"
+  local cmd="$2"
+
+  osascript <<APPLE
+tell application "iTerm2"
+  activate
+  set newWindow to (create window with default profile)
+  tell current session of newWindow
+    set name to "${title}"
+    write text "${cmd}"
+  end tell
+  return id of newWindow
+end tell
+APPLE
+}
+
+# Bring an iTerm2 window to front by id
+focus_iterm_window() {
+  local wid="$1"
+  osascript <<APPLE
+tell application "iTerm2"
+  set win to (window id ${wid})
+  set index of win to 1
+end tell
+APPLE
+}
+
+# Capture the foreground window via screencapture.
+# Uses the window ID directly so we don't accidentally capture another window.
+capture_window() {
+  local wid="$1"
+  local outfile="$2"
+  # -l <windowid> captures exactly that window (layer capture)
+  screencapture -l "${wid}" -x "${outfile}"
+}
+
+# Crop to terminal content area (removes title bar and padding).
+# Adjust X/Y/W/H for your screen DPI and iTerm2 theme.
+# The values below assume: 13" MacBook Pro Retina, iTerm2 Minimal theme,
+# font size 14, 80-column terminal.
+crop_terminal_content() {
+  local infile="$1"
+  local outfile="$2"
+  # sips crop: height width startY startX
+  sips -c 80 1200 60 0 "${infile}" --out "${outfile}" >/dev/null
+}
+
+# ---------------------------------------------------------------------------
+# Entry 1: capedbitmap-codex-hud (tmux HUD)
+#
+# This entry requires a running tmux session.  The HUD is displayed as a
+# tmux status bar plugin — it reads token usage from a Codex session file
+# written by the codex CLI and displays a compact "HUD" in the tmux status.
+#
+# Setup for this entry:
+#   brew install tmux
+#   npm install -g codex               (needs a real install; not idempotent via npx)
+#   Clone capedbitmap/codex-hud repo and follow its README to wire the tmux plugin.
+#
+# We simulate a session by pre-creating a fake Codex context JSON at the
+# path the HUD polls, then screenshotting the tmux status line.
+# ---------------------------------------------------------------------------
+
+render_capedbitmap_codex_hud() {
+  local SLUG="capedbitmap-codex-hud"
+  local OUT="${IMAGES_DIR}/${SLUG}.png"
+  log "Rendering ${SLUG}..."
+
+  # Create a fake Codex context file the HUD reads
+  local FAKE_CTX="${TMPDIR:-/tmp}/codex-context-fake.json"
+  cat > "${FAKE_CTX}" <<'JSON'
+{
+  "session_id": "fake-session-001",
+  "model": "o4-mini",
+  "context": {
+    "used_tokens": 34200,
+    "max_tokens": 128000
+  },
+  "cost_usd": 0.042
+}
+JSON
+
+  # Start a tmux session with the HUD plugin loaded
+  # Adjust the path to match where you cloned capedbitmap/codex-hud
+  local HUD_DIR="${HOME}/.local/share/statuslines/codex-hud"
+  if [[ ! -d "${HUD_DIR}" ]]; then
+    echo "SKIP ${SLUG}: clone capedbitmap/codex-hud to ${HUD_DIR} first" >&2
+    return 0
+  fi
+
+  local TMUX_CMD="CODEX_CONTEXT_FILE=${FAKE_CTX} tmux new-session -d -s hud-preview \
+    -x 180 -y 5 'bash --norc'; \
+    tmux set-option -t hud-preview status on; \
+    tmux set-option -t hud-preview status-right \"#(node ${HUD_DIR}/index.js)\"; \
+    tmux attach -t hud-preview"
+
+  local WID
+  WID=$(open_iterm_tab "codex-hud-preview" "${TMUX_CMD}")
+  sleep "${DWELL_SECS}"
+  focus_iterm_window "${WID}"
+  sleep 0.5
+
+  local TMP_PNG="${TMPDIR:-/tmp}/${SLUG}-raw.png"
+  capture_window "${WID}" "${TMP_PNG}"
+  crop_terminal_content "${TMP_PNG}" "${OUT}"
+
+  # Clean up the tmux session
+  tmux kill-session -t hud-preview 2>/dev/null || true
+
+  # Close the iTerm2 tab
+  osascript -e "tell application \"iTerm2\" to close (window id ${WID})"
+
+  log "Saved ${OUT}"
+}
+
+# ---------------------------------------------------------------------------
+# Entry 2: owloops-claude-powerline (multi-line powerline)
+#
+# This entry works with termframe-via-stdin for a single-line render, but
+# the powerline style emits multiple lines.  On macOS we can use a real
+# terminal to capture all lines at natural line height.
+#
+# We pipe the synthetic fixture directly, same as the Linux harness, but
+# screencapture captures the true rendered glyph shapes and powerline
+# arrows in their native font rendering.
+# ---------------------------------------------------------------------------
+
+render_owloops_claude_powerline() {
+  local SLUG="owloops-claude-powerline"
+  local OUT="${IMAGES_DIR}/${SLUG}.png"
+  log "Rendering ${SLUG}..."
+
+  local CMD="npx --ignore-scripts -y @owloops/claude-powerline@1.26.0 \
+    --style=powerline < ${FIXTURE}; sleep 99"
+
+  local WID
+  WID=$(open_iterm_tab "powerline-preview" "${CMD}")
+  sleep "${DWELL_SECS}"
+  focus_iterm_window "${WID}"
+  sleep 0.5
+
+  local TMP_PNG="${TMPDIR:-/tmp}/${SLUG}-raw.png"
+  capture_window "${WID}" "${TMP_PNG}"
+  crop_terminal_content "${TMP_PNG}" "${OUT}"
+
+  osascript -e "tell application \"iTerm2\" to close (window id ${WID})"
+  log "Saved ${OUT}"
+}
+
+# ---------------------------------------------------------------------------
+# Entry 3: ainsley-opencode-token-monitor (OpenCode plugin sidebar)
+#
+# This entry is an OpenCode plugin — it runs inside the OpenCode TUI as a
+# sidebar widget, not as a standalone command.  There is no way to exercise
+# it without a live opencode session.
+#
+# The approach:
+#   1. Pre-seed ~/.config/opencode/opencode.json to add the plugin.
+#   2. Start opencode with a dummy prompt in a new iTerm2 tab.
+#   3. Wait for the plugin sidebar to render.
+#   4. Screencapture.
+#
+# NOTE: This requires a real OpenCode binary and a paid API key in env.
+#       It is provided as a reference implementation; skip if not set up.
+# ---------------------------------------------------------------------------
+
+render_ainsley_opencode_token_monitor() {
+  local SLUG="ainsley-opencode-token-monitor"
+  local OUT="${IMAGES_DIR}/${SLUG}.png"
+  log "Rendering ${SLUG}..."
+
+  if [[ -z "${ANTHROPIC_API_KEY:-}" ]]; then
+    echo "SKIP ${SLUG}: ANTHROPIC_API_KEY not set" >&2
+    return 0
+  fi
+
+  if ! command -v opencode >/dev/null 2>&1; then
+    echo "SKIP ${SLUG}: opencode binary not found; install from opencode.ai" >&2
+    return 0
+  fi
+
+  # Backup the existing opencode config
+  local OC_CONFIG="${HOME}/.config/opencode/opencode.json"
+  local OC_BACKUP="${OC_CONFIG}.preview-backup"
+  if [[ -f "${OC_CONFIG}" ]]; then
+    cp "${OC_CONFIG}" "${OC_BACKUP}"
+  fi
+
+  # Inject the plugin into opencode config
+  python3 - <<PYEOF
+import json, sys, os
+cfg_path = os.path.expanduser("~/.config/opencode/opencode.json")
+cfg = {}
+if os.path.exists(cfg_path):
+    with open(cfg_path) as f:
+        cfg = json.load(f)
+plugins = cfg.get("plugins", [])
+pkg = "ainsley-token-monitor"  # adjust to actual npm package name from catalog entry
+if pkg not in plugins:
+    plugins.append(pkg)
+cfg["plugins"] = plugins
+with open(cfg_path, "w") as f:
+    json.dump(cfg, f, indent=2)
+PYEOF
+
+  # Start opencode in a confined directory with a short prompt
+  local TMP_DIR="${TMPDIR:-/tmp}/opencode-preview-$$"
+  mkdir -p "${TMP_DIR}"
+
+  local CMD="cd ${TMP_DIR} && echo 'Say hello in one word.' | opencode; sleep 99"
+  local WID
+  WID=$(open_iterm_tab "opencode-plugin-preview" "${CMD}")
+
+  # OpenCode plugin sidebar may take a few seconds to mount
+  sleep $(( DWELL_SECS + 2 ))
+  focus_iterm_window "${WID}"
+  sleep 0.5
+
+  local TMP_PNG="${TMPDIR:-/tmp}/${SLUG}-raw.png"
+  capture_window "${WID}" "${TMP_PNG}"
+  crop_terminal_content "${TMP_PNG}" "${OUT}"
+
+  osascript -e "tell application \"iTerm2\" to close (window id ${WID})"
+
+  # Restore the opencode config
+  if [[ -f "${OC_BACKUP}" ]]; then
+    mv "${OC_BACKUP}" "${OC_CONFIG}"
+  fi
+
+  rm -rf "${TMP_DIR}"
+  log "Saved ${OUT}"
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+require_macos
+require_iterm
+
+mkdir -p "${IMAGES_DIR}"
+
+TARGETS="${1:-all}"
+
+case "${TARGETS}" in
+  all)
+    render_capedbitmap_codex_hud
+    render_owloops_claude_powerline
+    render_ainsley_opencode_token_monitor
+    ;;
+  capedbitmap-codex-hud)
+    render_capedbitmap_codex_hud
+    ;;
+  owloops-claude-powerline)
+    render_owloops_claude_powerline
+    ;;
+  ainsley-opencode-token-monitor)
+    render_ainsley_opencode_token_monitor
+    ;;
+  *)
+    echo "Usage: $0 [all | capedbitmap-codex-hud | owloops-claude-powerline | ainsley-opencode-token-monitor]" >&2
+    exit 1
+    ;;
+esac
+
+log "Done."
