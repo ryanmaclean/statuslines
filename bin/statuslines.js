@@ -110,6 +110,13 @@ function validate(entry) {
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {
     errs.push(`security.quarantined=true requires security.quarantine_reason`);
   }
+  // description_fr / description_ja — soft requirement: warn for redistributable
+  // entries missing either, since the localized top READMEs fall back to the
+  // English description when missing (acceptable degradation, not a failure).
+  if (entry.redistributable === true) {
+    if (typeof entry.description_fr !== "string") warns.push(`redistributable=true but no description_fr; FR top README will fall back to English`);
+    if (typeof entry.description_ja !== "string") warns.push(`redistributable=true but no description_ja; JA top README will fall back to English`);
+  }
   // Phase H — image. Warning, not error, during rollout. When the
   // backfill completes for every redistributable entry the warning will
   // be promoted to a hard error.
@@ -421,7 +428,7 @@ function cmdRenderReadme() {
   }
 }
 
-function renderTopReadmeBlocks() {
+function renderTopReadmeBlocks(lang = "en") {
   const entries = loadVisible().sort((a, b) => a.slug.localeCompare(b.slug));
   const byCli = { claude: [], opencode: [], gemini: [], codex: [] };
   for (const e of entries) {
@@ -430,23 +437,30 @@ function renderTopReadmeBlocks() {
     }
   }
   const cliLabels = { claude: "Claude Code", opencode: "OpenCode", gemini: "Gemini CLI", codex: "Codex CLI" };
+  const headers = {
+    en: { preview: "Preview", name: "Name", license: "License", description: "Description", empty: (cli) => `*No catalog entries for ${cli} yet.*` },
+    fr: { preview: "Aperçu", name: "Nom", license: "Licence", description: "Description", empty: (cli) => `*Aucune entrée de catalogue pour ${cli} pour le moment.*` },
+    ja: { preview: "プレビュー", name: "名称", license: "ライセンス", description: "説明", empty: (cli) => `*${cli} のカタログエントリはまだありません。*` },
+  }[lang] ?? null;
+  if (!headers) throw new Error(`unknown lang: ${lang}`);
+  const descKey = lang === "en" ? "description" : `description_${lang}`;
   const lines = [];
   for (const cli of ["claude", "opencode", "gemini", "codex"]) {
     lines.push(`### ${cliLabels[cli]}`);
     lines.push("");
     if (byCli[cli].length === 0) {
-      lines.push(`*No catalog entries for ${cliLabels[cli]} yet.*`);
+      lines.push(headers.empty(cliLabels[cli]));
       lines.push("");
       continue;
     }
-    lines.push("| Preview | Name | License | Description |");
+    lines.push(`| ${headers.preview} | ${headers.name} | ${headers.license} | ${headers.description} |`);
     lines.push("|---|---|---|---|");
     for (const e of byCli[cli]) {
       const tag = e.redistributable ? "" : " `(ref)`";
       const imgCell = e.image?.local
         ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="200"></a>`
         : "—";
-      const desc = e.description.replace(/\|/g, "\\|");
+      const desc = (e[descKey] ?? e.description).replace(/\|/g, "\\|");
       lines.push(`| ${imgCell} | [**${e.name}**](${e.repo}) | ${e.license}${tag} | ${desc} |`);
     }
     lines.push("");
@@ -602,19 +616,20 @@ function cmdRenderQuarantine() {
 }
 
 function cmdRenderTopReadme() {
-  const { catalog, count } = renderTopReadmeBlocks();
-  const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
-  for (const file of ["README.md", "README.fr.md", "README.ja.md"]) {
+  const langByFile = { "README.md": "en", "README.fr.md": "fr", "README.ja.md": "ja" };
+  for (const [file, lang] of Object.entries(langByFile)) {
     const path = join(ROOT, file);
     if (!existsSync(path)) {
       process.stderr.write(`${file} not found; skipping\n`);
       continue;
     }
+    const { catalog, count } = renderTopReadmeBlocks(lang);
+    const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
     let raw = readFileSync(path, "utf8");
     raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
     raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
     writeFileSync(path, raw);
-    process.stdout.write(`wrote ${path} (${count} entries)\n`);
+    process.stdout.write(`wrote ${path} (${count} entries, lang=${lang})\n`);
   }
 }
 

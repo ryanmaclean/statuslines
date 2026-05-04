@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Fast Rust-based Claude Code statusline with an interactive TUI configurator, git integration, and usage tracking.",
+  "description_fr": "Statusline Claude Code rapide en Rust avec un configurateur TUI interactif, une intégration git et un suivi de l'usage.",
+  "description_ja": "インタラクティブな TUI 設定ツール、git 連携、使用量追跡を備えた Rust 製の高速 Claude Code statusline。",
   "image": {
     "url": "https://raw.githubusercontent.com/Haleclipse/CCometixLine/HEAD/assets/img1.png",
     "alt": "CCometixLine statusline screenshot",

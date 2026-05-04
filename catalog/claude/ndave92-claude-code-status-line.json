@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with workspace info, git status, model name, context usage, worktree hints, quota timers, and optional API costs.",
+  "description_fr": "Statusline Rust pour Claude Code avec les informations de l'espace de travail, l'état git, le nom du modèle, l'usage du contexte, des indications de worktree, des minuteries de quota et les coûts API optionnels.",
+  "description_ja": "ワークスペース情報・git ステータス・モデル名・コンテキスト使用量・worktree ヒント・クォータタイマー・オプションの API コストを表示する Rust 製 Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/ndave92/claude-code-status-line",
     "alt": "claude-code-status-line repo preview",

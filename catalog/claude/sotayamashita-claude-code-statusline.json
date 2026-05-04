@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with starship-like configuration and module-based composition.",
+  "description_fr": "Statusline Rust pour Claude Code avec une configuration de style starship et une composition par modules.",
+  "description_ja": "starship ライクな設定とモジュールベースの構成に対応した Rust 製 Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/sotayamashita/claude-code-statusline",
     "alt": "claude-code-statusline (Rust) repo preview",

@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.",
+  "description_fr": "Statusline Claude Code fournie sous le paquet npm `claudeline` avec des thèmes intégrés ; peut s'auto-installer dans settings.json via son option `--install`.",
+  "description_ja": "npm パッケージ `claudeline` として配布され、組み込みテーマと `--install` フラグによる settings.json への自動インストールに対応した Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/lucasilverentand/claudeline",
     "alt": "claudeline statusline — model, token count, rate-limit bars",

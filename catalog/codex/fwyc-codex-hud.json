@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Real-time tmux statusline HUD for OpenAI Codex CLI with session/context usage, git status, and tool-activity monitoring; includes --kill / --list / --attach / --self-check subcommands.",
+  "description_fr": "HUD de statusline tmux en temps réel pour OpenAI Codex CLI avec l'usage de session/contexte, l'état git et la surveillance de l'activité des outils ; inclut les sous-commandes --kill / --list / --attach / --self-check.",
+  "description_ja": "セッション／コンテキスト使用量・git ステータス・ツールアクティビティ監視を備えた OpenAI Codex CLI 向けリアルタイム tmux statusline HUD。`--kill` / `--list` / `--attach` / `--self-check` サブコマンドも含みます。",
   "image": {
     "url": "https://raw.githubusercontent.com/fwyc0573/codex-hud/HEAD/doc/fig/2a00eaf0-496a-4039-a0ce-87a9453df30d.png",
     "alt": "codex-hud single-session statusline demo",

@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Claude Code statusline that parses session JSONL transcripts to compute input + cache-creation + cache-read tokens for an accurate context-window display.",
+  "description_fr": "Statusline Claude Code qui parse les transcriptions JSONL de session pour calculer les jetons en entrée + création de cache + lecture de cache afin d'afficher fidèlement la fenêtre de contexte.",
+  "description_ja": "セッション JSONL トランスクリプトを解析して入力・キャッシュ作成・キャッシュ読み取りトークンを集計し、正確なコンテキストウィンドウを表示する Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/thisdot/claude-code-context-status-line",
     "alt": "claude-code-context-status-line repo preview",

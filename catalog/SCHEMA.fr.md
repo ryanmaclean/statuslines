@@ -14,6 +14,8 @@ Chaque `catalog/<cli>/<slug>.json` correspond à une entrée unique.
   "host_clis": ["claude"],
   "language": "typescript",
   "description": "One sentence (we write this).",
+  "description_fr": "Une phrase (traduction française).",
+  "description_ja": "一文（日本語訳）。",
   "image": {
     "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
     "alt": "ccstatusline demo animation",
@@ -55,6 +57,7 @@ Chaque `catalog/<cli>/<slug>.json` correspond à une entrée unique.
 - **license** : identifiant SPDX lu directement depuis le fichier `LICENSE` amont. Les badges de README ne font pas autorité.
 - **redistributable** : `true` uniquement si la licence figure dans la liste blanche permissive OSI (MIT, Apache-2.0, BSD-2/3-Clause, ISC, MPL-2.0, 0BSD). Les licences copyleft (AGPL, GPL), à code source disponible (PolyForm-NC, BSL) et celles que nous n'avons pas pu vérifier (absence de fichier LICENSE) → `false`. Les entrées non redistribuables restent listées à titre indicatif mais sont ignorées par `configure`.
 - **host_clis** : l'un quelconque parmi `claude`, `opencode`, `gemini`, `codex`. Une entrée peut en cibler plusieurs.
+- **description_fr** / **description_ja** : traductions française / japonaise optionnelles de `description`. Renseignées par les agents de traduction FR + JA (voir `scripts/apply-descriptions.mjs`) ; le rendu choisit le champ adapté à la locale pour chaque variante linguistique du README racine. Comportement du validateur : `doctor` *avertit* lorsque l'une des deux manque sur une entrée `redistributable: true` — les README racine FR/JA retombent simplement sur `description` en anglais pour cette ligne, dégradation acceptable et non bloquante.
 
 ### Image
 

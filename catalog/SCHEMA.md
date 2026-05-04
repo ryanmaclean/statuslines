@@ -14,6 +14,8 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
   "host_clis": ["claude"],
   "language": "typescript",
   "description": "One sentence (we write this).",
+  "description_fr": "Une phrase (traduction française).",
+  "description_ja": "一文（日本語訳）。",
   "image": {
     "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
     "alt": "ccstatusline demo animation",
@@ -55,6 +57,7 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
 - **license**: SPDX identifier read from the upstream `LICENSE` file directly. README badges are not authoritative.
 - **redistributable**: `true` only if the license is in the OSI-permissive allowlist (MIT, Apache-2.0, BSD-2/3-Clause, ISC, MPL-2.0, 0BSD). Copyleft (AGPL, GPL) and source-available (PolyForm-NC, BSL) and licenses we couldn't verify (no LICENSE file) → `false`. Non-redistributable entries are still listed for reference but skipped by `configure`.
 - **host_clis**: any of `claude`, `opencode`, `gemini`, `codex`. An entry may target multiple.
+- **description_fr** / **description_ja**: optional French / Japanese translations of `description`. Both are populated by the FR + JA translation agents (see `scripts/apply-descriptions.mjs`); the renderer picks the locale-appropriate field per language variant of the top README. Validator behavior: `doctor` *warns* when either is missing on a `redistributable: true` entry — the FR/JA top READMEs simply fall back to the English `description` for that row, which is acceptable degradation, not a hard failure.
 
 ### Image
 

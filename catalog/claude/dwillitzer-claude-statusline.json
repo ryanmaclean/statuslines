@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).",
+  "description_fr": "Statusline Bash pour Claude Code avec comptage de jetons optionnel via Node.js + tiktoken et colorisation de modèles multi-fournisseurs (Claude, OpenAI, Gemini, Grok).",
+  "description_ja": "オプションの Node.js + tiktoken トークンカウントと、Claude・OpenAI・Gemini・Grok のマルチプロバイダーモデルカラーリングに対応した Bash 製 Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/dwillitzer/claude-statusline",
     "alt": "claude-statusline repo preview",

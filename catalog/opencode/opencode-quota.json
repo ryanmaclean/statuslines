@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "OpenCode quota and token-usage display with zero context-window pollution; supports providers including OpenCode Go, Cursor, GitHub Copilot, and others.",
+  "description_fr": "Affichage du quota et de l'usage de jetons pour OpenCode sans pollution de la fenêtre de contexte ; prend en charge les fournisseurs OpenCode Go, Cursor, GitHub Copilot et d'autres.",
+  "description_ja": "コンテキストウィンドウを汚染しない OpenCode のクォータおよびトークン使用量表示ツール。OpenCode Go・Cursor・GitHub Copilot などのプロバイダーをサポートします。",
   "image": {
     "url": "https://shawnkiser.com/opencode-quota/sidebar.webp",
     "alt": "opencode-quota sidebar",

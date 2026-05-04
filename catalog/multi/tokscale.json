@@ -12,6 +12,8 @@
   ],
   "language": "typescript",
   "description": "Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.",
+  "description_fr": "Traqueur d'usage de jetons multi-CLI qui lit les données de session locales de nombreux outils de codage IA (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, et d'autres) avec une tarification alimentée par LiteLLM.",
+  "description_ja": "Claude Code・OpenCode・Codex・Gemini・Cursor・Amp・Kimi など多数の AI コーディングツールのローカルセッションデータを読み取り、LiteLLM の価格情報に基づいてトークン使用量を追跡するクロス CLI 対応ツール。",
   "image": {
     "url": "https://raw.githubusercontent.com/junhoyeo/tokscale/HEAD/.github/assets/hero-v2.png",
     "alt": "tokscale hero banner",

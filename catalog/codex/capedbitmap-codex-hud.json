@@ -9,6 +9,8 @@
   ],
   "language": "swift",
   "description": "macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.",
+  "description_fr": "Application macOS de barre de menus qui ingère les données de session Codex locales et recommande le prochain compte à utiliser selon le calendrier de réinitialisation hebdomadaire et la capacité restante.",
+  "description_ja": "ローカルの Codex セッションデータを取り込み、週次リセットのタイミングと残余容量に基づいて次に使用するアカウントを推薦する macOS メニューバーアプリ。",
   "image": {
     "url": "https://raw.githubusercontent.com/Capedbitmap/codex-hud/HEAD/docs/images/codex-hud-menu.png",
     "alt": "codex-hud menu bar with account status",

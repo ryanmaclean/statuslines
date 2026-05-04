@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.",
+  "description_fr": "Plugin OpenCode (pas une statusline) fournissant l'analyse de l'usage des jetons et des coûts pour les sessions avec des ventilations détaillées.",
+  "description_ja": "セッションのトークン使用量とコストを詳細な内訳とともに分析する OpenCode プラグイン（statusline ではない）。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/ramtinJ95/opencode-tokenscope",
     "alt": "opencode-tokenscope repo preview",

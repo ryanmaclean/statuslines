@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.",
+  "description_fr": "Statusline powerline de style Vim pour Claude Code avec suivi de l'usage en temps réel, intégration git et thèmes prédéfinis.",
+  "description_ja": "リアルタイム使用量追跡・git 連携・テーマプリセットを備えた Vim スタイルの powerline Claude Code statusline。",
   "image": {
     "url": "https://raw.githubusercontent.com/Owloops/claude-powerline/HEAD/images/demo-tui.gif",
     "alt": "claude-powerline — powerline segments for dir, model, tokens, cost",

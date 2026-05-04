@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Bash + PowerShell statusline for Claude Code showing model, tokens, rate limits, and git status.",
+  "description_fr": "Statusline Bash + PowerShell pour Claude Code affichant le modèle, les jetons, les limites de débit et l'état git.",
+  "description_ja": "モデル・トークン・レート制限・git ステータスを表示する Bash + PowerShell 製の Claude Code statusline。",
   "image": {
     "url": "https://raw.githubusercontent.com/daniel3303/ClaudeCodeStatusLine/HEAD/screenshot.png",
     "alt": "Status line showing model, tokens, rate limits",

@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.",
+  "description_fr": "Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec les ventilations de jetons en entrée, sortie, raisonnement et cache.",
+  "description_ja": "OpenCode プラグイン（statusline ではない）で、`token_stats` / `token_history` / `token_export` ツールを登録し、入力・出力・推論・キャッシュのトークン内訳をトースト通知で表示します。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/Ainsley0917/opencode-token-monitor",
     "alt": "opencode-token-monitor repo preview",
