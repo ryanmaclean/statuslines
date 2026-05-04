@@ -40,7 +40,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.
+- **Description:** Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec les ventilations de jetons en entrée, sortie, raisonnement et cache.
 - **Notes:** Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.
 - **Installation:** OpenCode charge `opencode-token-monitor@0.5.0` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 - **Configurer:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
@@ -51,7 +51,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** PolyForm-Noncommercial-1.0.0 (non redistribuable ; pour référence uniquement)
 - **Cibles:** codex
-- **Description:** macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.
+- **Description:** Application macOS de barre de menus qui ingère les données de session Codex locales et recommande le prochain compte à utiliser selon le calendrier de réinitialisation hebdomadaire et la capacité restante.
 - **Notes:** Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries.
 - **Installation:** voir en amont
 
@@ -61,7 +61,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Fast Rust-based Claude Code statusline with an interactive TUI configurator, git integration, and usage tracking.
+- **Description:** Statusline Claude Code rapide en Rust avec un configurateur TUI interactif, une intégration git et un suivi de l'usage.
 - **Notes:** No verified package-manager install; follow upstream build/release instructions.
 - **Installation:** voir en amont
 
@@ -71,7 +71,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.
+- **Description:** Statusline Claude Code personnalisable avec un configurateur TUI interactif, un rendu powerline, des thèmes et des widgets pour les jetons, git, les minuteries de session et les liens cliquables.
 - **Installation:** `npx --ignore-scripts -y ccstatusline@2.2.12`
 - **Configurer:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
 
@@ -81,7 +81,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude, codex
-- **Description:** Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.
+- **Description:** Analyseur d'usage de jetons et de coûts qui parse les fichiers JSONL de sessions locales Claude Code et Codex ; pas une statusline en soi, mais une source de données utile à composer dans une statusline.
 - **Notes:** Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments.
 - **Installation:** `npx --ignore-scripts -y ccusage@18.0.11`
 
@@ -91,7 +91,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Claude Code plugin/statusline that surfaces context usage, active tools, running subagents, todo progress, and rate-limit windows using the native statusline API.
+- **Description:** Plugin/statusline Claude Code qui affiche l'usage du contexte, les outils actifs, les sous-agents en cours, la progression des tâches et les fenêtres de limites de débit via l'API native de statusline.
 - **Notes:** Distributed as a Claude Code plugin; see upstream README for the current install command.
 - **Installation:** voir en amont
 
@@ -101,7 +101,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT (non redistribuable ; pour référence uniquement)
 - **Cibles:** claude
-- **Description:** Bash + PowerShell statusline for Claude Code showing model, tokens, rate limits, and git status.
+- **Description:** Statusline Bash + PowerShell pour Claude Code affichant le modèle, les jetons, les limites de débit et l'état git.
 - **Notes:** README declares MIT but the repo has no LICENSE file at the canonical paths as of catalog verification on 2026-04-30, so we treat it as license-unverified and don't ship an automated install. Upstream install: clone into ~/.claude/statusline/ and point statusLine.command at statusline.sh — see upstream INSTALL.md.
 - **Installation:** voir en amont
 
@@ -111,7 +111,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT (non redistribuable ; pour référence uniquement)
 - **Cibles:** claude
-- **Description:** Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).
+- **Description:** Statusline Bash pour Claude Code avec comptage de jetons optionnel via Node.js + tiktoken et colorisation de modèles multi-fournisseurs (Claude, OpenAI, Gemini, Grok).
 - **Notes:** README claims MIT but no LICENSE file is present at catalog verification on 2026-04-30. README's clone command also uses a literal `<repository-url>` placeholder rather than this repo's URL — substitute manually.
 - **Installation:** voir en amont
 
@@ -121,7 +121,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Go binary statusline for Claude Code with module-based config, OSC 8 hyperlinks, and theme presets (catppuccin, tokyo-night, gruvbox-rainbow, and others).
+- **Description:** Statusline binaire Go pour Claude Code avec une configuration par modules, des hyperliens OSC 8 et des thèmes prédéfinis (`catppuccin`, `tokyo-night`, `gruvbox-rainbow` et d'autres).
 - **Notes:** Brew install drops a `claude-statusline` binary on PATH. Alternative install: `go install github.com/felipeelias/claude-statusline@latest`. Customize via `~/.config/claude-statusline/config.toml` (see upstream).
 - **Installation:** `brew install claude-statusline` (tap: `felipeelias/tap`)
 - **Configurer:** `node bin/statuslines.js configure felipeelias-claude-statusline --cli=<claude>`
@@ -132,7 +132,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Minimalistic Go statusline for Claude Code distributed as a Claude Code plugin; the plugin's `/claudeline:setup` slash command downloads the binary and patches settings.json.
+- **Description:** Statusline Go minimaliste pour Claude Code distribuée comme plugin Claude Code ; la commande slash `/claudeline:setup` du plugin télécharge le binaire et met à jour settings.json.
 - **Notes:** Install flow runs entirely inside Claude Code: `/plugin marketplace add fredrikaverpil/claudeline` → `/plugin install claudeline@claudeline` → `/claudeline:setup`. The setup command writes `{"statusLine":{"type":"command","command":"claudeline"}}` itself, so we don't ship a `configs.claude` patch. Manual fallback: `go install github.com/fredrikaverpil/claudeline@latest`, then add the same snippet by hand.
 - **Installation:** voir en amont
 
@@ -142,7 +142,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** codex
-- **Description:** Real-time tmux statusline HUD for OpenAI Codex CLI with session/context usage, git status, and tool-activity monitoring; includes --kill / --list / --attach / --self-check subcommands.
+- **Description:** HUD de statusline tmux en temps réel pour OpenAI Codex CLI avec l'usage de session/contexte, l'état git et la surveillance de l'activité des outils ; inclut les sous-commandes --kill / --list / --attach / --self-check.
 - **Notes:** Codex CLI has no native command-statusline yet, so this runs as an external HUD — start it under tmux per upstream docs.
 - **Installation:** voir en amont
 
@@ -152,7 +152,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Rust statusline for Claude Code with persistent stats tracking, prebuilt binaries for Linux/macOS/Windows, and 11 themes; referenced by the official Claude Code docs.
+- **Description:** Statusline Rust pour Claude Code avec suivi de statistiques persistantes, des binaires pré-compilés pour Linux/macOS/Windows et 11 thèmes ; référencée dans la documentation officielle de Claude Code.
 - **Notes:** Upstream install is a `curl | bash` quick-install script that auto-configures settings.json. We don't auto-run remote scripts from `bin/statuslines.js configure` — invoke it directly per upstream README. Distinct from the inactive `taskx6004/claudia-statusline` fork.
 - **Installation:** voir en amont
 
@@ -162,7 +162,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.
+- **Description:** Plugin de barre latérale TUI OpenCode (pas un statusLine.command) qui affiche l'activité des sous-agents, le temps écoulé et l'usage des jetons/du contexte.
 - **Notes:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
 - **Installation:** OpenCode charge `opencode-subagent-statusline@0.5.4` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 
@@ -172,7 +172,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** Unspecified (non redistribuable ; pour référence uniquement)
 - **Cibles:** gemini
-- **Description:** Two-line shell-prompt helper for Gemini CLI showing model, workspace context, git branch, GitHub issue counts, and inbox depth — Gemini CLI has no native statusLine hook so this runs from the user's shell prompt.
+- **Description:** Aide d'invite shell sur deux lignes pour Gemini CLI affichant le modèle, le contexte de l'espace de travail, la branche git, le nombre de tickets GitHub et la profondeur de la boîte de réception — Gemini CLI n'ayant pas de hook statusLine natif, ceci s'exécute depuis l'invite shell de l'utilisateur.
 - **Notes:** No LICENSE file at the canonical paths as of catalog verification on 2026-04-30; default copyright is all-rights-reserved, so we don't ship install recipes. Worth tracking as the first Gemini-targeted statusline-style helper. Upstream README acknowledges Gemini CLI lacks a native statusLine hook.
 - **Installation:** voir en amont
 
@@ -182,7 +182,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.
+- **Description:** Statusline Claude Code fournie sous le paquet npm `claudeline` avec des thèmes intégrés ; peut s'auto-installer dans settings.json via son option `--install`.
 - **Notes:** Distinct from fredrikaverpil/claudeline (Go binary) despite the shared name. The package's `--install` flag patches settings.json automatically; the configs.claude here is the same snippet that flag would write.
 - **Installation:** `npx --ignore-scripts -y claudeline@1.11.0`
 - **Configurer:** `node bin/statuslines.js configure lucasilverentand-claudeline --cli=<claude>`
@@ -193,7 +193,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** Lightweight, fast status line for OpenCode CLI.
+- **Description:** Statusline légère et rapide pour OpenCode CLI.
 - **Notes:** Verify the entry script name in the upstream repo before relying on the configured command.
 - **Installation:** `git clone` (géré par `bin/statuslines.js configure`)
 - **Configurer:** `node bin/statuslines.js configure markwilkening-opencode-status-line --cli=<opencode>`
@@ -204,7 +204,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Rust statusline for Claude Code with workspace info, git status, model name, context usage, worktree hints, quota timers, and optional API costs.
+- **Description:** Statusline Rust pour Claude Code avec les informations de l'espace de travail, l'état git, le nom du modèle, l'usage du contexte, des indications de worktree, des minuteries de quota et les coûts API optionnels.
 - **Notes:** Recommended install is a self-installing slash command: download `.claude/commands/install-statusline.md` from the upstream repo, restart Claude Code, and run `/install-statusline`. The crate `claude-code-status-line` is not published on crates.io as of catalog verification on 2026-04-30.
 - **Installation:** voir en amont
 
@@ -214,7 +214,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** OpenCode quota and token-usage display with zero context-window pollution; supports providers including OpenCode Go, Cursor, GitHub Copilot, and others.
+- **Description:** Affichage du quota et de l'usage de jetons pour OpenCode sans pollution de la fenêtre de contexte ; prend en charge les fournisseurs OpenCode Go, Cursor, GitHub Copilot et d'autres.
 - **Notes:** Follow upstream README for the current install path; project surface evolves quickly.
 - **Installation:** voir en amont
 
@@ -224,7 +224,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.
+- **Description:** Statusline powerline de style Vim pour Claude Code avec suivi de l'usage en temps réel, intégration git et thèmes prédéfinis.
 - **Installation:** `npx --ignore-scripts -y @owloops/claude-powerline@1.26.0`
 - **Configurer:** `node bin/statuslines.js configure owloops-claude-powerline --cli=<claude>`
 
@@ -234,7 +234,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.
+- **Description:** Plugin OpenCode (pas une statusline) fournissant l'analyse de l'usage des jetons et des coûts pour les sessions avec des ventilations détaillées.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
 - **Installation:** OpenCode charge `@ramtinj95/opencode-tokenscope@1.6.3` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 - **Configurer:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
@@ -245,7 +245,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Rust statusline for Claude Code with starship-like configuration and module-based composition.
+- **Description:** Statusline Rust pour Claude Code avec une configuration de style starship et une composition par modules.
 - **Notes:** Upstream README references `cargo install claude-code-statusline-cli`, but that crate is not published on crates.io as of catalog verification on 2026-04-30. Build from source meanwhile: clone the repo, run `cargo build --release`, point statusLine.command at the resulting binary.
 - **Installation:** voir en amont
 
@@ -255,7 +255,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Claude Code statusline that parses session JSONL transcripts to compute input + cache-creation + cache-read tokens for an accurate context-window display.
+- **Description:** Statusline Claude Code qui parse les transcriptions JSONL de session pour calculer les jetons en entrée + création de cache + lecture de cache afin d'afficher fidèlement la fenêtre de contexte.
 - **Notes:** Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session.
 - **Installation:** `npx --ignore-scripts -y @this-dot/claude-code-context-status-line@0.2.2`
 - **Configurer:** `node bin/statuslines.js configure thisdot-context-statusline --cli=<claude>`
@@ -266,6 +266,6 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude, opencode, gemini, codex
-- **Description:** Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
+- **Description:** Traqueur d'usage de jetons multi-CLI qui lit les données de session locales de nombreux outils de codage IA (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, et d'autres) avec une tarification alimentée par LiteLLM.
 - **Notes:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
 - **Installation:** `npx --ignore-scripts -y tokscale@2.0.27`

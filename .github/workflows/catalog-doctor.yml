@@ -9,12 +9,14 @@ on:
     paths:
       - 'catalog/**'
       - 'bin/statuslines.js'
+      - 'tests/**'
       - '.github/workflows/catalog-doctor.yml'
   push:
     branches: [main]
     paths:
       - 'catalog/**'
       - 'bin/statuslines.js'
+      - 'tests/**'
 
 permissions:
   contents: read
@@ -29,6 +31,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Run unit tests
+        run: node --test tests/statuslines.test.js
 
       - name: Run doctor
         run: node bin/statuslines.js doctor

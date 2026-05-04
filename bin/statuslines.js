@@ -6,7 +6,7 @@ import { homedir } from "node:os";
 import { spawnSync } from "node:child_process";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const CATALOG = join(ROOT, "catalog");
+const CATALOG = process.env.STATUSLINES_CATALOG ?? join(ROOT, "catalog");
 const VALID_CLIS = ["claude", "opencode", "gemini", "codex"];
 const PERMISSIVE = new Set(["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MPL-2.0", "0BSD"]);
 const REQUIRED = ["slug", "name", "repo", "license", "redistributable", "host_clis", "language", "description", "install"];
@@ -299,6 +299,9 @@ function cmdConfigure(args) {
     /* nothing to install — npx invokes at run time */
   } else if (e.install.type === "opencode-plugin") {
     /* nothing to install — OpenCode loads from npm at session start */
+  } else if (e.install.type === "manual") {
+    process.stderr.write(`entry ${slug} is install.type=manual; no automated install path. See ${e.repo} for upstream instructions, then re-run \`configure\` with the binary on PATH.\n`);
+    process.exit(1);
   }
 
   const expanded = installDir ? expandInstallDir(snippet, installDir) : snippet;
@@ -368,6 +371,8 @@ const README_I18N = {
 
 function renderReadme(lang = "en") {
   const t = README_I18N[lang];
+  if (!t) throw new Error(`unknown lang: ${lang}`);
+  const descKey = lang === "en" ? "description" : `description_${lang}`;
   const entries = loadVisible().sort((a, b) => a.slug.localeCompare(b.slug));
   const lines = [];
   lines.push(t.title);
@@ -399,7 +404,7 @@ function renderReadme(lang = "en") {
     }
     lines.push(`- **${t.labels.license}:** ${e.license}${e.redistributable ? "" : t.notRedistributable}`);
     lines.push(`- **${t.labels.targets}:** ${e.host_clis.join(", ")}`);
-    lines.push(`- **${t.labels.description}:** ${e.description}`);
+    lines.push(`- **${t.labels.description}:** ${e[descKey] ?? e.description}`);
     if (e.notes) lines.push(`- **${t.labels.notes}:** ${e.notes}`);
     const ver = e.install?.version;
     if (e.install?.type === "npx") lines.push(`- **${t.labels.install}:** \`npx --ignore-scripts -y ${e.install.package}@${ver ?? "latest"}\``);
@@ -682,21 +687,31 @@ Environment:
 `);
 }
 
-const cmd = process.argv[2];
-const rest = process.argv.slice(3);
-switch (cmd) {
-  case "list":          cmdList(rest); break;
-  case "show":          cmdShow(rest); break;
-  case "configure":     cmdConfigure(rest); break;
-  case "doctor":        cmdDoctor(); break;
-  case "render-readme": cmdRenderReadme(); break;
-  case "render-top-readme": cmdRenderTopReadme(); break;
-  case "render-quarantine": cmdRenderQuarantine(); break;
-  case "audit":         await cmdAudit(rest); break;
-  case "verify-capabilities": cmdVerifyCapabilities(rest); break;
-  case "help":
-  case "--help":
-  case "-h":
-  case undefined:       cmdHelp(); break;
-  default: process.stderr.write(`unknown command: ${cmd}\n`); cmdHelp(); process.exit(2);
+// Run CLI only when executed directly (not imported as a module).
+// The check is: our resolved URL equals the main entry URL.
+const _isMain = import.meta.url === new URL(`file://${process.argv[1]}`).href ||
+  // also handle the case where process.argv[1] is already an absolute path resolved by node
+  fileURLToPath(import.meta.url) === resolve(process.argv[1] ?? "");
+
+if (_isMain) {
+  const cmd = process.argv[2];
+  const rest = process.argv.slice(3);
+  switch (cmd) {
+    case "list":          cmdList(rest); break;
+    case "show":          cmdShow(rest); break;
+    case "configure":     cmdConfigure(rest); break;
+    case "doctor":        cmdDoctor(); break;
+    case "render-readme": cmdRenderReadme(); break;
+    case "render-top-readme": cmdRenderTopReadme(); break;
+    case "render-quarantine": cmdRenderQuarantine(); break;
+    case "audit":         await cmdAudit(rest); break;
+    case "verify-capabilities": cmdVerifyCapabilities(rest); break;
+    case "help":
+    case "--help":
+    case "-h":
+    case undefined:       cmdHelp(); break;
+    default: process.stderr.write(`unknown command: ${cmd}\n`); cmdHelp(); process.exit(2);
+  }
 }
+
+export { validate, renderTopReadmeBlocks, renderReadme, renderQuarantine, loadVisible, loadAll, isQuarantined };

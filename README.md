@@ -234,7 +234,8 @@ To add an entry to the catalog:
    `node bin/statuslines.js render-readme` and
    `node bin/statuslines.js render-top-readme` to refresh the
    generated tables.
-6. Open a PR.
+6. Run the test suite — `node --test tests/statuslines.test.js` (or `sh tests/run.sh`) — and confirm it passes. The CI job runs these automatically and blocks merging on failure.
+7. Open a PR.
 
 The full schema and field-by-field rules are in
 [`catalog/SCHEMA.md`](catalog/SCHEMA.md). Copyleft (AGPL, GPL) and
