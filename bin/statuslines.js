@@ -439,9 +439,15 @@ function renderTopReadmeBlocks() {
       lines.push("");
       continue;
     }
+    lines.push("| Preview | Name | License | Description |");
+    lines.push("|---|---|---|---|");
     for (const e of byCli[cli]) {
       const tag = e.redistributable ? "" : " `(ref)`";
-      lines.push(`- [**${e.name}**](${e.repo}) — ${e.license}${tag} — ${e.description}`);
+      const imgCell = e.image?.local
+        ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="200"></a>`
+        : "—";
+      const desc = e.description.replace(/\|/g, "\\|");
+      lines.push(`| ${imgCell} | [**${e.name}**](${e.repo}) | ${e.license}${tag} | ${desc} |`);
     }
     lines.push("");
   }
