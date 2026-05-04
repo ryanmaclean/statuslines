@@ -371,11 +371,10 @@ const header = totalDrifted === 0
   ? `# catalog-deps-verify\n\nAll ${totalChecked} npm-backed lockfiles match live registry resolution.\n`
   : `# catalog-deps-verify — drift report\n\nChecked ${totalChecked} entries; ${totalDrifted} drifted${anomalous ? "; anomaly detected" : ""}.\n\n` + reportLines.join("\n") + "\n";
 
-const body = totalDrifted === 0 ? header : header;
-process.stdout.write(body);
+process.stdout.write(header);
 
 // Mirror to /tmp/deps-drift.md so the workflow can pick it up regardless
 // of how the script's stdout was redirected.
-try { writeFileSync(REPORT_PATH, body); } catch { /* /tmp may not be writable in odd envs */ }
+try { writeFileSync(REPORT_PATH, header); } catch { /* /tmp may not be writable in odd envs */ }
 
 process.exit(0);
