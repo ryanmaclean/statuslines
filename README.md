@@ -31,6 +31,7 @@
 - [Contributing](#contributing)
 - [Related](#related)
 - [Roadmap](#roadmap)
+- [Changelog](./CHANGELOG.md)
 - [License](#license)
 
 ## Quick start

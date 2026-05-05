@@ -31,6 +31,7 @@
 - [Contribuer](#contribuer)
 - [Liens connexes](#liens-connexes)
 - [Feuille de route](#feuille-de-route)
+- [Journal des modifications](./CHANGELOG.fr.md)
 - [Licence](#licence)
 
 ## Démarrage rapide
