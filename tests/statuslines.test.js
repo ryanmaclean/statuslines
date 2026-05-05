@@ -292,9 +292,14 @@ describe("validate() — quarantine", () => {
     assert.ok(errs.some((m) => m.includes("quarantine_reason")));
   });
 
-  test("quarantined=true with reason is OK", () => {
-    const { errs } = validate(fullEntry({ security: { quarantined: true, quarantine_reason: "supply chain issue" } }));
+  test("quarantined=true with reason and quarantined_at is OK", () => {
+    const { errs } = validate(fullEntry({ security: { quarantined: true, quarantine_reason: "supply chain issue", quarantined_at: "2026-05-01" } }));
     assert.deepEqual(errs.filter((m) => m.includes("quarantine")), []);
+  });
+
+  test("quarantined=true without quarantined_at fails", () => {
+    const { errs } = validate(fullEntry({ security: { quarantined: true, quarantine_reason: "supply chain issue" } }));
+    assert.ok(errs.some((m) => m.includes("quarantined_at")));
   });
 
   test("quarantined=false produces no quarantine error", () => {
@@ -383,6 +388,56 @@ describe("validate() — image validation", () => {
     const { errs } = validate(fullEntry({ image: { url: "https://example.com/img.png", alt: "ok" } }));
     assert.ok(errs.some((m) => m.includes('image.source must be')));
   });
+
+  test("image.local with valid relative path under images/ is accepted", () => {
+    const { errs } = validate(fullEntry({ image: { url: "https://example.com/img.png", alt: "ok", source: "readme", local: "images/foo.svg" } }));
+    assert.deepEqual(errs.filter((m) => m.includes("image.local")), []);
+  });
+
+  test("image.local outside images/ is an error", () => {
+    const { errs } = validate(fullEntry({ image: { url: "https://example.com/img.png", alt: "ok", source: "readme", local: "../../etc/passwd" } }));
+    assert.ok(errs.some((m) => m.includes("image.local")));
+  });
+
+  test("image.local with unknown extension is an error", () => {
+    const { errs } = validate(fullEntry({ image: { url: "https://example.com/img.png", alt: "ok", source: "readme", local: "images/foo.bmp" } }));
+    assert.ok(errs.some((m) => m.includes("image.local")));
+  });
+
+  test("image.local missing is OK (optional)", () => {
+    const { errs } = validate(fullEntry({ image: { url: "https://example.com/img.png", alt: "ok", source: "readme" } }));
+    assert.deepEqual(errs.filter((m) => m.includes("image.local")), []);
+  });
+});
+
+describe("validate() — install.integrity SRI", () => {
+  test("valid sha512 SRI is accepted", () => {
+    const e = fullEntry();
+    e.install.integrity = "sha512-abcDEF123/+xyz==";
+    const { errs } = validate(e);
+    assert.deepEqual(errs.filter((m) => m.includes("integrity")), []);
+  });
+
+  test("valid sha256 SRI is accepted", () => {
+    const e = fullEntry();
+    e.install.integrity = "sha256-abc123==";
+    const { errs } = validate(e);
+    assert.deepEqual(errs.filter((m) => m.includes("integrity")), []);
+  });
+
+  test("non-SRI integrity string is an error", () => {
+    const e = fullEntry();
+    e.install.integrity = "md5-deadbeef";
+    const { errs } = validate(e);
+    assert.ok(errs.some((m) => m.includes("integrity")));
+  });
+
+  test("missing install.integrity is OK (optional)", () => {
+    const e = fullEntry();
+    delete e.install.integrity;
+    const { errs } = validate(e);
+    assert.deepEqual(errs.filter((m) => m.includes("integrity")), []);
+  });
 });
 
 describe("validate() — capabilities", () => {
@@ -417,6 +472,11 @@ describe("validate() — capabilities", () => {
   test("capabilities.env_read as array is OK", () => {
     const { errs } = validate(fullEntry({ capabilities: { env_read: ["HOME", "PATH"] } }));
     assert.deepEqual(errs.filter((m) => m.includes("env_read")), []);
+  });
+
+  test("capabilities.env_read with non-string element is an error", () => {
+    const { errs } = validate(fullEntry({ capabilities: { env_read: ["HOME", 42, null] } }));
+    assert.ok(errs.some((m) => m.includes("env_read elements must all be strings")));
   });
 
   test("unknown verification_method is an error", () => {

@@ -110,6 +110,14 @@ function validate(entry) {
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {
     errs.push(`security.quarantined=true requires security.quarantine_reason`);
   }
+  if (entry.security?.quarantined === true && !entry.security?.quarantined_at) {
+    errs.push(`security.quarantined=true requires security.quarantined_at (ISO date)`);
+  }
+  if (entry.install?.integrity != null) {
+    if (typeof entry.install.integrity !== "string" || !/^sha(256|384|512)-[A-Za-z0-9+/=]+$/.test(entry.install.integrity)) {
+      errs.push(`install.integrity must be an SRI string (sha256/384/512-<base64>)`);
+    }
+  }
   // description_fr / description_ja — soft requirement: warn for redistributable
   // entries missing either, since the localized top READMEs fall back to the
   // English description when missing (acceptable degradation, not a failure).
@@ -135,6 +143,11 @@ function validate(entry) {
     if (img.source !== "readme" && img.source !== "og-fallback" && img.source !== "termframe-synthetic") {
       errs.push(`image.source must be "readme", "og-fallback", or "termframe-synthetic"`);
     }
+    if (img.local != null) {
+      if (typeof img.local !== "string" || !img.local.startsWith("images/") || !/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(img.local)) {
+        errs.push(`image.local must be a relative path under "images/" with a known extension (png|jpg|jpeg|gif|webp|svg)`);
+      }
+    }
   }
   // Phase G — capabilities. Warning, not error, during rollout. When the
   // backfill completes for every redistributable entry the warning will
@@ -146,7 +159,10 @@ function validate(entry) {
     for (const k of ["network", "child_process", "filesystem_write"]) {
       if (k in c && typeof c[k] !== "boolean") errs.push(`capabilities.${k} must be boolean`);
     }
-    if ("env_read" in c && !Array.isArray(c.env_read)) errs.push(`capabilities.env_read must be an array of strings`);
+    if ("env_read" in c) {
+      if (!Array.isArray(c.env_read)) errs.push(`capabilities.env_read must be an array of strings`);
+      else if (c.env_read.some((v) => typeof v !== "string")) errs.push(`capabilities.env_read elements must all be strings`);
+    }
     const validMethods = ["declared", "sandbox-strace", "sandbox-bpf", "skipped"];
     if ("verification_method" in c && c.verification_method !== null && !validMethods.includes(c.verification_method)) {
       errs.push(`capabilities.verification_method must be one of: ${validMethods.join(", ")}`);
