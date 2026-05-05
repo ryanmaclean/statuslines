@@ -20,6 +20,14 @@
  * Requirements:
  *   ~/.local/bin/termframe  (termframe v0.8.4+, installed by Phase 1)
  *   Node.js 18+             (stdlib only, no npm deps)
+ *
+ * Direct-mode (bypass import.meta.url guard):
+ *   Some packages gate their main() on `import.meta.url === \`file://\${process.argv[1]}\``.
+ *   When invoked through an npm/npx bin symlink the symlink path diverges from the
+ *   resolved file path, so the guard never fires.  For those entries, set
+ *   configs.claude.statusLine.direct = true  in the catalog JSON.  The harness will
+ *   then locate the real entry .js file inside the npx cache and invoke it as
+ *   `node <resolved-path>` so both sides of the guard agree.
  */
 
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, statSync } from "node:fs";
@@ -66,6 +74,70 @@ writeFileSync(TF_CONFIG, TF_CONFIG_CONTENT);
 // ---------------------------------------------------------------------------
 function log(tag, msg) {
   process.stdout.write(`[${tag}] ${msg}\n`);
+}
+
+/**
+ * Resolve the real entry .js path for a package installed in the npx cache.
+ *
+ * Strategy:
+ *   1. Run `npm exec --yes -- node -e "require.resolve('<pkg>')"` inside a
+ *      temp context to let npm locate or install the package and print its
+ *      resolved main path.
+ *   2. Fall back to searching ~/.npm/_npx for a matching package.json and
+ *      reading its `main` / `bin` field.
+ *
+ * Returns the absolute path string, or null if resolution fails.
+ *
+ * @param {string} packageName  e.g. "@this-dot/claude-code-context-status-line"
+ */
+function resolveDirectPath(packageName) {
+  // Strategy: search ~/.npm/_npx for installed package
+  const npxCacheBase = join(homedir(), ".npm", "_npx");
+  if (!existsSync(npxCacheBase)) return null;
+
+  // packageName may be scoped (@scope/name) — search nested node_modules
+  const nameParts = packageName.split("/");
+  const searchName = nameParts[nameParts.length - 1];
+
+  // Walk one level of hash dirs under _npx
+  let found = null;
+  try {
+    for (const hashDir of readdirSync(npxCacheBase, { withFileTypes: true })) {
+      if (!hashDir.isDirectory()) continue;
+      const pkgJsonPath = join(
+        npxCacheBase, hashDir.name, "node_modules", packageName, "package.json"
+      );
+      if (!existsSync(pkgJsonPath)) continue;
+      const pkg = JSON.parse(readFileSync(pkgJsonPath, "utf8"));
+      // Prefer bin field, fall back to main
+      let entry = null;
+      if (pkg.bin) {
+        // bin can be a string or object
+        if (typeof pkg.bin === "string") {
+          entry = pkg.bin;
+        } else {
+          // pick the first bin value
+          entry = Object.values(pkg.bin)[0];
+        }
+      } else if (pkg.main) {
+        entry = pkg.main;
+      } else if (pkg.exports && pkg.exports["."] && typeof pkg.exports["."] === "string") {
+        entry = pkg.exports["."];
+      }
+      if (!entry) continue;
+      const fullPath = join(
+        npxCacheBase, hashDir.name, "node_modules", packageName,
+        entry.replace(/^\.\//, "")
+      );
+      if (existsSync(fullPath)) {
+        found = fullPath;
+        break;
+      }
+    }
+  } catch (e) {
+    // ignore FS errors
+  }
+  return found;
 }
 
 function loadEntries() {
@@ -118,11 +190,23 @@ function isCandidateEntry(e) {
  *   --             separator before the command to run
  *
  * The outer spawnSync timeout is 90 s (30 s more than termframe's own limit).
+ *
+ * @param {string} slug
+ * @param {string} cmd            The statusLine command string from catalog
+ * @param {string} outputPath
+ * @param {{ directPath?: string }} [opts]
+ *   directPath  If provided, invoke `node <directPath>` instead of `cmd` to
+ *               bypass import.meta.url guards that fail through npx symlinks.
  */
-function renderEntry(slug, cmd, outputPath) {
-  // Build the shell command: pipe fixture JSON to the statusLine command
-  // We use a heredoc-style redirect so special chars in cmd don't break quoting.
-  const shellCmd = `${cmd} < ${JSON.stringify(FIXTURE)}`;
+function renderEntry(slug, cmd, outputPath, opts = {}) {
+  // Build the shell command: pipe fixture JSON to the statusLine command.
+  // In direct mode we replace the npx invocation with `node <resolved-path>`
+  // so import.meta.url === `file://${process.argv[1]}` holds true.
+  const effectiveCmd = opts.directPath
+    ? `node ${JSON.stringify(opts.directPath)}`
+    : cmd;
+
+  const shellCmd = `${effectiveCmd} < ${JSON.stringify(FIXTURE)}`;
 
   const tfArgs = [
     `--config=${TF_CONFIG}`,
@@ -136,7 +220,11 @@ function renderEntry(slug, cmd, outputPath) {
     "bash", "-c", shellCmd,
   ];
 
-  log("RUN", `${slug}: termframe ... bash -c '${cmd} < fixture'`);
+  if (opts.directPath) {
+    log("RUN", `${slug}: termframe ... node ${opts.directPath} < fixture  [direct mode]`);
+  } else {
+    log("RUN", `${slug}: termframe ... bash -c '${cmd} < fixture'`);
+  }
 
   const result = spawnSync(TERMFRAME, tfArgs, {
     timeout: 90_000,           // 90 s outer hard limit
@@ -216,7 +304,8 @@ const results = { upgraded: [], skipped: [] };
 
 for (const entry of entries) {
   const { slug } = entry;
-  const cmd = entry.configs.claude.statusLine.command;
+  const statusLineCfg = entry.configs.claude.statusLine;
+  const cmd = statusLineCfg.command;
   const outputPath = join(IMAGES, `${slug}.svg`);
 
   if (!FORCE && existsSync(outputPath)) {
@@ -231,7 +320,28 @@ for (const entry of entries) {
     log("INFO", `${slug}: SVG exists but entry is newer — re-rendering`);
   }
 
-  const { ok, reason, svgBytes } = renderEntry(slug, cmd, outputPath);
+  // Direct mode: bypass import.meta.url guard in packages whose guard fails
+  // through npm/npx symlinks.  Triggered by direct:true in statusLine config.
+  let renderOpts = {};
+  if (statusLineCfg.direct === true) {
+    const packageName = entry.install?.package;
+    if (!packageName) {
+      log("FAIL", `${slug}: direct:true but no install.package defined`);
+      results.skipped.push({ slug, reason: "direct:true but no install.package" });
+      continue;
+    }
+    const directPath = resolveDirectPath(packageName);
+    if (!directPath) {
+      log("FAIL", `${slug}: direct:true but could not resolve real path for ${packageName}`);
+      log("INFO", `${slug}: hint — run 'npx --ignore-scripts -y ${packageName}' first to warm the cache`);
+      results.skipped.push({ slug, reason: `could not resolve direct path for ${packageName}` });
+      continue;
+    }
+    log("INFO", `${slug}: direct mode → ${directPath}`);
+    renderOpts = { directPath };
+  }
+
+  const { ok, reason, svgBytes } = renderEntry(slug, cmd, outputPath, renderOpts);
 
   if (ok) {
     log("OK  ", `${slug}: wrote ${outputPath} (${svgBytes} bytes)`);

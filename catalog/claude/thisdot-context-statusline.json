@@ -13,9 +13,9 @@
   "description_ja": "セッション JSONL トランスクリプトを解析して入力・キャッシュ作成・キャッシュ読み取りトークンを集計し、正確なコンテキストウィンドウを表示する Claude Code statusline。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/thisdot/claude-code-context-status-line",
-    "alt": "claude-code-context-status-line repo preview",
-    "source": "og-fallback",
-    "local": "images/thisdot-context-statusline.png"
+    "alt": "context-statusline showing token + cache breakdown",
+    "source": "termframe-synthetic",
+    "local": "images/thisdot-context-statusline.svg"
   },
   "install": {
     "type": "npx",
@@ -28,7 +28,8 @@
     "claude": {
       "statusLine": {
         "type": "command",
-        "command": "npx --ignore-scripts -y @this-dot/claude-code-context-status-line"
+        "command": "npx --ignore-scripts -y @this-dot/claude-code-context-status-line",
+        "direct": true
       }
     }
   },

@@ -251,7 +251,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `thisdot-context-statusline` — [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line)
 
-<a href="https://github.com/thisdot/claude-code-context-status-line"><img alt="claude-code-context-status-line repo preview" src="images/thisdot-context-statusline.png" width="480"></a>
+<a href="https://github.com/thisdot/claude-code-context-status-line"><img alt="context-statusline showing token + cache breakdown" src="images/thisdot-context-statusline.svg" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
