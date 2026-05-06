@@ -95,10 +95,6 @@ function resolveDirectPath(packageName) {
   const npxCacheBase = join(homedir(), ".npm", "_npx");
   if (!existsSync(npxCacheBase)) return null;
 
-  // packageName may be scoped (@scope/name) — search nested node_modules
-  const nameParts = packageName.split("/");
-  const searchName = nameParts[nameParts.length - 1];
-
   // Walk one level of hash dirs under _npx
   let found = null;
   try {

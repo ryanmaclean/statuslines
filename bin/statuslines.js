@@ -105,6 +105,13 @@ function validate(entry) {
       if (entry.redistributable && /@latest\b/.test(flat)) {
         errs.push(`configs.${cli} uses @latest; pin a version for redistributable entries`);
       }
+      // statusLine.direct: opt-in flag for the termframe harness's direct-path
+      // mode. Strict-equality `=== true` at render time, so any non-true value
+      // (typo, "yes", 1) silently disables the bypass without a doctor signal.
+      const direct = snippet?.statusLine?.direct;
+      if (direct !== undefined && direct !== true) {
+        errs.push(`configs.${cli}.statusLine.direct must be strictly true (boolean) when present`);
+      }
     }
   }
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {

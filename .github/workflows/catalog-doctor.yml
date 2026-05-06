@@ -62,3 +62,22 @@ jobs:
             echo "::warning::One or more catalog images exceed their size thresholds."
             echo "::warning::Run: node scripts/optimize-images.mjs  (then commit the results)"
           fi
+
+  smoke-test:
+    name: Smoke-test cmd* handlers end-to-end
+    runs-on: ubuntu-latest
+    needs: doctor
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Run smoke tests
+        run: bash tests/smoke.sh

@@ -280,6 +280,26 @@ describe("validate() — dangerous config patterns", () => {
     assert.ok(errs.some((m) => m.includes("configs key 'cursor'")));
   });
 
+  test("statusLine.direct=true is OK", () => {
+    const { errs } = validate(fullEntry({ configs: { claude: { statusLine: { type: "command", command: "npx pkg", direct: true } } } }));
+    assert.deepEqual(errs.filter((m) => m.includes("statusLine.direct")), []);
+  });
+
+  test("statusLine.direct=false is rejected (silent disable risk)", () => {
+    const { errs } = validate(fullEntry({ configs: { claude: { statusLine: { type: "command", command: "npx pkg", direct: false } } } }));
+    assert.ok(errs.some((m) => m.includes("statusLine.direct must be strictly true")));
+  });
+
+  test("statusLine.direct='yes' (string typo) is rejected", () => {
+    const { errs } = validate(fullEntry({ configs: { claude: { statusLine: { type: "command", command: "npx pkg", direct: "yes" } } } }));
+    assert.ok(errs.some((m) => m.includes("statusLine.direct must be strictly true")));
+  });
+
+  test("statusLine without direct field is OK", () => {
+    const { errs } = validate(fullEntry({ configs: { claude: { statusLine: { type: "command", command: "npx pkg" } } } }));
+    assert.deepEqual(errs.filter((m) => m.includes("statusLine.direct")), []);
+  });
+
   test("config with known cli and safe content is OK", () => {
     const { errs } = validate(fullEntry({ configs: { claude: { statusLine: "echo ok" } } }));
     assert.deepEqual(errs.filter((m) => m.includes("configs")), []);
