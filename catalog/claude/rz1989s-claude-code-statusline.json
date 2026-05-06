@@ -1,0 +1,52 @@
+{
+  "slug": "rz1989s-claude-code-statusline",
+  "name": "claude-code-statusline (rz1989s)",
+  "repo": "https://github.com/rz1989s/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "bash",
+  "description": "Bash statusline for Claude Code with 28 atomic components across up to 9 lines: git info, cost tracking, MCP health, block reset timer, Islamic prayer times, and Catppuccin themes.",
+  "description_fr": "Statusline Bash pour Claude Code avec 28 composants atomiques sur jusqu'à 9 lignes : infos git, suivi des coûts, état MCP, minuteur de réinitialisation de bloc, heures de prière islamiques et thèmes Catppuccin.",
+  "description_ja": "Claude Code 向け Bash 製 statusline。最大 9 行に渡る 28 のアトミックコンポーネントで git 情報・コスト追跡・MCP ヘルス・ブロックリセットタイマー・イスラム礼拝時間・Catppuccin テーマを表示。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/rz1989s/claude-code-statusline/main/assets/screenshots/catppuccin-mocha-theme.png",
+    "alt": "claude-code-statusline Catppuccin Mocha theme screenshot",
+    "source": "readme",
+    "local": "images/rz1989s-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "bash",
+    "cost",
+    "git",
+    "mcp",
+    "themes",
+    "prayer-times"
+  ],
+  "notes": "Install via curl|sh: `curl -sSfL https://raw.githubusercontent.com/rz1989s/claude-code-statusline/main/install.sh | bash`. The script downloads statusline.sh and 11 modular lib components into ~/.claude/statusline/ and patches ~/.claude/settings.json automatically. No admin privileges required. Also available via Homebrew: `brew tap rz1989s/tap && brew install claude-code-statusline`. Configure via ~/.claude/statusline/Config.toml (227 settings).",
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-06"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH",
+      "CLAUDE_INSTALL_BRANCH",
+      "GITHUB_TOKEN",
+      "TMPDIR"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

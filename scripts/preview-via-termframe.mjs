@@ -88,9 +88,10 @@ function log(tag, msg) {
  *
  * Returns the absolute path string, or null if resolution fails.
  *
- * @param {string} packageName  e.g. "@this-dot/claude-code-context-status-line"
+ * @param {string} packageName   e.g. "@this-dot/claude-code-context-status-line"
+ * @param {string} [commandName] bare binary name to prefer when pkg.bin is an object
  */
-function resolveDirectPath(packageName) {
+function resolveDirectPath(packageName, commandName) {
   // Strategy: search ~/.npm/_npx for installed package
   const npxCacheBase = join(homedir(), ".npm", "_npx");
   if (!existsSync(npxCacheBase)) return null;
@@ -112,8 +113,12 @@ function resolveDirectPath(packageName) {
         if (typeof pkg.bin === "string") {
           entry = pkg.bin;
         } else {
-          // pick the first bin value
-          entry = Object.values(pkg.bin)[0];
+          // prefer bin whose key matches commandName, fall back to first entry
+          const keys = Object.keys(pkg.bin);
+          const match = commandName
+            ? keys.find((k) => k === commandName || k === commandName.split("/").pop())
+            : null;
+          entry = match ? pkg.bin[match] : Object.values(pkg.bin)[0];
         }
       } else if (pkg.main) {
         entry = pkg.main;
@@ -326,7 +331,13 @@ for (const entry of entries) {
       results.skipped.push({ slug, reason: "direct:true but no install.package" });
       continue;
     }
-    const directPath = resolveDirectPath(packageName);
+    // Extract bare binary name from the command string so the correct bin
+    // entry is selected when pkg.bin is an object with multiple keys.
+    // e.g. "npx --ignore-scripts -y @this-dot/foo@1.2.3" → "foo"
+    // e.g. "npx -y somepkg" → "somepkg"
+    const cmdParts = statusLineCfg.command.replace(/@[^@/\s]+$/, "").trim().split(/\s+/);
+    const cmdName = cmdParts[cmdParts.length - 1].split("/").pop();
+    const directPath = resolveDirectPath(packageName, cmdName);
     if (!directPath) {
       log("FAIL", `${slug}: direct:true but could not resolve real path for ${packageName}`);
       log("INFO", `${slug}: hint — run 'npx --ignore-scripts -y ${packageName}' first to warm the cache`);

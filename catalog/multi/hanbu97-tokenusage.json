@@ -1,0 +1,54 @@
+{
+  "slug": "hanbu97-tokenusage",
+  "name": "tokenusage (hanbu97)",
+  "repo": "https://github.com/hanbu97/tokenusage",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude",
+    "codex"
+  ],
+  "language": "rust",
+  "description": "Fast local token-usage tracker for Claude Code and Codex; `tu statusline` emits a one-line cost/token summary. Also ships CLI, TUI, and GUI modes. 214x faster than ccusage.",
+  "description_fr": "Traqueur d'usage de jetons rapide et local pour Claude Code et Codex ; `tu statusline` émet un résumé coût/jetons en une ligne. Disponible aussi en mode CLI, TUI et GUI. 214x plus rapide que ccusage.",
+  "description_ja": "Claude Code と Codex 向けの高速ローカルトークン使用量トラッカー。`tu statusline` でコスト/トークンの1行サマリを出力。CLI・TUI・GUI モードも搭載。ccusage より 214 倍高速。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/hanbu97/tokenusage/main/docs/images/thumbs/cli-demo-padded.png",
+    "alt": "tokenusage CLI demo screenshot",
+    "source": "readme",
+    "local": "images/hanbu97-tokenusage.png"
+  },
+  "install": {
+    "type": "npx",
+    "package": "tokenusage",
+    "version": "1.5.2",
+    "integrity": "sha512-TQyzHwIEXGn+61ZhAXPE55UILqP1MABLOhosKZW8PPPLy/XghspUt4VLXyT9CcbGz++A0JtsdYNW1u/mG7CEaQ==",
+    "deps_lock_sha256": "f0d1d4d6be9b123357ca72e6d580cf1a790901e92caaabf5afd998127e044a08"
+  },
+  "configs": {},
+  "tags": [
+    "rust",
+    "tokens",
+    "cost",
+    "multi-cli",
+    "tui",
+    "gui"
+  ],
+  "notes": "Primary install via npm (`npm install -g tokenusage`), also available on crates.io (`cargo install tokenusage --bin tu`) and PyPI (`pip install tokenusage`). Run `tu statusline` to emit a one-line token/cost summary suitable for use as a Claude Code statusLine command.",
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-06"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

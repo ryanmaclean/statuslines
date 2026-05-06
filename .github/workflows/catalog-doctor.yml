@@ -35,6 +35,16 @@ jobs:
       - name: Run unit tests
         run: node --test tests/statuslines.test.js
 
+      - name: Check image directory size
+        run: |
+          SIZE_KB=$(du -sk catalog/images 2>/dev/null | cut -f1 || echo 0)
+          SIZE_MB=$(( SIZE_KB / 1024 ))
+          echo "catalog/images size: ${SIZE_MB} MB (${SIZE_KB} KB)"
+          if [ "$SIZE_KB" -gt 10240 ]; then
+            echo "ERROR: catalog/images exceeds 10 MB (${SIZE_KB} KB). Optimize images before committing."
+            exit 1
+          fi
+
       - name: Run doctor
         run: node bin/statuslines.js doctor
 

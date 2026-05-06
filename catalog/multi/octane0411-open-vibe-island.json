@@ -1,0 +1,48 @@
+{
+  "slug": "octane0411-open-vibe-island",
+  "name": "Open Island",
+  "repo": "https://github.com/octane0411/open-vibe-island",
+  "license": "GPL-3.0",
+  "redistributable": false,
+  "host_clis": [
+    "claude",
+    "codex",
+    "gemini",
+    "opencode"
+  ],
+  "language": "swift",
+  "description": "macOS notch/menu-bar companion (SwiftUI + AppKit) that monitors active AI coding agents in real time, shows session status and pending permission requests, and lets you jump back to the correct terminal or IDE. Supports Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Kimi CLI, Qoder, Qwen Code, Factory, and CodeBuddy. macOS 14+ only.",
+  "description_fr": "Compagnon macOS pour le notch et la barre de menus (SwiftUI + AppKit) qui surveille les agents de codage IA en temps réel, affiche l'état des sessions et les demandes de permission en attente, et permet de retourner rapidement au bon terminal ou IDE. Prend en charge Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Kimi CLI, Qoder, Qwen Code, Factory et CodeBuddy. macOS 14+ uniquement.",
+  "description_ja": "macOS のノッチ/メニューバーに常駐する SwiftUI + AppKit 製コンパニオンアプリ。AI コーディングエージェントのセッション状態や保留中の権限リクエストをリアルタイムで表示し、正しいターミナルや IDE にワンクリックで戻れる。Claude Code・Codex・Gemini CLI・OpenCode・Cursor・Kimi CLI・Qoder・Qwen Code・Factory・CodeBuddy に対応。macOS 14 以降専用。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/octane0411/open-vibe-island/main/docs/images/demo.gif",
+    "alt": "Open Island demo showing AI agent status in the macOS notch",
+    "source": "readme",
+    "local": "images/octane0411-open-vibe-island.gif"
+  },
+  "install": {"type": "manual"},
+  "configs": {},
+  "tags": [
+    "swift",
+    "macos",
+    "menubar",
+    "notch",
+    "multi-cli",
+    "desktop-app",
+    "gui"
+  ],
+  "notes": "GPL-3.0: not redistributable. macOS only. Install via signed DMG from GitHub Releases or `brew install --cask octane0411/tap/openisland`. Requires macOS 14+.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "GPL-3.0",
+    "last_audit": "2026-05-06"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
