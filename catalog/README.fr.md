@@ -40,7 +40,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** opencode
-- **Description:** Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec les ventilations de jetons en entrée, sortie, raisonnement et cache.
+- **Description:** Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec la ventilation des jetons d'entrée, de sortie, de raisonnement et de cache.
 - **Notes:** Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.
 - **Installation:** OpenCode charge `opencode-token-monitor@0.5.0` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 - **Configurer:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
@@ -51,7 +51,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** PolyForm-Noncommercial-1.0.0 (non redistribuable ; pour référence uniquement)
 - **Cibles:** codex
-- **Description:** Application macOS de barre de menus qui ingère les données de session Codex locales et recommande le prochain compte à utiliser selon le calendrier de réinitialisation hebdomadaire et la capacité restante.
+- **Description:** Application macOS de barre de menus qui ingère les données de session Codex locales et recommande le prochain compte à utiliser selon le moment de réinitialisation hebdomadaire et la capacité restante.
 - **Notes:** Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries.
 - **Installation:** voir en amont
 
@@ -81,7 +81,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude, codex
-- **Description:** Analyseur d'usage de jetons et de coûts qui parse les fichiers JSONL de sessions locales Claude Code et Codex ; pas une statusline en soi, mais une source de données utile à composer dans une statusline.
+- **Description:** Analyseur d'usage de jetons et de coûts qui parse les fichiers JSONL de sessions locales Claude Code et Codex ; pas une statusline en soi, mais une source de données utile à intégrer dans une statusline.
 - **Notes:** Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments.
 - **Installation:** `npx --ignore-scripts -y ccusage@18.0.11`
 
@@ -132,7 +132,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Statusline Go minimaliste pour Claude Code distribuée comme plugin Claude Code ; la commande slash `/claudeline:setup` du plugin télécharge le binaire et met à jour settings.json.
+- **Description:** Statusline Go minimaliste pour Claude Code distribuée comme plugin Claude Code ; la commande slash `/claudeline:setup` du plugin télécharge le binaire et patche settings.json.
 - **Notes:** Install flow runs entirely inside Claude Code: `/plugin marketplace add fredrikaverpil/claudeline` → `/plugin install claudeline@claudeline` → `/claudeline:setup`. The setup command writes `{"statusLine":{"type":"command","command":"claudeline"}}` itself, so we don't ship a `configs.claude` patch. Manual fallback: `go install github.com/fredrikaverpil/claudeline@latest`, then add the same snippet by hand.
 - **Installation:** voir en amont
 
@@ -255,7 +255,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 - **Licence:** MIT
 - **Cibles:** claude
-- **Description:** Statusline Claude Code qui parse les transcriptions JSONL de session pour calculer les jetons en entrée + création de cache + lecture de cache afin d'afficher fidèlement la fenêtre de contexte.
+- **Description:** Statusline Claude Code qui parse les transcriptions JSONL de session pour calculer les jetons d'entrée, de création de cache et de lecture de cache afin d'afficher fidèlement la fenêtre de contexte.
 - **Notes:** Last published 2025-09-27 (v0.2.2); originally tuned for AWS Bedrock-hosted models but works for any Claude Code session.
 - **Installation:** `npx --ignore-scripts -y @this-dot/claude-code-context-status-line@0.2.2`
 - **Configurer:** `node bin/statuslines.js configure thisdot-context-statusline --cli=<claude>`

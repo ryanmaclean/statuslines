@@ -266,6 +266,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 - **ライセンス:** MIT
 - **対象:** claude, opencode, gemini, codex
-- **説明:** Claude Code・OpenCode・Codex・Gemini・Cursor・Amp・Kimi など多数の AI コーディングツールのローカルセッションデータを読み取り、LiteLLM の価格情報に基づいてトークン使用量を追跡するクロス CLI 対応ツール。
+- **説明:** Claude Code・OpenCode・Codex・Gemini・Cursor・Amp・Kimi など多数の AI コーディングツールのローカルセッションデータを読み取り、LiteLLM から取得した価格情報でトークン使用量を追跡するクロス CLI 対応ツール。
 - **備考:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
 - **インストール:** `npx --ignore-scripts -y tokscale@2.0.27`
