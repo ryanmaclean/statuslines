@@ -560,7 +560,7 @@ describe("validate() — i18n description warnings", () => {
 // Renderer tests — each suite uses its own temp dir to avoid races
 // ════════════════════════════════════════════════════════════════════════════
 
-describe("renderTopReadmeBlocks() — locale headers", () => {
+describe("renderTopReadmeBlocks() — card layout", () => {
   const DIR = join(tmpdir(), `sl-test-headers-${process.pid}`);
 
   before(() => {
@@ -569,38 +569,33 @@ describe("renderTopReadmeBlocks() — locale headers", () => {
         slug: "alpha",
         name: "Alpha Tool",
         host_clis: ["claude"],
-        image: { url: "https://example.com/a.png", alt: "alpha", source: "readme", local: "images/alpha.png" },
+        image: { url: "https://example.com/a.png", alt: "alpha preview", source: "readme", local: "images/alpha.png" },
       }),
     ], DIR);
   });
 
   after(() => { try { rmSync(DIR, { recursive: true, force: true }); } catch {} });
 
-  test("en — Preview/Name/License/Description headers", async () => {
+  test("entry renders as h4 heading with name + license", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
     const { catalog } = renderTopReadmeBlocks("en");
-    assert.ok(catalog.includes("| Preview |"), `'Preview' missing; got: ${catalog.slice(0, 200)}`);
-    assert.ok(catalog.includes("| Name |"));
-    assert.ok(catalog.includes("| License |"));
-    assert.ok(catalog.includes("| Description |"));
+    assert.ok(catalog.includes("#### [**Alpha Tool**]"), `entry heading missing; got: ${catalog.slice(0, 300)}`);
+    assert.ok(catalog.includes(" · MIT"), "license should appear after middle dot");
   });
 
-  test("fr — Aperçu/Nom/Licence/Description headers", async () => {
+  test("image renders on its own row at width 800", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
-    const { catalog } = renderTopReadmeBlocks("fr");
-    assert.ok(catalog.includes("| Aperçu |"), `'Aperçu' missing; got: ${catalog.slice(0, 200)}`);
-    assert.ok(catalog.includes("| Nom |"));
-    assert.ok(catalog.includes("| Licence |"));
-    assert.ok(catalog.includes("| Description |"));
+    const { catalog } = renderTopReadmeBlocks("en");
+    assert.ok(catalog.includes('width="800"'), "image should be 800px wide");
+    assert.ok(catalog.includes('src="./catalog/images/alpha.png"'));
+    assert.ok(catalog.includes('alt="alpha preview"'));
   });
 
-  test("ja — プレビュー/名称/ライセンス/説明 headers", async () => {
+  test("layout has no markdown table syntax in entry blocks", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
-    const { catalog } = renderTopReadmeBlocks("ja");
-    assert.ok(catalog.includes("| プレビュー |"), `'プレビュー' missing; got: ${catalog.slice(0, 200)}`);
-    assert.ok(catalog.includes("| 名称 |"));
-    assert.ok(catalog.includes("| ライセンス |"));
-    assert.ok(catalog.includes("| 説明 |"));
+    const { catalog } = renderTopReadmeBlocks("en");
+    assert.ok(!catalog.includes("|---|"), "table separator should not appear");
+    assert.ok(!catalog.includes("| Preview |"), "old table header should not appear");
   });
 
   test("unknown lang throws with 'unknown lang' message", async () => {
@@ -686,19 +681,18 @@ describe("renderTopReadmeBlocks() — description localisation and fallback", ()
   });
 });
 
-describe("renderTopReadmeBlocks() — pipe and quote escaping", () => {
+describe("renderTopReadmeBlocks() — quote escaping in alt attribute", () => {
   const DIR = join(tmpdir(), `sl-test-escape-${process.pid}`);
 
   before(() => {
     makeTempCatalog([fullEntry({
       slug: "escape-test",
-      name: "Pipe|Tool",
+      name: "QuoteTool",
       host_clis: ["claude"],
-      description: 'Has a | pipe here.',
-      description_fr: 'A des | barres ici.',
+      description: 'Has a | pipe here (no longer escaped — card layout has no table).',
       image: {
         url: "https://example.com/e.png",
-        alt: 'Alt with | pipe and "quote"',
+        alt: 'Alt with "double quote"',
         source: "readme",
         local: "images/escape-test.png",
       },
@@ -707,27 +701,21 @@ describe("renderTopReadmeBlocks() — pipe and quote escaping", () => {
 
   after(() => { try { rmSync(DIR, { recursive: true, force: true }); } catch {} });
 
-  test("pipes in description are escaped as \\| in en output", async () => {
+  test("double quotes in image alt are escaped as &quot;", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
     const { catalog } = renderTopReadmeBlocks("en");
-    assert.ok(catalog.includes("\\|"), `expected escaped pipe in: ${catalog}`);
+    assert.ok(catalog.includes("&quot;"), `expected &quot; in alt; got: ${catalog.slice(0, 400)}`);
   });
 
-  test("pipes in description_fr are escaped as \\| in fr output", async () => {
-    const { renderTopReadmeBlocks } = await freshImport(DIR);
-    const { catalog } = renderTopReadmeBlocks("fr");
-    assert.ok(catalog.includes("\\|"), `expected escaped pipe in fr: ${catalog}`);
-  });
-
-  test("pipe in image alt is escaped (\\| or &quot;) in img cell", async () => {
+  test("description renders verbatim (no pipe escaping in card layout)", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
     const { catalog } = renderTopReadmeBlocks("en");
-    // alt has both | and " — verify at least one form of escaping is present
-    assert.ok(catalog.includes("\\|") || catalog.includes("&quot;"), "expected escaping in alt attribute");
+    assert.ok(catalog.includes("Has a | pipe here"), "description should render with literal pipe");
+    assert.ok(!catalog.includes("\\|"), "no markdown-table pipe-escape sequence should appear");
   });
 });
 
-describe("renderTopReadmeBlocks() — image.local absent shows em dash", () => {
+describe("renderTopReadmeBlocks() — image.local absent omits image block", () => {
   const DIR = join(tmpdir(), `sl-test-dash-${process.pid}`);
 
   before(() => {
@@ -742,10 +730,11 @@ describe("renderTopReadmeBlocks() — image.local absent shows em dash", () => {
 
   after(() => { try { rmSync(DIR, { recursive: true, force: true }); } catch {} });
 
-  test("preview cell is '—' when image.local is missing", async () => {
+  test("entry still renders heading + description but omits the <img> block", async () => {
     const { renderTopReadmeBlocks } = await freshImport(DIR);
     const { catalog } = renderTopReadmeBlocks("en");
-    assert.ok(catalog.includes("| — |"), `expected '—' cell in: ${catalog}`);
+    assert.ok(catalog.includes("#### [**No Local Image**]"), "heading should still render");
+    assert.ok(!catalog.includes("<img"), "no img tag when image.local is missing");
   });
 });
 
