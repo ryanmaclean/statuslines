@@ -9,12 +9,14 @@ on:
     paths:
       - 'catalog/**'
       - 'bin/statuslines.js'
+      - 'tests/**'
       - '.github/workflows/catalog-doctor.yml'
   push:
     branches: [main]
     paths:
       - 'catalog/**'
       - 'bin/statuslines.js'
+      - 'tests/**'
 
 permissions:
   contents: read
@@ -29,6 +31,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Run unit tests
+        run: node --test tests/statuslines.test.js
+
+      - name: Check image directory size
+        run: |
+          SIZE_KB=$(du -sk catalog/images 2>/dev/null | cut -f1 || echo 0)
+          SIZE_MB=$(( SIZE_KB / 1024 ))
+          echo "catalog/images size: ${SIZE_MB} MB (${SIZE_KB} KB)"
+          if [ "$SIZE_KB" -gt 10240 ]; then
+            echo "ERROR: catalog/images exceeds 10 MB (${SIZE_KB} KB). Optimize images before committing."
+            exit 1
+          fi
 
       - name: Run doctor
         run: node bin/statuslines.js doctor
@@ -46,3 +61,33 @@ jobs:
             git --no-pager diff -- catalog/README.md README.md catalog/QUARANTINE.md
             exit 1
           fi
+
+      - name: Check oversized catalog images
+        run: |
+          sudo apt-get install -y imagemagick gifsicle
+          # Advisory: warn if any target image is over its size threshold.
+          # This does not block the workflow — a large image means optimize-images.mjs
+          # needs to be re-run and the result committed, but it is not a schema error.
+          if ! node scripts/optimize-images.mjs --check; then
+            echo "::warning::One or more catalog images exceed their size thresholds."
+            echo "::warning::Run: node scripts/optimize-images.mjs  (then commit the results)"
+          fi
+
+  smoke-test:
+    name: Smoke-test cmd* handlers end-to-end
+    runs-on: ubuntu-latest
+    needs: doctor
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Run smoke tests
+        run: bash tests/smoke.sh

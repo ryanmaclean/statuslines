@@ -31,7 +31,10 @@ jobs:
       - name: Probe upstreams
         id: probe
         run: |
-          node scripts/catalog-liveness.mjs > /tmp/liveness.md
+          # `|| true` so an all-dead network state (script exits 1 per spec)
+          # still lets the issue-open step run with the report body — the
+          # alarm scenario is exactly when we need the issue opened.
+          node scripts/catalog-liveness.mjs > /tmp/liveness.md || true
           if grep -q '^- ' /tmp/liveness.md; then
             echo "drift=true" >> "$GITHUB_OUTPUT"
           else

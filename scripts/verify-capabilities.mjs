@@ -253,7 +253,7 @@ function verify(slug, opts) {
   const fsw = parseStraceWrite(straceText, allowedWriteRoots);
 
   const observed = {
-    network: net.networkObserved || !noNetFailed === false,
+    network: net.networkObserved || noNetFailed,
     child_process: proc.childProcessObserved,
     filesystem_write: fsw.filesystemWriteObserved,
   };

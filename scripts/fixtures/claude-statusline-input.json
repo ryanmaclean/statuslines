@@ -1,0 +1,53 @@
+{
+  "cwd": "/home/dev/projects/my-saas-app",
+  "session_id": "ses_01ABCDEFGHIJKLMNabcdefgh",
+  "session_name": "backend-refactor",
+  "transcript_path": "/home/user/statuslines/scripts/fixtures/claude-transcript.jsonl",
+  "model": {
+    "id": "claude-sonnet-4-5",
+    "display_name": "claude-sonnet-4-5"
+  },
+  "workspace": {
+    "current_dir": "/home/dev/projects/my-saas-app",
+    "project_dir": "/home/dev/projects/my-saas-app",
+    "added_dirs": []
+  },
+  "version": "1.9.4",
+  "output_style": {
+    "name": "default"
+  },
+  "cost": {
+    "total_cost_usd": 0.08412,
+    "total_duration_ms": 1847000,
+    "total_api_duration_ms": 43200,
+    "total_lines_added": 347,
+    "total_lines_removed": 89
+  },
+  "context_window": {
+    "total_input_tokens": 42187,
+    "total_output_tokens": 8934,
+    "context_window_size": 200000,
+    "used_percentage": 26,
+    "remaining_percentage": 74,
+    "current_usage": {
+      "input_tokens": 38500,
+      "output_tokens": 2100,
+      "cache_creation_input_tokens": 14000,
+      "cache_read_input_tokens": 22000
+    }
+  },
+  "exceeds_200k_tokens": false,
+  "thinking": {
+    "enabled": false
+  },
+  "rate_limits": {
+    "five_hour": {
+      "used_percentage": 31.4,
+      "resets_at": 1746432000
+    },
+    "seven_day": {
+      "used_percentage": 18.7,
+      "resets_at": 1746864000
+    }
+  }
+}

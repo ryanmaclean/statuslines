@@ -14,6 +14,8 @@
   "host_clis": ["claude"],
   "language": "typescript",
   "description": "One sentence (we write this).",
+  "description_fr": "Une phrase (traduction française).",
+  "description_ja": "一文（日本語訳）。",
   "image": {
     "url": "https://raw.githubusercontent.com/sirmalloc/ccstatusline/main/screenshots/demo.gif",
     "alt": "ccstatusline demo animation",
@@ -55,6 +57,7 @@
 - **license** ：上流の `LICENSE` ファイルから直接読み取った SPDX 識別子。README のバッジは正典ではありません。
 - **redistributable** ：ライセンスが OSI 互換の許可リスト（MIT、Apache-2.0、BSD-2/3-Clause、ISC、MPL-2.0、0BSD）に含まれる場合のみ `true`。コピーレフト系（AGPL、GPL）、ソース利用可能系（PolyForm-NC、BSL）、検証できなかったライセンス（LICENSE ファイルなし）は `false`。再配布不可のエントリも参照のため一覧には残りますが、`configure` の対象外となります。
 - **host_clis** ：`claude`、`opencode`、`gemini`、`codex` のいずれか。エントリは複数を対象にできます。
+- **description_fr** / **description_ja** ：`description` のフランス語／日本語訳（任意）。FR + JA 翻訳エージェント（`scripts/apply-descriptions.mjs` を参照）が値を埋めます。レンダラはトップ README の各言語バリアントに応じて適切なフィールドを選択します。バリデータの挙動：`redistributable: true` のエントリでいずれかが欠けている場合 `doctor` は *警告* を出します — FR／JA トップ README は当該行で英語の `description` にフォールバックします。許容される劣化であり、ハード失敗ではありません。
 
 ### 画像
 

@@ -15,7 +15,7 @@
     "statuslines": "./bin/statuslines.js"
   },
   "scripts": {
-    "test": "node --test tests/"
+    "test": "node --test tests/statuslines.test.js"
   },
   "repository": {
     "type": "git",

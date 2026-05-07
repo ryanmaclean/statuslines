@@ -6,7 +6,7 @@ import { homedir } from "node:os";
 import { spawnSync } from "node:child_process";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const CATALOG = join(ROOT, "catalog");
+const CATALOG = process.env.STATUSLINES_CATALOG ?? join(ROOT, "catalog");
 const VALID_CLIS = ["claude", "opencode", "gemini", "codex"];
 const PERMISSIVE = new Set(["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MPL-2.0", "0BSD"]);
 const REQUIRED = ["slug", "name", "repo", "license", "redistributable", "host_clis", "language", "description", "install"];
@@ -105,10 +105,56 @@ function validate(entry) {
       if (entry.redistributable && /@latest\b/.test(flat)) {
         errs.push(`configs.${cli} uses @latest; pin a version for redistributable entries`);
       }
+      // statusLine.direct: opt-in flag for the termframe harness's direct-path
+      // mode. Strict-equality `=== true` at render time, so any non-true value
+      // (typo, "yes", 1) silently disables the bypass without a doctor signal.
+      const direct = snippet?.statusLine?.direct;
+      if (direct !== undefined && direct !== true) {
+        errs.push(`configs.${cli}.statusLine.direct must be strictly true (boolean) when present`);
+      }
     }
   }
   if (entry.security?.quarantined === true && !entry.security?.quarantine_reason) {
     errs.push(`security.quarantined=true requires security.quarantine_reason`);
+  }
+  if (entry.security?.quarantined === true && !entry.security?.quarantined_at) {
+    errs.push(`security.quarantined=true requires security.quarantined_at (ISO date)`);
+  }
+  if (entry.install?.integrity != null) {
+    if (typeof entry.install.integrity !== "string" || !/^sha(256|384|512)-[A-Za-z0-9+/=]+$/.test(entry.install.integrity)) {
+      errs.push(`install.integrity must be an SRI string (sha256/384/512-<base64>)`);
+    }
+  }
+  // description_fr / description_ja — soft requirement: warn for redistributable
+  // entries missing either, since the localized top READMEs fall back to the
+  // English description when missing (acceptable degradation, not a failure).
+  if (entry.redistributable === true) {
+    if (typeof entry.description_fr !== "string") warns.push(`redistributable=true but no description_fr; FR top README will fall back to English`);
+    if (typeof entry.description_ja !== "string") warns.push(`redistributable=true but no description_ja; JA top README will fall back to English`);
+  }
+  // Phase H — image. Warning, not error, during rollout. When the
+  // backfill completes for every redistributable entry the warning will
+  // be promoted to a hard error.
+  if (entry.redistributable === true && !entry.image) {
+    warns.push(`redistributable=true but no image block (will become an error after Phase H rollout)`);
+  } else if (entry.image) {
+    const img = entry.image;
+    if (typeof img.url !== "string" || !img.url.startsWith("https://")) {
+      errs.push(`image.url must be https://...`);
+    } else if (img.url.includes("github.com/user-attachments/")) {
+      errs.push(`image.url uses github.com/user-attachments/... which 403s to non-browser clients`);
+    }
+    if (typeof img.alt !== "string" || img.alt.length < 1 || img.alt.length > 120) {
+      errs.push(`image.alt must be a string of length 1..120`);
+    }
+    if (img.source !== "readme" && img.source !== "og-fallback" && img.source !== "termframe-synthetic") {
+      errs.push(`image.source must be "readme", "og-fallback", or "termframe-synthetic"`);
+    }
+    if (img.local != null) {
+      if (typeof img.local !== "string" || !img.local.startsWith("images/") || !/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(img.local)) {
+        errs.push(`image.local must be a relative path under "images/" with a known extension (png|jpg|jpeg|gif|webp|svg)`);
+      }
+    }
   }
   // Phase G — capabilities. Warning, not error, during rollout. When the
   // backfill completes for every redistributable entry the warning will
@@ -120,7 +166,10 @@ function validate(entry) {
     for (const k of ["network", "child_process", "filesystem_write"]) {
       if (k in c && typeof c[k] !== "boolean") errs.push(`capabilities.${k} must be boolean`);
     }
-    if ("env_read" in c && !Array.isArray(c.env_read)) errs.push(`capabilities.env_read must be an array of strings`);
+    if ("env_read" in c) {
+      if (!Array.isArray(c.env_read)) errs.push(`capabilities.env_read must be an array of strings`);
+      else if (c.env_read.some((v) => typeof v !== "string")) errs.push(`capabilities.env_read elements must all be strings`);
+    }
     const validMethods = ["declared", "sandbox-strace", "sandbox-bpf", "skipped"];
     if ("verification_method" in c && c.verification_method !== null && !validMethods.includes(c.verification_method)) {
       errs.push(`capabilities.verification_method must be one of: ${validMethods.join(", ")}`);
@@ -273,6 +322,9 @@ function cmdConfigure(args) {
     /* nothing to install — npx invokes at run time */
   } else if (e.install.type === "opencode-plugin") {
     /* nothing to install — OpenCode loads from npm at session start */
+  } else if (e.install.type === "manual") {
+    process.stderr.write(`entry ${slug} is install.type=manual; no automated install path. See ${e.repo} for upstream instructions, then re-run \`configure\` with the binary on PATH.\n`);
+    process.exit(1);
   }
 
   const expanded = installDir ? expandInstallDir(snippet, installDir) : snippet;
@@ -342,6 +394,8 @@ const README_I18N = {
 
 function renderReadme(lang = "en") {
   const t = README_I18N[lang];
+  if (!t) throw new Error(`unknown lang: ${lang}`);
+  const descKey = lang === "en" ? "description" : `description_${lang}`;
   const entries = loadVisible().sort((a, b) => a.slug.localeCompare(b.slug));
   const lines = [];
   lines.push(t.title);
@@ -365,14 +419,15 @@ function renderReadme(lang = "en") {
   for (const e of entries) {
     lines.push(`### \`${e.slug}\` — [${e.name}](${e.repo})`);
     lines.push("");
-    if (e.image?.url) {
+    if (e.image?.url || e.image?.local) {
       const alt = (e.image.alt ?? e.name).replace(/\]/g, "\\]");
-      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${e.image.url}" width="480"></a>`);
+      const imgSrc = e.image.local ?? e.image.url;
+      lines.push(`<a href="${e.repo}"><img alt="${alt}" src="${imgSrc}" width="480"></a>`);
       lines.push("");
     }
     lines.push(`- **${t.labels.license}:** ${e.license}${e.redistributable ? "" : t.notRedistributable}`);
     lines.push(`- **${t.labels.targets}:** ${e.host_clis.join(", ")}`);
-    lines.push(`- **${t.labels.description}:** ${e.description}`);
+    lines.push(`- **${t.labels.description}:** ${e[descKey] ?? e.description}`);
     if (e.notes) lines.push(`- **${t.labels.notes}:** ${e.notes}`);
     const ver = e.install?.version;
     if (e.install?.type === "npx") lines.push(`- **${t.labels.install}:** \`npx --ignore-scripts -y ${e.install.package}@${ver ?? "latest"}\``);
@@ -401,7 +456,7 @@ function cmdRenderReadme() {
   }
 }
 
-function renderTopReadmeBlocks() {
+function renderTopReadmeBlocks(lang = "en") {
   const entries = loadVisible().sort((a, b) => a.slug.localeCompare(b.slug));
   const byCli = { claude: [], opencode: [], gemini: [], codex: [] };
   for (const e of entries) {
@@ -410,18 +465,31 @@ function renderTopReadmeBlocks() {
     }
   }
   const cliLabels = { claude: "Claude Code", opencode: "OpenCode", gemini: "Gemini CLI", codex: "Codex CLI" };
+  const headers = {
+    en: { preview: "Preview", name: "Name", license: "License", description: "Description", empty: (cli) => `*No catalog entries for ${cli} yet.*` },
+    fr: { preview: "Aperçu", name: "Nom", license: "Licence", description: "Description", empty: (cli) => `*Aucune entrée de catalogue pour ${cli} pour le moment.*` },
+    ja: { preview: "プレビュー", name: "名称", license: "ライセンス", description: "説明", empty: (cli) => `*${cli} のカタログエントリはまだありません。*` },
+  }[lang] ?? null;
+  if (!headers) throw new Error(`unknown lang: ${lang}`);
+  const descKey = lang === "en" ? "description" : `description_${lang}`;
   const lines = [];
   for (const cli of ["claude", "opencode", "gemini", "codex"]) {
     lines.push(`### ${cliLabels[cli]}`);
     lines.push("");
     if (byCli[cli].length === 0) {
-      lines.push(`*No catalog entries for ${cliLabels[cli]} yet.*`);
+      lines.push(headers.empty(cliLabels[cli]));
       lines.push("");
       continue;
     }
+    lines.push(`| ${headers.preview} | ${headers.name} | ${headers.license} | ${headers.description} |`);
+    lines.push("|---|---|---|---|");
     for (const e of byCli[cli]) {
       const tag = e.redistributable ? "" : " `(ref)`";
-      lines.push(`- [**${e.name}**](${e.repo}) — ${e.license}${tag} — ${e.description}`);
+      const imgCell = e.image?.local
+        ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="200"></a>`
+        : "—";
+      const desc = (e[descKey] ?? e.description).replace(/\|/g, "\\|");
+      lines.push(`| ${imgCell} | [**${e.name}**](${e.repo}) | ${e.license}${tag} | ${desc} |`);
     }
     lines.push("");
   }
@@ -576,15 +644,21 @@ function cmdRenderQuarantine() {
 }
 
 function cmdRenderTopReadme() {
-  const readmePath = join(ROOT, "README.md");
-  if (!existsSync(readmePath)) { process.stderr.write(`README.md not found at ${readmePath}\n`); process.exit(1); }
-  let raw = readFileSync(readmePath, "utf8");
-  const { catalog, count } = renderTopReadmeBlocks();
-  raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
-  const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
-  raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
-  writeFileSync(readmePath, raw);
-  process.stdout.write(`wrote ${readmePath} (${count} entries)\n`);
+  const langByFile = { "README.md": "en", "README.fr.md": "fr", "README.ja.md": "ja" };
+  for (const [file, lang] of Object.entries(langByFile)) {
+    const path = join(ROOT, file);
+    if (!existsSync(path)) {
+      process.stderr.write(`${file} not found; skipping\n`);
+      continue;
+    }
+    const { catalog, count } = renderTopReadmeBlocks(lang);
+    const badge = `![entries](https://img.shields.io/badge/catalog%20entries-${count}-orange)`;
+    let raw = readFileSync(path, "utf8");
+    raw = replaceBetweenMarkers(raw, "<!-- catalog:start -->", "<!-- catalog:end -->", catalog);
+    raw = replaceBetweenMarkers(raw, "<!-- count:start -->", "<!-- count:end -->", badge);
+    writeFileSync(path, raw);
+    process.stdout.write(`wrote ${path} (${count} entries, lang=${lang})\n`);
+  }
 }
 
 function cmdVerifyCapabilities(args) {
@@ -636,21 +710,31 @@ Environment:
 `);
 }
 
-const cmd = process.argv[2];
-const rest = process.argv.slice(3);
-switch (cmd) {
-  case "list":          cmdList(rest); break;
-  case "show":          cmdShow(rest); break;
-  case "configure":     cmdConfigure(rest); break;
-  case "doctor":        cmdDoctor(); break;
-  case "render-readme": cmdRenderReadme(); break;
-  case "render-top-readme": cmdRenderTopReadme(); break;
-  case "render-quarantine": cmdRenderQuarantine(); break;
-  case "audit":         await cmdAudit(rest); break;
-  case "verify-capabilities": cmdVerifyCapabilities(rest); break;
-  case "help":
-  case "--help":
-  case "-h":
-  case undefined:       cmdHelp(); break;
-  default: process.stderr.write(`unknown command: ${cmd}\n`); cmdHelp(); process.exit(2);
+// Run CLI only when executed directly (not imported as a module).
+// The check is: our resolved URL equals the main entry URL.
+const _isMain = import.meta.url === new URL(`file://${process.argv[1]}`).href ||
+  // also handle the case where process.argv[1] is already an absolute path resolved by node
+  fileURLToPath(import.meta.url) === resolve(process.argv[1] ?? "");
+
+if (_isMain) {
+  const cmd = process.argv[2];
+  const rest = process.argv.slice(3);
+  switch (cmd) {
+    case "list":          cmdList(rest); break;
+    case "show":          cmdShow(rest); break;
+    case "configure":     cmdConfigure(rest); break;
+    case "doctor":        cmdDoctor(); break;
+    case "render-readme": cmdRenderReadme(); break;
+    case "render-top-readme": cmdRenderTopReadme(); break;
+    case "render-quarantine": cmdRenderQuarantine(); break;
+    case "audit":         await cmdAudit(rest); break;
+    case "verify-capabilities": cmdVerifyCapabilities(rest); break;
+    case "help":
+    case "--help":
+    case "-h":
+    case undefined:       cmdHelp(); break;
+    default: process.stderr.write(`unknown command: ${cmd}\n`); cmdHelp(); process.exit(2);
+  }
 }
+
+export { validate, renderTopReadmeBlocks, renderReadme, renderQuarantine, loadVisible, loadAll, isQuarantined };
