@@ -486,7 +486,7 @@ function renderTopReadmeBlocks(lang = "en") {
     for (const e of byCli[cli]) {
       const tag = e.redistributable ? "" : " `(ref)`";
       const imgCell = e.image?.local
-        ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="200"></a>`
+        ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="400"></a>`
         : "—";
       const desc = (e[descKey] ?? e.description).replace(/\|/g, "\\|");
       lines.push(`| ${imgCell} | [**${e.name}**](${e.repo}) | ${e.license}${tag} | ${desc} |`);
