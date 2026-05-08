@@ -1,0 +1,43 @@
+{
+  "slug": "gregoryho-cc-pulseline",
+  "name": "cc-pulseline",
+  "repo": "https://github.com/GregoryHo/cc-pulseline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "High-performance multi-line Claude Code statusline written in Rust with deep observability — incremental seek-based JSONL parsing, live context, cost burn rate, active tools with targets, running agents, todo progress, and per-session tracking.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/GregoryHo/cc-pulseline/HEAD/docs/assets/hero-dark.png",
+    "alt": "cc-pulseline hero",
+    "source": "readme",
+    "local": "images/gregoryho-cc-pulseline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "themes",
+    "tools",
+    "agents",
+    "todos"
+  ],
+  "notes": "Distributed via npm (@cc-pulseline/cc-pulseline), cargo, and install.sh; configured through TOML at ~/.claude/pulseline/config.toml with project overrides. Six layouts and ten built-in themes.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

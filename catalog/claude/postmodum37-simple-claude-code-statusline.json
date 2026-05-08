@@ -1,0 +1,39 @@
+{
+  "slug": "postmodum37-simple-claude-code-statusline",
+  "name": "simple-claude-code-statusline",
+  "repo": "https://github.com/Postmodum37/simple-claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "go",
+  "description": "Minimal, hackable two-line Claude Code statusline written in Go: row one shows model, directory, git branch with file counts and worktree, plus session lines changed; row two shows context bar, 5h and 7d rate limits, cost, and duration.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/Postmodum37/simple-claude-code-statusline/HEAD/screenshot.png",
+    "alt": "simple-claude-code-statusline two-line preview",
+    "source": "readme",
+    "local": "images/postmodum37-simple-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "git",
+    "rate-limits"
+  ],
+  "notes": "Ships as a Claude Code plugin via `/plugin marketplace add Postmodum37/simple-claude-code-statusline` or as pre-compiled Go binaries built with `make build`; designed to be forked and edited (colors and row layout live in `src/render.go`).",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

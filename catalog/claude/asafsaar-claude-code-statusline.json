@@ -1,0 +1,41 @@
+{
+  "slug": "asafsaar-claude-code-statusline",
+  "name": "claude-code-statusline",
+  "repo": "https://github.com/AsafSaar/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Segment-based, fully configurable Claude Code statusline composed from toggleable parts (cwd, git branch, dirty, ahead/behind, model, node, context, cost, duration, lines, last commit, stash, effort, rate limits, ts errors) with per-segment icons and color thresholds.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/AsafSaar/claude-code-statusline/main/screenshot.png",
+    "alt": "claude-code-statusline segment preview",
+    "source": "readme",
+    "local": "images/asafsaar-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "rate-limits",
+    "tools"
+  ],
+  "notes": "Bash/PowerShell script edited in place to toggle segments via the ENABLED_SEGMENTS array; see upstream README for the install command.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
