@@ -1,0 +1,41 @@
+{
+  "slug": "leeguooooo-claude-code-usage-bar",
+  "name": "claude-code-usage-bar",
+  "repo": "https://github.com/leeguooooo/claude-code-usage-bar",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "python",
+  "description": "Python statusline (cs) for Claude Code that renders token usage, cost, and rate-limit windows across three styles and nine themes, backed by a background daemon and configurable via slash commands.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/leeguooooo/claude-code-usage-bar/HEAD/docs/images/hero.gif",
+    "alt": "claude-statusbar live demo",
+    "source": "readme",
+    "local": "images/leeguooooo-claude-code-usage-bar.gif"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "themes",
+    "daemon"
+  ],
+  "notes": "Distributed as a PyPI package (claude-statusbar); install via pip/pipx and run `cs --setup` per upstream README.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

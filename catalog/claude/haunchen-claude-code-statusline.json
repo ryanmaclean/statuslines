@@ -1,0 +1,40 @@
+{
+  "slug": "haunchen-claude-code-statusline",
+  "name": "claude-code-statusline",
+  "repo": "https://github.com/haunchen/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "javascript",
+  "description": "Cross-platform Claude Code statusline that surfaces Anthropic peak/off-peak rate-limit windows alongside context usage, session cost, and 5-hour and 7-day rate limits, so you can plan sessions around faster-burning peak hours.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/haunchen/claude-code-statusline/HEAD/screenshots/off-peak.png",
+    "alt": "claude-code-statusline showing OFF-PEAK indicator with context, cost, and rate limits",
+    "source": "readme",
+    "local": "images/haunchen-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "peak-hours",
+    "rate-limits",
+    "tokens",
+    "cost"
+  ],
+  "notes": "Upstream marked deprecated 2026-05-06 after Anthropic removed the peak-hour rate reduction; context/cost/rate-limit display still works. Install via git clone + manual settings.json edit, or run the bundled install.sh / install.ps1.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
