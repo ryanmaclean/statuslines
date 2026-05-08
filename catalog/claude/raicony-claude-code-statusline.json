@@ -1,0 +1,39 @@
+{
+  "slug": "raicony-claude-code-statusline",
+  "name": "claude-code-statusline (RaiconY)",
+  "repo": "https://github.com/RaiconY/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "javascript",
+  "description": "Feature-rich, dependency-free single-file Node.js statusline for Claude Code showing model, active task, git state, context usage, prompt-cache state with TTL, and 5-hour plus 7-day Anthropic rate-limit countdowns.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/RaiconY/claude-code-statusline",
+    "alt": "claude-code-statusline repo preview",
+    "source": "og-fallback",
+    "local": "images/raicony-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "rate-limits",
+    "git"
+  ],
+  "notes": "Single-file statusline.js dropped at a user-chosen path (e.g. ~/.claude/hooks/statusline.js) and wired via settings.json statusLine.command. No npm package; clone or download from the repo. Requires Claude Code >= 2.1.97 for refreshInterval support.",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

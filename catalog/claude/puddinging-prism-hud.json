@@ -1,0 +1,42 @@
+{
+  "slug": "puddinging-prism-hud",
+  "name": "prism-hud",
+  "repo": "https://github.com/puddinging/prism-hud",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "typescript",
+  "description": "Fork of jarrodwatts/claude-hud that swaps the progress bars for a per-position gradient palette — each dot has a fixed color from green (safe) through yellow to red (critical), so fill level reads at a glance across context and rate-limit windows.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/puddinging/prism-hud/main/claude-hud-preview-5-2.png",
+    "alt": "prism-hud gradient statusline preview",
+    "source": "readme",
+    "local": "images/puddinging-prism-hud.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "tokens",
+    "tools",
+    "agents",
+    "todos",
+    "rate-limits"
+  ],
+  "notes": "Fork of jarrodwatts/claude-hud (MIT). Engine, transcript parsing, and rate-limit handling are upstream's; this fork adds a 10-step gradient bar palette (per-position color), renames the plugin namespace to prism-hud, and moves config to ~/.claude/plugins/prism-hud/config.json. Don't install both — they target the same statusline slot.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
