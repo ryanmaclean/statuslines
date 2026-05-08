@@ -1,0 +1,42 @@
+{
+  "slug": "gerardofc8-claude-subagent-statusline",
+  "name": "claude-subagent-statusline",
+  "repo": "https://github.com/GerardoFC8/claude-subagent-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "javascript",
+  "description": "Claude Code statusline focused on real-time sub-agent delegation tracking — surfaces running, completed, and failed Task counters alongside model, cost, context window, elapsed time, and 5h/7d rate limits.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/GerardoFC8/claude-subagent-statusline",
+    "alt": "claude-subagent-statusline repository preview",
+    "source": "og-fallback",
+    "local": "images/gerardofc8-claude-subagent-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "agents",
+    "tools",
+    "tokens",
+    "cost",
+    "rate-limits",
+    "todos"
+  ],
+  "notes": "Distributed as a Claude Code plugin via the upstream marketplace; install with `claude plugin marketplace add GerardoFC8/claude-subagent-statusline` then `claude plugin install`. Self-configures statusLine on SessionStart and writes a delegation history JSONL under ~/.claude/state/.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

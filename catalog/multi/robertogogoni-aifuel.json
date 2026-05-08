@@ -1,0 +1,52 @@
+{
+  "slug": "robertogogoni-aifuel",
+  "name": "aifuel",
+  "repo": "https://github.com/robertogogoni/aifuel",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude",
+    "codex",
+    "gemini"
+  ],
+  "language": "go",
+  "description": "Go-based multi-provider AI usage monitor (Claude, Codex, Gemini, Copilot, Antigravity) that surfaces rate limits, cost, and peak-hour analytics across a waybar module, Chrome extension, Bubble Tea TUI, Admin API dashboard, and a compact Claude Code statusline.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/robertogogoni/aifuel/HEAD/internal/installer/chrome-extension/icons/icon-128.png",
+    "alt": "aifuel fuel pump logo",
+    "source": "readme",
+    "local": "images/robertogogoni-aifuel.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "themes",
+    "tools",
+    "agents",
+    "peak-hours",
+    "daemon",
+    "cache"
+  ],
+  "notes": "Statusline is one surface among many: install via upstream `curl | bash` wizard, AUR `aifuel-bin`, or `go install`, then point Claude Code's statusLine.command at `aifuel statusline`.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-08"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

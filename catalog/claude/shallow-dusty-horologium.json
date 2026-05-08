@@ -1,0 +1,42 @@
+{
+  "slug": "shallow-dusty-horologium",
+  "name": "horologium",
+  "repo": "https://github.com/Shallow-dusty/horologium",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "Unified Rust binary that combines a sub-millisecond Claude Code statusline with ccusage-style JSONL log analytics; one tool renders tokens, cost, git, and 5h/7d rate limits while also producing daily, session, and block usage reports.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/Shallow-dusty/horologium",
+    "alt": "horologium repo card",
+    "source": "og-fallback",
+    "local": "images/shallow-dusty-horologium.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "rate-limits",
+    "themes",
+    "powerline"
+  ],
+  "notes": "Single Rust binary unifying statusline (`horologium status`) and usage analytics (`horologium stat daily|session|blocks`), replacing the ccstatusline + ccusage pair. Targets <20ms cold start; reads `rate_limits.five_hour`/`seven_day` directly from Claude Code v2.1.80+ stdin JSON. TOML config at `~/.config/horologium/config.toml` with `--powerline`, `--multiline`, `--hyperlinks` render flags. Upstream README shows `cargo install --path .` from a local clone; no published crate version pin yet.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

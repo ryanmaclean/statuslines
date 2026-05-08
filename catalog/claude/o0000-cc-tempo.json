@@ -1,0 +1,38 @@
+{
+  "slug": "o0000-cc-tempo",
+  "name": "cc-tempo",
+  "repo": "https://github.com/O0000-code/cc-tempo",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Claude Code statusline that measures real wall-clock work time parsed from transcripts, surfaces SubAgent parallel-speedup ratios, and tracks code-churn velocity via a sparkline rather than tokens or cost.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/O0000-code/cc-tempo/HEAD/screenshot.png",
+    "alt": "cc-tempo statusline screenshot",
+    "source": "readme",
+    "local": "images/o0000-cc-tempo.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "agents",
+    "tools"
+  ],
+  "notes": "Install via upstream `git clone` + `./install.sh`; statusline command is `bash ~/.claude/statusline.sh`.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

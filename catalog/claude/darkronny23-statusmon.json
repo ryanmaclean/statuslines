@@ -1,0 +1,45 @@
+{
+  "slug": "darkronny23-statusmon",
+  "name": "statusmon",
+  "repo": "https://github.com/DarkRonny23/statusmon",
+  "license": "MIT",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "javascript",
+  "description": "Pokemon companion statusline for Claude Code that displays a sprite which gains experience and levels up as you complete coding sessions, with stats fetched from the PokeAPI and persisted across runs.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/DarkRonny23/statusmon/HEAD/docs/assets/og-image.png",
+    "alt": "statusmon Pokemon companion banner",
+    "source": "readme",
+    "local": "images/darkronny23-statusmon.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes"
+  ],
+  "notes": "Code is MIT but the repo bundles Pok\u00e9mon sprite PNGs and a Game Freak-derived font; runtime also fetches sprites from PokeAPI. Listed for reference; not redistributable due to bundled third-party IP.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "quarantined": true,
+    "quarantine_reason": "Bundles Pok\u00e9mon sprite assets and Pokemon-style font likely derived from Nintendo/Game Freak IP without license.",
+    "quarantined_at": "2026-05-08",
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-08"
+  }
+}
