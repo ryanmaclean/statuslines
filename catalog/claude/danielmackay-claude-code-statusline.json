@@ -1,0 +1,53 @@
+{
+  "slug": "danielmackay-claude-code-statusline",
+  "name": "Claude Code Statusline",
+  "repo": "https://github.com/danielmackay/claude-code-statusline",
+  "license": "Unspecified",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Shell script statusline for Claude Code displaying active model, context usage, session cost, 5-hour rate-limit bar with reset time, git branch, and diff stats.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/danielmackay/claude-code-statusline",
+    "alt": "danielmackay-claude-code-statusline GitHub preview",
+    "source": "og-fallback",
+    "local": "images/danielmackay-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "sh ~/.claude/statusline-command.sh",
+        "padding": 0
+      }
+    }
+  },
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "rate-limits"
+  ],
+  "notes": "Copy statusline-command.sh to ~/.claude/ and add the statusLine config to ~/.claude/settings.json. No license file present in repo.",
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "Unspecified",
+    "last_audit": "2026-05-12",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}
