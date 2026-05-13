@@ -1,0 +1,68 @@
+{
+  "slug": "noahbclarkson-noahs-claude-statusline",
+  "name": "noahs-claude-statusline",
+  "repo": "https://github.com/noahbclarkson/noahs-claude-statusline",
+  "license": null,
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Windows MSYS2 bash statusline that solves terminal-width detection via PowerShell AttachConsole process-tree walking, with a sub-cell-precision fractional progress bar rendered in eighths.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/noahbclarkson/noahs-claude-statusline",
+    "alt": "noahs-claude-statusline GitHub preview",
+    "source": "og-fallback",
+    "local": "images/noahbclarkson-noahs-claude-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "bash ${INSTALL_DIR}/statusline.sh"
+      },
+      "hooks": {
+        "Stop": [
+          {
+            "matcher": "",
+            "hooks": [
+              {
+                "type": "command",
+                "command": "bash ${INSTALL_DIR}/width-hook.sh"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    "git",
+    "rate-limits",
+    "shell"
+  ],
+  "notes": "platform: windows (Windows 10/11 + MSYS2 bash only \u2014 the AttachConsole/CONOUT$ width-probe is Windows-specific and not applicable on macOS or Linux). Requires PowerShell 5.1+, jq, and git on PATH. No LICENSE file in repo; redistributable is false until a license is added upstream.",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH",
+      "COLUMNS"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": null,
+    "last_audit": "2026-05-12",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}

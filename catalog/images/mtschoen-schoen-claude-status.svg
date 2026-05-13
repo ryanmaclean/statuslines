@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="170" viewBox="0 0 1000 170" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14">
+  <rect width="100%" height="100%" rx="6" fill="#1e1e1e"/>
+
+  <!-- main statusline: location row + metrics row -->
+  <text x="14" y="30" fill="#dcdcdc" xml:space="preserve">[my-laptop] ~/projects/example-app (feature/example)</text>
+  <text x="14" y="56" fill="#dcdcdc" xml:space="preserve"><tspan fill="#23d18b">183.7K</tspan> / <tspan fill="#af87af">1.00M</tspan> (<tspan fill="#23d18b">18.0%</tspan>) | <tspan fill="#00afdf">15.41M</tspan> / <tspan fill="#ff8700">207.4K</tspan> / <tspan fill="#23d18b">99%</tspan> hit | 5h: <tspan fill="#23d18b">6%</tspan> <tspan fill="#23d18b">+0.4h</tspan> wk: <tspan fill="#23d18b">21%</tspan> <tspan fill="#23d18b">+9.7h</tspan> | <tspan fill="#23d18b">$10.66</tspan></text>
+
+  <!-- subagent panel: one row per visible task in the agent panel -->
+  <line x1="14" y1="72" x2="986" y2="72" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="14" y="92" fill="#dcdcdc" xml:space="preserve"><tspan fill="#f5f543">●</tspan> <tspan fill="#d670d6">opus</tspan> reviewing diff | <tspan fill="#f5f543">215.4K</tspan> / <tspan fill="#af87af">1.00M</tspan> (<tspan fill="#f5f543">21.5%</tspan>) | <tspan fill="#00afdf">4.21M</tspan> / <tspan fill="#ff8700">89.3K</tspan> / <tspan fill="#23d18b">97%</tspan> hit | <tspan fill="#23d18b">$4.82</tspan> | 1m23s</text>
+  <text x="14" y="118" fill="#dcdcdc" xml:space="preserve"><tspan fill="#23d18b">✓</tspan> <tspan fill="#29b8db">sonnet</tspan> exploring config | <tspan fill="#23d18b">18.4K</tspan> / <tspan fill="#af87af">200K</tspan> (<tspan fill="#23d18b">9.2%</tspan>) | <tspan fill="#00afdf">87.3K</tspan> / <tspan fill="#ff8700">4.2K</tspan> / <tspan fill="#23d18b">95%</tspan> hit | <tspan fill="#23d18b">$0.21</tspan></text>
+  <text x="14" y="144" fill="#dcdcdc" xml:space="preserve"><tspan fill="#f5f543">●</tspan> <tspan fill="#3b8eea">haiku</tspan> running tests | <tspan fill="#23d18b">5.1K</tspan> / <tspan fill="#af87af">200K</tspan> (<tspan fill="#23d18b">2.6%</tspan>) | <tspan fill="#00afdf">18.9K</tspan> / <tspan fill="#ff8700">1.1K</tspan> / <tspan fill="#f5f543">84%</tspan> hit | <tspan fill="#23d18b">$0.04</tspan> | 8s</text>
+</svg>
