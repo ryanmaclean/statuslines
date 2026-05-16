@@ -20,8 +20,8 @@
   "install": {
     "type": "opencode-plugin",
     "package": "opencode-subagent-statusline",
-    "version": "0.6.1",
-    "integrity": "sha512-wgv5yuK4B8ERlI5HYtFNdwrq6O75sYbiUbSw4Rk9OVsE7LjvzWyzsQT+6ER7ilBSPgr+Abgrjr3iipGRjOk5OA==",
+    "version": "0.7.0",
+    "integrity": "sha512-csa+Gu+FY1q2cWeE1I21xNmwFPKN3Zp3A4hrcZY7MAHg4CnlegvNm5ndiP4ZKWILBVMvri5osE4zDUTIxueL1w==",
     "deps_lock_sha256": "91cee44da52833f347407f99cd2f9049ad0dc0aee6a7c9e6a89994670594f603"
   },
   "configs": {},

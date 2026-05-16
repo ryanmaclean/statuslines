@@ -1,17 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-16T19:49:37.131Z",
+  "generated_at": "2026-05-16T20:05:57.552Z",
   "entries": [
-    {
-      "slug": "0xhanniba1-cc-codex-statusline",
-      "path": "catalog/multi/0xhanniba1-cc-codex-statusline.json",
-      "sha256": "975720697cfc1d4b2a44cfa5dbb8841277b2446d255a4f31357668b9212aeb53"
-    },
-    {
-      "slug": "adam-ismael-claude-fitness-break",
-      "path": "catalog/claude/adam-ismael-claude-fitness-break.json",
-      "sha256": "f5b31710e185366ca33bb58f49240e6b5b849556e35162af62b8a532332c50f6"
-    },
     {
       "slug": "ai-ken-git-cat-codex-statusline",
       "path": "catalog/codex/ai-ken-git-cat-codex-statusline.json",
@@ -25,27 +15,22 @@
     {
       "slug": "anirudhmkumar-claude-code-statusline",
       "path": "catalog/claude/anirudhmkumar-claude-code-statusline.json",
-      "sha256": "93f310c156268f0bed793c0b0357ff813f4f1a80670bb8b3b94e934f05200af2"
+      "sha256": "3611ff1d97f10839d09d4870841d4f10738c166cf22a035f46f5ab12776dce09"
     },
     {
       "slug": "asafsaar-claude-code-statusline",
       "path": "catalog/claude/asafsaar-claude-code-statusline.json",
-      "sha256": "144e21a0c470c1bae87d9e52d8682f5530ea82b26b1d8194fb525604df9859ae"
+      "sha256": "2b450e7bc96a5d375cad05a09b30831b0f10ec3e35ec2df0de159a2535087240"
     },
     {
       "slug": "b-open-statusline",
       "path": "catalog/claude/b-open-statusline.json",
-      "sha256": "549cc67cc0c7e1667397ec2642571836ac6e487562dc23e51968a8e2a6e5594e"
+      "sha256": "b760e58a1cbda9e631dfc94b20b489513200efeec8e7bf86b78f903aba632a5a"
     },
     {
       "slug": "brandonchartier-cc-statusline",
       "path": "catalog/claude/brandonchartier-cc-statusline.json",
-      "sha256": "57b5a29c821a7c8c329ab57d970b34dfa12cad7ff079a5790de243788cdb8cf4"
-    },
-    {
-      "slug": "briansmith80-claude-code-status-bar",
-      "path": "catalog/claude/briansmith80-claude-code-status-bar.json",
-      "sha256": "91af82c3da9bcd611cdfb68e228e3f69fb484c9b9ea195590d47a0bd9c91d06f"
+      "sha256": "c936c69f1e1f94d2c854e7f2375d5a64fe26bcd7d85b930286aeac28da3e86b7"
     },
     {
       "slug": "capedbitmap-codex-hud",
@@ -60,7 +45,7 @@
     {
       "slug": "ccstatusline",
       "path": "catalog/claude/ccstatusline.json",
-      "sha256": "e7e5ede0a3b3dd4a4bd95e52f16d6ae4972d4b25a2decb6ff5a0a99b2b642ae7"
+      "sha256": "40fe184bafbea8320567431343607384f7d8324da1722598579e8167f12a8d44"
     },
     {
       "slug": "ccusage",
@@ -70,27 +55,22 @@
     {
       "slug": "chae-dahee-claude-buddy",
       "path": "catalog/claude/chae-dahee-claude-buddy.json",
-      "sha256": "3fd2ef37deebcadea7e011e6dc9a5c1c72313b5509ca161db61bba10cf64e947"
+      "sha256": "28247443f2d712db3b12a83eb5b26d4750b669335f6a0ff799c070dde7cffa35"
     },
     {
       "slug": "claude-hud",
       "path": "catalog/claude/claude-hud.json",
-      "sha256": "452a17f0f094328bcadca0538ed9515d185c3c2c854d24634bd7e1569d928461"
-    },
-    {
-      "slug": "ctfbio-claude-code-statusline",
-      "path": "catalog/claude/ctfbio-claude-code-statusline.json",
-      "sha256": "62e80db22de4de91a2b75990f9650d0691b634aa58ab86053944394af46511cb"
+      "sha256": "87991a2e497d9313ed7b19a8d5444220dc38907cb51ab1c16733d28a9765b5c4"
     },
     {
       "slug": "daniel3303-claude-statusline",
       "path": "catalog/claude/daniel3303-claude-statusline.json",
-      "sha256": "38764e12fe6a66d9cd069ad7077c25cfb1b47b6d2ecb8546112e9cda8f8efd40"
+      "sha256": "ef69a311858d59a0026056d34f21f52ecabf304c461b4aa4dada9e2a5cdeec08"
     },
     {
       "slug": "danielmackay-claude-code-statusline",
       "path": "catalog/claude/danielmackay-claude-code-statusline.json",
-      "sha256": "3fef3825742a36b7513ca60446df1705c167576a6d7c8a127e96bbcb64ef4aac"
+      "sha256": "6cc489731e6bcc3cc2f715267991e96f61079aa73ad458dea139e894f46e4313"
     },
     {
       "slug": "darkronny23-statusmon",
@@ -100,7 +80,7 @@
     {
       "slug": "dwillitzer-claude-statusline",
       "path": "catalog/claude/dwillitzer-claude-statusline.json",
-      "sha256": "5344332b4d652cce8092a1928e0322599564290cc452fb30fba4637de443884b"
+      "sha256": "ad474a0910e04c12a8a92a5182bb50292da959eca97b0c8c79dd89bef00dc72a"
     },
     {
       "slug": "felipeelias-claude-statusline",
@@ -120,22 +100,17 @@
     {
       "slug": "fyko-claudehud",
       "path": "catalog/claude/fyko-claudehud.json",
-      "sha256": "304afc4915134982ca187b19ff55893ef8a9c575fe7a58e9b912c15cb21c424a"
+      "sha256": "3476561cf3db154f54da7deb8a6ca78a4117fe88a444e184acc279a67a831a11"
     },
     {
       "slug": "gerardofc8-claude-subagent-statusline",
       "path": "catalog/claude/gerardofc8-claude-subagent-statusline.json",
-      "sha256": "7276a31f960582a34088467f82ff43bd681a22142fc9611c7b9979cb67b33cdd"
-    },
-    {
-      "slug": "gordonbeeming-codex-statusline",
-      "path": "catalog/codex/gordonbeeming-codex-statusline.json",
-      "sha256": "599e87b33618aa98a69b6282e9cbe47cc57fda526f3caa71a2262e7e02195ca1"
+      "sha256": "ced1822396117fcb1aaf13cbf968ae45cab04fa709de7e02e4706f37b25629dc"
     },
     {
       "slug": "gregoryho-cc-pulseline",
       "path": "catalog/claude/gregoryho-cc-pulseline.json",
-      "sha256": "12555aea3289062f5c44dcdd84d600fd3e3f83496ebf29d80030f0f462bca2da"
+      "sha256": "37faf506632a3e9ed4ac2f79e34c4ae09aaeccad4a0ca69269b49c45aad520e6"
     },
     {
       "slug": "hagan-claudia-statusline",
@@ -150,37 +125,22 @@
     {
       "slug": "haunchen-claude-code-statusline",
       "path": "catalog/claude/haunchen-claude-code-statusline.json",
-      "sha256": "30e36b6992e532b13c91b7f88b07ce42bdf98c4f1cfffc7bc9ddb125ae5adc52"
-    },
-    {
-      "slug": "hstojanovic-claude-vibeline",
-      "path": "catalog/claude/hstojanovic-claude-vibeline.json",
-      "sha256": "e0a380c4bd444383fe1fcfd881eb57add785ca3592ad30f9217cf0e4136be6f7"
+      "sha256": "5cc34ec3d9ed189bf185e35cfea6f6d69328ba7c067a943495e52d3b31174669"
     },
     {
       "slug": "ilia-pluzhnikov-claude-code-statusline",
       "path": "catalog/claude/ilia-pluzhnikov-claude-code-statusline.json",
-      "sha256": "ca51d0f267590137ec68bf47957d30649f2ca0241e343111fba26c48e3f0da94"
-    },
-    {
-      "slug": "jacsuper-codex-statusline-vscode",
-      "path": "catalog/vscode/jacsuper-codex-statusline-vscode.json",
-      "sha256": "0f6993aa27ba07e7ee6b97ec409f29871a4706523cf0b8b8eadc45f53424e4d8"
+      "sha256": "72ccc8c9a820122034079acd5233666236cd9f8dba0276e244badb5214d3738f"
     },
     {
       "slug": "joaquinvesapa-sub-agent-statusline",
       "path": "catalog/opencode/joaquinvesapa-sub-agent-statusline.json",
-      "sha256": "c1bcc77ffc5d8e915c8c3899631cf909cf9a6bf616a889fde34791b27ab0552b"
+      "sha256": "4664f147106689e3891f7dd9d28a9b1bce794e21ea50d90a95f389ea1504f953"
     },
     {
       "slug": "kamranahmedse-claude-statusline",
       "path": "catalog/claude/kamranahmedse-claude-statusline.json",
       "sha256": "edfa958b50ce1182eedff1bc4d543443cffd379fa0158f174be23f4577cf32ea"
-    },
-    {
-      "slug": "kiheon0709-claude-codex-statusline",
-      "path": "catalog/multi/kiheon0709-claude-codex-statusline.json",
-      "sha256": "febce41551f1acd4c83edf2c31f5f6266a3498927ac4e03c18da078f569c6804"
     },
     {
       "slug": "kiriketsuki-gemini-statusline",
@@ -190,22 +150,17 @@
     {
       "slug": "laveez-ccsl",
       "path": "catalog/claude/laveez-ccsl.json",
-      "sha256": "03c78856887d4ff2ba3e0f7b5dc133a2291794211f3197bada8314afa57f009f"
+      "sha256": "63d5645cd4e643daf3b589f7a123417cbb7f790e7310fcd23824b55872433a75"
     },
     {
       "slug": "leeguooooo-claude-code-usage-bar",
       "path": "catalog/claude/leeguooooo-claude-code-usage-bar.json",
-      "sha256": "9648438b2399fc6de19671e9107e47e965cd9822a7800bbf59259a21b1d82fcb"
-    },
-    {
-      "slug": "lightning7329-cc-statusline",
-      "path": "catalog/claude/lightning7329-cc-statusline.json",
-      "sha256": "8ea1ad18042bae0e07979b016e69683ba27056ca14cdd991ed614b4be80fee89"
+      "sha256": "b26269ede6ea11ca20632881a127bf094d020a070d7617aacfb50aa155b74a61"
     },
     {
       "slug": "lucasilverentand-claudeline",
       "path": "catalog/claude/lucasilverentand-claudeline.json",
-      "sha256": "caa5f57d968ec00518a71accc640e2dc3354f17bc22987d578f20bb359cd5f31"
+      "sha256": "eb30d094250939361edc329fc6dc438d155b63c6312b65b2d25a81c4cf5603f0"
     },
     {
       "slug": "markwilkening-opencode-status-line",
@@ -215,12 +170,12 @@
     {
       "slug": "meros-claude-usage-statusline",
       "path": "catalog/claude/meros-claude-usage-statusline.json",
-      "sha256": "69ebd9af1c8603234befbe13e9db7767926a47934e1a52f280e2c15651d0a1a7"
+      "sha256": "024e90bbc1a18107c7d9879df03fc0808eb8f346bcf417872be0f6d3a562c27d"
     },
     {
       "slug": "mtschoen-schoen-claude-status",
       "path": "catalog/claude/mtschoen-schoen-claude-status.json",
-      "sha256": "f14238c1107d41dae17d8e5ff9c4f91708044c59b2a458c966809c4f5b31a201"
+      "sha256": "ccd006965ef6695206a7f7f5214654094bd715d083f86a5da9f4b3eb402721e2"
     },
     {
       "slug": "ndave92-claude-code-status-line",
@@ -230,12 +185,12 @@
     {
       "slug": "noahbclarkson-noahs-claude-statusline",
       "path": "catalog/claude/noahbclarkson-noahs-claude-statusline.json",
-      "sha256": "6adc60feb5e534e0c939507e8f35dffeeb578a4c1d19d37f6110f017d2ba3d73"
+      "sha256": "01b8ef9825eadfe7de9cb592418b5bf12b244fa1b8d425e9d422e854541c6586"
     },
     {
       "slug": "o0000-cc-tempo",
       "path": "catalog/claude/o0000-cc-tempo.json",
-      "sha256": "f41dfa01eb20addc2693040bba95b611d36c1fac54d26080042a7b5a8798b733"
+      "sha256": "25717798a80837425dd8f4081fbb08cf5972c19dafed3d449372aca9a306f609"
     },
     {
       "slug": "octane0411-open-vibe-island",
@@ -255,32 +210,27 @@
     {
       "slug": "pcvelz-ccstatusline-usage",
       "path": "catalog/claude/pcvelz-ccstatusline-usage.json",
-      "sha256": "3e58b56ef65e0a4e0d8af5e8ec24679f4fc331ea9de22f9b4adf0c331d7246f4"
+      "sha256": "114d94591e900b5be0e3662df2e18b72d21f73cf7a2a4a45ce5df9cba5df1233"
     },
     {
       "slug": "postmodum37-simple-claude-code-statusline",
       "path": "catalog/claude/postmodum37-simple-claude-code-statusline.json",
-      "sha256": "6802d4dd1f92aaecfdbdd96bcbfda32c9954d91bd9628a188383d90f68f34c37"
+      "sha256": "6ed95a300ecefefac909ba55f05a01c2fb8dc89c3ec5e4be68aea1723d80cfd0"
     },
     {
       "slug": "puddinging-prism-hud",
       "path": "catalog/claude/puddinging-prism-hud.json",
-      "sha256": "ffc654819a409aeb3d501312b26343aaa9d887abbcbf43ab4893cc4cdc7ce431"
+      "sha256": "ba4e13e89adcf6bbe5b4ecb74f6d8cae78a91d6137de5b8a5073cbe7e8ce9b99"
     },
     {
       "slug": "raicony-claude-code-statusline",
       "path": "catalog/claude/raicony-claude-code-statusline.json",
-      "sha256": "5d28400e9d3e3b447fcc135b2b97a7f8b6f7e889f31f154778eca43e4446eafa"
+      "sha256": "574147091cfa7927b7f77d3c0023ac44ec5bbd9dfb3b1ac96a3395f6693e5cbd"
     },
     {
       "slug": "ramtinj95-opencode-tokenscope",
       "path": "catalog/opencode/ramtinj95-opencode-tokenscope.json",
       "sha256": "9fc8e8dd7614f7d2682683ae79a5e39b502f9480da227946e5b6e0c7dcb6b141"
-    },
-    {
-      "slug": "rgomes87-codex-statusline",
-      "path": "catalog/codex/rgomes87-codex-statusline.json",
-      "sha256": "199199efbd0f9b9ea326d4ebd7a1dc8a7fbdec57afabd9c923d4e8e1bf1c15a0"
     },
     {
       "slug": "riveroflogic-claude-code-statusline",
@@ -300,17 +250,12 @@
     {
       "slug": "shallow-dusty-horologium",
       "path": "catalog/claude/shallow-dusty-horologium.json",
-      "sha256": "4dcd5053bf9cb3e6ac9a43c7746c1a8145f5b91b608a0965b62a0188e3eea74d"
-    },
-    {
-      "slug": "siropkin-budi-jetbrains",
-      "path": "catalog/jetbrains/siropkin-budi-jetbrains.json",
-      "sha256": "13795b6904cce076656635167693f5e508aa0272dae79104f9af60ba0a76222b"
+      "sha256": "9d57ead6f2c2851336ecca29bb5213b39f43da58e83cfc6a9ba128e3d5fc226b"
     },
     {
       "slug": "sleighmaster99-claudecodestatusbar",
       "path": "catalog/claude/sleighmaster99-claudecodestatusbar.json",
-      "sha256": "ba4e10d7808970b8c5e0f98ab4a213a62af393fa3c4fe31394cd651d1f4594a6"
+      "sha256": "e1f1509591af206a3de9e617365516aad00fc82cd78d4832fd021b33aed4cb7c"
     },
     {
       "slug": "sotayamashita-claude-code-statusline",
@@ -325,7 +270,7 @@
     {
       "slug": "tokscale",
       "path": "catalog/multi/tokscale.json",
-      "sha256": "93531bbecc51ac4a9a0ffbb303b1708e81fff9e384ea8d19fc4e4bdc4ff122e5"
+      "sha256": "b7738b371bbebb3a87c2504e210d085b63282edf7d84b610e795dd74b6a0d323"
     },
     {
       "slug": "xuedi-claude-statusline",
@@ -335,7 +280,7 @@
     {
       "slug": "xyzcardiff-claude-code-statusline",
       "path": "catalog/claude/xyzcardiff-claude-code-statusline.json",
-      "sha256": "34b83841d158be011eb2f91c2c0d5f0f462ba038b26b8e60fe127cfbe6d73ba4"
+      "sha256": "ad03346b9f8617ec843cd3a16da8fec2061a97ad5409e0ed32dce8a75a145032"
     }
   ]
 }
