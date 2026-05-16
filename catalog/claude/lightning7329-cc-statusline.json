@@ -1,0 +1,45 @@
+{
+  "slug": "lightning7329-cc-statusline",
+  "name": "cc-statusline",
+  "repo": "https://github.com/Lightning7329/cc-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "fsharp",
+  "description": "F# statusline for Claude Code — the only F# entry in the catalog — showing context window, model, session cost, and rate-limit windows via a color-coded braille progress bar.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/Lightning7329/cc-statusline/main/img/example.png",
+    "alt": "cc-statusline example output",
+    "source": "readme",
+    "local": "images/lightning7329-cc-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "~/.claude/bin/statusline"
+      }
+    }
+  },
+  "tags": ["tokens", "cost", "rate-limits"],
+  "notes": "Distributed as a self-contained binary; install via the upstream one-liner which places the binary at ~/.claude/bin/statusline.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": ["HOME", "PATH"],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
