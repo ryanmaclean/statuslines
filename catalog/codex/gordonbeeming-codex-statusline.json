@@ -1,0 +1,42 @@
+{
+  "slug": "gordonbeeming-codex-statusline",
+  "name": "codex-statusline (GordonBeeming)",
+  "repo": "https://github.com/GordonBeeming/codex-statusline",
+  "license": "Unspecified",
+  "redistributable": false,
+  "host_clis": [
+    "codex"
+  ],
+  "language": "shell",
+  "description": "Four-line Codex statusline showing repo name, git branch, model, session cost in AUD, 5-hour rate-limit bar, and context window usage \u2014 mirroring the author's claude-statusline layout.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/GordonBeeming/codex-statusline",
+    "alt": "codex-statusline (GordonBeeming) OpenGraph card",
+    "source": "og-fallback",
+    "local": "images/gordonbeeming-codex-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "cost",
+    "aud",
+    "repo-name",
+    "session-time",
+    "rate-limits",
+    "context-bar",
+    "git"
+  ],
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

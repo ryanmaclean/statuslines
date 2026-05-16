@@ -1,0 +1,42 @@
+{
+  "slug": "adam-ismael-claude-fitness-break",
+  "name": "claude-fitness-break",
+  "repo": "https://github.com/adam-ismael/claude-fitness-break",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "bash",
+  "description": "Hook plugin that fires when Claude spawns an agent, picking a random exercise and shouting it at you via claude-haiku in one of four unhinged fitness personalities — drill sergeant, 80s coach, 90s wrestler, or anxious doctor. Displays the nudge in the statusline with a 5-minute cooldown.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/adam-ismael/claude-fitness-break",
+    "alt": "adam-ismael/claude-fitness-break repository preview",
+    "source": "og-fallback",
+    "local": "images/adam-ismael-claude-fitness-break.png"
+  },
+  "install": {
+    "type": "plugin"
+  },
+  "hooks": ["SubagentStart", "PreToolUse"],
+  "configs": {},
+  "tags": [
+    "agents",
+    "tools",
+    "wellness",
+    "statusline"
+  ],
+  "notes": "Install via `claude plugin marketplace add adam-ismael/claude-fitness-break && claude plugin install claude-fitness-break@claude-fitness-break`, then run `/claude-fitness-break:fitness-setup` to wire the statusline (idempotent, backs up existing config). Requires `jq` and `claude` on PATH. Hooks fire on SubagentStart with PreToolUse fallback for Task/Agent tools on older builds.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH",
+      "CLAUDE_PLUGIN_ROOT"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

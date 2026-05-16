@@ -1,0 +1,29 @@
+{
+  "slug": "jacsuper-codex-statusline-vscode",
+  "name": "codex-statusline-vscode",
+  "repo": "https://github.com/jacsuper/codex-statusline-vscode",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["vscode"],
+  "language": "typescript",
+  "description": "VS Code extension that watches local Codex session JSONL rollout logs and shows a compact status bar item plus dockable activity view with token usage meters.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/jacsuper/codex-statusline-vscode/main/docs/screenshots/thumbs/activity-overview.jpg",
+    "alt": "Codex Activity view showing pinned status and recent activity",
+    "source": "readme",
+    "local": "images/jacsuper-codex-statusline-vscode.jpg"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "tags": ["tokens", "cost", "rate-limits"],
+  "notes": "VS Code extension, not a terminal statusline. Watches Codex session JSONL.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "siropkin-budi-jetbrains",
+  "name": "budi — JetBrains plugin",
+  "repo": "https://github.com/siropkin/budi-jetbrains",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["jetbrains"],
+  "language": "kotlin",
+  "description": "JetBrains IDE status-bar widget that shows AI coding spend (1d/7d/30d) for the current IDE surface by querying a local budi daemon running on 127.0.0.1:7878.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/siropkin/budi-jetbrains",
+    "alt": "budi JetBrains plugin — AI spend status bar",
+    "source": "og-fallback"
+  },
+  "install": {
+    "type": "plugin"
+  },
+  "configs": {},
+  "tags": ["cost", "daemon", "tools"],
+  "notes": "Requires the budi daemon; reads AI session data from local logs. JetBrains IDE status bar, not a terminal statusline.",
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}
