@@ -8,11 +8,14 @@
     "claude"
   ],
   "language": "python",
-  "description": "Python statusline for Claude Code that reads real subscription usage data from Anthropic's OAuth API \u2014 per-model Opus/Sonnet limits, extra-usage spend, prompt cache TTL, and session/weekly rate limits.",
+  "description": "Python statusline for Claude Code that reads real subscription usage data from Anthropic's OAuth API — per-model Opus/Sonnet limits, extra-usage spend, prompt cache TTL, and session/weekly rate limits.",
+  "description_fr": "Ligne de statut Python pour Claude Code qui lit les données d'utilisation réelles via l'API OAuth d'Anthropic — limites par modèle Opus/Sonnet, dépenses supplémentaires, TTL du cache de prompt et limites de taux session/hebdomadaires.",
+  "description_ja": "AnthropicのOAuth APIから実際のサブスクリプション使用データを取得するPythonステータスライン — モデル別Opus/Sonnet制限、追加使用量、プロンプトキャッシュTTL、セッション/週次レート制限を表示。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/hstojanovic/claude-vibeline",
     "alt": "claude-vibeline repo preview",
-    "source": "og-fallback"
+    "source": "og-fallback",
+    "local": "images/hstojanovic-claude-vibeline.png"
   },
   "install": {
     "type": "manual"
@@ -34,7 +37,7 @@
     "context-bar",
     "quota-timer"
   ],
-  "notes": "Install via `uv tool install claude-vibeline`. Per-model and extra-usage sections require `--usage-api` plus at least one of `--opus`, `--sonnet`, or `--extra`; these fetch from an undocumented Anthropic OAuth endpoint \u2014 responses cached 60 s locally. Base sections (session limit, weekly limit, context window, prompt cache) are read from stdin JSON with no network call needed.",
+  "notes": "Install via `uv tool install claude-vibeline`. Per-model and extra-usage sections require `--usage-api` plus at least one of `--opus`, `--sonnet`, or `--extra`; these fetch from an undocumented Anthropic OAuth endpoint — responses cached 60 s locally. Base sections (session limit, weekly limit, context window, prompt cache) are read from stdin JSON with no network call needed.",
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",

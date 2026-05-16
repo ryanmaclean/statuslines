@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Claude Code statusline that auto-detects the active model's context window (1M for [1m] suffixed models, 200k otherwise) with widgets for tokens, git, and a 5-hour block timer.",
+  "description_fr": "Ligne de statut Claude Code qui détecte automatiquement la fenêtre de contexte du modèle actif (1M pour les modèles avec suffixe [1m], 200k sinon) avec des widgets pour les tokens, Git et un minuteur de bloc de 5 heures.",
+  "description_ja": "アクティブモデルのコンテキストウィンドウを自動検出（[1m]サフィックスモデルは1M、それ以外は200k）し、トークン、Git、5時間ブロックタイマーのウィジェットを表示するClaude Codeステータスライン。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/b-open-io/statusline",
     "alt": "b-open-io/statusline repo preview",

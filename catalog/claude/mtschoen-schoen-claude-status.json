@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Two-line statusline tracking session-wide cache hit rate, context usage, and 5-hour/weekly rate-limit pace projections with cost — all in a single-file bash + python setup.",
+  "description_fr": "Ligne de statut sur deux lignes suivant le taux de cache de session, l'utilisation du contexte et les projections de rythme de limite 5h/hebdomadaire avec le coût — le tout dans une configuration bash + Python en fichier unique.",
+  "description_ja": "セッション全体のキャッシュヒット率、コンテキスト使用量、5時間/週次レート制限ペース予測とコストを追跡する2行ステータスライン — bash + Python単一ファイル構成。",
   "image": {
     "url": "https://raw.githubusercontent.com/mtschoen/schoen-claude-status/HEAD/docs/example.svg",
     "alt": "schoen-claude-status showing cache hit rate and rate-limit pace projection",

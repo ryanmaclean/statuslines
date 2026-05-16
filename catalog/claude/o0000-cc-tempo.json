@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Claude Code statusline that measures real wall-clock work time parsed from transcripts, surfaces SubAgent parallel-speedup ratios, and tracks code-churn velocity via a sparkline rather than tokens or cost.",
+  "description_fr": "Ligne de statut Claude Code qui mesure le temps de travail réel parsé depuis les transcripts, expose les ratios d'accélération parallèle des sous-agents et suit la vélocité de churning de code via un sparkline plutôt que tokens ou coûts.",
+  "description_ja": "トランスクリプトから実際の作業時間を計測し、サブエージェントの並列高速化比率を表示、トークンやコストではなくスパークラインでコードチャーン速度を追跡するClaude Codeステータスライン。",
   "image": {
     "url": "https://raw.githubusercontent.com/O0000-code/cc-tempo/HEAD/screenshot.png",
     "alt": "cc-tempo statusline screenshot",

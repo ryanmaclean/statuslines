@@ -9,6 +9,8 @@
   ],
   "language": "javascript",
   "description": "Feature-rich, dependency-free single-file Node.js statusline for Claude Code showing model, active task, git state, context usage, prompt-cache state with TTL, and 5-hour plus 7-day Anthropic rate-limit countdowns.",
+  "description_fr": "Ligne de statut Node.js en fichier unique sans dépendance pour Claude Code, affichant le modèle, la tâche active, l'état Git, l'utilisation du contexte, l'état du cache avec TTL et les comptes à rebours de limite Anthropic 5h et 7j.",
+  "description_ja": "依存関係なしの単一ファイルNode.jsステータスライン — モデル、アクティブタスク、Git状態、コンテキスト使用量、TTL付きプロンプトキャッシュ状態、Anthropicの5時間/7日レート制限カウントダウンを表示。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/RaiconY/claude-code-statusline",
     "alt": "claude-code-statusline repo preview",

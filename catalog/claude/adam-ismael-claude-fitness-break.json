@@ -9,6 +9,8 @@
   ],
   "language": "bash",
   "description": "Hook plugin that fires when Claude spawns an agent, picking a random exercise and shouting it at you via claude-haiku in one of four unhinged fitness personalities — drill sergeant, 80s coach, 90s wrestler, or anxious doctor. Displays the nudge in the statusline with a 5-minute cooldown.",
+  "description_fr": "Plugin hook se déclenchant quand Claude lance un agent, qui choisit un exercice aléatoire et vous le crie via claude-haiku selon l'une des quatre personnalités fitness déjantées — sergent instructeur, coach des années 80, catcheur des années 90 ou médecin anxieux. Affiche le rappel dans le statusline avec un délai de cinq minutes.",
+  "description_ja": "Claudeがエージェントを生成するたびに発火するフックプラグイン。ランダムなエクササイズを選び、鬼教官・80年代コーチ・90年代レスラー・神経質な医師の4つの個性のいずれかでclaude-haikuを通じて叫びかける。5分のクールダウン付きでステータスラインに表示する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/adam-ismael/claude-fitness-break",
     "alt": "adam-ismael/claude-fitness-break repository preview",

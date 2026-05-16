@@ -9,6 +9,8 @@
   ],
   "language": "javascript",
   "description": "Feature-rich single-file Node.js statusline showing model, active task, git branch status, context window usage, prompt-cache hit rate, 5-hour and 7-day rate limits, and peak-hours indicator with color-coded urgency.",
+  "description_fr": "Ligne de statut Node.js en fichier unique très complète, affichant le modèle, la tâche active, l'état Git, l'utilisation du contexte, le taux de cache, les limites 5h/7j et un indicateur d'heures de pointe avec code couleur d'urgence.",
+  "description_ja": "モデル、アクティブタスク、Gitブランチ状態、コンテキストウィンドウ使用量、プロンプトキャッシュヒット率、5時間/7日レート制限、ピーク時間インジケーターをカラーコードで表示する高機能な単一ファイルNode.jsステータスライン。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/ilia-pluzhnikov/claude-code-statusline",
     "alt": "ilia-pluzhnikov claude-code-statusline GitHub preview",

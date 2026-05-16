@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Rust statusline for Claude Code with mmap+seqlock git daemon, ~168× faster than bash; shows model, token usage, rate limits, cost, active incidents, and dual layouts.",
+  "description_fr": "Ligne de statut Rust pour Claude Code avec démon Git mmap+seqlock (~168× plus rapide que bash) ; affiche le modèle, l'utilisation des tokens, les limites de taux, le coût, les incidents actifs et deux dispositions.",
+  "description_ja": "mmap+seqlockを使ったGitデーモン（bashより約168倍高速）を備えたRust製ステータスライン — モデル、トークン使用量、レート制限、コスト、アクティブインシデントを2レイアウトで表示。",
   "image": {
     "url": "https://raw.githubusercontent.com/fyko/claudehud/main/docs/example.png",
     "alt": "claudehud comfortable layout with model, tokens, rate limits",

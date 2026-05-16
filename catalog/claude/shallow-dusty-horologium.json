@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Unified Rust binary that combines a sub-millisecond Claude Code statusline with ccusage-style JSONL log analytics; one tool renders tokens, cost, git, and 5h/7d rate limits while also producing daily, session, and block usage reports.",
+  "description_fr": "Binaire Rust unifié combinant un statusline Claude Code sub-milliseconde avec des analyses de journaux JSONL style ccusage ; un seul outil affiche jetons, coût, git, limites 5h/7j et génère des rapports d'utilisation journaliers, par session et par bloc.",
+  "description_ja": "サブミリ秒のClaude Codeステータスラインとccusage形式のJSONLログ解析を統合したRustバイナリ。トークン、コスト、Git、5時間/7日レート制限の表示と、日次・セッション・ブロック使用レポート生成を一つのツールで実現する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/Shallow-dusty/horologium",
     "alt": "horologium repo card",

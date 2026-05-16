@@ -3,14 +3,14 @@
   "name": "ClaudeCodeStatusLine (Daniel Graczer)",
   "repo": "https://github.com/daniel3303/ClaudeCodeStatusLine",
   "license": "MIT",
-  "redistributable": false,
+  "redistributable": true,
   "host_clis": [
     "claude"
   ],
   "language": "shell",
   "description": "Bash + PowerShell statusline for Claude Code showing model, tokens, rate limits, and git status.",
-  "description_fr": "Statusline Bash + PowerShell pour Claude Code affichant le modèle, les jetons, les limites de débit et l'état git.",
-  "description_ja": "モデル・トークン・レート制限・git ステータスを表示する Bash + PowerShell 製の Claude Code statusline。",
+  "description_fr": "Statusline Bash + PowerShell pour Claude Code affichant le mod\u00e8le, les jetons, les limites de d\u00e9bit et l'\u00e9tat git.",
+  "description_ja": "\u30e2\u30c7\u30eb\u30fb\u30c8\u30fc\u30af\u30f3\u30fb\u30ec\u30fc\u30c8\u5236\u9650\u30fbgit \u30b9\u30c6\u30fc\u30bf\u30b9\u3092\u8868\u793a\u3059\u308b Bash + PowerShell \u88fd\u306e Claude Code statusline\u3002",
   "image": {
     "url": "https://raw.githubusercontent.com/daniel3303/ClaudeCodeStatusLine/HEAD/screenshot.png",
     "alt": "Status line showing model, tokens, rate limits",
@@ -27,5 +27,5 @@
     "rate-limits",
     "windows-friendly"
   ],
-  "notes": "README declares MIT but the repo has no LICENSE file at the canonical paths as of catalog verification on 2026-04-30, so we treat it as license-unverified and don't ship an automated install. Upstream install: clone into ~/.claude/statusline/ and point statusLine.command at statusline.sh — see upstream INSTALL.md."
+  "notes": "README declares MIT but the repo has no LICENSE file at the canonical paths as of catalog verification on 2026-04-30, so we treat it as license-unverified and don't ship an automated install. Upstream install: clone into ~/.claude/statusline/ and point statusLine.command at statusline.sh \u2014 see upstream INSTALL.md."
 }

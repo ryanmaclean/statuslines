@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Windows MSYS2 bash statusline that solves terminal-width detection via PowerShell AttachConsole process-tree walking, with a sub-cell-precision fractional progress bar rendered in eighths.",
+  "description_fr": "Statusline bash pour Windows MSYS2 résolvant la détection de la largeur du terminal via PowerShell AttachConsole, avec une barre de progression fractionnaire en huitièmes de cellule pour une précision sub-cellulaire.",
+  "description_ja": "Windows MSYS2向けbashステータスライン。PowerShell AttachConsoleのプロセスツリー探索でターミナル幅を検出し、1/8セル精度の分数プログレスバーをレンダリングする。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/noahbclarkson/noahs-claude-statusline",
     "alt": "noahs-claude-statusline GitHub preview",

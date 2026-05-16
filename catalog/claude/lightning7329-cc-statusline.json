@@ -7,6 +7,8 @@
   "host_clis": ["claude"],
   "language": "fsharp",
   "description": "F# statusline for Claude Code — the only F# entry in the catalog — showing context window, model, session cost, and rate-limit windows via a color-coded braille progress bar.",
+  "description_fr": "Ligne de statut F# pour Claude Code — la seule entrée F# du catalogue — affichant la fenêtre de contexte, le modèle, le coût de session et les fenêtres de limite via une barre de progression braille avec code couleur.",
+  "description_ja": "カタログ唯一のF#ステータスライン — コンテキストウィンドウ、モデル、セッションコスト、レート制限ウィンドウをカラーコード付きブライユ点字プログレスバーで表示。",
   "image": {
     "url": "https://raw.githubusercontent.com/Lightning7329/cc-statusline/main/img/example.png",
     "alt": "cc-statusline example output",

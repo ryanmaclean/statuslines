@@ -9,6 +9,8 @@
   ],
   "language": "go",
   "description": "Minimal, hackable two-line Claude Code statusline written in Go: row one shows model, directory, git branch with file counts and worktree, plus session lines changed; row two shows context bar, 5h and 7d rate limits, cost, and duration.",
+  "description_fr": "Statusline Claude Code minimaliste et modifiable en deux lignes, écrite en Go : la première ligne affiche modèle, répertoire, branche git avec comptage de fichiers et worktree ; la seconde montre la barre de contexte, les limites 5h et 7j, le coût et la durée.",
+  "description_ja": "Go製のシンプルで改造しやすい2行Claude Codeステータスライン。1行目はモデル・ディレクトリ・ファイル数付きGitブランチ・ワークツリー・変更行数、2行目はコンテキストバー・5時間/7日レート制限・コスト・経過時間を表示する。",
   "image": {
     "url": "https://raw.githubusercontent.com/Postmodum37/simple-claude-code-statusline/HEAD/screenshot.png",
     "alt": "simple-claude-code-statusline two-line preview",

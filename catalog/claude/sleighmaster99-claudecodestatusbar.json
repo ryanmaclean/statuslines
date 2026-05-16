@@ -7,6 +7,8 @@
   "host_clis": ["claude"],
   "language": "powershell",
   "description": "Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag-and-drop layout builder with PowerShell runtime, usage tracking, and git/context/cost widgets.",
+  "description_fr": "Éditeur GUI WinForms exclusif à Windows pour les statuslines multi-lignes de Claude Code — constructeur de mise en page par glisser-déposer avec runtime PowerShell, suivi d'utilisation et widgets git, contexte et coût.",
+  "description_ja": "Windows専用のWinForms GUIエディタ。Claude Codeの複数行ステータスラインをドラッグ＆ドロップで構築でき、PowerShellランタイム、使用量トラッキング、Git・コンテキスト・コストウィジェットを備える。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/SleighMaster99/ClaudeCodeStatusBar",
     "alt": "ClaudeCodeStatusBar GitHub preview",

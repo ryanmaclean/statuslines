@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Two-line Claude Code statusline (shell) with live subagent count and background-task progress bar read from ~/.claude/jobs — second line only appears when agents or tasks are active.",
+  "description_fr": "Ligne de statut shell sur deux lignes pour Claude Code, avec compteur de sous-agents en direct et barre de progression des tâches lue depuis ~/.claude/jobs — la seconde ligne n'apparaît que si des agents ou tâches sont actifs.",
+  "description_ja": "~/.claude/jobsからサブエージェント数とバックグラウンドタスクのプログレスバーをリアルタイム表示する2行のシェルステータスライン — エージェントやタスクがアクティブな時のみ2行目を表示。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/xyzcardiff/claude-code-statusline",
     "alt": "xyzcardiff claude-code-statusline repository preview",

@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Shell statusline with session duration, ECB FX-backed multi-currency cost display, per-MTok rates, spending caps, and effort level \u2014 zero runtime network calls via 24-hour cache.",
+  "description_fr": "Ligne de statut shell affichant la dur\u00e9e de session, le co\u00fbt en multi-devises via les taux BCE, les tarifs par MTok, les plafonds de d\u00e9penses et le niveau d'effort \u2014 aucun appel r\u00e9seau \u00e0 l'ex\u00e9cution gr\u00e2ce au cache 24 heures.",
+  "description_ja": "\u30bb\u30c3\u30b7\u30e7\u30f3\u6642\u9593\u3001ECB\u30ec\u30fc\u30c8\u306b\u3088\u308b\u591a\u901a\u8ca8\u30b3\u30b9\u30c8\u8868\u793a\u3001MTok\u5358\u4fa1\u3001\u652f\u51fa\u4e0a\u9650\u3001\u30a8\u30d5\u30a9\u30fc\u30c8\u30ec\u30d9\u30eb\u3092\u8868\u793a\u3059\u308b\u30b7\u30a7\u30eb\u30b9\u30c6\u30fc\u30bf\u30b9\u30e9\u30a4\u30f3 \u2014 24\u6642\u9593\u30ad\u30e3\u30c3\u30b7\u30e5\u306b\u3088\u308a\u5b9f\u884c\u6642\u306e\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u547c\u3073\u51fa\u3057\u306f\u30bc\u30ed\u3002",
   "image": {
     "url": "https://opengraph.githubassets.com/1/ctfbio/claude-code-statusline",
     "alt": "claude-code-statusline (ctfbio) OpenGraph card",
