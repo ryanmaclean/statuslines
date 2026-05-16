@@ -21,3 +21,4 @@ Set `STATUSLINES_REVEAL_QUARANTINE=1` in the environment to reveal these in the 
 | `gordonbeeming-codex-statusline` | No LICENSE file | 2026-05-16 |
 | `rgomes87-codex-statusline` | No LICENSE file | 2026-05-16 |
 | `octane0411-open-vibe-island` | Copyleft license (GPL-3.0) | 2026-05-16 |
+| `darkronny23-statusmon` | Bundles Pokémon sprite assets and Pokemon-style font likely derived from Nintendo/Game Freak IP without license. | 2026-05-08 |

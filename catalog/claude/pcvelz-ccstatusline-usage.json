@@ -18,14 +18,14 @@
   "install": {
     "type": "npx",
     "package": "ccstatusline-usage",
-    "version": "2.4.1",
-    "integrity": "sha512-t73oNADwXBNejsfH9Fv0NrAKDLaS2xuPRiObsWUEUH+UOFvFPHIocDtRyHAKEWc6kBq/6z6CJq36is82C2AUcg=="
+    "version": "2.4.4",
+    "integrity": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A=="
   },
   "configs": {
     "claude": {
       "statusLine": {
         "type": "command",
-        "command": "npx --ignore-scripts -y ccstatusline-usage@2.4.1",
+        "command": "npx --ignore-scripts -y ccstatusline-usage@2.4.4",
         "padding": 0
       }
     }
@@ -34,7 +34,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-06"
+    "last_audit": "2026-05-16"
   },
   "capabilities": {
     "network": true,
