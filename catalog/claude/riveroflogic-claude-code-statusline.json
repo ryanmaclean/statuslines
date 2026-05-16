@@ -1,0 +1,58 @@
+{
+  "slug": "riveroflogic-claude-code-statusline",
+  "name": "claude-code-statusline (RiverOfLogic)",
+  "repo": "https://github.com/RiverOfLogic/claude-code-statusline",
+  "license": "Unspecified",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Powerline-style retro-terminal statusline for Claude Code, displaying model, git branch, output style, thinking mode, and a 10-cell context progress bar with warm earth-tone color thresholds and a live clock.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/RiverOfLogic/claude-code-statusline/main/screenshots/statusline.png",
+    "alt": "RiverOfLogic Powerline statusline showing model, git, context bar with warm retro colors",
+    "source": "readme",
+    "local": "images/riveroflogic-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "~/.claude/statusline.sh",
+        "padding": 1,
+        "refreshInterval": 5
+      }
+    }
+  },
+  "tags": [
+    "powerline",
+    "git",
+    "context-window",
+    "clock",
+    "retro",
+    "nerd-fonts",
+    "installer"
+  ],
+  "notes": "README declares MIT but no LICENSE file is present in the repository; GitHub license API returns 404. Listed for reference only. Requires jq and a Nerd Font for glyph rendering; degrades to plain ASCII without one.",
+  "security": {
+    "quarantined": false,
+    "has_install_scripts": true,
+    "license_observed": "claimed-MIT-no-file",
+    "last_audit": "2026-05-12"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

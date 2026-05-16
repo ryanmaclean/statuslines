@@ -1,0 +1,41 @@
+{
+  "slug": "mtschoen-schoen-claude-status",
+  "name": "schoen-claude-status",
+  "repo": "https://github.com/mtschoen/schoen-claude-status",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Two-line statusline tracking session-wide cache hit rate, context usage, and 5-hour/weekly rate-limit pace projections with cost — all in a single-file bash + python setup.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/mtschoen/schoen-claude-status/HEAD/docs/example.svg",
+    "alt": "schoen-claude-status showing cache hit rate and rate-limit pace projection",
+    "source": "readme",
+    "local": "images/mtschoen-schoen-claude-status.svg"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "cache",
+    "rate-limits",
+    "tokens",
+    "cost",
+    "git"
+  ],
+  "notes": "Requires Claude Code's rate_limits payload field; silently omits quota fields on proxy setups (LiteLLM, gateways). Weekly pace uses a trailing-168h JSONL burn rate cached at ~/.claude/.statusline-pace-cache.json.",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
