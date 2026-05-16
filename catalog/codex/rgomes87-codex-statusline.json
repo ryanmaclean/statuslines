@@ -1,0 +1,39 @@
+{
+  "slug": "rgomes87-codex-statusline",
+  "name": "codex-statusline (rgomes87)",
+  "repo": "https://github.com/rgomes87/codex-statusline",
+  "license": "Unspecified",
+  "redistributable": false,
+  "host_clis": [
+    "codex"
+  ],
+  "language": "shell",
+  "description": "Colourful 4-line tmux status area for Codex CLI showing context window, model, git branch, and 5-hour/7-day rate-limit pacing bars with per-second reset countdowns.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/rgomes87/codex-statusline/main/assets/preview.svg",
+    "alt": "codex-statusline 4-line tmux preview",
+    "source": "readme",
+    "local": "images/rgomes87-codex-statusline.svg"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tmux",
+    "rate-limits",
+    "context-bar",
+    "git"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
