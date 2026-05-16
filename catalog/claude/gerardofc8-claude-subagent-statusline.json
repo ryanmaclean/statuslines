@@ -18,6 +18,7 @@
   "install": {
     "type": "manual"
   },
+  "hooks": ["PreToolUse", "PostToolUse", "PostToolUseFailure"],
   "configs": {},
   "tags": [
     "agents",

@@ -1,0 +1,38 @@
+{
+  "slug": "0xhanniba1-cc-codex-statusline",
+  "name": "cc-codex-statusline",
+  "repo": "https://github.com/0xHanniba1/cc-codex-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude", "codex"],
+  "language": "shell",
+  "description": "Combined Claude Code and Codex statusline in a single repo, each with a one-liner curl installer — adds path, model display, and color-coded rate-limit countdown to both CLIs.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/0xHanniba1/cc-codex-statusline/main/preview.png",
+    "alt": "cc-codex-statusline preview",
+    "source": "readme",
+    "local": "images/0xhanniba1-cc-codex-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": ["tokens", "cost", "rate-limits", "git"],
+  "notes": "Separate one-liner installers for Claude Code and Codex; see upstream subdirectory READMEs for per-CLI setup steps.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": ["HOME", "PATH"],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

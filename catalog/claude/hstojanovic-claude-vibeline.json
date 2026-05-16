@@ -1,0 +1,54 @@
+{
+  "slug": "hstojanovic-claude-vibeline",
+  "name": "claude-vibeline",
+  "repo": "https://github.com/hstojanovic/claude-vibeline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "python",
+  "description": "Python statusline for Claude Code that reads real subscription usage data from Anthropic's OAuth API \u2014 per-model Opus/Sonnet limits, extra-usage spend, prompt cache TTL, and session/weekly rate limits.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/hstojanovic/claude-vibeline",
+    "alt": "claude-vibeline repo preview",
+    "source": "og-fallback"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "claude-vibeline",
+        "refreshIntervalSeconds": 30
+      }
+    }
+  },
+  "tags": [
+    "api-usage",
+    "rate-limits",
+    "cache-aware",
+    "tokens",
+    "context-bar",
+    "quota-timer"
+  ],
+  "notes": "Install via `uv tool install claude-vibeline`. Per-model and extra-usage sections require `--usage-api` plus at least one of `--opus`, `--sonnet`, or `--extra`; these fetch from an undocumented Anthropic OAuth endpoint \u2014 responses cached 60 s locally. Base sections (session limit, weekly limit, context window, prompt cache) are read from stdin JSON with no network call needed.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

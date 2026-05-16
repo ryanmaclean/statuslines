@@ -18,8 +18,10 @@
     "local": "images/claude-hud.png"
   },
   "install": {
-    "type": "manual"
+    "type": "plugin"
   },
+  "slash_commands": ["/setup", "/configure"],
+  "hooks": ["SessionStart"],
   "configs": {},
   "tags": [
     "tools",

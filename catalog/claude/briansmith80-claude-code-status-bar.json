@@ -1,0 +1,61 @@
+{
+  "slug": "briansmith80-claude-code-status-bar",
+  "name": "claude-code-status-bar",
+  "repo": "https://github.com/briansmith80/claude-code-status-bar",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Pure-bash statusline with 18 segments and 7 colour themes — context bar, 5-hour and weekly rate-limit pacing, git state, session cost, and live tool activity, all with zero dependencies.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/briansmith80/claude-code-status-bar",
+    "alt": "claude-code-status-bar OpenGraph card",
+    "source": "og-fallback",
+    "local": "images/briansmith80-claude-code-status-bar.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "bash ~/.claude/statusline-command.sh"
+      }
+    }
+  },
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "rate-limits",
+    "themes",
+    "tools",
+    "agents",
+    "todos",
+    "peak-hours",
+    "cache"
+  ],
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH",
+      "NO_COLOR"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}

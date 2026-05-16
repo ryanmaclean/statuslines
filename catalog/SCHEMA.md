@@ -84,6 +84,16 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
 - **install.tap** + **install.formula** (brew): tap (e.g. `felipeelias/tap`) and formula name; `formula` defaults to `package` if omitted.
 - **install.clone_dir** (git): destination subdirectory under `~/.local/share/statuslines/`.
 
+## Plugin capabilities
+
+Some statuslines distribute as Claude Code plugins (loaded from `~/.claude/plugins/` via `.claude-plugin/plugin.json`) rather than standalone scripts or npm packages.
+
+- **install.type: `"plugin"`** — repo is a Claude Code plugin. Distinct from `"manual"` (bare script), `"npx"`/`"cargo"` (package manager). The plugin loader handles wiring; no explicit install command beyond `claude plugin install`.
+- **slash_commands** (array of strings, optional) — slash commands registered by the plugin, e.g. `["/setup", "/configure"]`. Omit when the plugin registers none.
+- **hooks** (array of strings, optional) — Claude Code hook events wired by the plugin, e.g. `["PreToolUse", "PostToolUse", "SessionStart"]`. Omit when the plugin wires no hooks.
+
+These fields live at the top level of the entry alongside `install`, `configs`, and `capabilities`.
+
 ### Configs
 
 - **configs**: map of `<cli>` → JSON patch merged into that tool's settings file by `configure`. Keys must be one of the four `host_clis`.

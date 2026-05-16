@@ -1,0 +1,47 @@
+{
+  "slug": "kiheon0709-claude-codex-statusline",
+  "name": "claude-codex-statusline",
+  "repo": "https://github.com/kiheon0709/claude-codex-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude",
+    "codex"
+  ],
+  "language": "javascript",
+  "description": "Dual-bar statusline showing Claude Code and Codex CLI quota side-by-side with 5H/weekly rate-limit bars, context window, and live active-subagent count tracked via PreToolUse/PostToolUse hooks.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/kiheon0709/claude-codex-statusline/main/docs/screenshot.png",
+    "alt": "claude-codex-statusline showing dual usage bars for Claude and Codex",
+    "source": "readme",
+    "local": "images/kiheon0709-claude-codex-statusline.png"
+  },
+  "install": {
+    "type": "curl",
+    "script": "curl -fsSL https://raw.githubusercontent.com/kiheon0709/claude-codex-statusline/main/install.sh | bash"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "rate-limits",
+    "agents",
+    "multi-cli",
+    "tools"
+  ],
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
