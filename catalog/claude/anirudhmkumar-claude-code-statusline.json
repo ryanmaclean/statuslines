@@ -9,6 +9,8 @@
   ],
   "language": "powershell",
   "description": "Windows-native PowerShell statusline for Claude Code showing directory, git branch, active model, and context usage — installs in one command via irm/iex with zero external dependencies.",
+  "description_fr": "Ligne de statut PowerShell native Windows pour Claude Code affichant le répertoire, la branche Git, le modèle actif et l'utilisation du contexte — installation en une commande via irm/iex sans dépendances externes.",
+  "description_ja": "ディレクトリ、Gitブランチ、アクティブモデル、コンテキスト使用量を表示するWindows向けPowerShellステータスライン — 外部依存なしでirm/iexコマンド1行でインストール可能。",
   "image": {
     "url": "https://raw.githubusercontent.com/AnirudhMKumar/claude-code-statusline/main/preview.png",
     "alt": "anirudhmkumar-claude-code-statusline preview",

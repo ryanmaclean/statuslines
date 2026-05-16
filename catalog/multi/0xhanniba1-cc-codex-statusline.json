@@ -7,6 +7,8 @@
   "host_clis": ["claude", "codex"],
   "language": "shell",
   "description": "Combined Claude Code and Codex statusline in a single repo, each with a one-liner curl installer — adds path, model display, and color-coded rate-limit countdown to both CLIs.",
+  "description_fr": "Statusline combinée pour Claude Code et Codex dans un seul dépôt, chacune avec un installateur curl en une ligne — ajoute le chemin, l'affichage du modèle et un compte à rebours de limite de débit coloré aux deux CLI.",
+  "description_ja": "Claude CodeとCodexのステータスラインを1つのリポジトリにまとめ、それぞれワンライナーcurlインストーラを提供。両CLIにパス表示、モデル表示、カラーコード付きレート制限カウントダウンを追加する。",
   "image": {
     "url": "https://raw.githubusercontent.com/0xHanniba1/cc-codex-statusline/main/preview.png",
     "alt": "cc-codex-statusline preview",

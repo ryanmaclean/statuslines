@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Animated ASCII companion that lives in the Claude Code statusline, rolled from a gacha table with 18 species, 5 rarity tiers, and stats like DEBUGGING and SNARK — levels up every 7 days.",
+  "description_fr": "Compagnon ASCII animé intégré au statusline Claude Code, tiré d'une table gacha avec 18 espèces, 5 niveaux de rareté et des statistiques comme DEBUGGING et SNARK — monte de niveau tous les sept jours.",
+  "description_ja": "Claude Codeステータスラインに住むアニメーションASCIIコンパニオン。18種・5レアリティのガチャテーブルからロールされ、DEBUGGINGやSNARKなどのステータスを持ち、7日ごとにレベルアップする。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/chae-dahee/claude-buddy",
     "alt": "chae-dahee/claude-buddy repo preview",

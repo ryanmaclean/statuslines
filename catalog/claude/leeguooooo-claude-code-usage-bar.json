@@ -9,6 +9,8 @@
   ],
   "language": "python",
   "description": "Python statusline (cs) for Claude Code that renders token usage, cost, and rate-limit windows across three styles and nine themes, backed by a background daemon and configurable via slash commands.",
+  "description_fr": "Ligne de statut Python (cs) pour Claude Code affichant l'utilisation des tokens, le coût et les fenêtres de limite en trois styles et neuf thèmes, soutenue par un démon en arrière-plan et configurable via des commandes slash.",
+  "description_ja": "トークン使用量、コスト、レート制限ウィンドウを3スタイル・9テーマで描画するPythonステータスライン(cs) — バックグラウンドデーモンが動作し、スラッシュコマンドで設定可能。",
   "image": {
     "url": "https://raw.githubusercontent.com/leeguooooo/claude-code-usage-bar/HEAD/docs/images/hero.gif",
     "alt": "claude-statusbar live demo",

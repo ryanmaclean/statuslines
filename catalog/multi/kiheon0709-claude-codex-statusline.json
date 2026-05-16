@@ -10,6 +10,8 @@
   ],
   "language": "javascript",
   "description": "Dual-bar statusline showing Claude Code and Codex CLI quota side-by-side with 5H/weekly rate-limit bars, context window, and live active-subagent count tracked via PreToolUse/PostToolUse hooks.",
+  "description_fr": "Statusline à double barre affichant côte à côte les quotas Claude Code et Codex CLI avec des barres de limite 5h et hebdomadaire, la fenêtre de contexte et le nombre de sous-agents actifs suivi via les hooks PreToolUse/PostToolUse.",
+  "description_ja": "Claude CodeとCodex CLIのクォータを並べて表示するデュアルバーステータスライン。5時間・週次レート制限バー、コンテキストウィンドウ、PreToolUse/PostToolUseフックで追跡するアクティブサブエージェント数をリアルタイムに表示する。",
   "image": {
     "url": "https://raw.githubusercontent.com/kiheon0709/claude-codex-statusline/main/docs/screenshot.png",
     "alt": "claude-codex-statusline showing dual usage bars for Claude and Codex",

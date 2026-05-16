@@ -9,6 +9,8 @@
   ],
   "language": "typescript",
   "description": "Dense, color-coded ANSI statusline for Claude Code showing model, cost, context usage, git state, PR links, active tools, subagents, task progress, and optional API rate-limit bars.",
+  "description_fr": "Ligne de statut ANSI dense et colorée pour Claude Code affichant le modèle, le coût, l'utilisation du contexte, l'état Git, les liens PR, les outils actifs, les sous-agents, la progression des tâches et des barres de limite API optionnelles.",
+  "description_ja": "モデル、コスト、コンテキスト使用量、Git状態、PRリンク、アクティブツール、サブエージェント、タスク進捗、オプションのAPIレート制限バーを表示する高密度カラーコードANSIステータスライン。",
   "image": {
     "url": "https://raw.githubusercontent.com/laveez/ccsl/main/docs/demo.gif",
     "alt": "ccsl animated statusline demo",

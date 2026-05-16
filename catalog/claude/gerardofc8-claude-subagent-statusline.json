@@ -9,6 +9,8 @@
   ],
   "language": "javascript",
   "description": "Claude Code statusline focused on real-time sub-agent delegation tracking — surfaces running, completed, and failed Task counters alongside model, cost, context window, elapsed time, and 5h/7d rate limits.",
+  "description_fr": "Statusline Claude Code axée sur le suivi en temps réel des sous-agents — affiche les compteurs de tâches en cours, terminées et échouées ainsi que le modèle, le coût, la fenêtre de contexte, le temps écoulé et les limites 5h/7j.",
+  "description_ja": "サブエージェントのデリゲーション追跡に特化したClaude Codeステータスライン。実行中・完了・失敗のタスクカウンターをモデル、コスト、コンテキストウィンドウ、経過時間、5時間/7日レート制限とともに表示する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/GerardoFC8/claude-subagent-statusline",
     "alt": "claude-subagent-statusline repository preview",

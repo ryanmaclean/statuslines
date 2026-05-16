@@ -7,6 +7,8 @@
   "host_clis": ["vscode"],
   "language": "typescript",
   "description": "VS Code extension that watches local Codex session JSONL rollout logs and shows a compact status bar item plus dockable activity view with token usage meters.",
+  "description_fr": "Extension VS Code surveillant les journaux JSONL de session Codex locaux et affichant un élément compact dans la barre d'état ainsi qu'une vue d'activité ancrable avec des compteurs d'utilisation de tokens.",
+  "description_ja": "VS Code拡張機能。ローカルのCodexセッションJSONLロールアウトログを監視し、コンパクトなステータスバーアイテムとトークン使用量メーター付きのドッキング可能なアクティビティビューを表示する。",
   "image": {
     "url": "https://raw.githubusercontent.com/jacsuper/codex-statusline-vscode/main/docs/screenshots/thumbs/activity-overview.jpg",
     "alt": "Codex Activity view showing pinned status and recent activity",

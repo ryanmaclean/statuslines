@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "High-performance multi-line Claude Code statusline written in Rust with deep observability — incremental seek-based JSONL parsing, live context, cost burn rate, active tools with targets, running agents, todo progress, and per-session tracking.",
+  "description_fr": "Statusline multi-lignes Claude Code haute performance en Rust avec observabilité approfondie — parsing JSONL incrémental par seek, contexte en direct, taux de consommation des coûts, outils actifs, agents en cours, avancement des todos et suivi par session.",
+  "description_ja": "高性能なRust製Claude Code多行ステータスライン。インクリメンタルシーク型JSONLパース、ライブコンテキスト、コスト消費レート、ターゲット付きアクティブツール、実行中エージェント、Todoの進捗、セッション別トラッキングを備えた高い可観測性を提供する。",
   "image": {
     "url": "https://raw.githubusercontent.com/GregoryHo/cc-pulseline/HEAD/docs/assets/hero-dark.png",
     "alt": "cc-pulseline hero",

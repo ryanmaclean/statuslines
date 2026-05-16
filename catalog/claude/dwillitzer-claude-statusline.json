@@ -3,14 +3,14 @@
   "name": "claude-statusline (dwillitzer)",
   "repo": "https://github.com/dwillitzer/claude-statusline",
   "license": "MIT",
-  "redistributable": false,
+  "redistributable": true,
   "host_clis": [
     "claude"
   ],
   "language": "shell",
   "description": "Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).",
-  "description_fr": "Statusline Bash pour Claude Code avec comptage de jetons optionnel via Node.js + tiktoken et colorisation de modèles multi-fournisseurs (Claude, OpenAI, Gemini, Grok).",
-  "description_ja": "オプションの Node.js + tiktoken トークンカウントと、Claude・OpenAI・Gemini・Grok のマルチプロバイダーモデルカラーリングに対応した Bash 製 Claude Code statusline。",
+  "description_fr": "Statusline Bash pour Claude Code avec comptage de jetons optionnel via Node.js + tiktoken et colorisation de mod\u00e8les multi-fournisseurs (Claude, OpenAI, Gemini, Grok).",
+  "description_ja": "\u30aa\u30d7\u30b7\u30e7\u30f3\u306e Node.js + tiktoken \u30c8\u30fc\u30af\u30f3\u30ab\u30a6\u30f3\u30c8\u3068\u3001Claude\u30fbOpenAI\u30fbGemini\u30fbGrok \u306e\u30de\u30eb\u30c1\u30d7\u30ed\u30d0\u30a4\u30c0\u30fc\u30e2\u30c7\u30eb\u30ab\u30e9\u30fc\u30ea\u30f3\u30b0\u306b\u5bfe\u5fdc\u3057\u305f Bash \u88fd Claude Code statusline\u3002",
   "image": {
     "url": "https://opengraph.githubassets.com/1/dwillitzer/claude-statusline",
     "alt": "claude-statusline repo preview",
@@ -26,5 +26,5 @@
     "multi-provider",
     "tokens"
   ],
-  "notes": "README claims MIT but no LICENSE file is present at catalog verification on 2026-04-30. README's clone command also uses a literal `<repository-url>` placeholder rather than this repo's URL — substitute manually."
+  "notes": "README claims MIT but no LICENSE file is present at catalog verification on 2026-04-30. README's clone command also uses a literal `<repository-url>` placeholder rather than this repo's URL \u2014 substitute manually."
 }

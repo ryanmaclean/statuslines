@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Shell script statusline for Claude Code displaying active model, context usage, session cost, 5-hour rate-limit bar with reset time, git branch, and diff stats.",
+  "description_fr": "Script shell pour Claude Code affichant le modèle actif, l'utilisation du contexte, le coût de session, une barre de limite de débit sur cinq heures avec l'heure de réinitialisation, la branche git et les statistiques de diff.",
+  "description_ja": "Claude Code 向けシェルスクリプト製ステータスライン。アクティブモデル、コンテキスト使用量、セッションコスト、リセット時刻付き5時間レート制限バー、Gitブランチ、差分統計を表示する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/danielmackay/claude-code-statusline",
     "alt": "danielmackay-claude-code-statusline GitHub preview",

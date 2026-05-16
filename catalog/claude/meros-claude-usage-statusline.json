@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Polls the Claude API for 5-hour and 7-day window usage, persists dual-tier history locally, renders sparklines and color-coded progress bars, and projects an ETA to rate-limit with smart date/duration formatting.",
+  "description_fr": "Interroge l'API Claude pour l'utilisation sur fenêtres de cinq heures et sept jours, conserve un historique local à deux niveaux, affiche des sparklines et des barres de progression colorées, et projette un ETA vers la limite de débit avec un formatage intelligent.",
+  "description_ja": "Claude APIに5時間・7日間ウィンドウの使用量をポーリングし、2階層の履歴をローカルに保存。スパークラインとカラーコード付きプログレスバーをレンダリングし、スマートな日付/期間フォーマットでレート制限までのETAを予測する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/meros/claude-usage-statusline",
     "alt": "claude-usage-statusline dashboard with sparklines and ETA",

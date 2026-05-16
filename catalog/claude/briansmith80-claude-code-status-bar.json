@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Pure-bash statusline with 18 segments and 7 colour themes — context bar, 5-hour and weekly rate-limit pacing, git state, session cost, and live tool activity, all with zero dependencies.",
+  "description_fr": "Statusline pure bash avec 18 segments et 7 thèmes de couleurs — barre de contexte, cadence des limites de débit sur cinq heures et hebdomadaires, état git, coût de session et activité des outils en direct, sans aucune dépendance.",
+  "description_ja": "18セグメント・7カラーテーマ対応のピュアbashステータスライン。コンテキストバー、5時間・週次レート制限のペーシング、Git状態、セッションコスト、ライブツールアクティビティを依存関係ゼロで提供する。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/briansmith80/claude-code-status-bar",
     "alt": "claude-code-status-bar OpenGraph card",
