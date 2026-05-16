@@ -1,0 +1,49 @@
+{
+  "slug": "anirudhmkumar-claude-code-statusline",
+  "name": "claude-code-statusline",
+  "repo": "https://github.com/AnirudhMKumar/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "powershell",
+  "description": "Windows-native PowerShell statusline for Claude Code showing directory, git branch, active model, and context usage — installs in one command via irm/iex with zero external dependencies.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/AnirudhMKumar/claude-code-statusline/main/preview.png",
+    "alt": "anirudhmkumar-claude-code-statusline preview",
+    "source": "readme",
+    "local": "images/anirudhmkumar-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "pwsh -File ~/.claude/statusline.ps1",
+        "padding": 0
+      }
+    }
+  },
+  "tags": [
+    "git",
+    "context-window",
+    "nerd-fonts",
+    "self-install",
+    "windows-friendly"
+  ],
+  "notes": "Requires Windows with PowerShell (pwsh). One-command install: `powershell -ExecutionPolicy Bypass -c \"irm https://raw.githubusercontent.com/AnirudhMKumar/claude-code-statusline/main/install.ps1 | iex\"`. Nerd Font required for icons.",
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

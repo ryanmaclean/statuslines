@@ -1,0 +1,52 @@
+{
+  "slug": "sleighmaster99-claudecodestatusbar",
+  "name": "ClaudeCodeStatusBar",
+  "repo": "https://github.com/SleighMaster99/ClaudeCodeStatusBar",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": ["claude"],
+  "language": "powershell",
+  "description": "Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag-and-drop layout builder with PowerShell runtime, usage tracking, and git/context/cost widgets.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/SleighMaster99/ClaudeCodeStatusBar",
+    "alt": "ClaudeCodeStatusBar GitHub preview",
+    "source": "og-fallback"
+  },
+  "install": {
+    "type": "git",
+    "clone_dir": "sleighmaster99-claudecodestatusbar"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${INSTALL_DIR}\\StatusLine.ps1\""
+      }
+    }
+  },
+  "tags": [
+    "gui",
+    "windows",
+    "git",
+    "cost",
+    "tokens",
+    "tui-config"
+  ],
+  "notes": "Windows-only — requires PowerShell 5+ and WinForms (.NET), which are built into Windows 10/11. Does not run on macOS or Linux. Launch Edit-StatusBar.vbs to open the GUI; click Save & Apply to write config.json and update ~/.claude/settings.json automatically.",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": ["HOME", "PATH", "USERPROFILE"],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-16",
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}

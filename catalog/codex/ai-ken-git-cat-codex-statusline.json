@@ -1,0 +1,39 @@
+{
+  "slug": "ai-ken-git-cat-codex-statusline",
+  "name": "cat-codex-statusline (ai-ken-git)",
+  "repo": "https://github.com/ai-ken-git/cat-codex-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "codex"
+  ],
+  "language": "python",
+  "description": "Cat-themed Codex CLI statusline installer; wires built-in segments (model, git branch, context, limits) into a clean preset today, with a cat-face renderer ready to activate once Codex ships a command-backed status line hook.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/ai-ken-git/cat-codex-statusline/main/preview.png",
+    "alt": "cat-codex-statusline terminal preview showing model, git branch, and context segments",
+    "source": "readme",
+    "local": "images/ai-ken-git-cat-codex-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "cat-themed",
+    "novelty",
+    "context-bar",
+    "preset"
+  ],
+  "notes": "Codex CLI does not yet expose a command-backed status line hook (unlike Claude Code, which runs an arbitrary command). The cat-face renderer (statusline.py) is included but not wired in; the installer currently configures only Codex's native built-in segments via [tui].status_line in ~/.codex/config.toml. Cat faces will activate automatically once Codex adds hook support.",
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
