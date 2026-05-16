@@ -1,0 +1,42 @@
+{
+  "slug": "xyzcardiff-claude-code-statusline",
+  "name": "claude-code-statusline",
+  "repo": "https://github.com/xyzcardiff/claude-code-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Two-line Claude Code statusline (shell) with live subagent count and background-task progress bar read from ~/.claude/jobs — second line only appears when agents or tasks are active.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/xyzcardiff/claude-code-statusline",
+    "alt": "xyzcardiff claude-code-statusline repository preview",
+    "source": "og-fallback",
+    "local": "images/xyzcardiff-claude-code-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "agents",
+    "tokens",
+    "cost",
+    "git",
+    "rate-limits",
+    "daemon"
+  ],
+  "notes": "Manual install: curl the script to ~/.claude/statusline-command.sh, then set statusLine.command in ~/.claude/settings.json. Requires jq. FX rate (USD→GBP) cached at ~/.claude/.fx-usd-gbp, refreshed in the background every 24 h.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

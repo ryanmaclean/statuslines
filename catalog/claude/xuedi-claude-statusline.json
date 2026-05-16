@@ -1,0 +1,34 @@
+{
+  "slug": "xuedi-claude-statusline",
+  "name": "xuedi/claude-statusline",
+  "repo": "https://github.com/xuedi/claude-statusline",
+  "license": "EUPL-1.2",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "Rust-native Claude Code statusline rendering model, git, tokens, effort, and 5h/7d rate limits via a 20-cell braille progress bar in ~500 lines of safe, unsafe-forbidden code.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/xuedi/claude-statusline",
+    "alt": "xuedi/claude-statusline repo preview",
+    "source": "og-fallback",
+    "local": "images/xuedi-claude-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rust",
+    "tokens",
+    "rate-limits",
+    "braille-bar"
+  ],
+  "notes": "EUPL-1.2 is a copyleft license (OSI-approved but incompatible with the catalog redistribution allowlist of MIT/Apache-2.0/BSD/ISC/MPL-2.0). Listed for reference only; skipped by configure. Notable technical differentiator: 20-cell braille progress bar for token usage, built in safe Rust (~500 LOC). Reads credentials from ~/.claude/.credentials.json to fetch /api/oauth/usage when Claude Code does not supply rate-limit data in the payload; results cached under /tmp/claude/.",
+  "security": {
+    "quarantined": false,
+    "quarantine_reason": null,
+    "quarantined_at": null
+  }
+}

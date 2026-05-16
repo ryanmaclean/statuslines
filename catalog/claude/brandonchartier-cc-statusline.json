@@ -1,0 +1,47 @@
+{
+  "slug": "brandonchartier-cc-statusline",
+  "name": "cc-statusline",
+  "repo": "https://github.com/brandonchartier/cc-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "python",
+  "description": "Minimal Python statusline for Claude Code showing model, git branch, token usage percentage, reasoning effort level, 5h/7d rate-limit windows, and current local time — no API calls, no OAuth.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/brandonchartier/cc-statusline",
+    "alt": "cc-statusline showing model, git, tokens, effort, and rate limits",
+    "source": "og-fallback",
+    "local": "images/brandonchartier-cc-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "python3 ~/.claude/statusline/statusline.py"
+      }
+    }
+  },
+  "tags": [
+    "tokens",
+    "git",
+    "rate-limits",
+    "effort"
+  ],
+  "notes": "No external dependencies beyond Python 3.10+ and git. Reads directly from the JSON Claude Code passes via stdin.",
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
