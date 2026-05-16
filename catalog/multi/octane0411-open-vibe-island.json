@@ -12,15 +12,17 @@
   ],
   "language": "swift",
   "description": "macOS notch/menu-bar companion (SwiftUI + AppKit) that monitors active AI coding agents in real time, shows session status and pending permission requests, and lets you jump back to the correct terminal or IDE. Supports Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Kimi CLI, Qoder, Qwen Code, Factory, and CodeBuddy. macOS 14+ only.",
-  "description_fr": "Compagnon macOS pour le notch et la barre de menus (SwiftUI + AppKit) qui surveille les agents de codage IA en temps réel, affiche l'état des sessions et les demandes de permission en attente, et permet de retourner rapidement au bon terminal ou IDE. Prend en charge Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Kimi CLI, Qoder, Qwen Code, Factory et CodeBuddy. macOS 14+ uniquement.",
-  "description_ja": "macOS のノッチ/メニューバーに常駐する SwiftUI + AppKit 製コンパニオンアプリ。AI コーディングエージェントのセッション状態や保留中の権限リクエストをリアルタイムで表示し、正しいターミナルや IDE にワンクリックで戻れる。Claude Code・Codex・Gemini CLI・OpenCode・Cursor・Kimi CLI・Qoder・Qwen Code・Factory・CodeBuddy に対応。macOS 14 以降専用。",
+  "description_fr": "Compagnon macOS pour le notch et la barre de menus (SwiftUI + AppKit) qui surveille les agents de codage IA en temps r\u00e9el, affiche l'\u00e9tat des sessions et les demandes de permission en attente, et permet de retourner rapidement au bon terminal ou IDE. Prend en charge Claude Code, Codex, Gemini CLI, OpenCode, Cursor, Kimi CLI, Qoder, Qwen Code, Factory et CodeBuddy. macOS 14+ uniquement.",
+  "description_ja": "macOS \u306e\u30ce\u30c3\u30c1/\u30e1\u30cb\u30e5\u30fc\u30d0\u30fc\u306b\u5e38\u99d0\u3059\u308b SwiftUI + AppKit \u88fd\u30b3\u30f3\u30d1\u30cb\u30aa\u30f3\u30a2\u30d7\u30ea\u3002AI \u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u30a8\u30fc\u30b8\u30a7\u30f3\u30c8\u306e\u30bb\u30c3\u30b7\u30e7\u30f3\u72b6\u614b\u3084\u4fdd\u7559\u4e2d\u306e\u6a29\u9650\u30ea\u30af\u30a8\u30b9\u30c8\u3092\u30ea\u30a2\u30eb\u30bf\u30a4\u30e0\u3067\u8868\u793a\u3057\u3001\u6b63\u3057\u3044\u30bf\u30fc\u30df\u30ca\u30eb\u3084 IDE \u306b\u30ef\u30f3\u30af\u30ea\u30c3\u30af\u3067\u623b\u308c\u308b\u3002Claude Code\u30fbCodex\u30fbGemini CLI\u30fbOpenCode\u30fbCursor\u30fbKimi CLI\u30fbQoder\u30fbQwen Code\u30fbFactory\u30fbCodeBuddy \u306b\u5bfe\u5fdc\u3002macOS 14 \u4ee5\u964d\u5c02\u7528\u3002",
   "image": {
     "url": "https://raw.githubusercontent.com/octane0411/open-vibe-island/main/docs/images/demo.gif",
     "alt": "Open Island demo showing AI agent status in the macOS notch",
     "source": "readme",
-    "local": "images/octane0411-open-vibe-island.gif"
+    "local": "images/octane0411-open-vibe-island.png"
   },
-  "install": {"type": "manual"},
+  "install": {
+    "type": "manual"
+  },
   "configs": {},
   "tags": [
     "swift",
