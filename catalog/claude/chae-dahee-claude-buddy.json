@@ -1,0 +1,53 @@
+{
+  "slug": "chae-dahee-claude-buddy",
+  "name": "claude-buddy",
+  "repo": "https://github.com/chae-dahee/claude-buddy",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "typescript",
+  "description": "Animated ASCII companion that lives in the Claude Code statusline, rolled from a gacha table with 18 species, 5 rarity tiers, and stats like DEBUGGING and SNARK — levels up every 7 days.",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/chae-dahee/claude-buddy",
+    "alt": "chae-dahee/claude-buddy repo preview",
+    "source": "og-fallback",
+    "local": "images/chae-dahee-claude-buddy.png"
+  },
+  "install": {
+    "type": "npm",
+    "package": "claude-buddy-statusline",
+    "version": "0.2.3"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "claude-buddy statusline",
+        "padding": 0
+      }
+    }
+  },
+  "tags": [
+    "installer",
+    "self-install",
+    "session-timer"
+  ],
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-05-12"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "CLAUDE_BUDDY_STATE_DIR"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

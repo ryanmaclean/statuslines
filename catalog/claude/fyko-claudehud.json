@@ -1,0 +1,44 @@
+{
+  "slug": "fyko-claudehud",
+  "name": "claudehud",
+  "repo": "https://github.com/Fyko/claudehud",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "rust",
+  "description": "Rust statusline for Claude Code with mmap+seqlock git daemon, ~168× faster than bash; shows model, token usage, rate limits, cost, active incidents, and dual layouts.",
+  "image": {
+    "url": "https://raw.githubusercontent.com/fyko/claudehud/main/docs/example.png",
+    "alt": "claudehud comfortable layout with model, tokens, rate limits",
+    "source": "readme",
+    "local": "images/fyko-claudehud.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rust",
+    "git",
+    "rate-limits",
+    "api-usage",
+    "installer"
+  ],
+  "notes": "Ships a curl|sh quick-install (install.sh / install.ps1) and a `claudehud install` sub-command that auto-wires settings.json. Two binaries: claudehud (client) + claudehud-daemon (git cache + status.claude.com poller). Daemon must be registered separately (launchd / systemd / Task Scheduler).",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH",
+      "CLAUDE_CONFIG_DIR",
+      "CLAUDEHUD_LAYOUT",
+      "LOCALAPPDATA"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
