@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "slug": "kamranahmedse-claude-statusline",
+  "package": "@kamranahmedse/claude-statusline",
+  "version": "1.0.6",
+  "captured_at": "2026-05-20",
+  "deps": {
+    "@kamranahmedse/claude-statusline@1.0.6": "sha512-7hDEVBXRg99YZZakAyHf72ANs/pKqm1erH8pVBspwl2wbYatAuI237AX2jAFjL0UxG8Wsl9KQJnwz0Wzwbisxg=="
+  }
+}
