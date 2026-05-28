@@ -42,7 +42,15 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-16"
+    "last_audit": "2026-05-16",
+    "attestation": {
+      "available": true,
+      "checked_at": "2026-05-28T11:03:49.968Z",
+      "predicate_type": "https://slsa.dev/provenance/v1",
+      "issuer": "https://github.com/actions/runner/github-hosted",
+      "build_workflow": "github.com/sirmalloc/ccstatusline/.github/workflows/publish.yml@refs/tags/v2.2.18",
+      "regression": false
+    }
   },
   "capabilities": {
     "network": true,

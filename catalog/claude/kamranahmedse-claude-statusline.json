@@ -4,7 +4,9 @@
   "repo": "https://github.com/kamranahmedse/claude-statusline",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "shell",
   "description": "Minimal Claude Code statusline showing model, context usage percentage, current directory, git branch, session timer, effort level, and live rate-limit bars fetched from the Anthropic API.",
   "description_fr": "Statusline Claude Code minimaliste affichant le modèle, le pourcentage d'utilisation du contexte, le répertoire courant, la branche git, le minuteur de session, le niveau d'effort et les barres de limites de débit en temps réel depuis l'API Anthropic.",
@@ -30,18 +32,35 @@
       }
     }
   },
-  "tags": ["shell", "rate-limits", "git", "session-timer", "installer"],
+  "tags": [
+    "shell",
+    "rate-limits",
+    "git",
+    "session-timer",
+    "installer"
+  ],
   "notes": "Run `npx @kamranahmedse/claude-statusline@1.0.6` once to install. The installer copies statusline.sh to ~/.claude/statusline.sh and patches ~/.claude/settings.json automatically. Requires jq, curl, and git on PATH. Uninstall with `npx @kamranahmedse/claude-statusline --uninstall`.",
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-06"
+    "last_audit": "2026-05-06",
+    "attestation": {
+      "available": false,
+      "checked_at": "2026-05-28T11:03:49.968Z",
+      "predicate_type": null,
+      "issuer": null,
+      "build_workflow": null,
+      "regression": false
+    }
   },
   "capabilities": {
     "network": true,
     "child_process": true,
     "filesystem_write": true,
-    "env_read": ["HOME", "PATH"],
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
     "verified_at": null,
     "verification_method": "declared"
   }

@@ -35,7 +35,15 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-04-30"
+    "last_audit": "2026-04-30",
+    "attestation": {
+      "available": true,
+      "checked_at": "2026-05-28T11:03:49.968Z",
+      "predicate_type": "https://slsa.dev/provenance/v1",
+      "issuer": "https://github.com/actions/runner/github-hosted",
+      "build_workflow": "github.com/ryoppippi/ccusage/.github/workflows/release.yaml@refs/tags/v18.0.11",
+      "regression": false
+    }
   },
   "capabilities": {
     "network": true,

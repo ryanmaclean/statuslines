@@ -4,7 +4,9 @@
   "repo": "https://github.com/pcvelz/ccstatusline-usage",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "typescript",
   "description": "Fork of ccstatusline adding real-time Anthropic API usage widgets: session and weekly utilization bars, weekly pace indicator, reset countdown, and multi-provider routing for local models.",
   "description_fr": "Fork de ccstatusline ajoutant des widgets d'utilisation en temps réel via l'API Anthropic : barres d'utilisation session et hebdomadaire, indicateur de rythme hebdomadaire, compte à rebours de réinitialisation et routage multi-fournisseur pour les modèles locaux.",
@@ -30,17 +32,35 @@
       }
     }
   },
-  "tags": ["tokens", "powerline", "themes", "tui-config", "api-usage", "rate-limits"],
+  "tags": [
+    "tokens",
+    "powerline",
+    "themes",
+    "tui-config",
+    "api-usage",
+    "rate-limits"
+  ],
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-16"
+    "last_audit": "2026-05-16",
+    "attestation": {
+      "available": false,
+      "checked_at": "2026-05-28T11:03:49.968Z",
+      "predicate_type": null,
+      "issuer": null,
+      "build_workflow": null,
+      "regression": false
+    }
   },
   "capabilities": {
     "network": true,
     "child_process": true,
     "filesystem_write": false,
-    "env_read": ["HOME", "PATH"],
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
     "verified_at": null,
     "verification_method": "declared"
   }
