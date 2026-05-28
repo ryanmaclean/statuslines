@@ -28,7 +28,7 @@
     "package": "tokscale",
     "version": "2.1.1",
     "integrity": "sha512-kYUZrWZbb9YG0KTwAlu8tLSP9COMfAbM0AYj0k+rHbJG+QjFZNNGQTHW18AfTuIRZ+poqW+ZvNWOXgQV5XEO8g==",
-    "deps_lock_sha256": "bceeaabae86639eb743fbb767b2b9b63b10b429f41ee61662a15a787dc290427"
+    "deps_lock_sha256": "576e990c82398e4f1290f8efe56a7eb915d0c20158bfe3b46362ebb2be232570"
   },
   "configs": {},
   "tags": [
@@ -41,15 +41,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-16",
-    "attestation": {
-      "available": false,
-      "checked_at": "2026-05-28T11:03:49.968Z",
-      "predicate_type": null,
-      "issuer": null,
-      "build_workflow": null,
-      "regression": false
-    }
+    "last_audit": "2026-05-25"
   },
   "capabilities": {
     "network": true,

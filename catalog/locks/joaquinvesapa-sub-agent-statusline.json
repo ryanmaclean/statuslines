@@ -2,9 +2,9 @@
   "schema_version": 1,
   "slug": "joaquinvesapa-sub-agent-statusline",
   "package": "opencode-subagent-statusline",
-  "version": "0.5.4",
-  "captured_at": "2026-04-30",
+  "version": "0.7.0",
+  "captured_at": "2026-05-20",
   "deps": {
-    "opencode-subagent-statusline@0.5.4": "sha512-Ifu+xDVSAkqNkdQPIkBYD0vRNt4cvD/JZNvR8BexKmcxTjXbXixKgcSRtk1hub8ReKCglr3HV+IMDJm75laX7Q=="
+    "opencode-subagent-statusline@0.7.0": "sha512-csa+Gu+FY1q2cWeE1I21xNmwFPKN3Zp3A4hrcZY7MAHg4CnlegvNm5ndiP4ZKWILBVMvri5osE4zDUTIxueL1w=="
   }
 }

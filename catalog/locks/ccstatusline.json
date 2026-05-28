@@ -2,9 +2,9 @@
   "schema_version": 1,
   "slug": "ccstatusline",
   "package": "ccstatusline",
-  "version": "2.2.12",
-  "captured_at": "2026-04-30",
+  "version": "2.2.18",
+  "captured_at": "2026-05-20",
   "deps": {
-    "ccstatusline@2.2.12": "sha512-vnwvzi9NT7WA2g9aFs3gI40X9xZvBTyqmQlrFfX2Jd9r7UNL9mu1NV9/t/OOrGZDl5W1DdMKzqFybLjEqQ1KJg=="
+    "ccstatusline@2.2.18": "sha512-370kn0HAXHPW75nAB3IacXLAFyI4GArvbVyz5rGg/1T/KOdIqYKdxKTS/GB+29ftPwduur9FnpF36503kgZ2nw=="
   }
 }

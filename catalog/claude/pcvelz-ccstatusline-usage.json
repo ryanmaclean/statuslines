@@ -21,7 +21,8 @@
     "type": "npx",
     "package": "ccstatusline-usage",
     "version": "2.4.4",
-    "integrity": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A=="
+    "integrity": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A==",
+    "deps_lock_sha256": "edd98e212380fce09fc7efe0eac766d0278bddf511ff81fa7052db410168e3ae"
   },
   "configs": {
     "claude": {

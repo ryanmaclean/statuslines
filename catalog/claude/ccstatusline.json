@@ -22,13 +22,13 @@
     "package": "ccstatusline",
     "version": "2.2.18",
     "integrity": "sha512-370kn0HAXHPW75nAB3IacXLAFyI4GArvbVyz5rGg/1T/KOdIqYKdxKTS/GB+29ftPwduur9FnpF36503kgZ2nw==",
-    "deps_lock_sha256": "f1dff32d07c8e86942f63fe2a8f4bef919669630657c8ab37a1f916a0a370161"
+    "deps_lock_sha256": "e6434169a2425663d2b4beb9307f11486751304c9a26915e71bb44407975ec8a"
   },
   "configs": {
     "claude": {
       "statusLine": {
         "type": "command",
-        "command": "npx --ignore-scripts -y ccstatusline@2.2.18",
+        "command": "npx --ignore-scripts -y ccstatusline@2.2.19",
         "padding": 0
       }
     }
@@ -42,15 +42,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-16",
-    "attestation": {
-      "available": true,
-      "checked_at": "2026-05-28T11:03:49.968Z",
-      "predicate_type": "https://slsa.dev/provenance/v1",
-      "issuer": "https://github.com/actions/runner/github-hosted",
-      "build_workflow": "github.com/sirmalloc/ccstatusline/.github/workflows/publish.yml@refs/tags/v2.2.18",
-      "regression": false
-    }
+    "last_audit": "2026-05-25"
   },
   "capabilities": {
     "network": true,

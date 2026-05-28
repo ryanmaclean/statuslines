@@ -23,7 +23,7 @@
     "package": "ccusage",
     "version": "18.0.11",
     "integrity": "sha512-QIFCY2gh06vjWelND1gDwJxrniAcNkPw0OHUhz985iE7FIEf738YVzxUKQMKhA2fO9CIJCz0dSpnyIufaKdjdA==",
-    "deps_lock_sha256": "228839066d921d60f6ebde51849d5f6ef5cf9611e7bc842fe5d3a17ebaeaa238"
+    "deps_lock_sha256": "63d9a9c5d2d8e55953f3d9339572aa7bdab78883d8f8b3dd7fc33327927d5cd0"
   },
   "configs": {},
   "tags": [
