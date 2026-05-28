@@ -4,7 +4,9 @@
   "repo": "https://github.com/pcvelz/ccstatusline-usage",
   "license": "MIT",
   "redistributable": true,
-  "host_clis": ["claude"],
+  "host_clis": [
+    "claude"
+  ],
   "language": "typescript",
   "description": "Fork of ccstatusline adding real-time Anthropic API usage widgets: session and weekly utilization bars, weekly pace indicator, reset countdown, and multi-provider routing for local models.",
   "description_fr": "Fork de ccstatusline ajoutant des widgets d'utilisation en temps réel via l'API Anthropic : barres d'utilisation session et hebdomadaire, indicateur de rythme hebdomadaire, compte à rebours de réinitialisation et routage multi-fournisseur pour les modèles locaux.",
@@ -19,7 +21,8 @@
     "type": "npx",
     "package": "ccstatusline-usage",
     "version": "2.4.4",
-    "integrity": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A=="
+    "integrity": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A==",
+    "deps_lock_sha256": "edd98e212380fce09fc7efe0eac766d0278bddf511ff81fa7052db410168e3ae"
   },
   "configs": {
     "claude": {
@@ -30,7 +33,14 @@
       }
     }
   },
-  "tags": ["tokens", "powerline", "themes", "tui-config", "api-usage", "rate-limits"],
+  "tags": [
+    "tokens",
+    "powerline",
+    "themes",
+    "tui-config",
+    "api-usage",
+    "rate-limits"
+  ],
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
@@ -40,7 +50,10 @@
     "network": true,
     "child_process": true,
     "filesystem_write": false,
-    "env_read": ["HOME", "PATH"],
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
     "verified_at": null,
     "verification_method": "declared"
   }

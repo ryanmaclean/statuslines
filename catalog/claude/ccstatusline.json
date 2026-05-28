@@ -20,9 +20,9 @@
   "install": {
     "type": "npx",
     "package": "ccstatusline",
-    "version": "2.2.19",
-    "integrity": "sha512-Z0AHBr1kMLYTJE5wYHp7GR4mOer6TGfa+ze0jj96vOVs9zwx1DMG4zqxFYY84lT03w4WM+notHs6JanrOZ0LFw==",
-    "deps_lock_sha256": "f1dff32d07c8e86942f63fe2a8f4bef919669630657c8ab37a1f916a0a370161"
+    "version": "2.2.18",
+    "integrity": "sha512-370kn0HAXHPW75nAB3IacXLAFyI4GArvbVyz5rGg/1T/KOdIqYKdxKTS/GB+29ftPwduur9FnpF36503kgZ2nw==",
+    "deps_lock_sha256": "e6434169a2425663d2b4beb9307f11486751304c9a26915e71bb44407975ec8a"
   },
   "configs": {
     "claude": {

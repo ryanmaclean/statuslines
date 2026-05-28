@@ -26,9 +26,9 @@
   "install": {
     "type": "npx",
     "package": "tokscale",
-    "version": "2.1.3",
-    "integrity": "sha512-Yn/glUBGif60bhV8ET66Ot/dG6ihzLHYU9rRc0P1pnlX8+r76JAHeqkaPVUetvckriu8731dv9PWKymxrUs1cQ==",
-    "deps_lock_sha256": "bceeaabae86639eb743fbb767b2b9b63b10b429f41ee61662a15a787dc290427"
+    "version": "2.1.1",
+    "integrity": "sha512-kYUZrWZbb9YG0KTwAlu8tLSP9COMfAbM0AYj0k+rHbJG+QjFZNNGQTHW18AfTuIRZ+poqW+ZvNWOXgQV5XEO8g==",
+    "deps_lock_sha256": "576e990c82398e4f1290f8efe56a7eb915d0c20158bfe3b46362ebb2be232570"
   },
   "configs": {},
   "tags": [
