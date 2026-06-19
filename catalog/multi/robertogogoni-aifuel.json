@@ -11,6 +11,8 @@
   ],
   "language": "go",
   "description": "Go-based multi-provider AI usage monitor (Claude, Codex, Gemini, Copilot, Antigravity) that surfaces rate limits, cost, and peak-hour analytics across a waybar module, Chrome extension, Bubble Tea TUI, Admin API dashboard, and a compact Claude Code statusline.",
+  "description_fr": "Moniteur d'utilisation IA multi-fournisseurs en Go (Claude, Codex, Gemini, Copilot, Antigravity) affichant limites de débit, coûts et analyses aux heures de pointe via un module waybar, une extension Chrome, un TUI Bubble Tea, un tableau de bord Admin API et une statusline Claude Code compacte.",
+  "description_ja": "Go 製マルチプロバイダー AI 使用量モニター（Claude、Codex、Gemini、Copilot、Antigravity）。waybar モジュール、Chrome 拡張機能、Bubble Tea TUI、Admin API ダッシュボード、コンパクトな Claude Code ステータスラインにわたってレート制限・コスト・ピーク時間帯の分析を提供します。",
   "image": {
     "url": "https://raw.githubusercontent.com/robertogogoni/aifuel/HEAD/internal/installer/chrome-extension/icons/icon-128.png",
     "alt": "aifuel fuel pump logo",

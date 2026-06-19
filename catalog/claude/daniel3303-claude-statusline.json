@@ -27,5 +27,13 @@
     "rate-limits",
     "windows-friendly"
   ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": ["HOME", "PATH"],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
   "notes": "README declares MIT but the repo has no LICENSE file at the canonical paths as of catalog verification on 2026-04-30, so we treat it as license-unverified and don't ship an automated install. Upstream install: clone into ~/.claude/statusline/ and point statusLine.command at statusline.sh \u2014 see upstream INSTALL.md."
 }

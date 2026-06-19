@@ -20,6 +20,14 @@
   },
   "tags": ["tokens", "cost", "rate-limits"],
   "notes": "VS Code extension, not a terminal statusline. Watches Codex session JSONL.",
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": ["HOME", "PATH"],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
