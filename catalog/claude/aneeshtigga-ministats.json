@@ -1,0 +1,38 @@
+{
+  "slug": "aneeshtigga-ministats",
+  "name": "ministats",
+  "repo": "https://github.com/aneeshtigga/ministats",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A compact Claude Code statusline that displays model name, reasoning effort level, a context usage bar with token counts, and cumulative session cost, with an optional caveman badge for plugin detection.",
+  "description_fr": "Une ligne de statut compacte pour Claude Code affichant le nom du modèle, le niveau d'effort de raisonnement, une barre d'utilisation du contexte avec le nombre de tokens, et le coût cumulé de la session, avec un badge optionnel caveman.",
+  "description_ja": "モデル名、推論努力レベル、トークン数付きのコンテキスト使用バー、セッションの累積コストを表示するClaude Code用のコンパクトなステータスラインで、オプションのcavemanバッジにも対応しています。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "statusline",
+    "claude",
+    "context",
+    "reasoning",
+    "multi-provider"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

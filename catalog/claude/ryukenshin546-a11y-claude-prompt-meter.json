@@ -1,0 +1,39 @@
+{
+  "slug": "ryukenshin546-a11y-claude-prompt-meter",
+  "name": "Claude Prompt Meter",
+  "repo": "https://github.com/ryukenshin546-a11y/claude-prompt-meter",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A VS Code extension that tracks per-prompt token usage and USD costs for Claude Code sessions by reading local logs, displaying a live status-bar meter alongside a spend heatmap and configurable daily budget alerts in Thai or English.",
+  "description_fr": "Une extension VS Code qui suit l'utilisation des tokens et les coûts en USD par prompt pour les sessions Claude Code en lisant les journaux locaux, affichant un compteur en barre d'état avec une carte de chaleur des dépenses et des alertes de budget quotidien configurables en thaï ou en anglais.",
+  "description_ja": "ローカルログを読み取ってClaude Codeセッションのプロンプトごとのトークン使用量とUSDコストを追跡するVS Code拡張機能で、タイ語または英語で支出ヒートマップと設定可能な日次予算アラートを含むライブステータスバーメーターを表示します。",
+  "install": {
+    "type": "plugin"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "vscode",
+    "statusline",
+    "heatmap",
+    "budget",
+    "claude",
+    "billing"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

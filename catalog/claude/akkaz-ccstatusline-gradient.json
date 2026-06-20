@@ -1,0 +1,39 @@
+{
+  "slug": "akkaz-ccstatusline-gradient",
+  "name": "ccstatusline-gradient",
+  "repo": "https://github.com/akkaz/ccstatusline-gradient",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "TypeScript",
+  "description": "A fork of ccstatusline that adds gradient colors sweeping across status line text character-by-character, plus dynamic value-based color shifting for Claude Code widgets. Ships seven built-in presets and an interactive onboarding UI via a single npx command.",
+  "description_fr": "Un fork de ccstatusline qui ajoute des couleurs dégradées balayant le texte de la barre d'état caractère par caractère, ainsi qu'une coloration dynamique basée sur les valeurs des widgets Claude Code. Livré avec sept préréglages intégrés et une interface d'intégration interactive via une seule commande npx.",
+  "description_ja": "ccstatuslineのフォークで、Claude Codeのステータスラインテキストに文字ごとにグラデーションカラーをスイープ表示する機能と、ウィジェット値に基づく動的な色変化を追加します。7つの組み込みプリセットと、単一のnpxコマンドによるインタラクティブなオンボーディングUIを提供します。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "statusline",
+    "gradient",
+    "claude",
+    "visual",
+    "customization",
+    "nerd-fonts",
+    "presets"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

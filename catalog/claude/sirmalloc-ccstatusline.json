@@ -1,0 +1,40 @@
+{
+  "slug": "sirmalloc-ccstatusline",
+  "name": "ccstatusline",
+  "repo": "https://github.com/sirmalloc/ccstatusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "TypeScript",
+  "description": "A highly customizable status line formatter for Claude Code CLI with Powerline support, multiple themes, real-time token/session metrics, and an interactive TUI configuration interface.",
+  "description_fr": "Un formateur de barre d'état hautement personnalisable pour le CLI Claude Code, avec support Powerline, plusieurs thèmes, métriques en temps réel (tokens, session) et une interface TUI interactive.",
+  "description_ja": "Powerlineサポート、複数テーマ、リアルタイムのトークン/セッションメトリクス表示、インタラクティブなTUI設定インターフェースを備えた、Claude Code CLI向けの高度にカスタマイズ可能なステータスライン フォーマッター。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "tokens",
+    "cost",
+    "git",
+    "claude",
+    "statusline",
+    "powerline",
+    "tui",
+    "metrics"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

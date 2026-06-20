@@ -1,0 +1,39 @@
+{
+  "slug": "soulagent-claude-duck",
+  "name": "claude-duck",
+  "repo": "https://github.com/soulagent/claude-duck",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A swimming ASCII duck that animates across a 3-row pond in the Claude Code status line, paired with a rainbow truecolor bar showing model, session/weekly usage, context, cost, and git branch. It is a dependency-free Node.js script installable as a Claude Code plugin.",
+  "description_fr": "Un canard ASCII animé qui se déplace sur un étang de 3 lignes dans la barre de statut de Claude Code, accompagné d'une barre colorée affichant le modèle, l'utilisation de session/hebdomadaire, le contexte, le coût et la branche git. C'est un script Node.js sans dépendances, installable comme plugin Claude Code.",
+  "description_ja": "Claude Codeのステータスラインで3行の池をアニメーション表示する水泳ASCIIアヒるを提供し、モデル名・セッション/週次使用量・コンテキスト・コスト・Gitブランチを虹色のバーで表示します。依存関係のないNode.jsスクリプトで、Claude Codeプラグインとしてインストールできます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "novelty",
+    "cost",
+    "tokens",
+    "git",
+    "status-line",
+    "ascii-art",
+    "animation"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

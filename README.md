@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-67-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-103-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -75,11 +75,31 @@ auto-rendered by `node bin/statuslines.js render-top-readme`.
 
 Hook plugin that fires when Claude spawns an agent, picking a random exercise and shouting it at you via claude-haiku in one of four unhinged fitness personalities — drill sergeant, 80s coach, 90s wrestler, or anxious doctor. Displays the nudge in the statusline with a 5-minute cooldown.
 
+#### [**ccstatusline-gradient**](https://github.com/akkaz/ccstatusline-gradient) · MIT
+
+A fork of ccstatusline that adds gradient colors sweeping across status line text character-by-character, plus dynamic value-based color shifting for Claude Code widgets. Ships seven built-in presets and an interactive onboarding UI via a single npx command.
+
+#### [**ccstatusline Tokyo Night Theme**](https://github.com/Alequip/ccstatusline-tokyonight) · MIT
+
+A Tokyo Night color theme preset for ccstatusline, providing a 4-line powerline-style statusline for Claude Code with progress bars for session, weekly, and context token usage. Requires the ccstatusline base tool installed via npx.
+
+#### [**ministats**](https://github.com/aneeshtigga/ministats) · MIT
+
+A compact Claude Code statusline that displays model name, reasoning effort level, a context usage bar with token counts, and cumulative session cost, with an optional caveman badge for plugin detection.
+
 #### [**claude-code-statusline**](https://github.com/AnirudhMKumar/claude-code-statusline) · MIT
 
 <a href="https://github.com/AnirudhMKumar/claude-code-statusline"><img alt="anirudhmkumar-claude-code-statusline preview" src="./catalog/images/anirudhmkumar-claude-code-statusline.png" width="800"></a>
 
 Windows-native PowerShell statusline for Claude Code showing directory, git branch, active model, and context usage — installs in one command via irm/iex with zero external dependencies.
+
+#### [**claude-statusline**](https://github.com/anthonybaldwin/claude-statusline) · MIT
+
+A zero-dependency Bun-powered statusline for Claude Code that renders a multi-row terminal dashboard showing context usage, API cost with burn rate, rate-limit windows, git/PR status, and active sub-agents. Installs by cloning and running bun install.js, which auto-configures ~/.claude/settings.json.
+
+#### [**CCStatusline4DeepSeek**](https://github.com/asaberui1/CCStatusline4DeepSeek) · MIT
+
+A dual-line Claude Code statusline script that displays a 16-block context-window progress bar, cumulative session cost in CNY (¥), token usage metrics, and live DeepSeek account balance fetched via API.
 
 #### [**claude-code-statusline**](https://github.com/AsafSaar/claude-code-statusline) · MIT
 
@@ -87,11 +107,27 @@ Windows-native PowerShell statusline for Claude Code showing directory, git bran
 
 Segment-based, fully configurable Claude Code statusline composed from toggleable parts (cwd, git branch, dirty, ahead/behind, model, node, context, cost, duration, lines, last commit, stash, effort, rate limits, ts errors) with per-segment icons and color thresholds.
 
+#### [**cc-petline**](https://github.com/Assenav-Gnuj/cc-petline) · MIT
+
+A Rust-based animated sprite mascot (Fox) for Claude Code that reacts to hook events (thinking, working, sleepy, etc.) and pairs with a Charmbracelet-styled statusline showing model, git status, token usage, and cost/budget tracking. Supports both a ~3fps statusline column mode and a smooth 25fps ratatui TUI pane mode.
+
+#### [**ccstatusline-charm**](https://github.com/Assenav-Gnuj/ccstatusline-charm) · MIT
+
+A ccstatusline configuration for Claude Code styled with the Charm/lipgloss color palette, displaying a compact status line with model info, context usage, session cost, and token limits. Includes automated install scripts for macOS/Linux and Windows.
+
 #### [**Awesome Statusline (CC-statusline)**](https://github.com/AwesomeJun/CC-statusline) · MIT `(ref)`
 
 <a href="https://github.com/AwesomeJun/CC-statusline"><img alt="Awesome Statusline five size presets with reasoning-effort and thinking indicators" src="./catalog/images/awesomejun-cc-statusline.webp" width="800"></a>
 
 Cross-platform Claude Code statusline (Bash on macOS/Linux, native PowerShell on Windows) showing context, 5h/7d usage limits, cost, reasoning-effort and extended-thinking indicators, with five size presets and Catppuccin theming — no Node or Nerd Font required.
+
+#### [**fun-fact-bawstos**](https://github.com/BawstosAI/fun-fact-bawstos) · MIT
+
+Displays rotating random fun facts in the Claude Code status line, cycling through 400+ topic-tagged facts that refresh automatically. Installs via npx and integrates by adding a statusLine entry to ~/.claude/settings.json.
+
+#### [**claude-code-plan-statusline**](https://github.com/blazemalan/claude-code-plan-statusline) · MIT
+
+A Claude Code statusline hook that displays plan rate-limit usage (5-hour and weekly rolling windows) and session metrics — context fill, cache freshness, and costs — with themed ANSI output, requiring no network calls or authentication.
 
 #### [**cc-statusline**](https://github.com/brandonchartier/cc-statusline) · MIT
 
@@ -104,6 +140,10 @@ Minimal Python statusline for Claude Code showing model, git branch, token usage
 <a href="https://github.com/briansmith80/claude-code-status-bar"><img alt="claude-code-status-bar OpenGraph card" src="./catalog/images/briansmith80-claude-code-status-bar.png" width="800"></a>
 
 Pure-bash statusline with 18 segments and 7 colour themes — context bar, 5-hour and weekly rate-limit pacing, git state, session cost, and live tool activity, all with zero dependencies.
+
+#### [**claude-statusline**](https://github.com/callmemorgan/claude-statusline) · MIT
+
+A fast, themeable terminal statusline renderer for Claude Code, Antigravity CLI, and Pi that displays session metrics including cost tracking, context-window usage, rate-limit projections, and git information in a compact color-coded format.
 
 #### [**CCometixLine**](https://github.com/Haleclipse/CCometixLine) · MIT
 
@@ -129,6 +169,10 @@ Animated ASCII companion that lives in the Claude Code statusline, rolled from a
 
 Claude Code plugin/statusline that surfaces context usage, active tools, running subagents, todo progress, and rate-limit windows using the native statusline API.
 
+#### [**ccstatusline retro-hud**](https://github.com/codyslater/ccstatusline_retro-hud) · MIT
+
+A retro sci-fi HUD status line theme for Claude Code that renders a two-row terminal display showing model name, working directory, git branch, context usage, token I/O ratios, rate limits, session duration, and cost tracking with neon wireframe aesthetics and fractional-block progress bars.
+
 #### [**claude-code-statusline (ctfbio)**](https://github.com/ctfbio/claude-code-statusline) · MIT
 
 <a href="https://github.com/ctfbio/claude-code-statusline"><img alt="claude-code-statusline (ctfbio) OpenGraph card" src="./catalog/images/ctfbio-claude-code-statusline.png" width="800"></a>
@@ -147,17 +191,41 @@ Bash + PowerShell statusline for Claude Code showing model, tokens, rate limits,
 
 Shell script statusline for Claude Code displaying active model, context usage, session cost, 5-hour rate-limit bar with reset time, git branch, and diff stats.
 
+#### [**glm-quota-line**](https://github.com/deluo/glm-quota-line) · MIT
+
+Displays Zhipu GLM Coding Plan API quota usage directly in the Claude Code status line, showing balance, weekly consumption, context window utilization, and time until reset with color-coded alerts.
+
+#### [**ccstatusline-editor**](https://github.com/dpc00/ccstatusline-editor) · MIT
+
+A web-based visual drag-and-drop editor for ccstatusline configuration files, letting you build and customize your Claude Code statusline through a browser UI instead of hand-editing JSON. Supports 83+ widget types, 30 presets, and 56 color themes, with Ctrl+S saving directly to the ccstatusline settings file.
+
 #### [**claude-statusline (dwillitzer)**](https://github.com/dwillitzer/claude-statusline) · MIT
 
 <a href="https://github.com/dwillitzer/claude-statusline"><img alt="claude-statusline repo preview" src="./catalog/images/dwillitzer-claude-statusline.png" width="800"></a>
 
 Bash statusline for Claude Code with optional Node.js + tiktoken token counting and multi-provider model coloring (Claude, OpenAI, Gemini, Grok).
 
+#### [**quotaline**](https://github.com/Entrolution/quotaline) · MIT
+
+A Claude Code statusline plugin that displays account-wide 5-hour and weekly usage limits with live burn rates and cap warnings, reading directly from Claude Code's stdin with no API calls or credentials required.
+
+#### [**vastline**](https://github.com/Entrolution/vastline) · MIT
+
+A Claude Code statusline plugin for vast.ai that displays GPU instance counts, compute burn rates, storage costs for stopped instances, account balance, and estimated runway until funds deplete. It runs off the render path using cached API snapshots to keep prompt interactions fast.
+
 #### [**claude-statusline (Felipe Elias)**](https://github.com/felipeelias/claude-statusline) · MIT
 
 <a href="https://github.com/felipeelias/claude-statusline"><img alt="claude-statusline demo screenshot" src="./catalog/images/felipeelias-claude-statusline.webp" width="800"></a>
 
 Go binary statusline for Claude Code with module-based config, OSC 8 hyperlinks, and theme presets (catppuccin, tokyo-night, gruvbox-rainbow, and others).
+
+#### [**claude-usage-statusline**](https://github.com/ffontenit/claude-usage-statusline) · MIT
+
+Displays Claude Code real /usage rate-limit percentages (5-hour and 7-day windows) directly in your statusline, along with context window utilization and current model — with no API token or network calls required.
+
+#### [**co2-claude**](https://github.com/fmondora/co2-claude) · unknown `(ref)`
+
+A Claude Code hook that tracks the environmental footprint of each AI tool call, displaying live CO2 emissions, water consumption, and energy usage in the status bar. Installed via a curl script that injects PostToolUse and statusline hooks into Claude Code settings.
 
 #### [**claudeline (Fredrik Averpil)**](https://github.com/fredrikaverpil/claudeline) · MIT
 
@@ -213,11 +281,19 @@ Python statusline for Claude Code that reads real subscription usage data from A
 
 Feature-rich single-file Node.js statusline showing model, active task, git branch status, context window usage, prompt-cache hit rate, 5-hour and 7-day rate limits, and peak-hours indicator with color-coded urgency.
 
+#### [**claude-code-context-meter**](https://github.com/IntertechInc/claude-code-context-meter) · unknown `(ref)`
+
+A Bash status line script for Claude Code that displays context window fill percentage, per-turn token delta, a sparkline of recent growth, and 5-hour/7-day rate limit usage after each assistant message.
+
 #### [**claude-statusline (Kamran Ahmed)**](https://github.com/kamranahmedse/claude-statusline) · MIT
 
 <a href="https://github.com/kamranahmedse/claude-statusline"><img alt="claude-statusline showing model, context bar, git branch, rate limits" src="./catalog/images/kamranahmedse-claude-statusline.png" width="800"></a>
 
 Minimal Claude Code statusline showing model, context usage percentage, current directory, git branch, session timer, effort level, and live rate-limit bars fetched from the Anthropic API.
+
+#### [**Islamic Statuses for Claude Code**](https://github.com/kenanbalija/claude-islamic-statuses) · MIT
+
+Animated Claude Code status line that displays a spinner while Claude is working, with rotating authentic hadiths sourced from Sahih al-Bukhari and Sahih Muslim. Runs entirely offline after initial setup and supports customizable display modes.
 
 #### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT `(ref)`
 
@@ -249,6 +325,14 @@ F# statusline for Claude Code — the only F# entry in the catalog — showing c
 
 Claude Code statusline shipped as the npm package `claudeline` with built-in themes; can self-install into settings.json via its `--install` flag.
 
+#### [**Dumbometer**](https://github.com/MaximoCorrea1/dumbometer) · MIT
+
+A Claude Code statusline gauge that tracks context window fill level and displays a color-coded Smart-to-Dumb scale, warning users when session quality is likely degrading. Zero dependencies, runs via Node.js with no token cost.
+
+#### [**OpenDoor StatusLine**](https://github.com/MengFanLu1/opendoor-statusline) · MIT
+
+A Claude Code status bar tool for OpenDoor that displays real-time balance and API usage tracking alongside model name, Git branch, and context window metrics. Written in Rust and distributed as a cross-platform binary via npm.
+
 #### [**claude-usage-statusline**](https://github.com/meros/claude-usage-statusline) · MIT
 
 <a href="https://github.com/meros/claude-usage-statusline"><img alt="claude-usage-statusline dashboard with sparklines and ETA" src="./catalog/images/meros-claude-usage-statusline.png" width="800"></a>
@@ -260,6 +344,10 @@ Polls the Claude API for 5-hour and 7-day window usage, persists dual-tier histo
 <a href="https://github.com/mtschoen/schoen-claude-status"><img alt="schoen-claude-status showing cache hit rate and rate-limit pace projection" src="./catalog/images/mtschoen-schoen-claude-status.svg" width="800"></a>
 
 Two-line statusline tracking session-wide cache hit rate, context usage, and 5-hour/weekly rate-limit pace projections with cost — all in a single-file bash + python setup.
+
+#### [**sysmon**](https://github.com/Navifra-Sally/sysmon-plugin) · MIT
+
+A Claude Code plugin that adds a live statusline showing CPU load, memory, disk, and network health, plus a /sysmon slash command that runs a full read-only system diagnosis (routing, DNS, disk usage, top processes, open listeners) and has Claude summarize what is wrong and what to do.
 
 #### [**claude-code-status-line (ndave92)**](https://github.com/ndave92/claude-code-status-line) · MIT
 
@@ -291,6 +379,10 @@ macOS notch/menu-bar companion (SwiftUI + AppKit) that monitors active AI coding
 
 Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.
 
+#### [**foxtail**](https://github.com/padenot/foxtail) · Apache-2.0
+
+A Claude Code statusline for Mozilla/Firefox developers that displays model, working directory, time, context window usage, git status, session statistics, cost, and cache details in a formatted two-line output. Implemented in Rust and configured via TOML, it integrates with Claude Code's statusLine command hook.
+
 #### [**ccstatusline-usage**](https://github.com/pcvelz/ccstatusline-usage) · MIT
 
 <a href="https://github.com/pcvelz/ccstatusline-usage"><img alt="ccstatusline-usage showing session and weekly API usage bars alongside model and git widgets" src="./catalog/images/pcvelz-ccstatusline-usage.png" width="800"></a>
@@ -315,6 +407,10 @@ Fork of jarrodwatts/claude-hud that swaps the progress bars for a per-position g
 
 Feature-rich, dependency-free single-file Node.js statusline for Claude Code showing model, active task, git state, context usage, prompt-cache state with TTL, and 5-hour plus 7-day Anthropic rate-limit countdowns.
 
+#### [**Token Horse**](https://github.com/ratelworks/token-horse) · MIT
+
+A terminal pixel-horse pet that gallops faster as your Claude Code or Codex CLI session burns more tokens per second, wired into the statusline via a command that reads the session transcript JSONL to measure live token throughput.
+
 #### [**claude-code-statusline (RiverOfLogic)**](https://github.com/RiverOfLogic/claude-code-statusline) · Unspecified `(ref)`
 
 <a href="https://github.com/RiverOfLogic/claude-code-statusline"><img alt="RiverOfLogic Powerline statusline showing model, git, context bar with warm retro colors" src="./catalog/images/riveroflogic-claude-code-statusline.png" width="800"></a>
@@ -326,6 +422,10 @@ Powerline-style retro-terminal statusline for Claude Code, displaying model, git
 <a href="https://github.com/robertogogoni/aifuel"><img alt="aifuel fuel pump logo" src="./catalog/images/robertogogoni-aifuel.png" width="800"></a>
 
 Go-based multi-provider AI usage monitor (Claude, Codex, Gemini, Copilot, Antigravity) that surfaces rate limits, cost, and peak-hour analytics across a waybar module, Chrome extension, Bubble Tea TUI, Admin API dashboard, and a compact Claude Code statusline.
+
+#### [**Claude Prompt Meter**](https://github.com/ryukenshin546-a11y/claude-prompt-meter) · MIT
+
+A VS Code extension that tracks per-prompt token usage and USD costs for Claude Code sessions by reading local logs, displaying a live status-bar meter alongside a spend heatmap and configurable daily budget alerts in Thai or English.
 
 #### [**claude-code-statusline (rz1989s)**](https://github.com/rz1989s/claude-code-statusline) · MIT
 
@@ -339,11 +439,19 @@ Bash statusline for Claude Code with 28 atomic components across up to 9 lines: 
 
 Unified Rust binary that combines a sub-millisecond Claude Code statusline with ccusage-style JSONL log analytics; one tool renders tokens, cost, git, and 5h/7d rate limits while also producing daily, session, and block usage reports.
 
+#### [**ccstatusline**](https://github.com/sirmalloc/ccstatusline) · MIT
+
+A highly customizable status line formatter for Claude Code CLI with Powerline support, multiple themes, real-time token/session metrics, and an interactive TUI configuration interface.
+
 #### [**ClaudeCodeStatusBar**](https://github.com/SleighMaster99/ClaudeCodeStatusBar) · MIT
 
 <a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="./catalog/images/sleighmaster99-claudecodestatusbar.svg" width="800"></a>
 
 Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag-and-drop layout builder with PowerShell runtime, usage tracking, and git/context/cost widgets.
+
+#### [**claude-statusline**](https://github.com/snackdriven/claude-statusline) · unknown `(ref)`
+
+A multi-region statusline composer for Claude Code that forks parallel producer scripts, manages TTL-based region caching, applies priority sorting, and renders colored output rows within terminal width constraints. It includes a conscience system with rule-hint matching and optional integrations for context window usage, active tickets, and external services.
 
 #### [**claude-code-statusline (Sam Yamashita)**](https://github.com/sotayamashita/claude-code-statusline) · MIT
 
@@ -351,11 +459,23 @@ Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag
 
 Rust statusline for Claude Code with starship-like configuration and module-based composition.
 
+#### [**claude-duck**](https://github.com/soulagent/claude-duck) · MIT
+
+A swimming ASCII duck that animates across a 3-row pond in the Claude Code status line, paired with a rainbow truecolor bar showing model, session/weekly usage, context, cost, and git branch. It is a dependency-free Node.js script installable as a Claude Code plugin.
+
 #### [**claude-statusline-powerline**](https://github.com/spences10/claude-statusline-powerline) · MIT
 
 <a href="https://github.com/spences10/claude-statusline-powerline"><img alt="claude-statusline-powerline demo showing themed powerline segments" src="./catalog/images/spences10-claude-statusline-powerline.png" width="800"></a>
 
 Powerline-style Claude Code statusline built as an expansion of Owloops' claude-powerline, adding a local SQLite-backed usage-analytics database and a JSON config schema with settings.json IntelliSense (autocomplete, hover docs, color validation).
+
+#### [**ClaudeCodeStatusBar**](https://github.com/squanchymnonm/ClaudeCodeStatusBar) · MIT
+
+A Claude Code plugin that adds a real-time statusline showing context window usage, token counts, and session/weekly rate limits with color-coded alerts. Includes a live subagent panel displaying running subagents with their token consumption speed.
+
+#### [**XClaudeUsage**](https://github.com/SrDarf/XClaudeUsage) · MIT
+
+A Claude Code statusline hook that tracks per-session token usage and 5-hour quota in real time, aggregating across parallel local sessions via SQLite with optional cross-device sync through Turso cloud.
 
 #### [**claude-statusline (TheoBrigitte)**](https://github.com/TheoBrigitte/claude-statusline) · MIT
 
@@ -375,6 +495,14 @@ Claude Code statusline that parses session JSONL transcripts to compute input + 
 
 Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
 
+#### [**FitPet**](https://github.com/victory-c/fitpet) · MIT
+
+A Claude Code statusline companion that renders a virtual pet whose vitality is driven by Garmin fitness data and whose reactions are triggered by coding hook events such as test passes and errors. The pet evolves through vitality tiers synced via a Garmin MCP skill, with all quip responses handled locally without model calls.
+
+#### [**codexbar-hub**](https://github.com/xicv/codexbar-hub) · MIT
+
+A Claude Code statusline tool that renders a claude-hud segment, a caffeinate indicator, and Codex/Claude usage pace-bars sourced from CodexBar. Designed for terminal statuslines to surface real-time AI usage metrics and system state.
+
 #### [**xuedi/claude-statusline**](https://github.com/xuedi/claude-statusline) · EUPL-1.2 `(ref)`
 
 <a href="https://github.com/xuedi/claude-statusline"><img alt="xuedi/claude-statusline repo preview" src="./catalog/images/xuedi-claude-statusline.png" width="800"></a>
@@ -386,6 +514,18 @@ Rust-native Claude Code statusline rendering model, git, tokens, effort, and 5h/
 <a href="https://github.com/xyzcardiff/claude-code-statusline"><img alt="xyzcardiff claude-code-statusline repository preview" src="./catalog/images/xyzcardiff-claude-code-statusline.png" width="800"></a>
 
 Two-line Claude Code statusline (shell) with live subagent count and background-task progress bar read from ~/.claude/jobs — second line only appears when agents or tasks are active.
+
+#### [**claude-token-monitor**](https://github.com/young1lin/claude-token-monitor) · MIT
+
+A Claude Code statusline plugin written in Go that displays real-time context token usage, Anthropic Pro/Team 5-hour and 7-day quota countdowns, and Z.ai/GLM Coding Plan quota — all with git branch, thinking-mode indicators, and a single cross-platform binary.
+
+#### [**bmad-statusline**](https://github.com/zRawday/bmad-statusline) · MIT
+
+A ccstatusline widget pack that passively tracks BMAD workflow activity in Claude Code, automatically detecting active skills, story progress, and step state via Claude Code lifecycle hooks. Includes an interactive TUI configurator with 11 customizable widgets and support for 134 recognized workflows.
+
+#### [**claude-statusline**](https://github.com/zyx1121/claude-statusline) · MIT
+
+A modular statusline plugin for Claude Code that lets users compose self-contained widgets (model, context, cost, rate limits, git, now-playing, stocks, and more) into configurable profiles via a federated marketplace.
 
 ### OpenCode
 
@@ -433,11 +573,19 @@ Cross-CLI token-usage tracker that reads local session data from many AI coding 
 
 ### Gemini CLI
 
+#### [**claude-statusline**](https://github.com/callmemorgan/claude-statusline) · MIT
+
+A fast, themeable terminal statusline renderer for Claude Code, Antigravity CLI, and Pi that displays session metrics including cost tracking, context-window usage, rate-limit projections, and git information in a compact color-coded format.
+
 #### [**gemini-statusline**](https://github.com/Kiriketsuki/gemini-statusline) · Unspecified `(ref)`
 
 <a href="https://github.com/Kiriketsuki/gemini-statusline"><img alt="gemini-statusline repo preview" src="./catalog/images/kiriketsuki-gemini-statusline.png" width="800"></a>
 
 Two-line shell-prompt helper for Gemini CLI showing model, workspace context, git branch, GitHub issue counts, and inbox depth — Gemini CLI has no native statusLine hook so this runs from the user's shell prompt.
+
+#### [**OpenDoor StatusLine**](https://github.com/MengFanLu1/opendoor-statusline) · MIT
+
+A Claude Code status bar tool for OpenDoor that displays real-time balance and API usage tracking alongside model name, Git branch, and context window metrics. Written in Rust and distributed as a cross-platform binary via npm.
 
 #### [**Open Island**](https://github.com/octane0411/open-vibe-island) · GPL-3.0 `(ref)`
 
@@ -457,6 +605,10 @@ Go-based multi-provider AI usage monitor (Claude, Codex, Gemini, Copilot, Antigr
 
 Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
 
+#### [**codexbar-hub**](https://github.com/xicv/codexbar-hub) · MIT
+
+A Claude Code statusline tool that renders a claude-hud segment, a caffeinate indicator, and Codex/Claude usage pace-bars sourced from CodexBar. Designed for terminal statuslines to surface real-time AI usage metrics and system state.
+
 ### Codex CLI
 
 #### [**cat-codex-statusline (ai-ken-git)**](https://github.com/ai-ken-git/cat-codex-statusline) · MIT
@@ -464,6 +616,10 @@ Cross-CLI token-usage tracker that reads local session data from many AI coding 
 <a href="https://github.com/ai-ken-git/cat-codex-statusline"><img alt="cat-codex-statusline terminal preview showing model, git branch, and context segments" src="./catalog/images/ai-ken-git-cat-codex-statusline.png" width="800"></a>
 
 Cat-themed Codex CLI statusline installer; wires built-in segments (model, git branch, context, limits) into a clean preset today, with a cat-face renderer ready to activate once Codex ships a command-backed status line hook.
+
+#### [**claude-statusline**](https://github.com/callmemorgan/claude-statusline) · MIT
+
+A fast, themeable terminal statusline renderer for Claude Code, Antigravity CLI, and Pi that displays session metrics including cost tracking, context-window usage, rate-limit projections, and git information in a compact color-coded format.
 
 #### [**codex-hud (Capedbitmap)**](https://github.com/Capedbitmap/codex-hud) · PolyForm-Noncommercial-1.0.0 `(ref)`
 
@@ -495,6 +651,10 @@ Fast local token-usage tracker for Claude Code and Codex; `tu statusline` emits 
 
 Dual-bar statusline showing Claude Code and Codex CLI quota side-by-side with 5H/weekly rate-limit bars, context window, and live active-subagent count tracked via PreToolUse/PostToolUse hooks.
 
+#### [**OpenDoor StatusLine**](https://github.com/MengFanLu1/opendoor-statusline) · MIT
+
+A Claude Code status bar tool for OpenDoor that displays real-time balance and API usage tracking alongside model name, Git branch, and context window metrics. Written in Rust and distributed as a cross-platform binary via npm.
+
 #### [**Open Island**](https://github.com/octane0411/open-vibe-island) · GPL-3.0 `(ref)`
 
 <a href="https://github.com/octane0411/open-vibe-island"><img alt="Open Island demo showing AI agent status in the macOS notch" src="./catalog/images/octane0411-open-vibe-island.gif" width="800"></a>
@@ -518,6 +678,10 @@ Go-based multi-provider AI usage monitor (Claude, Codex, Gemini, Copilot, Antigr
 <a href="https://github.com/junhoyeo/tokscale"><img alt="tokscale hero banner" src="./catalog/images/tokscale.webp" width="800"></a>
 
 Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
+
+#### [**codexbar-hub**](https://github.com/xicv/codexbar-hub) · MIT
+
+A Claude Code statusline tool that renders a claude-hud segment, a caffeinate indicator, and Codex/Claude usage pace-bars sourced from CodexBar. Designed for terminal statuslines to surface real-time AI usage metrics and system state.
 
 <!-- catalog:end -->
 
