@@ -1,0 +1,41 @@
+{
+  "slug": "zrawday-bmad-statusline",
+  "name": "bmad-statusline",
+  "repo": "https://github.com/zRawday/bmad-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A ccstatusline widget pack that passively tracks BMAD workflow activity in Claude Code, automatically detecting active skills, story progress, and step state via Claude Code lifecycle hooks. Includes an interactive TUI configurator with 11 customizable widgets and support for 134 recognized workflows.",
+  "description_fr": "Un pack de widgets ccstatusline qui suit passivement l'activité des workflows BMAD dans Claude Code, détectant automatiquement les compétences actives, l'avancement des récits et l'état des étapes via les hooks du cycle de vie de Claude Code. Inclut un configurateur TUI interactif avec 11 widgets personnalisables et la prise en charge de 134 workflows reconnus.",
+  "description_ja": "Claude Codeのライフサイクルフックを通じてアクティブなスキル、ストーリーの進捗、ステップの状態を自動検出し、BMADワークフローのアクティビティをClaude Codeでパッシブに追跡するccstatuslineウィジェットパックです。11個のカスタマイズ可能なウィジェットと134種類のワークフローをサポートするインタラクティブなTUIコンフィギュレーターを含みます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "agents",
+    "themes",
+    "git",
+    "novelty",
+    "statusline",
+    "bmad",
+    "workflow",
+    "tui",
+    "hooks",
+    "monitoring"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

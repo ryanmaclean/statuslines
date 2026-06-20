@@ -1,0 +1,37 @@
+{
+  "slug": "blazemalan-claude-plan-statusline",
+  "name": "claude-code-plan-statusline",
+  "repo": "https://github.com/blazemalan/claude-code-plan-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A Claude Code statusline hook that displays plan rate-limit usage (5-hour and weekly rolling windows) and session metrics — context fill, cache freshness, and costs — with themed ANSI output, requiring no network calls or authentication.",
+  "description_fr": "Un hook de barre d'état pour Claude Code qui affiche l'utilisation du quota du plan (fenêtres glissantes de 5 heures et hebdomadaire) ainsi que les métriques de session — remplissage du contexte, fraîcheur du cache et coûts — avec une sortie ANSI thémée, sans appel réseau ni authentification.",
+  "description_ja": "Claude Codeのステータスラインフックで、プランのレート制限使用率（5時間および週次のローリングウィンドウ）とセッション指標（コンテキスト充填率、キャッシュの鮮度、コスト）をテーマ付きANSI出力で表示し、ネットワーク呼び出しや認証を必要としません。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rate-limits",
+    "statusline",
+    "tokens",
+    "cost",
+    "themes",
+    "hooks"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
