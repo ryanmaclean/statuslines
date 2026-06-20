@@ -9,6 +9,8 @@
   ],
   "language": "python",
   "description": "Cat-themed Codex CLI statusline installer; wires built-in segments (model, git branch, context, limits) into a clean preset today, with a cat-face renderer ready to activate once Codex ships a command-backed status line hook.",
+  "description_fr": "Installateur de statusline Codex CLI sur le thème des chats ; câble les segments natifs (modèle, branche git, contexte, limites) dans un preset propre, avec un rendu en tête de chat prêt à s'activer dès que Codex proposera un hook de ligne de statut basé sur des commandes.",
+  "description_ja": "猫テーマの Codex CLI ステータスライン インストーラー。ビルトインセグメント（モデル、gitブランチ、コンテキスト、制限）をクリーンなプリセットに配線し、Codex がコマンドベースのステータスラインフックを提供した時点で猫顔レンダラーが自動的に有効になります。",
   "image": {
     "url": "https://raw.githubusercontent.com/ai-ken-git/cat-codex-statusline/main/preview.png",
     "alt": "cat-codex-statusline terminal preview showing model, git branch, and context segments",

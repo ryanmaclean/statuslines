@@ -26,5 +26,13 @@
     "multi-provider",
     "tokens"
   ],
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": ["HOME", "PATH"],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
   "notes": "README claims MIT but no LICENSE file is present at catalog verification on 2026-04-30. README's clone command also uses a literal `<repository-url>` placeholder rather than this repo's URL \u2014 substitute manually."
 }

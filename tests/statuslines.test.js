@@ -124,19 +124,19 @@ describe("validate() — required fields", () => {
 
 describe("validate() — host_clis", () => {
   test("accepts all known clis", () => {
-    const { errs } = validate(minimalEntry({ host_clis: ["claude", "opencode", "gemini", "codex"] }));
+    const { errs } = validate(minimalEntry({ host_clis: ["claude", "opencode", "gemini", "codex", "jetbrains", "vscode", "amp", "cursor", "kimi"] }));
     assert.deepEqual(errs.filter((m) => m.includes("invalid host_cli")), []);
   });
 
   test("rejects an unknown cli", () => {
-    const { errs } = validate(minimalEntry({ host_clis: ["cursor"] }));
-    assert.ok(errs.some((m) => m.includes("invalid host_cli: cursor")));
+    const { errs } = validate(minimalEntry({ host_clis: ["unknowncli"] }));
+    assert.ok(errs.some((m) => m.includes("invalid host_cli: unknowncli")));
   });
 
   test("rejects multiple unknown clis independently", () => {
-    const { errs } = validate(minimalEntry({ host_clis: ["cursor", "amp"] }));
-    assert.ok(errs.some((m) => m.includes("invalid host_cli: cursor")));
-    assert.ok(errs.some((m) => m.includes("invalid host_cli: amp")));
+    const { errs } = validate(minimalEntry({ host_clis: ["unknowncli", "fakecli"] }));
+    assert.ok(errs.some((m) => m.includes("invalid host_cli: unknowncli")));
+    assert.ok(errs.some((m) => m.includes("invalid host_cli: fakecli")));
   });
 });
 
@@ -276,8 +276,8 @@ describe("validate() — dangerous config patterns", () => {
   });
 
   test("config key with unknown cli is an error", () => {
-    const { errs } = validate(fullEntry({ configs: { cursor: { cmd: "foo" } } }));
-    assert.ok(errs.some((m) => m.includes("configs key 'cursor'")));
+    const { errs } = validate(fullEntry({ configs: { unknowncli: { cmd: "foo" } } }));
+    assert.ok(errs.some((m) => m.includes("configs key 'unknowncli'")));
   });
 
   test("statusLine.direct=true is OK", () => {

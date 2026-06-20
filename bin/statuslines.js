@@ -7,7 +7,7 @@ import { spawnSync } from "node:child_process";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const CATALOG = process.env.STATUSLINES_CATALOG ?? join(ROOT, "catalog");
-const VALID_CLIS = ["claude", "opencode", "gemini", "codex"];
+const VALID_CLIS = ["claude", "opencode", "gemini", "codex", "jetbrains", "vscode", "amp", "cursor", "kimi"];
 const PERMISSIVE = new Set(["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "MPL-2.0", "0BSD"]);
 const REQUIRED = ["slug", "name", "repo", "license", "redistributable", "host_clis", "language", "description", "install"];
 const PINNED_INSTALL_TYPES = new Set(["npx", "npm-global", "opencode-plugin"]);
@@ -83,7 +83,7 @@ function validate(entry) {
     errs.push(`redistributable=true but license '${entry.license}' is not in the permissive allowlist`);
   }
   if (entry.install) {
-    const ok = ["npx", "npm-global", "cargo", "brew", "git", "manual", "opencode-plugin"];
+    const ok = ["npx", "npm-global", "cargo", "brew", "git", "manual", "opencode-plugin", "plugin", "curl"];
     if (!ok.includes(entry.install.type)) errs.push(`invalid install.type: ${entry.install.type}`);
     if (entry.install.type === "git" && !entry.install.clone_dir) errs.push("install.type=git requires clone_dir");
     if (["npx","npm-global","opencode-plugin"].includes(entry.install.type) && !entry.install.package) errs.push("install.type=npx/npm-global/opencode-plugin requires package");
