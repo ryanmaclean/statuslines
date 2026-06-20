@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-28T20:46:42.313Z",
+  "generated_at": "2026-06-20T06:28:17.890Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -15,7 +15,7 @@
     {
       "slug": "ai-ken-git-cat-codex-statusline",
       "path": "catalog/codex/ai-ken-git-cat-codex-statusline.json",
-      "sha256": "ef625bc36d56cebcaf9a3b0727f63919c84442739716b118b2f46bf36927ebd1"
+      "sha256": "d2fc3d0c8d97e3dff5831d5dd727a8d088e1bd8038f7e70c549d8c41b0d5c90d"
     },
     {
       "slug": "ainsley-opencode-token-monitor",
@@ -85,7 +85,7 @@
     {
       "slug": "daniel3303-claude-statusline",
       "path": "catalog/claude/daniel3303-claude-statusline.json",
-      "sha256": "38764e12fe6a66d9cd069ad7077c25cfb1b47b6d2ecb8546112e9cda8f8efd40"
+      "sha256": "970a749790a201af001f6ac44611803a7b42937544a6bed4c560844552024dd8"
     },
     {
       "slug": "danielmackay-claude-code-statusline",
@@ -100,7 +100,7 @@
     {
       "slug": "dwillitzer-claude-statusline",
       "path": "catalog/claude/dwillitzer-claude-statusline.json",
-      "sha256": "5344332b4d652cce8092a1928e0322599564290cc452fb30fba4637de443884b"
+      "sha256": "47768b7e093a2101c712d0e3d788daea9cc9be51ccba006710615f4de5e5dc85"
     },
     {
       "slug": "felipeelias-claude-statusline",
@@ -165,7 +165,7 @@
     {
       "slug": "jacsuper-codex-statusline-vscode",
       "path": "catalog/vscode/jacsuper-codex-statusline-vscode.json",
-      "sha256": "0f6993aa27ba07e7ee6b97ec409f29871a4706523cf0b8b8eadc45f53424e4d8"
+      "sha256": "a09a0db55fd7294af8275bc974836017b33c6251941e956593a3bd4d15c2d822"
     },
     {
       "slug": "joaquinvesapa-sub-agent-statusline",
@@ -290,7 +290,7 @@
     {
       "slug": "robertogogoni-aifuel",
       "path": "catalog/multi/robertogogoni-aifuel.json",
-      "sha256": "4f05fb46ea96cc1e3eb5a15b2ffd4b1d621125e1b007748d2e799e29dd427d78"
+      "sha256": "d75aaf32bd0c4684d323c95938d180b63671c72d18c7c9e720d800c8d370becc"
     },
     {
       "slug": "rz1989s-claude-code-statusline",
