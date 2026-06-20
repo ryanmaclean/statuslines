@@ -1,0 +1,41 @@
+{
+  "slug": "mengfanlu1-opendoor-statusline",
+  "name": "OpenDoor StatusLine",
+  "repo": "https://github.com/MengFanLu1/opendoor-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude",
+    "codex",
+    "gemini"
+  ],
+  "language": "Rust",
+  "description": "A Claude Code status bar tool for OpenDoor that displays real-time balance and API usage tracking alongside model name, Git branch, and context window metrics. Written in Rust and distributed as a cross-platform binary via npm.",
+  "description_fr": "Un outil de barre de statut pour Claude Code (OpenDoor) qui affiche en temps réel le solde et les métriques de consommation d'API, ainsi que le nom du modèle, la branche Git et l'utilisation de la fenêtre de contexte. Écrit en Rust et distribué via npm sous forme de binaire multiplateforme.",
+  "description_ja": "OpenDoor向けのClaude Codeステータスバーツールで、残高やAPI使用量をリアルタイムで表示するほか、モデル名・Gitブランチ・コンテキストウィンドウの使用状況も確認できます。Rustで書かれ、npm経由でクロスプラットフォームバイナリとして配布されます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "statusline",
+    "claude-code",
+    "themes",
+    "tui",
+    "balance-tracking"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

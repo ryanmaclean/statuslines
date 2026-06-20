@@ -1,0 +1,39 @@
+{
+  "slug": "deluo-glm-quota-line",
+  "name": "glm-quota-line",
+  "repo": "https://github.com/deluo/glm-quota-line",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "Displays Zhipu GLM Coding Plan API quota usage directly in the Claude Code status line, showing balance, weekly consumption, context window utilization, and time until reset with color-coded alerts.",
+  "description_fr": "Affiche l'utilisation du quota API du plan GLM Coding de Zhipu directement dans la barre de statut de Claude Code, avec la balance, la consommation hebdomadaire, l'utilisation de la fenêtre de contexte et le temps jusqu'à la réinitialisation.",
+  "description_ja": "Zhipu GLM Coding PlanのAPIクォータ使用状況（残高、週次消費量、コンテキストウィンドウ使用率、リセットまでの時間）をClaude Codeのステータスラインに直接表示します。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "cost",
+    "rate-limits",
+    "tokens",
+    "statusline",
+    "quota",
+    "glm",
+    "zhipu",
+    "multi-provider"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

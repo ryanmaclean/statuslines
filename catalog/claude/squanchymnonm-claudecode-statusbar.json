@@ -1,0 +1,38 @@
+{
+  "slug": "squanchymnonm-claudecode-statusbar",
+  "name": "ClaudeCodeStatusBar",
+  "repo": "https://github.com/squanchymnonm/ClaudeCodeStatusBar",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A Claude Code plugin that adds a real-time statusline showing context window usage, token counts, and session/weekly rate limits with color-coded alerts. Includes a live subagent panel displaying running subagents with their token consumption speed.",
+  "description_fr": "Un plugin Claude Code qui ajoute une barre d'état en temps réel affichant l'utilisation de la fenêtre de contexte, le nombre de tokens et les limites de débit session/hebdomadaire avec des alertes colorées. Comprend un panneau de sous-agents en direct montrant les sous-agents actifs avec leur vitesse de consommation de tokens.",
+  "description_ja": "コンテキストウィンドウの使用状況、トークン数、セッション/週間レート制限をカラーコードアラート付きでリアルタイム表示するステータスラインを追加するClaude Codeプラグイン。実行中のサブエージェントとそのトークン消費速度を表示するライブサブエージェントパネルも含む。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "agents",
+    "statusline",
+    "context-window",
+    "monitoring"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

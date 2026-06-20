@@ -1,0 +1,40 @@
+{
+  "slug": "fmondora-co2-claude",
+  "name": "co2-claude",
+  "repo": "https://github.com/fmondora/co2-claude",
+  "license": "unknown",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A Claude Code hook that tracks the environmental footprint of each AI tool call, displaying live CO2 emissions, water consumption, and energy usage in the status bar. Installed via a curl script that injects PostToolUse and statusline hooks into Claude Code settings.",
+  "description_fr": "Un hook Claude Code qui suit l'empreinte environnementale de chaque appel d'outil IA, affichant en temps réel les émissions de CO2, la consommation d'eau et l'énergie dans la barre d'état. S'installe via un script curl qui injecte des hooks PostToolUse et statusline dans la configuration de Claude Code.",
+  "description_ja": "各AIツール呼び出しの環境フットプリントを追跡するClaude Codeフックで、CO2排出量・水消費量・エネルギー使用量をステータスバーにリアルタイム表示します。curlスクリプトでインストールし、Claude CodeのPostToolUseフックとステータスラインフックを自動設定します。",
+  "install": {
+    "type": "curl"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "claude",
+    "statusline",
+    "hooks",
+    "sustainability",
+    "co2",
+    "energy",
+    "novelty"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

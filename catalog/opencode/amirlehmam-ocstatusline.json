@@ -1,0 +1,40 @@
+{
+  "slug": "amirlehmam-ocstatusline",
+  "name": "ocstatusline",
+  "repo": "https://github.com/amirlehmam/ocstatusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "opencode"
+  ],
+  "language": "TypeScript",
+  "description": "A highly customizable live statusline for OpenCode that runs as a standalone process, subscribing to OpenCode's event stream to display model, provider, token usage, cost, context window percentage, session timer, and git state in the terminal. It is the OpenCode counterpart of ccstatusline, featuring an interactive configuration TUI built with Ink and Powerline separator support.",
+  "description_fr": "Une barre d'état en direct hautement personnalisable pour OpenCode, fonctionnant comme un processus autonome qui s'abonne au flux d'événements d'OpenCode pour afficher le modèle, le fournisseur, l'utilisation des tokens, le coût, le pourcentage de la fenêtre de contexte, le minuteur de session et l'état git dans le terminal. C'est le pendant OpenCode de ccstatusline, avec un éditeur de configuration interactif basé sur Ink et la prise en charge des séparateurs Powerline.",
+  "description_ja": "OpenCodeのイベントストリームを購読してモデル、プロバイダー、トークン使用量、コスト、コンテキストウィンドウの割合、セッションタイマー、git状態をターミナルに表示する、スタンドアロンプロセスとして動作するOpenCode向けの高度にカスタマイズ可能なライブステータスラインです。ccstatuslineのOpenCode版であり、Inkで構築されたインタラクティブな設定TUIとPowerlineセパレータのサポートを備えています。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "git",
+    "themes",
+    "tui",
+    "powerline",
+    "opencode",
+    "statusline",
+    "typescript"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

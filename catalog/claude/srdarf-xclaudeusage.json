@@ -1,0 +1,39 @@
+{
+  "slug": "srdarf-xclaudeusage",
+  "name": "XClaudeUsage",
+  "repo": "https://github.com/SrDarf/XClaudeUsage",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A Claude Code statusline hook that tracks per-session token usage and 5-hour quota in real time, aggregating across parallel local sessions via SQLite with optional cross-device sync through Turso cloud.",
+  "description_fr": "Un hook de barre de statut pour Claude Code qui suit en temps réel la consommation de tokens par session et le quota sur 5 heures, en agrégeant les sessions locales parallèles via SQLite avec synchronisation multi-appareils optionnelle via Turso cloud.",
+  "description_ja": "Claude Codeのステータスライン用フックで、セッションごとのトークン使用量と5時間クォータをリアルタイムで追跡し、SQLiteを通じて並行ローカルセッションを集計、オプションでTursoクラウドを使ったデバイス間同期にも対応する。",
+  "install": {
+    "type": "curl"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "statusline",
+    "sqlite",
+    "cloud-sync",
+    "multi-session",
+    "hooks"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "entrolution-vastline",
+  "name": "vastline",
+  "repo": "https://github.com/Entrolution/vastline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Rust",
+  "description": "A Claude Code statusline plugin for vast.ai that displays GPU instance counts, compute burn rates, storage costs for stopped instances, account balance, and estimated runway until funds deplete. It runs off the render path using cached API snapshots to keep prompt interactions fast.",
+  "description_fr": "Un plugin de barre d'état pour Claude Code dédié à vast.ai, affichant le nombre d'instances GPU, les taux de consommation de calcul, les coûts de stockage des instances arrêtées, le solde du compte et l'autonomie estimée avant épuisement des fonds. Il fonctionne hors du chemin de rendu grâce à des instantanés d'API mis en cache pour garder les interactions rapides.",
+  "description_ja": "Claude CodeのステータスラインプラグインでVast.aiのGPUインスタンス数、計算燃焼率、停止インスタンスのストレージコスト、アカウント残高、資金枯渇までの推定滑走路を表示します。APIスナップショットのキャッシュを使用してレンダーパス外で動作し、プロンプトの操作を高速に保ちます。",
+  "install": {
+    "type": "curl"
+  },
+  "configs": {},
+  "tags": [
+    "cost",
+    "tokens",
+    "statusline",
+    "gpu",
+    "vast.ai",
+    "rate-limits",
+    "monitoring",
+    "claude-code"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

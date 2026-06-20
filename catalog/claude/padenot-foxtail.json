@@ -1,0 +1,40 @@
+{
+  "slug": "padenot-foxtail",
+  "name": "foxtail",
+  "repo": "https://github.com/padenot/foxtail",
+  "license": "Apache-2.0",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Rust",
+  "description": "A Claude Code statusline for Mozilla/Firefox developers that displays model, working directory, time, context window usage, git status, session statistics, cost, and cache details in a formatted two-line output. Implemented in Rust and configured via TOML, it integrates with Claude Code's statusLine command hook.",
+  "description_fr": "Une barre de statut pour Claude Code destinée aux développeurs Mozilla/Firefox, affichant le modèle, le répertoire courant, l'heure, l'utilisation du contexte, le statut git, les statistiques de session, le coût et les détails du cache. Implémentée en Rust et configurée via TOML, elle s'intègre au hook de commande statusLine de Claude Code.",
+  "description_ja": "Mozilla/Firefoxの開発者向けのClaude Codeステータスラインツールで、モデル、作業ディレクトリ、時刻、コンテキスト使用量、gitステータス、セッション統計、コスト、キャッシュ情報を整形出力します。RustとTOML設定で実装され、Claude CodeのstatusLineコマンドフックと統合されます。",
+  "install": {
+    "type": "cargo"
+  },
+  "configs": {},
+  "tags": [
+    "statusline",
+    "claude",
+    "git",
+    "cost",
+    "tokens",
+    "themes",
+    "mozilla",
+    "firefox",
+    "developer-tools"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
