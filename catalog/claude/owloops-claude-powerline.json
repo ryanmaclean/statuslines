@@ -20,15 +20,15 @@
   "install": {
     "type": "npx",
     "package": "@owloops/claude-powerline",
-    "version": "1.26.0",
-    "integrity": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ==",
+    "version": "1.27.0",
+    "integrity": "sha512-73HUtloPKxMqqcLJhJZcBxIIR/1oDtIzcfrqW5YPsYpIMESV38v1n9ds3mG3Blt9EqesyfJSOCUb46sEZ0KTSQ==",
     "deps_lock_sha256": "61288f691542a3cca3fb508976f0b62a98a5c4d1531bbb0002eb98373fd6a84d"
   },
   "configs": {
     "claude": {
       "statusLine": {
         "type": "command",
-        "command": "npx --ignore-scripts -y @owloops/claude-powerline@1.26.0 --style=powerline"
+        "command": "npx --ignore-scripts -y @owloops/claude-powerline@1.27.0 --style=powerline"
       }
     }
   },
@@ -41,7 +41,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-04-30"
+    "last_audit": "2026-06-29"
   },
   "capabilities": {
     "network": true,
