@@ -22,7 +22,7 @@
     "package": "opencode-token-monitor",
     "version": "0.5.0",
     "integrity": "sha512-Bh9ORa3sdF8hxroEejhSV9npEdAOjdPW9iGArIPFJzwmhbZhkiQqRAqvbTVq4HW4epRcfbh5ePORlBsDM0AQuw==",
-    "deps_lock_sha256": "4c59439d0ecfcd2c2c539db84e85f7c88ac983db207d2fffb9b3614473387d60"
+    "deps_lock_sha256": "8f4c9f581a77e5d84eb2b080a7ee2466067b6ea1f947b5534f9add3e40f241c0"
   },
   "configs": {
     "opencode": {

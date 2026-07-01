@@ -22,7 +22,7 @@
     "package": "@ramtinj95/opencode-tokenscope",
     "version": "1.6.4",
     "integrity": "sha512-ZFeoLETXX1Xiu2Irc8FN2R7onLbin68NKdj2P2RD3sHxbiCsTs0l5h75JxfUHjjGaw35p8zDLwQSH+aDDlrMJw==",
-    "deps_lock_sha256": "00b37af61a6c870d39e5ac8889718edcf5e9fa7e7b32b65497f477b40f421b4a"
+    "deps_lock_sha256": "084f9c58e8da5a66dc76f96086b4dd3a53a31ad14cc2915074c7fbc259547471"
   },
   "configs": {
     "opencode": {
