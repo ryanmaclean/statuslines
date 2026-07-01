@@ -3,7 +3,7 @@
   "slug": "chae-dahee-claude-buddy",
   "package": "claude-buddy-statusline",
   "version": "0.2.3",
-  "captured_at": "2026-05-20",
+  "captured_at": "2026-07-01",
   "deps": {
     "claude-buddy-statusline@0.2.3": "sha512-HSBAX8vjW71260qnTJFFViizn+ecOpMTV/b/aB9+/1eKzgm4adDTe64WMltK80fY9ZRE5n/uvHwW/8bNkrsCzg=="
   }

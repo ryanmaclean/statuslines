@@ -21,7 +21,7 @@
     "type": "npm-global",
     "package": "claude-buddy-statusline",
     "version": "0.2.3",
-    "deps_lock_sha256": "673ea806e07b73d0ec173cbf426f14e273a3339850f52a54fd6a7c82ada25b8a"
+    "deps_lock_sha256": "214426036418e0e813010e167721ab8e32b030dd8d4870ad70285485c53bafd6"
   },
   "configs": {
     "claude": {
