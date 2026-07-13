@@ -20,8 +20,9 @@
   "install": {
     "type": "npm-global",
     "package": "claude-buddy-statusline",
-    "version": "0.2.3",
-    "deps_lock_sha256": "673ea806e07b73d0ec173cbf426f14e273a3339850f52a54fd6a7c82ada25b8a"
+    "version": "0.2.9",
+    "deps_lock_sha256": "673ea806e07b73d0ec173cbf426f14e273a3339850f52a54fd6a7c82ada25b8a",
+    "integrity": "sha512-kGb5hBeHofk7+4ZSW9riWAtG2Wy7jVCAkm7JLAXaCz52RPpINsqIddy68VpOQ5S17A3hs3uhUdPme9sUKKsbSA=="
   },
   "configs": {
     "claude": {
@@ -40,7 +41,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-25"
+    "last_audit": "2026-07-13"
   },
   "capabilities": {
     "network": false,
