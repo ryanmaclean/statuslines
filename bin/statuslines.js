@@ -465,33 +465,39 @@ function renderTopReadmeBlocks(lang = "en") {
     }
   }
   const cliLabels = { claude: "Claude Code", opencode: "OpenCode", gemini: "Gemini CLI", codex: "Codex CLI" };
-  const headers = {
-    en: { preview: "Preview", name: "Name", license: "License", description: "Description", empty: (cli) => `*No catalog entries for ${cli} yet.*` },
-    fr: { preview: "Aperçu", name: "Nom", license: "Licence", description: "Description", empty: (cli) => `*Aucune entrée de catalogue pour ${cli} pour le moment.*` },
-    ja: { preview: "プレビュー", name: "名称", license: "ライセンス", description: "説明", empty: (cli) => `*${cli} のカタログエントリはまだありません。*` },
+  // NOTE: this renders a card-per-entry layout (h4 heading + full-width image
+  // + description), NOT a markdown table. GitHub constrains table-cell images
+  // to ~1/4 of the column width regardless of the `width=` attribute, which
+  // made preview images render as tiny thumbnails. See catalog/README.md for
+  // the (intentionally tabular) per-CLI index, which is a different renderer.
+  const i18n = {
+    en: { empty: (cli) => `*No catalog entries for ${cli} yet.*` },
+    fr: { empty: (cli) => `*Aucune entrée de catalogue pour ${cli} pour le moment.*` },
+    ja: { empty: (cli) => `*${cli} のカタログエントリはまだありません。*` },
   }[lang] ?? null;
-  if (!headers) throw new Error(`unknown lang: ${lang}`);
+  if (!i18n) throw new Error(`unknown lang: ${lang}`);
   const descKey = lang === "en" ? "description" : `description_${lang}`;
   const lines = [];
   for (const cli of ["claude", "opencode", "gemini", "codex"]) {
     lines.push(`### ${cliLabels[cli]}`);
     lines.push("");
     if (byCli[cli].length === 0) {
-      lines.push(headers.empty(cliLabels[cli]));
+      lines.push(i18n.empty(cliLabels[cli]));
       lines.push("");
       continue;
     }
-    lines.push(`| ${headers.preview} | ${headers.name} | ${headers.license} | ${headers.description} |`);
-    lines.push("|---|---|---|---|");
     for (const e of byCli[cli]) {
       const tag = e.redistributable ? "" : " `(ref)`";
-      const imgCell = e.image?.local
-        ? `<a href="${e.repo}"><img alt="${(e.image.alt ?? e.name).replace(/"/g, "&quot;").replace(/\|/g, "\\|")}" src="./catalog/${e.image.local}" width="200"></a>`
-        : "—";
-      const desc = (e[descKey] ?? e.description).replace(/\|/g, "\\|");
-      lines.push(`| ${imgCell} | [**${e.name}**](${e.repo}) | ${e.license}${tag} | ${desc} |`);
+      lines.push(`#### [**${e.name}**](${e.repo}) · ${e.license}${tag}`);
+      lines.push("");
+      if (e.image?.local) {
+        const alt = (e.image.alt ?? e.name).replace(/"/g, "&quot;");
+        lines.push(`<a href="${e.repo}"><img alt="${alt}" src="./catalog/${e.image.local}" width="800"></a>`);
+        lines.push("");
+      }
+      lines.push(e[descKey] ?? e.description);
+      lines.push("");
     }
-    lines.push("");
   }
   return { catalog: lines.join("\n").trimEnd() + "\n", count: entries.length };
 }
