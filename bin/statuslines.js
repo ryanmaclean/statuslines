@@ -323,8 +323,12 @@ function cmdConfigure(args) {
   } else if (e.install.type === "opencode-plugin") {
     /* nothing to install — OpenCode loads from npm at session start */
   } else if (e.install.type === "manual") {
-    process.stderr.write(`entry ${slug} is install.type=manual; no automated install path. See ${e.repo} for upstream instructions, then re-run \`configure\` with the binary on PATH.\n`);
-    process.exit(1);
+    if (dryRun) {
+      process.stdout.write(`note: entry ${slug} is install.type=manual; no automated install step to preview (see ${e.repo} for upstream instructions). Showing config merge preview only.\n`);
+    } else {
+      process.stderr.write(`entry ${slug} is install.type=manual; no automated install path. See ${e.repo} for upstream instructions, then re-run \`configure\` with the binary on PATH.\n`);
+      process.exit(1);
+    }
   }
 
   const expanded = installDir ? expandInstallDir(snippet, installDir) : snippet;
