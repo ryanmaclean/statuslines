@@ -161,7 +161,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `capedbitmap-codex-hud` — [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud)
 
-<a href="https://github.com/Capedbitmap/codex-hud"><img alt="codex-hud menu bar with account status" src="images/capedbitmap-codex-hud.png" width="480"></a>
+<a href="https://github.com/Capedbitmap/codex-hud"><img alt="codex-hud menu bar with account status" src="images/capedbitmap-codex-hud.webp" width="480"></a>
 
 - **License:** PolyForm-Noncommercial-1.0.0 (not redistributable; reference only)
 - **Targets:** codex
