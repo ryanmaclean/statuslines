@@ -2,7 +2,7 @@
   "slug": "noahbclarkson-noahs-claude-statusline",
   "name": "noahs-claude-statusline",
   "repo": "https://github.com/noahbclarkson/noahs-claude-statusline",
-  "license": null,
+  "license": "Unspecified",
   "redistributable": false,
   "host_clis": [
     "claude"
