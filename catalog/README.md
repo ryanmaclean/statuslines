@@ -188,7 +188,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.
-- **Install:** `npx --ignore-scripts -y ccstatusline@2.2.18`
+- **Install:** `npx --ignore-scripts -y ccstatusline@2.2.23`
 - **Configure:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
 
 ### `chae-dahee-claude-buddy` — [claude-buddy](https://github.com/chae-dahee/claude-buddy)
@@ -198,7 +198,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Animated ASCII companion that lives in the Claude Code statusline, rolled from a gacha table with 18 species, 5 rarity tiers, and stats like DEBUGGING and SNARK — levels up every 7 days.
-- **Install:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.3`
+- **Install:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.9`
 - **Configure:** `node bin/statuslines.js configure chae-dahee-claude-buddy --cli=<claude>`
 
 ### `claude-hud` — [claude-hud](https://github.com/jarrodwatts/claude-hud)
@@ -392,7 +392,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** opencode
 - **Description:** OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.
 - **Notes:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
-- **Install:** OpenCode loads `opencode-subagent-statusline@0.7.1` from npm at session start (added via `opencode.json` `plugin` array)
+- **Install:** OpenCode loads `opencode-subagent-statusline@1.2.1` from npm at session start (added via `opencode.json` `plugin` array)
 
 ### `kamranahmedse-claude-statusline` — [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline)
 
@@ -559,7 +559,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Vim-style powerline statusline for Claude Code with real-time usage tracking, git integration, and theme presets.
-- **Install:** `npx --ignore-scripts -y @owloops/claude-powerline@1.26.0`
+- **Install:** `npx --ignore-scripts -y @owloops/claude-powerline@1.28.0`
 - **Configure:** `node bin/statuslines.js configure owloops-claude-powerline --cli=<claude>`
 
 ### `pcvelz-ccstatusline-usage` — [ccstatusline-usage](https://github.com/pcvelz/ccstatusline-usage)
@@ -569,7 +569,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Fork of ccstatusline adding real-time Anthropic API usage widgets: session and weekly utilization bars, weekly pace indicator, reset countdown, and multi-provider routing for local models.
-- **Install:** `npx --ignore-scripts -y ccstatusline-usage@2.4.4`
+- **Install:** `npx --ignore-scripts -y ccstatusline-usage@2.4.10`
 - **Configure:** `node bin/statuslines.js configure pcvelz-ccstatusline-usage --cli=<claude>`
 
 ### `postmodum37-simple-claude-code-statusline` — [simple-claude-code-statusline](https://github.com/Postmodum37/simple-claude-code-statusline)
@@ -610,7 +610,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** opencode
 - **Description:** OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@1.6.4` from npm at session start (added via `opencode.json` `plugin` array)
+- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@1.8.0` from npm at session start (added via `opencode.json` `plugin` array)
 - **Configure:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `rgomes87-codex-statusline` — [codex-statusline (rgomes87)](https://github.com/rgomes87/codex-statusline)
@@ -747,7 +747,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **Description:** Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
 - **Notes:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **Install:** `npx --ignore-scripts -y tokscale@2.1.1`
+- **Install:** `npx --ignore-scripts -y tokscale@4.5.3`
 
 ### `xuedi-claude-statusline` — [xuedi/claude-statusline](https://github.com/xuedi/claude-statusline)
 

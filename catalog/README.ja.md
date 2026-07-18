@@ -188,7 +188,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** インタラクティブな TUI 設定ツール、powerline レンダリング、テーマ、トークン・git・セッションタイマー・クリッカブルリンクのウィジェットを備えたカスタマイズ可能な Claude Code statusline。
-- **インストール:** `npx --ignore-scripts -y ccstatusline@2.2.18`
+- **インストール:** `npx --ignore-scripts -y ccstatusline@2.2.23`
 - **設定:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
 
 ### `chae-dahee-claude-buddy` — [claude-buddy](https://github.com/chae-dahee/claude-buddy)
@@ -198,7 +198,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeステータスラインに住むアニメーションASCIIコンパニオン。18種・5レアリティのガチャテーブルからロールされ、DEBUGGINGやSNARKなどのステータスを持ち、7日ごとにレベルアップする。
-- **インストール:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.3`
+- **インストール:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.9`
 - **設定:** `node bin/statuslines.js configure chae-dahee-claude-buddy --cli=<claude>`
 
 ### `claude-hud` — [claude-hud](https://github.com/jarrodwatts/claude-hud)
@@ -392,7 +392,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** opencode
 - **説明:** サブエージェントのアクティビティ・経過時間・トークン／コンテキスト使用量を表示する OpenCode TUI サイドバープラグイン（statusLine.command ではない）。
 - **備考:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
-- **インストール:** OpenCode がセッション開始時に `opencode-subagent-statusline@0.7.1` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
+- **インストール:** OpenCode がセッション開始時に `opencode-subagent-statusline@1.2.1` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 
 ### `kamranahmedse-claude-statusline` — [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline)
 
@@ -559,7 +559,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** リアルタイム使用量追跡・git 連携・テーマプリセットを備えた Vim スタイルの powerline Claude Code statusline。
-- **インストール:** `npx --ignore-scripts -y @owloops/claude-powerline@1.26.0`
+- **インストール:** `npx --ignore-scripts -y @owloops/claude-powerline@1.28.0`
 - **設定:** `node bin/statuslines.js configure owloops-claude-powerline --cli=<claude>`
 
 ### `pcvelz-ccstatusline-usage` — [ccstatusline-usage](https://github.com/pcvelz/ccstatusline-usage)
@@ -569,7 +569,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** ccstatusline のフォーク。Anthropic API からセッション・週次利用率バー、週次ペースインジケーター、リセットカウントダウン、ローカルモデル向けマルチプロバイダールーティングをリアルタイムで表示する使用量ウィジェットを追加。
-- **インストール:** `npx --ignore-scripts -y ccstatusline-usage@2.4.4`
+- **インストール:** `npx --ignore-scripts -y ccstatusline-usage@2.4.10`
 - **設定:** `node bin/statuslines.js configure pcvelz-ccstatusline-usage --cli=<claude>`
 
 ### `postmodum37-simple-claude-code-statusline` — [simple-claude-code-statusline](https://github.com/Postmodum37/simple-claude-code-statusline)
@@ -610,7 +610,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** opencode
 - **説明:** セッションのトークン使用量とコストを詳細な内訳とともに分析する OpenCode プラグイン（statusline ではない）。
 - **備考:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@1.6.4` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
+- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@1.8.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 - **設定:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `rgomes87-codex-statusline` — [codex-statusline (rgomes87)](https://github.com/rgomes87/codex-statusline)
@@ -747,7 +747,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **説明:** Claude Code・OpenCode・Codex・Gemini・Cursor・Amp・Kimi など多数の AI コーディングツールのローカルセッションデータを読み取り、LiteLLM から取得した価格情報でトークン使用量を追跡するクロス CLI 対応ツール。
 - **備考:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **インストール:** `npx --ignore-scripts -y tokscale@2.1.1`
+- **インストール:** `npx --ignore-scripts -y tokscale@4.5.3`
 
 ### `xuedi-claude-statusline` — [xuedi/claude-statusline](https://github.com/xuedi/claude-statusline)
 
