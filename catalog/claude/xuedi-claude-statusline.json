@@ -9,6 +9,8 @@
   ],
   "language": "rust",
   "description": "Rust-native Claude Code statusline rendering model, git, tokens, effort, and 5h/7d rate limits via a 20-cell braille progress bar in ~500 lines of safe, unsafe-forbidden code.",
+  "description_fr": "Statusline Claude Code native en Rust affichant le modèle, git, les jetons, l'effort et les limites de débit 5h/7j via une barre de progression braille à 20 cellules, en environ 500 lignes de code sûr, sans « unsafe ».",
+  "description_ja": "Rust ネイティブの Claude Code statusline。モデル、git、トークン、effort、5時間/7日のレート制限を、20 セルの点字プログレスバーで表示する。約 500 行の安全な（unsafe 禁止の）コードで実装されている。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/xuedi/claude-statusline",
     "alt": "xuedi/claude-statusline repo preview",
@@ -26,6 +28,17 @@
     "braille-bar"
   ],
   "notes": "EUPL-1.2 is a copyleft license (OSI-approved but incompatible with the catalog redistribution allowlist of MIT/Apache-2.0/BSD/ISC/MPL-2.0). Listed for reference only; skipped by configure. Notable technical differentiator: 20-cell braille progress bar for token usage, built in safe Rust (~500 LOC). Reads credentials from ~/.claude/.credentials.json to fetch /api/oauth/usage when Claude Code does not supply rate-limit data in the payload; results cached under /tmp/claude/.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  },
   "security": {
     "quarantined": false,
     "quarantine_reason": null,

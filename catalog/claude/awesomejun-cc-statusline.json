@@ -1,0 +1,51 @@
+{
+  "slug": "awesomejun-cc-statusline",
+  "name": "Awesome Statusline (CC-statusline)",
+  "repo": "https://github.com/AwesomeJun/CC-statusline",
+  "license": "MIT",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "shell",
+  "description": "Cross-platform Claude Code statusline (Bash on macOS/Linux, native PowerShell on Windows) showing context, 5h/7d usage limits, cost, reasoning-effort and extended-thinking indicators, with five size presets and Catppuccin theming — no Node or Nerd Font required.",
+  "description_fr": "Statusline Claude Code multiplateforme (Bash sur macOS/Linux, PowerShell natif sur Windows) affichant le contexte, les limites d'utilisation 5h/7j, le coût, les indicateurs d'effort de raisonnement et de réflexion étendue, avec cinq préréglages de taille et un thème Catppuccin — sans Node ni Nerd Font requis.",
+  "description_ja": "macOS/Linux では Bash、Windows ではネイティブ PowerShell で動作するクロスプラットフォームな Claude Code statusline。コンテキスト、5時間/7日の利用制限、コスト、reasoning effort・拡張思考インジケーターを表示し、5段階のサイズプリセットと Catppuccin テーマを備える。Node も Nerd Font も不要。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/AwesomeJun/CC-statusline/main/assets/presets/presets.png",
+    "alt": "Awesome Statusline five size presets with reasoning-effort and thinking indicators",
+    "source": "readme",
+    "local": "images/awesomejun-cc-statusline.webp"
+  },
+  "install": {
+    "type": "curl",
+    "script": "curl -fsSL https://raw.githubusercontent.com/AwesomeJun/CC-statusline/main/install.sh | bash"
+  },
+  "configs": {},
+  "tags": [
+    "cross-platform",
+    "windows",
+    "reasoning-effort",
+    "rate-limits",
+    "catppuccin",
+    "presets",
+    "installer"
+  ],
+  "notes": "Listed as redistributable=false / install.type=curl despite the permissive MIT license: the only supported install path is a one-line `curl ... | bash` (macOS/Linux) or `irm ... | iex` (Windows) remote script executor. Our `configure` command already refuses any redistributable=false entry outright, so this never runs automatically — it is reference-only; run the installer yourself from https://github.com/AwesomeJun/CC-statusline after reviewing install.sh/install.ps1. A Git-clone-and-run-locally alternative is documented upstream (`git clone ... && ./install.sh`) but is not wired up here.",
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-07-17"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

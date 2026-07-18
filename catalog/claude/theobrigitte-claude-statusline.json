@@ -1,0 +1,56 @@
+{
+  "slug": "theobrigitte-claude-statusline",
+  "name": "claude-statusline (TheoBrigitte)",
+  "repo": "https://github.com/TheoBrigitte/claude-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "go",
+  "description": "Statically-compiled Go statusline for Claude Code sessions, configured via a TOML file with per-module colors/symbols/thresholds and responsive terminal-width layout, rendering in roughly 19 microseconds.",
+  "description_fr": "Statusline Claude Code compilée statiquement en Go, configurable via un fichier TOML avec couleurs, symboles et seuils par module, ainsi qu'une mise en page réactive selon la largeur du terminal, avec un rendu d'environ 19 microsecondes.",
+  "description_ja": "Go 言語で静的コンパイルされた Claude Code 用 statusline。モジュールごとの色・記号・しきい値を TOML ファイルで設定でき、ターミナル幅に応じたレスポンシブレイアウトを持ち、約 19 マイクロ秒でレンダリングする。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/TheoBrigitte/claude-statusline/main/assets/claude-statusline.png",
+    "alt": "claude-statusline (TheoBrigitte) showing model, context bar, cost, duration, and API status segments",
+    "source": "readme",
+    "local": "images/theobrigitte-claude-statusline.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "claude-statusline"
+      }
+    }
+  },
+  "tags": [
+    "go",
+    "toml-config",
+    "context-bar",
+    "cost",
+    "rate-limits",
+    "performance"
+  ],
+  "notes": "No package-manager install path we automate: upstream ships a curl-downloaded static binary (`curl -o ~/.local/bin/claude-statusline <release-url>`, no shell pipe) or `go install github.com/TheoBrigitte/claude-statusline@latest`. Listed as install.type=manual; download the release binary onto PATH yourself, then the configs.claude snippet applies. Works with sensible defaults with no config file; optional ~/.config/claude-statusline.toml for module styling. Reports <0.019ms render time in upstream benchmarks. The optional rate-limit/status module polls status.claude.com with a 10-minute file-based cache; disable that module to run fully offline.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-07-17"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": false,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

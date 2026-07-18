@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-65-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-70-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -93,6 +93,12 @@ Ligne de statut PowerShell native Windows pour Claude Code affichant le réperto
 <a href="https://github.com/AsafSaar/claude-code-statusline"><img alt="claude-code-statusline segment preview" src="./catalog/images/asafsaar-claude-code-statusline.png" width="800"></a>
 
 Ligne de statut Claude Code entièrement configurable par segments, composée de parties activables (cwd, branche Git, dirty, ahead/behind, modèle, node, contexte, coût, durée, lignes, dernier commit, stash, effort, limites, erreurs ts) avec icônes et seuils de couleur par segment.
+
+#### [**Awesome Statusline (CC-statusline)**](https://github.com/AwesomeJun/CC-statusline) · MIT `(ref)`
+
+<a href="https://github.com/AwesomeJun/CC-statusline"><img alt="Awesome Statusline five size presets with reasoning-effort and thinking indicators" src="./catalog/images/awesomejun-cc-statusline.webp" width="800"></a>
+
+Statusline Claude Code multiplateforme (Bash sur macOS/Linux, PowerShell natif sur Windows) affichant le contexte, les limites d'utilisation 5h/7j, le coût, les indicateurs d'effort de raisonnement et de réflexion étendue, avec cinq préréglages de taille et un thème Catppuccin — sans Node ni Nerd Font requis.
 
 #### [**cc-statusline**](https://github.com/brandonchartier/cc-statusline) · MIT
 
@@ -226,7 +232,7 @@ Ligne de statut Node.js en fichier unique très complète, affichant le modèle,
 
 Statusline Claude Code minimaliste affichant le modèle, le pourcentage d'utilisation du contexte, le répertoire courant, la branche git, le minuteur de session, le niveau d'effort et les barres de limites de débit en temps réel depuis l'API Anthropic.
 
-#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT
+#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT `(ref)`
 
 <a href="https://github.com/kiheon0709/claude-codex-statusline"><img alt="claude-codex-statusline showing dual usage bars for Claude and Codex" src="./catalog/images/kiheon0709-claude-codex-statusline.png" width="800"></a>
 
@@ -326,7 +332,7 @@ Ligne de statut Node.js en fichier unique sans dépendance pour Claude Code, aff
 
 <a href="https://github.com/RiverOfLogic/claude-code-statusline"><img alt="RiverOfLogic Powerline statusline showing model, git, context bar with warm retro colors" src="./catalog/images/riveroflogic-claude-code-statusline.png" width="800"></a>
 
-Powerline-style retro-terminal statusline for Claude Code, displaying model, git branch, output style, thinking mode, and a 10-cell context progress bar with warm earth-tone color thresholds and a live clock.
+Statusline rétro de style powerline pour Claude Code, affichant le modèle, la branche git, le style de sortie, le mode de réflexion, ainsi qu'une barre de progression de contexte à 10 cellules avec des seuils de couleurs ton terre chaudes et une horloge en direct.
 
 #### [**aifuel**](https://github.com/robertogogoni/aifuel) · MIT
 
@@ -348,6 +354,8 @@ Binaire Rust unifié combinant un statusline Claude Code sub-milliseconde avec d
 
 #### [**ClaudeCodeStatusBar**](https://github.com/SleighMaster99/ClaudeCodeStatusBar) · MIT
 
+<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="./catalog/images/sleighmaster99-claudecodestatusbar.svg" width="800"></a>
+
 Éditeur GUI WinForms exclusif à Windows pour les statuslines multi-lignes de Claude Code — constructeur de mise en page par glisser-déposer avec runtime PowerShell, suivi d'utilisation et widgets git, contexte et coût.
 
 #### [**claude-code-statusline (Sam Yamashita)**](https://github.com/sotayamashita/claude-code-statusline) · MIT
@@ -355,6 +363,18 @@ Binaire Rust unifié combinant un statusline Claude Code sub-milliseconde avec d
 <a href="https://github.com/sotayamashita/claude-code-statusline"><img alt="claude-code-statusline (Rust) repo preview" src="./catalog/images/sotayamashita-claude-code-statusline.png" width="800"></a>
 
 Statusline Rust pour Claude Code avec une configuration de style starship et une composition par modules.
+
+#### [**claude-statusline-powerline**](https://github.com/spences10/claude-statusline-powerline) · MIT
+
+<a href="https://github.com/spences10/claude-statusline-powerline"><img alt="claude-statusline-powerline demo showing themed powerline segments" src="./catalog/images/spences10-claude-statusline-powerline.png" width="800"></a>
+
+Statusline Claude Code de style powerline, conçue comme une extension de claude-powerline d'Owloops, ajoutant une base de données d'analyse d'utilisation locale sur SQLite et un schéma de configuration JSON avec IntelliSense pour settings.json (autocomplétion, documentation au survol, validation des couleurs).
+
+#### [**claude-statusline (TheoBrigitte)**](https://github.com/TheoBrigitte/claude-statusline) · MIT
+
+<a href="https://github.com/TheoBrigitte/claude-statusline"><img alt="claude-statusline (TheoBrigitte) showing model, context bar, cost, duration, and API status segments" src="./catalog/images/theobrigitte-claude-statusline.png" width="800"></a>
+
+Statusline Claude Code compilée statiquement en Go, configurable via un fichier TOML avec couleurs, symboles et seuils par module, ainsi qu'une mise en page réactive selon la largeur du terminal, avec un rendu d'environ 19 microsecondes.
 
 #### [**@this-dot/claude-code-context-status-line**](https://github.com/thisdot/claude-code-context-status-line) · MIT
 
@@ -372,7 +392,7 @@ Traqueur d'usage de jetons multi-CLI qui lit les données de session locales de 
 
 <a href="https://github.com/xuedi/claude-statusline"><img alt="xuedi/claude-statusline repo preview" src="./catalog/images/xuedi-claude-statusline.png" width="800"></a>
 
-Rust-native Claude Code statusline rendering model, git, tokens, effort, and 5h/7d rate limits via a 20-cell braille progress bar in ~500 lines of safe, unsafe-forbidden code.
+Statusline Claude Code native en Rust affichant le modèle, git, les jetons, l'effort et les limites de débit 5h/7j via une barre de progression braille à 20 cellules, en environ 500 lignes de code sûr, sans « unsafe ».
 
 #### [**claude-code-statusline**](https://github.com/xyzcardiff/claude-code-statusline) · MIT
 
@@ -387,6 +407,12 @@ Ligne de statut shell sur deux lignes pour Claude Code, avec compteur de sous-ag
 <a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="./catalog/images/ainsley-opencode-token-monitor.png" width="800"></a>
 
 Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec la ventilation des jetons d'entrée, de sortie, de raisonnement et de cache.
+
+#### [**ocstatusline**](https://github.com/amirlehmam/ocstatusline) · MIT
+
+<a href="https://github.com/amirlehmam/ocstatusline"><img alt="ocstatusline synthetic preview — model, git branch, context, cost, session timer" src="./catalog/images/amirlehmam-ocstatusline.svg" width="800"></a>
+
+Démon de statusline autonome pour OpenCode qui s'abonne au flux d'événements du serveur OpenCode et affiche une ligne d'état en direct, mise à jour en continu dans son propre panneau de terminal, avec un TUI interactif basé sur Ink pour configurer les segments.
 
 #### [**opencode-subagent-statusline**](https://github.com/Joaquinvesapa/sub-agent-statusline) · MIT
 
@@ -486,7 +512,7 @@ HUD de statusline tmux en temps réel pour OpenAI Codex CLI avec l'usage de sess
 
 <a href="https://github.com/GordonBeeming/codex-statusline"><img alt="codex-statusline (GordonBeeming) OpenGraph card" src="./catalog/images/gordonbeeming-codex-statusline.png" width="800"></a>
 
-Four-line Codex statusline showing repo name, git branch, model, session cost in AUD, 5-hour rate-limit bar, and context window usage — mirroring the author's claude-statusline layout.
+Statusline Codex sur quatre lignes affichant le nom du dépôt, la branche git, le modèle, le coût de la session en AUD, une barre de limite de débit sur 5 heures et l'utilisation de la fenêtre de contexte — reprenant la mise en page de la statusline Claude Code de l'auteur.
 
 #### [**tokenusage (hanbu97)**](https://github.com/hanbu97/tokenusage) · MIT
 
@@ -494,7 +520,7 @@ Four-line Codex statusline showing repo name, git branch, model, session cost in
 
 Traqueur d'usage de jetons rapide et local pour Claude Code et Codex ; `tu statusline` émet un résumé coût/jetons en une ligne. Disponible aussi en mode CLI, TUI et GUI. 214x plus rapide que ccusage.
 
-#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT
+#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT `(ref)`
 
 <a href="https://github.com/kiheon0709/claude-codex-statusline"><img alt="claude-codex-statusline showing dual usage bars for Claude and Codex" src="./catalog/images/kiheon0709-claude-codex-statusline.png" width="800"></a>
 
@@ -510,7 +536,7 @@ Compagnon macOS pour le notch et la barre de menus (SwiftUI + AppKit) qui survei
 
 <a href="https://github.com/rgomes87/codex-statusline"><img alt="codex-statusline 4-line tmux preview" src="./catalog/images/rgomes87-codex-statusline.svg" width="800"></a>
 
-Colourful 4-line tmux status area for Codex CLI showing context window, model, git branch, and 5-hour/7-day rate-limit pacing bars with per-second reset countdowns.
+Zone de statut tmux colorée sur 4 lignes pour Codex CLI, affichant la fenêtre de contexte, le modèle, la branche git, ainsi que des barres de rythme de limite de débit sur 5 heures/7 jours avec compte à rebours de réinitialisation à la seconde près.
 
 #### [**aifuel**](https://github.com/robertogogoni/aifuel) · MIT
 

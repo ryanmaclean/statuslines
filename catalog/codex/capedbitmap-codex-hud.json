@@ -26,5 +26,15 @@
     "menu-bar",
     "account-rotation"
   ],
-  "notes": "Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries."
+  "notes": "Source-available, not OSI-open-source. Listed for reference; we don't ship install recipes for non-redistributable entries.",
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

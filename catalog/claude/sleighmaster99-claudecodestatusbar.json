@@ -11,8 +11,9 @@
   "description_ja": "Windows専用のWinForms GUIエディタ。Claude Codeの複数行ステータスラインをドラッグ＆ドロップで構築でき、PowerShellランタイム、使用量トラッキング、Git・コンテキスト・コストウィジェットを備える。",
   "image": {
     "url": "https://opengraph.githubassets.com/1/SleighMaster99/ClaudeCodeStatusBar",
-    "alt": "ClaudeCodeStatusBar GitHub preview",
-    "source": "og-fallback"
+    "alt": "ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch",
+    "source": "termframe-synthetic",
+    "local": "images/sleighmaster99-claudecodestatusbar.svg"
   },
   "install": {
     "type": "git",

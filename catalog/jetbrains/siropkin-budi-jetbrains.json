@@ -10,9 +10,10 @@
   "description_fr": "Widget de barre d'état pour IDE JetBrains affichant les dépenses de codage IA sur 1j/7j/30j pour la surface IDE courante en interrogeant un démon budi local tournant sur 127.0.0.1:7878.",
   "description_ja": "JetBrains IDEのステータスバーウィジェット。127.0.0.1:7878で動作するローカルbudiデーモンに問い合わせ、現在のIDE画面のAIコーディングコスト（1日/7日/30日）を表示する。",
   "image": {
-    "url": "https://opengraph.githubassets.com/1/siropkin/budi-jetbrains",
-    "alt": "budi JetBrains plugin — AI spend status bar",
-    "source": "og-fallback"
+    "url": "https://raw.githubusercontent.com/siropkin/budi-jetbrains/main/docs/screenshots/status-bar-widget.png",
+    "alt": "budi JetBrains plugin — status bar widget showing AI spend",
+    "source": "readme",
+    "local": "images/siropkin-budi-jetbrains.png"
   },
   "install": {
     "type": "plugin"

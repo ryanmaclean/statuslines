@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Powerline-style retro-terminal statusline for Claude Code, displaying model, git branch, output style, thinking mode, and a 10-cell context progress bar with warm earth-tone color thresholds and a live clock.",
+  "description_fr": "Statusline rétro de style powerline pour Claude Code, affichant le modèle, la branche git, le style de sortie, le mode de réflexion, ainsi qu'une barre de progression de contexte à 10 cellules avec des seuils de couleurs ton terre chaudes et une horloge en direct.",
+  "description_ja": "Claude Code 向けの powerline スタイルのレトロターミナル statusline。モデル、git ブランチ、出力スタイル、思考モード、暖色系アーストーンのしきい値で色分けされた 10 セルのコンテキストプログレスバー、そしてライブ時計を表示する。",
   "image": {
     "url": "https://raw.githubusercontent.com/RiverOfLogic/claude-code-statusline/main/screenshots/statusline.png",
     "alt": "RiverOfLogic Powerline statusline showing model, git, context bar with warm retro colors",

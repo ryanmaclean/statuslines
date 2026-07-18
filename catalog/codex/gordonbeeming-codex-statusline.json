@@ -9,6 +9,8 @@
   ],
   "language": "shell",
   "description": "Four-line Codex statusline showing repo name, git branch, model, session cost in AUD, 5-hour rate-limit bar, and context window usage \u2014 mirroring the author's claude-statusline layout.",
+  "description_fr": "Statusline Codex sur quatre lignes affichant le nom du d\u00e9p\u00f4t, la branche git, le mod\u00e8le, le co\u00fbt de la session en AUD, une barre de limite de d\u00e9bit sur 5 heures et l'utilisation de la fen\u00eatre de contexte \u2014 reprenant la mise en page de la statusline Claude Code de l'auteur.",
+  "description_ja": "\u30ea\u30dd\u30b8\u30c8\u30ea\u540d\u3001git \u30d6\u30e9\u30f3\u30c1\u3001\u30e2\u30c7\u30eb\u3001AUD \u5efa\u3066\u306e\u30bb\u30c3\u30b7\u30e7\u30f3\u30b3\u30b9\u30c8\u30015\u6642\u9593\u30ec\u30fc\u30c8\u5236\u9650\u30d0\u30fc\u3001\u30b3\u30f3\u30c6\u30ad\u30b9\u30c8\u30a6\u30a3\u30f3\u30c9\u30a6\u4f7f\u7528\u7387\u3092\u8868\u793a\u3059\u308b 4 \u884c\u69cb\u6210\u306e Codex statusline\u3002\u4f5c\u8005\u306e claude-statusline \u306e\u30ec\u30a4\u30a2\u30a6\u30c8\u3092\u8e0f\u8972\u3057\u3066\u3044\u308b\u3002",
   "image": {
     "url": "https://opengraph.githubassets.com/1/GordonBeeming/codex-statusline",
     "alt": "codex-statusline (GordonBeeming) OpenGraph card",

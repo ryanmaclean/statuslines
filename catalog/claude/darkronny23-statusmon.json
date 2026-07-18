@@ -9,6 +9,8 @@
   ],
   "language": "javascript",
   "description": "Pokemon companion statusline for Claude Code that displays a sprite which gains experience and levels up as you complete coding sessions, with stats fetched from the PokeAPI and persisted across runs.",
+  "description_fr": "Statusline compagnon Pokémon pour Claude Code qui affiche un sprite gagnant de l'expérience et montant de niveau à mesure que vous terminez des sessions de codage, avec des statistiques récupérées depuis la PokeAPI et persistées entre les exécutions.",
+  "description_ja": "Claude Code 用のポケモンコンパニオン statusline。コーディングセッションを完了するたびに経験値を獲得しレベルアップするスプライトを表示し、統計情報は PokeAPI から取得して実行間で永続化される。",
   "image": {
     "url": "https://raw.githubusercontent.com/DarkRonny23/statusmon/HEAD/docs/assets/og-image.png",
     "alt": "statusmon Pokemon companion banner",

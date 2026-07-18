@@ -3,7 +3,7 @@
   "name": "claude-codex-statusline",
   "repo": "https://github.com/kiheon0709/claude-codex-statusline",
   "license": "MIT",
-  "redistributable": true,
+  "redistributable": false,
   "host_clis": [
     "claude",
     "codex"
@@ -30,10 +30,11 @@
     "multi-cli",
     "tools"
   ],
+  "notes": "Demoted from redistributable=true to redistributable=false on 2026-07-17: install.script is a curl|bash one-shot installer, which our `configure` command never actually executes (no curl-install branch), but the redistributable=true + curl-install combination misrepresented this as an auto-installable ('ok') entry. License is still MIT upstream; this is a policy-driven demotion pending a from-source (git clone) or checksum-pinned install recipe, not a license issue. See https://github.com/kiheon0709/claude-codex-statusline for upstream install instructions.",
   "security": {
     "has_install_scripts": true,
     "license_observed": "MIT",
-    "last_audit": "2026-05-16"
+    "last_audit": "2026-07-17"
   },
   "capabilities": {
     "network": false,
