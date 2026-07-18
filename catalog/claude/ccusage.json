@@ -3,7 +3,7 @@
   "name": "ccusage",
   "repo": "https://github.com/ryoppippi/ccusage",
   "license": "MIT",
-  "redistributable": true,
+  "redistributable": false,
   "host_clis": [
     "claude",
     "codex"
@@ -33,6 +33,9 @@
   ],
   "notes": "Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments.",
   "security": {
+    "quarantined": true,
+    "quarantine_reason": "Precautionary supply-chain hold (reversible). Entry ships the safe pinned ccusage@18.0.11; bot PR #27 proposes bumping to 20.0.17, which introduces 8 new outbound domains (incl. blacksmith.sh, bun.com, nixos.org). Quarantined to block auto-bump and force manual domain review before the version advances.",
+    "quarantined_at": "2026-07-18",
     "has_install_scripts": false,
     "license_observed": "MIT",
     "last_audit": "2026-04-30"
