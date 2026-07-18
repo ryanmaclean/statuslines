@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-70-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-67-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -69,12 +69,6 @@ auto-rendered by `node bin/statuslines.js render-top-readme`.
 <!-- catalog:start -->
 ### Claude Code
 
-#### [**cc-codex-statusline**](https://github.com/0xHanniba1/cc-codex-statusline) · MIT
-
-<a href="https://github.com/0xHanniba1/cc-codex-statusline"><img alt="cc-codex-statusline preview" src="./catalog/images/0xhanniba1-cc-codex-statusline.png" width="800"></a>
-
-Combined Claude Code and Codex statusline in a single repo, each with a one-liner curl installer — adds path, model display, and color-coded rate-limit countdown to both CLIs.
-
 #### [**claude-fitness-break**](https://github.com/adam-ismael/claude-fitness-break) · MIT
 
 <a href="https://github.com/adam-ismael/claude-fitness-break"><img alt="adam-ismael/claude-fitness-break repository preview" src="./catalog/images/adam-ismael-claude-fitness-break.png" width="800"></a>
@@ -122,12 +116,6 @@ Fast Rust-based Claude Code statusline with an interactive TUI configurator, git
 <a href="https://github.com/sirmalloc/ccstatusline"><img alt="ccstatusline — model, context tokens, git branch segments" src="./catalog/images/ccstatusline.svg" width="800"></a>
 
 Customizable Claude Code statusline with an interactive TUI configurator, powerline rendering, themes, and widgets for tokens, git, session timers, and clickable links.
-
-#### [**ccusage**](https://github.com/ryoppippi/ccusage) · MIT
-
-<a href="https://github.com/ryoppippi/ccusage"><img alt="ccusage terminal screenshot" src="./catalog/images/ccusage.png" width="800"></a>
-
-Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.
 
 #### [**claude-buddy**](https://github.com/chae-dahee/claude-buddy) · MIT
 
@@ -401,12 +389,6 @@ Two-line Claude Code statusline (shell) with live subagent count and background-
 
 ### OpenCode
 
-#### [**opencode-token-monitor**](https://github.com/Ainsley0917/opencode-token-monitor) · MIT
-
-<a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="./catalog/images/ainsley-opencode-token-monitor.png" width="800"></a>
-
-OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.
-
 #### [**ocstatusline**](https://github.com/amirlehmam/ocstatusline) · MIT
 
 <a href="https://github.com/amirlehmam/ocstatusline"><img alt="ocstatusline synthetic preview — model, git branch, context, cost, session timer" src="./catalog/images/amirlehmam-ocstatusline.svg" width="800"></a>
@@ -477,12 +459,6 @@ Cross-CLI token-usage tracker that reads local session data from many AI coding 
 
 ### Codex CLI
 
-#### [**cc-codex-statusline**](https://github.com/0xHanniba1/cc-codex-statusline) · MIT
-
-<a href="https://github.com/0xHanniba1/cc-codex-statusline"><img alt="cc-codex-statusline preview" src="./catalog/images/0xhanniba1-cc-codex-statusline.png" width="800"></a>
-
-Combined Claude Code and Codex statusline in a single repo, each with a one-liner curl installer — adds path, model display, and color-coded rate-limit countdown to both CLIs.
-
 #### [**cat-codex-statusline (ai-ken-git)**](https://github.com/ai-ken-git/cat-codex-statusline) · MIT
 
 <a href="https://github.com/ai-ken-git/cat-codex-statusline"><img alt="cat-codex-statusline terminal preview showing model, git branch, and context segments" src="./catalog/images/ai-ken-git-cat-codex-statusline.png" width="800"></a>
@@ -494,12 +470,6 @@ Cat-themed Codex CLI statusline installer; wires built-in segments (model, git b
 <a href="https://github.com/Capedbitmap/codex-hud"><img alt="codex-hud menu bar with account status" src="./catalog/images/capedbitmap-codex-hud.webp" width="800"></a>
 
 macOS menu-bar app that ingests local Codex session data and recommends the next account to use based on weekly reset timing and remaining capacity.
-
-#### [**ccusage**](https://github.com/ryoppippi/ccusage) · MIT
-
-<a href="https://github.com/ryoppippi/ccusage"><img alt="ccusage terminal screenshot" src="./catalog/images/ccusage.png" width="800"></a>
-
-Token-usage and cost analyzer that parses local Claude Code and Codex session JSONL files; not a statusline itself, but a useful data source to compose into one.
 
 #### [**codex-hud (fwyc0573)**](https://github.com/fwyc0573/codex-hud) · MIT
 

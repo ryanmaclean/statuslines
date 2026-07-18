@@ -8,10 +8,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 | Slug | 名称 | 対象 | ライセンス | 言語 | 状況 | インストール |
 |---|---|---|---|---|---|---|
-| `0xhanniba1-cc-codex-statusline` | [cc-codex-statusline](https://github.com/0xHanniba1/cc-codex-statusline) | claude, codex | MIT | shell | ok | manual |
 | `adam-ismael-claude-fitness-break` | [claude-fitness-break](https://github.com/adam-ismael/claude-fitness-break) | claude | MIT | bash | ok | plugin |
 | `ai-ken-git-cat-codex-statusline` | [cat-codex-statusline (ai-ken-git)](https://github.com/ai-ken-git/cat-codex-statusline) | codex | MIT | python | ok | manual |
-| `ainsley-opencode-token-monitor` | [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor) | opencode | MIT | typescript | ok | opencode-plugin |
 | `amirlehmam-ocstatusline` | [ocstatusline](https://github.com/amirlehmam/ocstatusline) | opencode | MIT | typescript | ok | npx |
 | `anirudhmkumar-claude-code-statusline` | [claude-code-statusline](https://github.com/AnirudhMKumar/claude-code-statusline) | claude | MIT | powershell | ok | manual |
 | `asafsaar-claude-code-statusline` | [claude-code-statusline](https://github.com/AsafSaar/claude-code-statusline) | claude | MIT | shell | ok | manual |
@@ -21,7 +19,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `capedbitmap-codex-hud` | [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud) | codex | PolyForm-Noncommercial-1.0.0 | swift | ref | manual |
 | `ccometixline` | [CCometixLine](https://github.com/Haleclipse/CCometixLine) | claude | MIT | rust | ok | manual |
 | `ccstatusline` | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | claude | MIT | typescript | ok | npx |
-| `ccusage` | [ccusage](https://github.com/ryoppippi/ccusage) | claude, codex | MIT | typescript | ok | npx |
 | `chae-dahee-claude-buddy` | [claude-buddy](https://github.com/chae-dahee/claude-buddy) | claude | MIT | typescript | ok | npm-global |
 | `claude-hud` | [claude-hud](https://github.com/jarrodwatts/claude-hud) | claude | MIT | typescript | ok | plugin |
 | `ctfbio-claude-code-statusline` | [claude-code-statusline (ctfbio)](https://github.com/ctfbio/claude-code-statusline) | claude | MIT | shell | ok | manual |
@@ -81,16 +78,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ## エントリ別詳細
 
-### `0xhanniba1-cc-codex-statusline` — [cc-codex-statusline](https://github.com/0xHanniba1/cc-codex-statusline)
-
-<a href="https://github.com/0xHanniba1/cc-codex-statusline"><img alt="cc-codex-statusline preview" src="images/0xhanniba1-cc-codex-statusline.png" width="480"></a>
-
-- **ライセンス:** MIT
-- **対象:** claude, codex
-- **説明:** Claude CodeとCodexのステータスラインを1つのリポジトリにまとめ、それぞれワンライナーcurlインストーラを提供。両CLIにパス表示、モデル表示、カラーコード付きレート制限カウントダウンを追加する。
-- **備考:** Separate one-liner installers for Claude Code and Codex; see upstream subdirectory READMEs for per-CLI setup steps.
-- **インストール:** 上流を参照
-
 ### `adam-ismael-claude-fitness-break` — [claude-fitness-break](https://github.com/adam-ismael/claude-fitness-break)
 
 <a href="https://github.com/adam-ismael/claude-fitness-break"><img alt="adam-ismael/claude-fitness-break repository preview" src="images/adam-ismael-claude-fitness-break.png" width="480"></a>
@@ -110,17 +97,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **説明:** 猫テーマの Codex CLI ステータスライン インストーラー。ビルトインセグメント（モデル、gitブランチ、コンテキスト、制限）をクリーンなプリセットに配線し、Codex がコマンドベースのステータスラインフックを提供した時点で猫顔レンダラーが自動的に有効になります。
 - **備考:** Codex CLI does not yet expose a command-backed status line hook (unlike Claude Code, which runs an arbitrary command). The cat-face renderer (statusline.py) is included but not wired in; the installer currently configures only Codex's native built-in segments via [tui].status_line in ~/.codex/config.toml. Cat faces will activate automatically once Codex adds hook support.
 - **インストール:** 上流を参照
-
-### `ainsley-opencode-token-monitor` — [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor)
-
-<a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="images/ainsley-opencode-token-monitor.png" width="480"></a>
-
-- **ライセンス:** MIT
-- **対象:** opencode
-- **説明:** OpenCode プラグイン（statusline ではない）で、`token_stats` / `token_history` / `token_export` ツールを登録し、入力・出力・推論・キャッシュのトークン内訳をトースト通知で表示します。
-- **備考:** Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.
-- **インストール:** OpenCode がセッション開始時に `opencode-token-monitor@0.5.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
-- **設定:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
 
 ### `amirlehmam-ocstatusline` — [ocstatusline](https://github.com/amirlehmam/ocstatusline)
 
@@ -214,16 +190,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **説明:** インタラクティブな TUI 設定ツール、powerline レンダリング、テーマ、トークン・git・セッションタイマー・クリッカブルリンクのウィジェットを備えたカスタマイズ可能な Claude Code statusline。
 - **インストール:** `npx --ignore-scripts -y ccstatusline@2.2.18`
 - **設定:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
-
-### `ccusage` — [ccusage](https://github.com/ryoppippi/ccusage)
-
-<a href="https://github.com/ryoppippi/ccusage"><img alt="ccusage terminal screenshot" src="images/ccusage.png" width="480"></a>
-
-- **ライセンス:** MIT
-- **対象:** claude, codex
-- **説明:** ローカルの Claude Code および Codex セッション JSONL ファイルを解析するトークン使用量・コスト分析ツール。statusline 自体ではないが、statusline 構築に有用なデータソースとして活用できます。
-- **備考:** Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments.
-- **インストール:** `npx --ignore-scripts -y ccusage@18.0.11`
 
 ### `chae-dahee-claude-buddy` — [claude-buddy](https://github.com/chae-dahee/claude-buddy)
 

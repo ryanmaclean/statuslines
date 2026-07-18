@@ -8,10 +8,8 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 | Slug | Nom | Cibles | Licence | Langage | Statut | Installation |
 |---|---|---|---|---|---|---|
-| `0xhanniba1-cc-codex-statusline` | [cc-codex-statusline](https://github.com/0xHanniba1/cc-codex-statusline) | claude, codex | MIT | shell | ok | manual |
 | `adam-ismael-claude-fitness-break` | [claude-fitness-break](https://github.com/adam-ismael/claude-fitness-break) | claude | MIT | bash | ok | plugin |
 | `ai-ken-git-cat-codex-statusline` | [cat-codex-statusline (ai-ken-git)](https://github.com/ai-ken-git/cat-codex-statusline) | codex | MIT | python | ok | manual |
-| `ainsley-opencode-token-monitor` | [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor) | opencode | MIT | typescript | ok | opencode-plugin |
 | `amirlehmam-ocstatusline` | [ocstatusline](https://github.com/amirlehmam/ocstatusline) | opencode | MIT | typescript | ok | npx |
 | `anirudhmkumar-claude-code-statusline` | [claude-code-statusline](https://github.com/AnirudhMKumar/claude-code-statusline) | claude | MIT | powershell | ok | manual |
 | `asafsaar-claude-code-statusline` | [claude-code-statusline](https://github.com/AsafSaar/claude-code-statusline) | claude | MIT | shell | ok | manual |
@@ -21,7 +19,6 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 | `capedbitmap-codex-hud` | [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud) | codex | PolyForm-Noncommercial-1.0.0 | swift | ref | manual |
 | `ccometixline` | [CCometixLine](https://github.com/Haleclipse/CCometixLine) | claude | MIT | rust | ok | manual |
 | `ccstatusline` | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | claude | MIT | typescript | ok | npx |
-| `ccusage` | [ccusage](https://github.com/ryoppippi/ccusage) | claude, codex | MIT | typescript | ok | npx |
 | `chae-dahee-claude-buddy` | [claude-buddy](https://github.com/chae-dahee/claude-buddy) | claude | MIT | typescript | ok | npm-global |
 | `claude-hud` | [claude-hud](https://github.com/jarrodwatts/claude-hud) | claude | MIT | typescript | ok | plugin |
 | `ctfbio-claude-code-statusline` | [claude-code-statusline (ctfbio)](https://github.com/ctfbio/claude-code-statusline) | claude | MIT | shell | ok | manual |
@@ -81,16 +78,6 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 
 ## Détail par entrée
 
-### `0xhanniba1-cc-codex-statusline` — [cc-codex-statusline](https://github.com/0xHanniba1/cc-codex-statusline)
-
-<a href="https://github.com/0xHanniba1/cc-codex-statusline"><img alt="cc-codex-statusline preview" src="images/0xhanniba1-cc-codex-statusline.png" width="480"></a>
-
-- **Licence:** MIT
-- **Cibles:** claude, codex
-- **Description:** Statusline combinée pour Claude Code et Codex dans un seul dépôt, chacune avec un installateur curl en une ligne — ajoute le chemin, l'affichage du modèle et un compte à rebours de limite de débit coloré aux deux CLI.
-- **Notes:** Separate one-liner installers for Claude Code and Codex; see upstream subdirectory READMEs for per-CLI setup steps.
-- **Installation:** voir en amont
-
 ### `adam-ismael-claude-fitness-break` — [claude-fitness-break](https://github.com/adam-ismael/claude-fitness-break)
 
 <a href="https://github.com/adam-ismael/claude-fitness-break"><img alt="adam-ismael/claude-fitness-break repository preview" src="images/adam-ismael-claude-fitness-break.png" width="480"></a>
@@ -110,17 +97,6 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Description:** Installateur de statusline Codex CLI sur le thème des chats ; câble les segments natifs (modèle, branche git, contexte, limites) dans un preset propre, avec un rendu en tête de chat prêt à s'activer dès que Codex proposera un hook de ligne de statut basé sur des commandes.
 - **Notes:** Codex CLI does not yet expose a command-backed status line hook (unlike Claude Code, which runs an arbitrary command). The cat-face renderer (statusline.py) is included but not wired in; the installer currently configures only Codex's native built-in segments via [tui].status_line in ~/.codex/config.toml. Cat faces will activate automatically once Codex adds hook support.
 - **Installation:** voir en amont
-
-### `ainsley-opencode-token-monitor` — [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor)
-
-<a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="images/ainsley-opencode-token-monitor.png" width="480"></a>
-
-- **Licence:** MIT
-- **Cibles:** opencode
-- **Description:** Plugin OpenCode (pas une statusline) qui enregistre les outils `token_stats` / `token_history` / `token_export` et émet des notifications toast avec la ventilation des jetons d'entrée, de sortie, de raisonnement et de cache.
-- **Notes:** Listed in the catalog because it complements an OpenCode statusline rather than replacing one — its output is tool results and toasts, not a `statusLine.command` line. OpenCode loads it from npm at session start once the `plugin` array is configured.
-- **Installation:** OpenCode charge `opencode-token-monitor@0.5.0` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
-- **Configurer:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
 
 ### `amirlehmam-ocstatusline` — [ocstatusline](https://github.com/amirlehmam/ocstatusline)
 
@@ -214,16 +190,6 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Description:** Statusline Claude Code personnalisable avec un configurateur TUI interactif, un rendu powerline, des thèmes et des widgets pour les jetons, git, les minuteries de session et les liens cliquables.
 - **Installation:** `npx --ignore-scripts -y ccstatusline@2.2.18`
 - **Configurer:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
-
-### `ccusage` — [ccusage](https://github.com/ryoppippi/ccusage)
-
-<a href="https://github.com/ryoppippi/ccusage"><img alt="ccusage terminal screenshot" src="images/ccusage.png" width="480"></a>
-
-- **Licence:** MIT
-- **Cibles:** claude, codex
-- **Description:** Analyseur d'usage de jetons et de coûts qui parse les fichiers JSONL de sessions locales Claude Code et Codex ; pas une statusline en soi, mais une source de données utile à intégrer dans une statusline.
-- **Notes:** Run `npx -y ccusage@latest` for daily/monthly/session reports; pipe into a custom statusline for richer cost segments.
-- **Installation:** `npx --ignore-scripts -y ccusage@18.0.11`
 
 ### `chae-dahee-claude-buddy` — [claude-buddy](https://github.com/chae-dahee/claude-buddy)
 
