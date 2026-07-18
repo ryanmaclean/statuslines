@@ -1,0 +1,39 @@
+{
+  "slug": "alequip-ccstatusline-tokyonight",
+  "name": "ccstatusline Tokyo Night Theme",
+  "repo": "https://github.com/Alequip/ccstatusline-tokyonight",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JSON",
+  "description": "A Tokyo Night color theme preset for ccstatusline, providing a 4-line powerline-style statusline for Claude Code with progress bars for session, weekly, and context token usage. Requires the ccstatusline base tool installed via npx.",
+  "description_fr": "Un preset de thème Tokyo Night pour ccstatusline, offrant une barre de statut en style powerline sur 4 lignes pour Claude Code avec des barres de progression pour l'utilisation des tokens de session, hebdomadaire et de contexte. Nécessite l'outil de base ccstatusline installé via npx.",
+  "description_ja": "ccstatusline向けのTokyo Nightカラーテーマプリセット。Claude Code用に4行のパワーライン形式ステータスラインを提供し、セッション・週次・コンテキストのトークン使用量をプログレスバーで表示する。ベースツールはnpxでインストールが必要。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "claude",
+    "statusline",
+    "cost",
+    "tokens",
+    "tokyo-night",
+    "powerline",
+    "ccstatusline"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

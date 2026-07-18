@@ -1,0 +1,35 @@
+{
+  "slug": "bawstosai-fun-fact",
+  "name": "fun-fact-bawstos",
+  "repo": "https://github.com/BawstosAI/fun-fact-bawstos",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "Displays rotating random fun facts in the Claude Code status line, cycling through 400+ topic-tagged facts that refresh automatically. Installs via npx and integrates by adding a statusLine entry to ~/.claude/settings.json.",
+  "description_fr": "Affiche des faits amusants aléatoires en rotation dans la barre de statut de Claude Code, parcourant plus de 400 faits classés par thème qui se rafraîchissent automatiquement. S'installe via npx en ajoutant une entrée statusLine dans ~/.claude/settings.json.",
+  "description_ja": "Claude Codeのステータスラインに400以上のトピック別ランダムなトリビアを自動でローテーション表示します。npxでインストールし、~/.claude/settings.jsonにstatusLineエントリを追加して統合されます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "novelty",
+    "statusline",
+    "fun",
+    "claude-code"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

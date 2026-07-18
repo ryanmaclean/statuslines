@@ -1,0 +1,44 @@
+{
+  "slug": "callmemorgan-claude-statusline",
+  "name": "claude-statusline",
+  "repo": "https://github.com/callmemorgan/claude-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude",
+    "codex",
+    "gemini"
+  ],
+  "language": "Go",
+  "description": "A fast, themeable terminal statusline renderer for Claude Code, Antigravity CLI, and Pi that displays session metrics including cost tracking, context-window usage, rate-limit projections, and git information in a compact color-coded format.",
+  "description_fr": "Un moteur de barre d'état terminal rapide et personnalisable pour Claude Code, Antigravity CLI et Pi, affichant les métriques de session telles que le suivi des coûts, l'utilisation de la fenêtre de contexte, les projections de limites de débit et les informations git dans un format compact et coloré.",
+  "description_ja": "Claude Code、Antigravity CLI、Pi向けの高速でテーマ対応のターミナルステータスラインレンダラーで、コスト追跡、コンテキストウィンドウ使用量、レート制限の予測、git情報などのセッションメトリクスをコンパクトな色分け形式で表示します。",
+  "install": {
+    "type": "brew"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "git",
+    "themes",
+    "agents",
+    "statusline",
+    "terminal-ui",
+    "session-metrics",
+    "plugins",
+    "multi-provider"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
