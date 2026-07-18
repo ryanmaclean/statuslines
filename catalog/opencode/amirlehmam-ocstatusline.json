@@ -1,0 +1,51 @@
+{
+  "slug": "amirlehmam-ocstatusline",
+  "name": "ocstatusline",
+  "repo": "https://github.com/amirlehmam/ocstatusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "opencode"
+  ],
+  "language": "typescript",
+  "description": "Standalone OpenCode statusline daemon that subscribes to the OpenCode server's event stream and renders a live, continuously-updating status line in its own terminal pane, with an Ink-based interactive TUI for configuring segments.",
+  "description_fr": "Démon de statusline autonome pour OpenCode qui s'abonne au flux d'événements du serveur OpenCode et affiche une ligne d'état en direct, mise à jour en continu dans son propre panneau de terminal, avec un TUI interactif basé sur Ink pour configurer les segments.",
+  "description_ja": "OpenCode サーバーのイベントストリームを購読し、専用のターミナルペインでライブ更新され続けるステータスラインを描画するスタンドアロンの OpenCode statusline デーモン。セグメントを設定できる Ink ベースのインタラクティブ TUI を備える。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/amirlehmam/ocstatusline",
+    "alt": "ocstatusline synthetic preview — model, git branch, context, cost, session timer",
+    "source": "termframe-synthetic",
+    "local": "images/amirlehmam-ocstatusline.svg"
+  },
+  "install": {
+    "type": "npx",
+    "package": "ocstatusline",
+    "version": "0.1.0",
+    "integrity": "sha512-p4zsoHAx9/dPYEauvImuMWSe6HbxHbMufp1legtBfy5Gl2V4oPYc3HagnZKx89Z1kReBm9jquUJIIpiWQhjWkA=="
+  },
+  "configs": {},
+  "tags": [
+    "daemon",
+    "event-stream",
+    "tui-config",
+    "tokens",
+    "git"
+  ],
+  "notes": "Not an opencode.json integration — runs as a separate long-lived process (`ocstatusline start`) in its own terminal pane alongside an OpenCode session, subscribing to the local OpenCode event stream (default http://127.0.0.1:4096). Can spawn its own `opencode serve` process or attach to an existing one with --server. Config TUI: `npx ocstatusline` (no subcommand) opens the Ink-based editor.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-07-17"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

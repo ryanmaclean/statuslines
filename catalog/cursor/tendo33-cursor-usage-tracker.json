@@ -1,0 +1,48 @@
+{
+  "slug": "tendo33-cursor-usage-tracker",
+  "name": "Cursor Usage Tracker",
+  "repo": "https://github.com/Tendo33/cursor-usage-tracker",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "cursor"
+  ],
+  "language": "typescript",
+  "description": "Cursor / VS Code extension that shows Cursor request quota or USD credit usage in the editor status bar, with traffic-light thresholds, a hover breakdown, and a Python sqlite3 fallback for state.vscdb files too large for Node's SQLite bindings.",
+  "description_fr": "Extension Cursor / VS Code affichant le quota de requêtes Cursor ou l'utilisation de crédits USD dans la barre d'état de l'éditeur, avec des seuils de type feu tricolore, un détail au survol, et un repli sur sqlite3 (Python) pour les fichiers state.vscdb trop volumineux pour les liaisons SQLite de Node.",
+  "description_ja": "Cursor のリクエストクォータまたは USD クレジット使用量をエディタのステータスバーに表示する Cursor / VS Code 拡張機能。信号機式のしきい値表示、ホバー時の内訳表示に加え、Node の SQLite バインディングでは扱えない巨大な state.vscdb ファイル向けに Python の sqlite3 へのフォールバックを備える。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/Tendo33/cursor-usage-tracker/main/assets/main-status-bar.png",
+    "alt": "Cursor Usage Tracker status bar showing request quota with traffic-light indicator",
+    "source": "readme",
+    "local": "images/tendo33-cursor-usage-tracker.png"
+  },
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "quota",
+    "credits",
+    "status-bar",
+    "sqlite",
+    "vsix"
+  ],
+  "notes": "Distributed as a VSIX, not an npm/marketplace-automatable package here: build locally (`npm install && npm run compile && npm run package`) then install via VS Code/Cursor's \"Extensions: Install from VSIX...\" command, or run in development mode with F5. Reads local Cursor state (user ID, access token) from platform-specific storage paths and calls Cursor's usage endpoints (cursor.com/api/usage, api2.cursor.sh, cursor.com/api/auth/stripe) on a 5-minute refresh timer. This is the first Cursor-targeted entry in the catalog.",
+  "security": {
+    "has_install_scripts": false,
+    "license_observed": "MIT",
+    "last_audit": "2026-07-17"
+  },
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "USERPROFILE"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

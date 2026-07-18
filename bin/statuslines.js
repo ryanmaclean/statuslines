@@ -93,6 +93,25 @@ function validate(entry) {
         errs.push(`redistributable=true with install.type=${entry.install.type} requires a pinned install.version (not "latest")`);
       }
     }
+
+    // install.script / install.command can carry the same shell-injection risk as
+    // configs.<cli> (e.g. install.type=curl entries embedding the literal `curl
+    // ... | bash` invocation) but were never scanned here — only entry.configs[cli]
+    // was. redistributable=true entries are the ones our `configure` command will
+    // actually merge/run for the user, so a dangerous pattern there is a hard error,
+    // same severity as the configs check above. redistributable=false entries are
+    // reference-only (configure() already refuses to touch them — see cmdConfigure),
+    // so we surface the same finding as a warning rather than blocking the listing.
+    if (entry.install.script != null || entry.install.command != null) {
+      const installFlat = JSON.stringify({ script: entry.install.script, command: entry.install.command });
+      for (const p of DANGEROUS_PATTERNS) {
+        if (p.re.test(installFlat)) {
+          const msg = `install contains dangerous pattern: ${p.label}`;
+          if (entry.redistributable) errs.push(msg);
+          else warns.push(msg);
+        }
+      }
+    }
   }
   if (entry.configs) {
     for (const cli of Object.keys(entry.configs)) {

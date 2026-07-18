@@ -1,0 +1,60 @@
+{
+  "slug": "spences10-claude-statusline-powerline",
+  "name": "claude-statusline-powerline",
+  "repo": "https://github.com/spences10/claude-statusline-powerline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "typescript",
+  "description": "Powerline-style Claude Code statusline built as an expansion of Owloops' claude-powerline, adding a local SQLite-backed usage-analytics database and a JSON config schema with settings.json IntelliSense (autocomplete, hover docs, color validation).",
+  "description_fr": "Statusline Claude Code de style powerline, conçue comme une extension de claude-powerline d'Owloops, ajoutant une base de données d'analyse d'utilisation locale sur SQLite et un schéma de configuration JSON avec IntelliSense pour settings.json (autocomplétion, documentation au survol, validation des couleurs).",
+  "description_ja": "Owloops の claude-powerline を拡張して構築された powerline スタイルの Claude Code statusline。ローカル SQLite バックエンドの使用状況分析データベースと、settings.json 向け IntelliSense（自動補完・ホバードキュメント・色検証）を備えた JSON 設定スキーマを追加している。",
+  "image": {
+    "url": "https://raw.githubusercontent.com/spences10/claude-statusline-powerline/main/demo.png",
+    "alt": "claude-statusline-powerline demo showing themed powerline segments",
+    "source": "readme",
+    "local": "images/spences10-claude-statusline-powerline.png"
+  },
+  "install": {
+    "type": "npx",
+    "package": "claude-statusline-powerline",
+    "version": "0.0.19",
+    "integrity": "sha512-R4TiMbjgT7EUio6CMjLfc+bMW1mLcEsbWJf9imXJKLcEWPYqXLtZk3ikVk6MXTgGPlgvkkgkefLIQtUB9nbP1A=="
+  },
+  "configs": {
+    "claude": {
+      "statusLine": {
+        "type": "command",
+        "command": "npx --ignore-scripts -y claude-statusline-powerline@0.0.19",
+        "padding": 0
+      }
+    }
+  },
+  "tags": [
+    "powerline",
+    "tokens",
+    "cost",
+    "git",
+    "sqlite",
+    "tui-config"
+  ],
+  "notes": "Package declares a postinstall script (dist/install.js) that auto-writes a default ~/.claude/claude-statusline-powerline.json and wires settings.json; our configure command uses --ignore-scripts to skip that write, so a config file may need to be created manually per the README's JSON schema. Maintains a local SQLite database at ~/.claude/statusline-usage.db for session/cost analytics.",
+  "security": {
+    "has_install_scripts": true,
+    "license_observed": "MIT",
+    "last_audit": "2026-07-17"
+  },
+  "capabilities": {
+    "network": false,
+    "child_process": true,
+    "filesystem_write": true,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

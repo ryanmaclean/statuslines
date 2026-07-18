@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-65-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-70-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -92,6 +92,12 @@ Windows-native PowerShell statusline for Claude Code showing directory, git bran
 <a href="https://github.com/AsafSaar/claude-code-statusline"><img alt="claude-code-statusline segment preview" src="./catalog/images/asafsaar-claude-code-statusline.png" width="800"></a>
 
 Segment-based, fully configurable Claude Code statusline composed from toggleable parts (cwd, git branch, dirty, ahead/behind, model, node, context, cost, duration, lines, last commit, stash, effort, rate limits, ts errors) with per-segment icons and color thresholds.
+
+#### [**Awesome Statusline (CC-statusline)**](https://github.com/AwesomeJun/CC-statusline) · MIT `(ref)`
+
+<a href="https://github.com/AwesomeJun/CC-statusline"><img alt="Awesome Statusline five size presets with reasoning-effort and thinking indicators" src="./catalog/images/awesomejun-cc-statusline.webp" width="800"></a>
+
+Cross-platform Claude Code statusline (Bash on macOS/Linux, native PowerShell on Windows) showing context, 5h/7d usage limits, cost, reasoning-effort and extended-thinking indicators, with five size presets and Catppuccin theming — no Node or Nerd Font required.
 
 #### [**cc-statusline**](https://github.com/brandonchartier/cc-statusline) · MIT
 
@@ -225,7 +231,7 @@ Feature-rich single-file Node.js statusline showing model, active task, git bran
 
 Minimal Claude Code statusline showing model, context usage percentage, current directory, git branch, session timer, effort level, and live rate-limit bars fetched from the Anthropic API.
 
-#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT
+#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT `(ref)`
 
 <a href="https://github.com/kiheon0709/claude-codex-statusline"><img alt="claude-codex-statusline showing dual usage bars for Claude and Codex" src="./catalog/images/kiheon0709-claude-codex-statusline.png" width="800"></a>
 
@@ -347,6 +353,8 @@ Unified Rust binary that combines a sub-millisecond Claude Code statusline with 
 
 #### [**ClaudeCodeStatusBar**](https://github.com/SleighMaster99/ClaudeCodeStatusBar) · MIT
 
+<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="./catalog/images/sleighmaster99-claudecodestatusbar.svg" width="800"></a>
+
 Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag-and-drop layout builder with PowerShell runtime, usage tracking, and git/context/cost widgets.
 
 #### [**claude-code-statusline (Sam Yamashita)**](https://github.com/sotayamashita/claude-code-statusline) · MIT
@@ -354,6 +362,18 @@ Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag
 <a href="https://github.com/sotayamashita/claude-code-statusline"><img alt="claude-code-statusline (Rust) repo preview" src="./catalog/images/sotayamashita-claude-code-statusline.png" width="800"></a>
 
 Rust statusline for Claude Code with starship-like configuration and module-based composition.
+
+#### [**claude-statusline-powerline**](https://github.com/spences10/claude-statusline-powerline) · MIT
+
+<a href="https://github.com/spences10/claude-statusline-powerline"><img alt="claude-statusline-powerline demo showing themed powerline segments" src="./catalog/images/spences10-claude-statusline-powerline.png" width="800"></a>
+
+Powerline-style Claude Code statusline built as an expansion of Owloops' claude-powerline, adding a local SQLite-backed usage-analytics database and a JSON config schema with settings.json IntelliSense (autocomplete, hover docs, color validation).
+
+#### [**claude-statusline (TheoBrigitte)**](https://github.com/TheoBrigitte/claude-statusline) · MIT
+
+<a href="https://github.com/TheoBrigitte/claude-statusline"><img alt="claude-statusline (TheoBrigitte) showing model, context bar, cost, duration, and API status segments" src="./catalog/images/theobrigitte-claude-statusline.png" width="800"></a>
+
+Statically-compiled Go statusline for Claude Code sessions, configured via a TOML file with per-module colors/symbols/thresholds and responsive terminal-width layout, rendering in roughly 19 microseconds.
 
 #### [**@this-dot/claude-code-context-status-line**](https://github.com/thisdot/claude-code-context-status-line) · MIT
 
@@ -386,6 +406,12 @@ Two-line Claude Code statusline (shell) with live subagent count and background-
 <a href="https://github.com/Ainsley0917/opencode-token-monitor"><img alt="opencode-token-monitor repo preview" src="./catalog/images/ainsley-opencode-token-monitor.png" width="800"></a>
 
 OpenCode plugin (not a statusline) that registers `token_stats` / `token_history` / `token_export` tools and emits toast notifications with input, output, reasoning, and cache token breakdowns.
+
+#### [**ocstatusline**](https://github.com/amirlehmam/ocstatusline) · MIT
+
+<a href="https://github.com/amirlehmam/ocstatusline"><img alt="ocstatusline synthetic preview — model, git branch, context, cost, session timer" src="./catalog/images/amirlehmam-ocstatusline.svg" width="800"></a>
+
+Standalone OpenCode statusline daemon that subscribes to the OpenCode server's event stream and renders a live, continuously-updating status line in its own terminal pane, with an Ink-based interactive TUI for configuring segments.
 
 #### [**opencode-subagent-statusline**](https://github.com/Joaquinvesapa/sub-agent-statusline) · MIT
 
@@ -493,7 +519,7 @@ Four-line Codex statusline showing repo name, git branch, model, session cost in
 
 Fast local token-usage tracker for Claude Code and Codex; `tu statusline` emits a one-line cost/token summary. Also ships CLI, TUI, and GUI modes. 214x faster than ccusage.
 
-#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT
+#### [**claude-codex-statusline**](https://github.com/kiheon0709/claude-codex-statusline) · MIT `(ref)`
 
 <a href="https://github.com/kiheon0709/claude-codex-statusline"><img alt="claude-codex-statusline showing dual usage bars for Claude and Codex" src="./catalog/images/kiheon0709-claude-codex-statusline.png" width="800"></a>
 

@@ -26,5 +26,15 @@
     "shell-prompt",
     "first-gemini"
   ],
-  "notes": "No LICENSE file at the canonical paths as of catalog verification on 2026-04-30; default copyright is all-rights-reserved, so we don't ship install recipes. Worth tracking as the first Gemini-targeted statusline-style helper. Upstream README acknowledges Gemini CLI lacks a native statusLine hook."
+  "notes": "No LICENSE file at the canonical paths as of catalog verification on 2026-04-30; default copyright is all-rights-reserved, so we don't ship install recipes. Worth tracking as the first Gemini-targeted statusline-style helper. Upstream README acknowledges Gemini CLI lacks a native statusLine hook.",
+  "capabilities": {
+    "network": true,
+    "child_process": true,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
 }

@@ -12,8 +12,10 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `adam-ismael-claude-fitness-break` | [claude-fitness-break](https://github.com/adam-ismael/claude-fitness-break) | claude | MIT | bash | ok | plugin |
 | `ai-ken-git-cat-codex-statusline` | [cat-codex-statusline (ai-ken-git)](https://github.com/ai-ken-git/cat-codex-statusline) | codex | MIT | python | ok | manual |
 | `ainsley-opencode-token-monitor` | [opencode-token-monitor](https://github.com/Ainsley0917/opencode-token-monitor) | opencode | MIT | typescript | ok | opencode-plugin |
+| `amirlehmam-ocstatusline` | [ocstatusline](https://github.com/amirlehmam/ocstatusline) | opencode | MIT | typescript | ok | npx |
 | `anirudhmkumar-claude-code-statusline` | [claude-code-statusline](https://github.com/AnirudhMKumar/claude-code-statusline) | claude | MIT | powershell | ok | manual |
 | `asafsaar-claude-code-statusline` | [claude-code-statusline](https://github.com/AsafSaar/claude-code-statusline) | claude | MIT | shell | ok | manual |
+| `awesomejun-cc-statusline` | [Awesome Statusline (CC-statusline)](https://github.com/AwesomeJun/CC-statusline) | claude | MIT | shell | ref | curl |
 | `brandonchartier-cc-statusline` | [cc-statusline](https://github.com/brandonchartier/cc-statusline) | claude | MIT | python | ok | manual |
 | `briansmith80-claude-code-status-bar` | [claude-code-status-bar](https://github.com/briansmith80/claude-code-status-bar) | claude | MIT | shell | ok | manual |
 | `capedbitmap-codex-hud` | [codex-hud (Capedbitmap)](https://github.com/Capedbitmap/codex-hud) | codex | PolyForm-Noncommercial-1.0.0 | swift | ref | manual |
@@ -41,7 +43,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `jacsuper-codex-statusline-vscode` | [codex-statusline-vscode](https://github.com/jacsuper/codex-statusline-vscode) | vscode | MIT | typescript | ok | manual |
 | `joaquinvesapa-sub-agent-statusline` | [opencode-subagent-statusline](https://github.com/Joaquinvesapa/sub-agent-statusline) | opencode | MIT | typescript | ok | opencode-plugin |
 | `kamranahmedse-claude-statusline` | [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline) | claude | MIT | shell | ok | npx |
-| `kiheon0709-claude-codex-statusline` | [claude-codex-statusline](https://github.com/kiheon0709/claude-codex-statusline) | claude, codex | MIT | javascript | ok | curl |
+| `kiheon0709-claude-codex-statusline` | [claude-codex-statusline](https://github.com/kiheon0709/claude-codex-statusline) | claude, codex | MIT | javascript | ref | curl |
 | `kiriketsuki-gemini-statusline` | [gemini-statusline](https://github.com/Kiriketsuki/gemini-statusline) | gemini | Unspecified | shell | ref | manual |
 | `laveez-ccsl` | [ccsl](https://github.com/laveez/ccsl) | claude | MIT | typescript | ok | npm-global |
 | `leeguooooo-claude-code-usage-bar` | [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar) | claude | MIT | python | ok | manual |
@@ -69,6 +71,9 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `siropkin-budi-jetbrains` | [budi — JetBrains plugin](https://github.com/siropkin/budi-jetbrains) | jetbrains | MIT | kotlin | ok | plugin |
 | `sleighmaster99-claudecodestatusbar` | [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar) | claude | MIT | powershell | ok | git |
 | `sotayamashita-claude-code-statusline` | [claude-code-statusline (Sam Yamashita)](https://github.com/sotayamashita/claude-code-statusline) | claude | MIT | rust | ok | manual |
+| `spences10-claude-statusline-powerline` | [claude-statusline-powerline](https://github.com/spences10/claude-statusline-powerline) | claude | MIT | typescript | ok | npx |
+| `tendo33-cursor-usage-tracker` | [Cursor Usage Tracker](https://github.com/Tendo33/cursor-usage-tracker) | cursor | MIT | typescript | ok | manual |
+| `theobrigitte-claude-statusline` | [claude-statusline (TheoBrigitte)](https://github.com/TheoBrigitte/claude-statusline) | claude | MIT | go | ok | manual |
 | `thisdot-context-statusline` | [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line) | claude | MIT | typescript | ok | npx |
 | `tokscale` | [tokscale](https://github.com/junhoyeo/tokscale) | claude, opencode, gemini, codex, amp, cursor, kimi | MIT | typescript | ok | npx |
 | `xuedi-claude-statusline` | [xuedi/claude-statusline](https://github.com/xuedi/claude-statusline) | claude | EUPL-1.2 | rust | ref | manual |
@@ -117,6 +122,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** OpenCode がセッション開始時に `opencode-token-monitor@0.5.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 - **設定:** `node bin/statuslines.js configure ainsley-opencode-token-monitor --cli=<opencode>`
 
+### `amirlehmam-ocstatusline` — [ocstatusline](https://github.com/amirlehmam/ocstatusline)
+
+<a href="https://github.com/amirlehmam/ocstatusline"><img alt="ocstatusline synthetic preview — model, git branch, context, cost, session timer" src="images/amirlehmam-ocstatusline.svg" width="480"></a>
+
+- **ライセンス:** MIT
+- **対象:** opencode
+- **説明:** OpenCode サーバーのイベントストリームを購読し、専用のターミナルペインでライブ更新され続けるステータスラインを描画するスタンドアロンの OpenCode statusline デーモン。セグメントを設定できる Ink ベースのインタラクティブ TUI を備える。
+- **備考:** Not an opencode.json integration — runs as a separate long-lived process (`ocstatusline start`) in its own terminal pane alongside an OpenCode session, subscribing to the local OpenCode event stream (default http://127.0.0.1:4096). Can spawn its own `opencode serve` process or attach to an existing one with --server. Config TUI: `npx ocstatusline` (no subcommand) opens the Ink-based editor.
+- **インストール:** `npx --ignore-scripts -y ocstatusline@0.1.0`
+
 ### `anirudhmkumar-claude-code-statusline` — [claude-code-statusline](https://github.com/AnirudhMKumar/claude-code-statusline)
 
 <a href="https://github.com/AnirudhMKumar/claude-code-statusline"><img alt="anirudhmkumar-claude-code-statusline preview" src="images/anirudhmkumar-claude-code-statusline.png" width="480"></a>
@@ -137,6 +152,17 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **説明:** トグル可能なセグメント（cwd、Gitブランチ、dirty、ahead/behind、モデル、node、コンテキスト、コスト、時間、行数、最終コミット、スタッシュ、エフォート、レート制限、tsエラー）をセグメントごとのアイコンとカラー閾値で組み合わせた完全設定可能なステータスライン。
 - **備考:** Bash/PowerShell script edited in place to toggle segments via the ENABLED_SEGMENTS array; see upstream README for the install command.
 - **インストール:** 上流を参照
+
+### `awesomejun-cc-statusline` — [Awesome Statusline (CC-statusline)](https://github.com/AwesomeJun/CC-statusline)
+
+<a href="https://github.com/AwesomeJun/CC-statusline"><img alt="Awesome Statusline five size presets with reasoning-effort and thinking indicators" src="images/awesomejun-cc-statusline.webp" width="480"></a>
+
+- **ライセンス:** MIT（再配布不可。参照のみ）
+- **対象:** claude
+- **説明:** macOS/Linux では Bash、Windows ではネイティブ PowerShell で動作するクロスプラットフォームな Claude Code statusline。コンテキスト、5時間/7日の利用制限、コスト、reasoning effort・拡張思考インジケーターを表示し、5段階のサイズプリセットと Catppuccin テーマを備える。Node も Nerd Font も不要。
+- **備考:** Listed as redistributable=false / install.type=curl despite the permissive MIT license: the only supported install path is a one-line `curl ... | bash` (macOS/Linux) or `irm ... | iex` (Windows) remote script executor. Our `configure` command already refuses any redistributable=false entry outright, so this never runs automatically — it is reference-only; run the installer yourself from https://github.com/AwesomeJun/CC-statusline after reviewing install.sh/install.ps1. A Git-clone-and-run-locally alternative is documented upstream (`git clone ... && ./install.sh`) but is not wired up here.
+- **インストール:** 上流を参照
+- **注意:** パッケージはライフサイクルスクリプト（preinstall／postinstall／prepare）を宣言しています。`configure` は `--ignore-scripts` 付きで実行されます。
 
 ### `brandonchartier-cc-statusline` — [cc-statusline](https://github.com/brandonchartier/cc-statusline)
 
@@ -316,7 +342,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 - **ライセンス:** Unspecified（再配布不可。参照のみ）
 - **対象:** codex
-- **説明:** Four-line Codex statusline showing repo name, git branch, model, session cost in AUD, 5-hour rate-limit bar, and context window usage — mirroring the author's claude-statusline layout.
+- **説明:** リポジトリ名、git ブランチ、モデル、AUD 建てのセッションコスト、5時間レート制限バー、コンテキストウィンドウ使用率を表示する 4 行構成の Codex statusline。作者の claude-statusline のレイアウトを踏襲している。
 - **インストール:** 上流を参照
 
 ### `gregoryho-cc-pulseline` — [cc-pulseline](https://github.com/GregoryHo/cc-pulseline)
@@ -417,9 +443,10 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 <a href="https://github.com/kiheon0709/claude-codex-statusline"><img alt="claude-codex-statusline showing dual usage bars for Claude and Codex" src="images/kiheon0709-claude-codex-statusline.png" width="480"></a>
 
-- **ライセンス:** MIT
+- **ライセンス:** MIT（再配布不可。参照のみ）
 - **対象:** claude, codex
 - **説明:** Claude CodeとCodex CLIのクォータを並べて表示するデュアルバーステータスライン。5時間・週次レート制限バー、コンテキストウィンドウ、PreToolUse/PostToolUseフックで追跡するアクティブサブエージェント数をリアルタイムに表示する。
+- **備考:** Demoted from redistributable=true to redistributable=false on 2026-07-17: install.script is a curl|bash one-shot installer, which our `configure` command never actually executes (no curl-install branch), but the redistributable=true + curl-install combination misrepresented this as an auto-installable ('ok') entry. License is still MIT upstream; this is a policy-driven demotion pending a from-source (git clone) or checksum-pinned install recipe, not a license issue. See https://github.com/kiheon0709/claude-codex-statusline for upstream install instructions.
 - **インストール:** 上流を参照
 - **注意:** パッケージはライフサイクルスクリプト（preinstall／postinstall／prepare）を宣言しています。`configure` は `--ignore-scripts` 付きで実行されます。
 
@@ -626,7 +653,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 - **ライセンス:** Unspecified（再配布不可。参照のみ）
 - **対象:** codex
-- **説明:** Colourful 4-line tmux status area for Codex CLI showing context window, model, git branch, and 5-hour/7-day rate-limit pacing bars with per-second reset countdowns.
+- **説明:** Codex CLI 向けのカラフルな 4 行構成の tmux ステータス領域。コンテキストウィンドウ、モデル、git ブランチ、そして秒単位のリセットカウントダウン付きの 5時間/7日レート制限ペーシングバーを表示する。
 - **インストール:** 上流を参照
 
 ### `riveroflogic-claude-code-statusline` — [claude-code-statusline (RiverOfLogic)](https://github.com/RiverOfLogic/claude-code-statusline)
@@ -635,7 +662,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 - **ライセンス:** Unspecified（再配布不可。参照のみ）
 - **対象:** claude
-- **説明:** Powerline-style retro-terminal statusline for Claude Code, displaying model, git branch, output style, thinking mode, and a 10-cell context progress bar with warm earth-tone color thresholds and a live clock.
+- **説明:** Claude Code 向けの powerline スタイルのレトロターミナル statusline。モデル、git ブランチ、出力スタイル、思考モード、暖色系アーストーンのしきい値で色分けされた 10 セルのコンテキストプログレスバー、そしてライブ時計を表示する。
 - **備考:** README declares MIT but no LICENSE file is present in the repository; GitHub license API returns 404. Listed for reference only. Requires jq and a Nerd Font for glyph rendering; degrades to plain ASCII without one.
 - **インストール:** 上流を参照
 - **注意:** パッケージはライフサイクルスクリプト（preinstall／postinstall／prepare）を宣言しています。`configure` は `--ignore-scripts` 付きで実行されます。
@@ -673,7 +700,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `siropkin-budi-jetbrains` — [budi — JetBrains plugin](https://github.com/siropkin/budi-jetbrains)
 
-<a href="https://github.com/siropkin/budi-jetbrains"><img alt="budi JetBrains plugin — AI spend status bar" src="https://opengraph.githubassets.com/1/siropkin/budi-jetbrains" width="480"></a>
+<a href="https://github.com/siropkin/budi-jetbrains"><img alt="budi JetBrains plugin — status bar widget showing AI spend" src="images/siropkin-budi-jetbrains.png" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** jetbrains
@@ -683,7 +710,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `sleighmaster99-claudecodestatusbar` — [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar)
 
-<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar GitHub preview" src="https://opengraph.githubassets.com/1/SleighMaster99/ClaudeCodeStatusBar" width="480"></a>
+<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="images/sleighmaster99-claudecodestatusbar.svg" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -701,6 +728,39 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **説明:** starship ライクな設定とモジュールベースの構成に対応した Rust 製 Claude Code statusline。
 - **備考:** Upstream README references `cargo install claude-code-statusline-cli`, but that crate is not published on crates.io as of catalog verification on 2026-04-30. Build from source meanwhile: clone the repo, run `cargo build --release`, point statusLine.command at the resulting binary.
 - **インストール:** 上流を参照
+
+### `spences10-claude-statusline-powerline` — [claude-statusline-powerline](https://github.com/spences10/claude-statusline-powerline)
+
+<a href="https://github.com/spences10/claude-statusline-powerline"><img alt="claude-statusline-powerline demo showing themed powerline segments" src="images/spences10-claude-statusline-powerline.png" width="480"></a>
+
+- **ライセンス:** MIT
+- **対象:** claude
+- **説明:** Owloops の claude-powerline を拡張して構築された powerline スタイルの Claude Code statusline。ローカル SQLite バックエンドの使用状況分析データベースと、settings.json 向け IntelliSense（自動補完・ホバードキュメント・色検証）を備えた JSON 設定スキーマを追加している。
+- **備考:** Package declares a postinstall script (dist/install.js) that auto-writes a default ~/.claude/claude-statusline-powerline.json and wires settings.json; our configure command uses --ignore-scripts to skip that write, so a config file may need to be created manually per the README's JSON schema. Maintains a local SQLite database at ~/.claude/statusline-usage.db for session/cost analytics.
+- **インストール:** `npx --ignore-scripts -y claude-statusline-powerline@0.0.19`
+- **注意:** パッケージはライフサイクルスクリプト（preinstall／postinstall／prepare）を宣言しています。`configure` は `--ignore-scripts` 付きで実行されます。
+- **設定:** `node bin/statuslines.js configure spences10-claude-statusline-powerline --cli=<claude>`
+
+### `tendo33-cursor-usage-tracker` — [Cursor Usage Tracker](https://github.com/Tendo33/cursor-usage-tracker)
+
+<a href="https://github.com/Tendo33/cursor-usage-tracker"><img alt="Cursor Usage Tracker status bar showing request quota with traffic-light indicator" src="images/tendo33-cursor-usage-tracker.png" width="480"></a>
+
+- **ライセンス:** MIT
+- **対象:** cursor
+- **説明:** Cursor のリクエストクォータまたは USD クレジット使用量をエディタのステータスバーに表示する Cursor / VS Code 拡張機能。信号機式のしきい値表示、ホバー時の内訳表示に加え、Node の SQLite バインディングでは扱えない巨大な state.vscdb ファイル向けに Python の sqlite3 へのフォールバックを備える。
+- **備考:** Distributed as a VSIX, not an npm/marketplace-automatable package here: build locally (`npm install && npm run compile && npm run package`) then install via VS Code/Cursor's "Extensions: Install from VSIX..." command, or run in development mode with F5. Reads local Cursor state (user ID, access token) from platform-specific storage paths and calls Cursor's usage endpoints (cursor.com/api/usage, api2.cursor.sh, cursor.com/api/auth/stripe) on a 5-minute refresh timer. This is the first Cursor-targeted entry in the catalog.
+- **インストール:** 上流を参照
+
+### `theobrigitte-claude-statusline` — [claude-statusline (TheoBrigitte)](https://github.com/TheoBrigitte/claude-statusline)
+
+<a href="https://github.com/TheoBrigitte/claude-statusline"><img alt="claude-statusline (TheoBrigitte) showing model, context bar, cost, duration, and API status segments" src="images/theobrigitte-claude-statusline.png" width="480"></a>
+
+- **ライセンス:** MIT
+- **対象:** claude
+- **説明:** Go 言語で静的コンパイルされた Claude Code 用 statusline。モジュールごとの色・記号・しきい値を TOML ファイルで設定でき、ターミナル幅に応じたレスポンシブレイアウトを持ち、約 19 マイクロ秒でレンダリングする。
+- **備考:** No package-manager install path we automate: upstream ships a curl-downloaded static binary (`curl -o ~/.local/bin/claude-statusline <release-url>`, no shell pipe) or `go install github.com/TheoBrigitte/claude-statusline@latest`. Listed as install.type=manual; download the release binary onto PATH yourself, then the configs.claude snippet applies. Works with sensible defaults with no config file; optional ~/.config/claude-statusline.toml for module styling. Reports <0.019ms render time in upstream benchmarks. The optional rate-limit/status module polls status.claude.com with a 10-minute file-based cache; disable that module to run fully offline.
+- **インストール:** 上流を参照
+- **設定:** `node bin/statuslines.js configure theobrigitte-claude-statusline --cli=<claude>`
 
 ### `thisdot-context-statusline` — [@this-dot/claude-code-context-status-line](https://github.com/thisdot/claude-code-context-status-line)
 
@@ -729,7 +789,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 - **ライセンス:** EUPL-1.2（再配布不可。参照のみ）
 - **対象:** claude
-- **説明:** Rust-native Claude Code statusline rendering model, git, tokens, effort, and 5h/7d rate limits via a 20-cell braille progress bar in ~500 lines of safe, unsafe-forbidden code.
+- **説明:** Rust ネイティブの Claude Code statusline。モデル、git、トークン、effort、5時間/7日のレート制限を、20 セルの点字プログレスバーで表示する。約 500 行の安全な（unsafe 禁止の）コードで実装されている。
 - **備考:** EUPL-1.2 is a copyleft license (OSI-approved but incompatible with the catalog redistribution allowlist of MIT/Apache-2.0/BSD/ISC/MPL-2.0). Listed for reference only; skipped by configure. Notable technical differentiator: 20-cell braille progress bar for token usage, built in safe Rust (~500 LOC). Reads credentials from ~/.claude/.credentials.json to fetch /api/oauth/usage when Claude Code does not supply rate-limit data in the payload; results cached under /tmp/claude/.
 - **インストール:** 上流を参照
 

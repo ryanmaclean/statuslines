@@ -306,6 +306,56 @@ describe("validate() — dangerous config patterns", () => {
   });
 });
 
+describe("validate() — dangerous install.script/install.command patterns", () => {
+  // Regression test for the gap where DANGEROUS_PATTERNS only scanned
+  // entry.configs[cli], letting a redistributable=true entry with a
+  // curl|bash install.script (kiheon0709-claude-codex-statusline) validate
+  // clean. install.script/command are now scanned too: a hit is a hard
+  // error for redistributable=true entries (the ones `configure` treats as
+  // safe to auto-install) and a warning for redistributable=false
+  // (reference-only; `configure` already refuses to touch them).
+
+  test("curl|bash in install.script on a redistributable=true entry is an error", () => {
+    const { errs } = validate(fullEntry({
+      redistributable: true,
+      install: { type: "curl", script: "curl -fsSL https://example.com/install.sh | bash" },
+    }));
+    assert.ok(errs.some((m) => m.includes("dangerous pattern: curl-pipe-shell")));
+  });
+
+  test("curl|bash in install.script on a redistributable=false entry is a warning, not an error", () => {
+    const { errs, warns } = validate(minimalEntry({
+      redistributable: false,
+      install: { type: "curl", script: "curl -fsSL https://example.com/install.sh | bash" },
+    }));
+    assert.deepEqual(errs.filter((m) => m.includes("dangerous pattern")), []);
+    assert.ok(warns.some((m) => m.includes("dangerous pattern: curl-pipe-shell")));
+  });
+
+  test("wget|sh in install.command on a redistributable=true entry is an error", () => {
+    const { errs } = validate(fullEntry({
+      redistributable: true,
+      install: { type: "curl", command: "wget https://example.com/install.sh | sh" },
+    }));
+    assert.ok(errs.some((m) => m.includes("dangerous pattern: wget-pipe-shell")));
+  });
+
+  test("install.script without a dangerous pattern is fine", () => {
+    const { errs, warns } = validate(fullEntry({
+      redistributable: true,
+      install: { type: "manual", script: "download the release binary and put it on PATH" },
+    }));
+    assert.deepEqual(errs.filter((m) => m.includes("dangerous pattern")), []);
+    assert.deepEqual(warns.filter((m) => m.includes("dangerous pattern")), []);
+  });
+
+  test("entry with no install.script/command is unaffected", () => {
+    const { errs, warns } = validate(fullEntry({ install: { type: "npx", package: "foo", version: "1.0.0" } }));
+    assert.deepEqual(errs.filter((m) => m.includes("dangerous pattern")), []);
+    assert.deepEqual(warns.filter((m) => m.includes("dangerous pattern")), []);
+  });
+});
+
 describe("validate() — quarantine", () => {
   test("quarantined=true without reason is an error", () => {
     const { errs } = validate(fullEntry({ security: { quarantined: true } }));
