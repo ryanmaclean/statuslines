@@ -188,7 +188,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Licence:** MIT
 - **Cibles:** claude
 - **Description:** Statusline Claude Code personnalisable avec un configurateur TUI interactif, un rendu powerline, des thèmes et des widgets pour les jetons, git, les minuteries de session et les liens cliquables.
-- **Installation:** `npx --ignore-scripts -y ccstatusline@2.2.18`
+- **Installation:** `npx --ignore-scripts -y ccstatusline@2.2.23`
 - **Configurer:** `node bin/statuslines.js configure ccstatusline --cli=<claude>`
 
 ### `chae-dahee-claude-buddy` — [claude-buddy](https://github.com/chae-dahee/claude-buddy)
@@ -198,7 +198,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Licence:** MIT
 - **Cibles:** claude
 - **Description:** Compagnon ASCII animé intégré au statusline Claude Code, tiré d'une table gacha avec 18 espèces, 5 niveaux de rareté et des statistiques comme DEBUGGING et SNARK — monte de niveau tous les sept jours.
-- **Installation:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.3`
+- **Installation:** `npm i -g --ignore-scripts claude-buddy-statusline@0.2.9`
 - **Configurer:** `node bin/statuslines.js configure chae-dahee-claude-buddy --cli=<claude>`
 
 ### `claude-hud` — [claude-hud](https://github.com/jarrodwatts/claude-hud)
@@ -392,7 +392,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** opencode
 - **Description:** Plugin de barre latérale TUI OpenCode (pas un statusLine.command) qui affiche l'activité des sous-agents, le temps écoulé et l'usage des jetons/du contexte.
 - **Notes:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
-- **Installation:** OpenCode charge `opencode-subagent-statusline@0.7.1` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
+- **Installation:** OpenCode charge `opencode-subagent-statusline@1.2.1` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 
 ### `kamranahmedse-claude-statusline` — [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline)
 
@@ -559,7 +559,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Licence:** MIT
 - **Cibles:** claude
 - **Description:** Statusline powerline de style Vim pour Claude Code avec suivi de l'usage en temps réel, intégration git et thèmes prédéfinis.
-- **Installation:** `npx --ignore-scripts -y @owloops/claude-powerline@1.26.0`
+- **Installation:** `npx --ignore-scripts -y @owloops/claude-powerline@1.28.0`
 - **Configurer:** `node bin/statuslines.js configure owloops-claude-powerline --cli=<claude>`
 
 ### `pcvelz-ccstatusline-usage` — [ccstatusline-usage](https://github.com/pcvelz/ccstatusline-usage)
@@ -569,7 +569,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Licence:** MIT
 - **Cibles:** claude
 - **Description:** Fork de ccstatusline ajoutant des widgets d'utilisation en temps réel via l'API Anthropic : barres d'utilisation session et hebdomadaire, indicateur de rythme hebdomadaire, compte à rebours de réinitialisation et routage multi-fournisseur pour les modèles locaux.
-- **Installation:** `npx --ignore-scripts -y ccstatusline-usage@2.4.4`
+- **Installation:** `npx --ignore-scripts -y ccstatusline-usage@2.4.10`
 - **Configurer:** `node bin/statuslines.js configure pcvelz-ccstatusline-usage --cli=<claude>`
 
 ### `postmodum37-simple-claude-code-statusline` — [simple-claude-code-statusline](https://github.com/Postmodum37/simple-claude-code-statusline)
@@ -610,7 +610,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** opencode
 - **Description:** Plugin OpenCode (pas une statusline) fournissant l'analyse de l'usage des jetons et des coûts pour les sessions avec des ventilations détaillées.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **Installation:** OpenCode charge `@ramtinj95/opencode-tokenscope@1.6.4` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
+- **Installation:** OpenCode charge `@ramtinj95/opencode-tokenscope@1.8.0` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 - **Configurer:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `rgomes87-codex-statusline` — [codex-statusline (rgomes87)](https://github.com/rgomes87/codex-statusline)
@@ -747,7 +747,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **Description:** Traqueur d'usage de jetons multi-CLI qui lit les données de session locales de nombreux outils de codage IA (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, et d'autres) avec une tarification alimentée par LiteLLM.
 - **Notes:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **Installation:** `npx --ignore-scripts -y tokscale@2.1.1`
+- **Installation:** `npx --ignore-scripts -y tokscale@4.5.3`
 
 ### `xuedi-claude-statusline` — [xuedi/claude-statusline](https://github.com/xuedi/claude-statusline)
 
