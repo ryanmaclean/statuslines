@@ -22,7 +22,7 @@
     "package": "@owloops/claude-powerline",
     "version": "1.28.0",
     "integrity": "sha512-p9Royz+gbj8Ex4dBfwLfKye4u96c5WdVLAbI60r85FMVWErZMW7csjeV6SbSWDIWrwahlW7Fm24cKtz8rXeEgw==",
-    "deps_lock_sha256": "61288f691542a3cca3fb508976f0b62a98a5c4d1531bbb0002eb98373fd6a84d"
+    "deps_lock_sha256": "b8e8f453a8aa4ed8bfc2c17d5748ea39abf336fb9dd733ca27e61d3a5ce2eb03"
   },
   "configs": {
     "claude": {
