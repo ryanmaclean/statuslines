@@ -2,9 +2,9 @@
   "schema_version": 1,
   "slug": "pcvelz-ccstatusline-usage",
   "package": "ccstatusline-usage",
-  "version": "2.4.4",
-  "captured_at": "2026-05-20",
+  "version": "2.4.10",
+  "captured_at": "2026-07-22",
   "deps": {
-    "ccstatusline-usage@2.4.4": "sha512-9RDVuUrzF+E2jrcAxtxSZrT/HdpY/dj4fxx9lob3G8XNWQrT0KuUJWU4OpFjGyslRl2IeM85m/m1oB4czCbI8A=="
+    "ccstatusline-usage@2.4.10": "sha512-6dMniffBoIYWkVUqXX9kbPBX/c7QD1toEJuX6mXk/T0KR3aSWVaOQnJZbwd8CmbuPpsWXnNTd7G6zRZgn1Xpig=="
   }
 }

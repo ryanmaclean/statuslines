@@ -2,9 +2,9 @@
   "schema_version": 1,
   "slug": "owloops-claude-powerline",
   "package": "@owloops/claude-powerline",
-  "version": "1.26.0",
-  "captured_at": "2026-05-20",
+  "version": "1.28.0",
+  "captured_at": "2026-07-22",
   "deps": {
-    "@owloops/claude-powerline@1.26.0": "sha512-LoWA+VwgThtJCSEfOkqaJRB7QZ8fdrfUP3jqVFUmxNbap+aJzMFyYgT5Tuh/q+0OY9xYj2aa9vUZeO+p/lTPEQ=="
+    "@owloops/claude-powerline@1.28.0": "sha512-p9Royz+gbj8Ex4dBfwLfKye4u96c5WdVLAbI60r85FMVWErZMW7csjeV6SbSWDIWrwahlW7Fm24cKtz8rXeEgw=="
   }
 }

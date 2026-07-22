@@ -22,7 +22,7 @@
     "package": "claudeline",
     "version": "1.11.0",
     "integrity": "sha512-lOdlocpc3mJyyJ5Ij96IRtZEXMbTYw+AMLBtrLmXa1j0XjLGZ8o5R1mDZ+Et8VgVpWryg6CZMXY9ZpUMU5tslw==",
-    "deps_lock_sha256": "7b0128008c6726c10d91ea7b0fb351086ff48d290f1f802c2cc6a0b52ba242f0"
+    "deps_lock_sha256": "6ae9c148be04af9cbac9b8cde336bcfa02143dbfe9b39f750ecb09004a85af2b"
   },
   "configs": {
     "claude": {
