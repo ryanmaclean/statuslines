@@ -61,6 +61,14 @@
     "last_audit": "2026-05-12",
     "quarantined": false,
     "quarantine_reason": null,
-    "quarantined_at": null
+    "quarantined_at": null,
+    "attestation": {
+      "available": true,
+      "checked_at": "2026-07-23T10:35:06.621Z",
+      "predicate_type": "https://slsa.dev/provenance/v1",
+      "issuer": "https://github.com/actions/runner/github-hosted",
+      "build_workflow": "github.com/laveez/ccsl/.github/workflows/release.yml@refs/tags/v0.3.1",
+      "regression": false
+    }
   }
 }
