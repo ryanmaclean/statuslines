@@ -20,8 +20,8 @@
   "install": {
     "type": "opencode-plugin",
     "package": "opencode-subagent-statusline",
-    "version": "1.2.1",
-    "integrity": "sha512-txXrF8FFjLWH/fLnXJqQvkK+uhayLm+iP3LCr+B3MMsLEhuuAB5lO+dJBUCvDff9tU4D8zWXzWxjoVpKtEh6xg==",
+    "version": "1.3.0",
+    "integrity": "sha512-YmCwC8cFe0WZmm9GWskmR2QspS11GMtUf8DflqnFplRPT+nxhlEGV8IOHLo4sFuRGRkThloB++XKo8DvCQfnaw==",
     "deps_lock_sha256": "91cee44da52833f347407f99cd2f9049ad0dc0aee6a7c9e6a89994670594f603"
   },
   "configs": {},
@@ -35,7 +35,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-07-18"
+    "last_audit": "2026-08-31"
   },
   "capabilities": {
     "network": true,
