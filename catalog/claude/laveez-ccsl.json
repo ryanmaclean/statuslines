@@ -20,8 +20,8 @@
   "install": {
     "type": "npm-global",
     "package": "ccsl",
-    "version": "0.3.1",
-    "integrity": "sha512-65tf80cspPFFM/jMLWgVxwtVQpLTPcHmDMwE8Gz6TDlTjrVsPZt/klZa2p3+he4wWG995Do53NkSfYo2LZnMEw==",
+    "version": "0.4.0",
+    "integrity": "sha512-52AdgI9QCbbglD5x6/SinaLgqHTi/qG3Tdg9Y2qKZTd2A/gZwzJDtH/YUh+Qqb+y6RMenFUwO8AF+E6hS9ks5g==",
     "deps_lock_sha256": "4445b4d36c4ba997b70f3d7b221837d6ac065c5970615e9a8a8dce9cfe14c7b5"
   },
   "configs": {
@@ -58,7 +58,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-12",
+    "last_audit": "2026-08-31",
     "quarantined": false,
     "quarantine_reason": null,
     "quarantined_at": null

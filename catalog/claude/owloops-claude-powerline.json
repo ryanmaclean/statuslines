@@ -20,8 +20,8 @@
   "install": {
     "type": "npx",
     "package": "@owloops/claude-powerline",
-    "version": "1.28.0",
-    "integrity": "sha512-p9Royz+gbj8Ex4dBfwLfKye4u96c5WdVLAbI60r85FMVWErZMW7csjeV6SbSWDIWrwahlW7Fm24cKtz8rXeEgw==",
+    "version": "1.30.1",
+    "integrity": "sha512-RhwJj1aGOPezI67y8qoWAaMgZUaiUxVNX0G6d8bGb31ZL1O4EMplh5rt3yvrXA5gWd86MF0W6bbNSQXiDp7Gyw==",
     "deps_lock_sha256": "61288f691542a3cca3fb508976f0b62a98a5c4d1531bbb0002eb98373fd6a84d"
   },
   "configs": {
@@ -41,7 +41,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-07-18"
+    "last_audit": "2026-08-31"
   },
   "capabilities": {
     "network": true,

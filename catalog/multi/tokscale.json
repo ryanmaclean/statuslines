@@ -26,8 +26,8 @@
   "install": {
     "type": "npx",
     "package": "tokscale",
-    "version": "4.5.3",
-    "integrity": "sha512-yR2ssSK+omkezZw98RW1Npxkycyw/5T8MhjG5wwFZvK6hVbiHUw8hnWDokaBCTYC5Mhf2bf3QpPfKUhzGK0Y7g==",
+    "version": "4.15.0",
+    "integrity": "sha512-UMZsjz2CR/kBD4v7uMvpzVXYrFo5bV8KCKJ7cFx2c5w0kIOgjDHrJR4l2MJ8rxgSDG40oylkjlkSCQEoo1VBhA==",
     "deps_lock_sha256": "576e990c82398e4f1290f8efe56a7eb915d0c20158bfe3b46362ebb2be232570"
   },
   "configs": {},
@@ -41,7 +41,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-07-18"
+    "last_audit": "2026-08-31"
   },
   "capabilities": {
     "network": true,
