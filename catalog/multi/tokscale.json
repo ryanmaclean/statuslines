@@ -28,7 +28,7 @@
     "package": "tokscale",
     "version": "4.5.3",
     "integrity": "sha512-yR2ssSK+omkezZw98RW1Npxkycyw/5T8MhjG5wwFZvK6hVbiHUw8hnWDokaBCTYC5Mhf2bf3QpPfKUhzGK0Y7g==",
-    "deps_lock_sha256": "576e990c82398e4f1290f8efe56a7eb915d0c20158bfe3b46362ebb2be232570"
+    "deps_lock_sha256": "08cbe1f5d19f4596a85616cce435541d972860dcda4f95b04f9fc4d604785b81"
   },
   "configs": {},
   "tags": [

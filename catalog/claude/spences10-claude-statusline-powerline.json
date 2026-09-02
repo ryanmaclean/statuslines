@@ -21,7 +21,8 @@
     "type": "npx",
     "package": "claude-statusline-powerline",
     "version": "0.0.19",
-    "integrity": "sha512-R4TiMbjgT7EUio6CMjLfc+bMW1mLcEsbWJf9imXJKLcEWPYqXLtZk3ikVk6MXTgGPlgvkkgkefLIQtUB9nbP1A=="
+    "integrity": "sha512-R4TiMbjgT7EUio6CMjLfc+bMW1mLcEsbWJf9imXJKLcEWPYqXLtZk3ikVk6MXTgGPlgvkkgkefLIQtUB9nbP1A==",
+    "deps_lock_sha256": "2aaf59b458565d02493278a62b4a8a2944247e141bdba55ced87fdcf9dbc3712"
   },
   "configs": {
     "claude": {
