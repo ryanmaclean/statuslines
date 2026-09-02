@@ -21,7 +21,8 @@
     "type": "npx",
     "package": "ocstatusline",
     "version": "0.1.0",
-    "integrity": "sha512-p4zsoHAx9/dPYEauvImuMWSe6HbxHbMufp1legtBfy5Gl2V4oPYc3HagnZKx89Z1kReBm9jquUJIIpiWQhjWkA=="
+    "integrity": "sha512-p4zsoHAx9/dPYEauvImuMWSe6HbxHbMufp1legtBfy5Gl2V4oPYc3HagnZKx89Z1kReBm9jquUJIIpiWQhjWkA==",
+    "deps_lock_sha256": "28fe6f388b696cdc42c1501a13672a1ef39414d919cfcb9e14d231af20556450"
   },
   "configs": {},
   "tags": [

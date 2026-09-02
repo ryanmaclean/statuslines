@@ -22,7 +22,7 @@
     "package": "ccsl",
     "version": "0.3.1",
     "integrity": "sha512-65tf80cspPFFM/jMLWgVxwtVQpLTPcHmDMwE8Gz6TDlTjrVsPZt/klZa2p3+he4wWG995Do53NkSfYo2LZnMEw==",
-    "deps_lock_sha256": "4445b4d36c4ba997b70f3d7b221837d6ac065c5970615e9a8a8dce9cfe14c7b5"
+    "deps_lock_sha256": "0e9d6179372cd59b8c2c48feea88ca1e4908558780aba9875adf3c9f391cda47"
   },
   "configs": {
     "claude": {
