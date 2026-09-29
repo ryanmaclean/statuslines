@@ -1,0 +1,39 @@
+{
+  "slug": "dpc00-ccstatusline-editor",
+  "name": "ccstatusline-editor",
+  "repo": "https://github.com/dpc00/ccstatusline-editor",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Python",
+  "description": "A web-based visual drag-and-drop editor for ccstatusline configuration files, letting you build and customize your Claude Code statusline through a browser UI instead of hand-editing JSON. Supports 83+ widget types, 30 presets, and 56 color themes, with Ctrl+S saving directly to the ccstatusline settings file.",
+  "description_fr": "Un éditeur visuel web par glisser-déposer pour les fichiers de configuration ccstatusline, permettant de construire et personnaliser votre barre de statut Claude Code via un navigateur plutôt qu'en éditant manuellement du JSON. Prend en charge plus de 83 types de widgets, 30 préréglages et 56 thèmes de couleurs, avec une sauvegarde Ctrl+S directement dans le fichier de paramètres ccstatusline.",
+  "description_ja": "ccstatuslineの設定ファイルをブラウザのビジュアルなドラッグ＆ドロップUIで編集できるWebベースのエディタ。JSONを手動編集せずにClaude Codeのステータスラインを構築・カスタマイズでき、83種類以上のウィジェット、30のプリセット、56のカラーテーマをサポートし、Ctrl+Sでccstatuslineの設定ファイルに直接保存できる。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "tokens",
+    "cost",
+    "git",
+    "statusline",
+    "config-editor",
+    "drag-and-drop",
+    "web-ui"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

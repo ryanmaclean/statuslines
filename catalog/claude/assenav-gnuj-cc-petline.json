@@ -1,0 +1,41 @@
+{
+  "slug": "assenav-gnuj-cc-petline",
+  "name": "cc-petline",
+  "repo": "https://github.com/Assenav-Gnuj/cc-petline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Rust",
+  "description": "A Rust-based animated sprite mascot (Fox) for Claude Code that reacts to hook events (thinking, working, sleepy, etc.) and pairs with a Charmbracelet-styled statusline showing model, git status, token usage, and cost/budget tracking. Supports both a ~3fps statusline column mode and a smooth 25fps ratatui TUI pane mode.",
+  "description_fr": "Un compagnon mascotte animée (Renard) pour Claude Code écrit en Rust, qui réagit aux événements de hooks (réflexion, travail, sommeil, etc.) et s'associe à une barre de statut de style Charmbracelet affichant le modèle, l'état git, l'utilisation des tokens et le suivi du budget/coût. Disponible en mode colonne de barre de statut (~3 fps) ou en mode TUI ratatui fluide à 25 fps.",
+  "description_ja": "Rustで書かれたClaude Code用のアニメーションスプライトマスコット（キツネ）で、フックイベント（思考中、作業中、休眠中など）に反応し、モデル・git状態・トークン使用量・コスト/予算追跡を表示するCharmbracelet風ステータスラインと組み合わせて動作します。~3fpsのステータスラインカラムモードと25fpsのスムーズなratatuiTUIペインモードの両方をサポートします。",
+  "install": {
+    "type": "cargo"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "novelty",
+    "tokens",
+    "cost",
+    "git",
+    "claude",
+    "statusline",
+    "hooks",
+    "tui",
+    "animated"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "intertechinc-claude-code-context-meter",
+  "name": "claude-code-context-meter",
+  "repo": "https://github.com/IntertechInc/claude-code-context-meter",
+  "license": "unknown",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A Bash status line script for Claude Code that displays context window fill percentage, per-turn token delta, a sparkline of recent growth, and 5-hour/7-day rate limit usage after each assistant message.",
+  "description_fr": "Un script de ligne de statut Bash pour Claude Code qui affiche le pourcentage de remplissage de la fenêtre de contexte, le delta de tokens par tour, un sparkline de la croissance récente et l'utilisation des limites de débit sur 5 heures et 7 jours après chaque message de l'assistant.",
+  "description_ja": "Claude Code用のBashステータスラインスクリプトで、コンテキストウィンドウの充填率、ターンごとのトークンデルタ、直近の成長スパークライン、およびアシスタントメッセージごとの5時間・7日間レートリミット使用状況を表示します。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "rate-limits",
+    "context-window",
+    "statusline",
+    "sparkline",
+    "terminal",
+    "claude"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

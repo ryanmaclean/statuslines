@@ -1,0 +1,42 @@
+{
+  "slug": "anthonybaldwin-claude-statusline",
+  "name": "claude-statusline",
+  "repo": "https://github.com/anthonybaldwin/claude-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A zero-dependency Bun-powered statusline for Claude Code that renders a multi-row terminal dashboard showing context usage, API cost with burn rate, rate-limit windows, git/PR status, and active sub-agents. Installs by cloning and running bun install.js, which auto-configures ~/.claude/settings.json.",
+  "description_fr": "Une statusline sans dépendances alimentée par Bun pour Claude Code, affichant un tableau de bord multi-lignes dans le terminal avec l'utilisation du contexte, le coût API avec le taux de consommation, les fenêtres de limite de débit, l'état git/PR et les sous-agents actifs. S'installe en clonant le dépôt et en exécutant bun install.js, qui configure automatiquement ~/.claude/settings.json.",
+  "description_ja": "Claude Code 向けのゼロ依存 Bun 製ステータスラインで、コンテキスト使用量・API コスト（消費率付き）・レートリミットウィンドウ・git/PR 状態・アクティブなサブエージェントを多行ターミナルダッシュボードとして表示します。リポジトリをクローンして bun install.js を実行するだけで ~/.claude/settings.json が自動設定されます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "git",
+    "agents",
+    "statusline",
+    "bun",
+    "terminal",
+    "dashboard",
+    "sub-agents",
+    "nerd-fonts"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "young1lin-claude-token-monitor",
+  "name": "claude-token-monitor",
+  "repo": "https://github.com/young1lin/claude-token-monitor",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Go",
+  "description": "A Claude Code statusline plugin written in Go that displays real-time context token usage, Anthropic Pro/Team 5-hour and 7-day quota countdowns, and Z.ai/GLM Coding Plan quota — all with git branch, thinking-mode indicators, and a single cross-platform binary.",
+  "description_fr": "Un plugin de barre de statut pour Claude Code, écrit en Go, qui affiche en temps réel l'utilisation des tokens de contexte, les quotas Anthropic Pro/Team sur 5 heures et 7 jours, ainsi que les quotas du plan Z.ai/GLM — avec l'indicateur de branche git, les modes de réflexion et un binaire unique multiplateforme.",
+  "description_ja": "Goで書かれたClaude Codeのステータスラインプラグインで、コンテキストトークンの使用状況、Anthropic Pro/Teamの5時間・7日間クォータカウントダウン、Z.ai/GLMコーディングプランのクォータをリアルタイム表示し、gitブランチや思考モード表示にも対応したシングルバイナリ。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "rate-limits",
+    "cost",
+    "statusline",
+    "multi-provider",
+    "git",
+    "quota"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

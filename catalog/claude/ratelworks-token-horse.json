@@ -1,0 +1,40 @@
+{
+  "slug": "ratelworks-token-horse",
+  "name": "Token Horse",
+  "repo": "https://github.com/ratelworks/token-horse",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "JavaScript",
+  "description": "A terminal pixel-horse pet that gallops faster as your Claude Code or Codex CLI session burns more tokens per second, wired into the statusline via a command that reads the session transcript JSONL to measure live token throughput.",
+  "description_fr": "Un animal de compagnie en pixels pour terminal qui galope plus vite à mesure que votre session Claude Code ou Codex CLI consomme davantage de tokens par seconde, intégré à la barre de statut via une commande qui lit le journal JSONL de session pour mesurer le débit de tokens en temps réel.",
+  "description_ja": "Claude CodeまたはCodex CLIセッションのトークン消費速度に応じて速く駆けるターミナル用ピクセル馬ペットで、セッションのJSONLトランスクリプトを読み取ってリアルタイムのトークンスループットを計測し、ステータスラインコマンドとして組み込めます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "novelty",
+    "statusline",
+    "claude",
+    "codex",
+    "terminal-pet",
+    "animation",
+    "multi-provider"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

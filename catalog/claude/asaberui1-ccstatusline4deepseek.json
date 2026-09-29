@@ -1,0 +1,39 @@
+{
+  "slug": "asaberui1-ccstatusline4deepseek",
+  "name": "CCStatusline4DeepSeek",
+  "repo": "https://github.com/asaberui1/CCStatusline4DeepSeek",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A dual-line Claude Code statusline script that displays a 16-block context-window progress bar, cumulative session cost in CNY (¥), token usage metrics, and live DeepSeek account balance fetched via API.",
+  "description_fr": "Un script de barre d'état Claude Code sur deux lignes affichant une barre de progression de fenêtre de contexte à 16 blocs, le coût cumulé de la session en CNY (¥), les métriques d'utilisation des tokens et le solde DeepSeek en temps réel récupéré via API.",
+  "description_ja": "16ブロックのコンテキストウィンドウ進捗バー、セッション累積コスト（CNY/¥）、トークン使用量メトリクス、APIで取得したDeepSeekリアルタイム残高を表示する、Claude Code用2行ステータスラインスクリプト。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "deepseek",
+    "multi-provider",
+    "git",
+    "themes",
+    "progress-bar",
+    "balance"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

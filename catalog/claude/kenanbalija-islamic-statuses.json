@@ -1,0 +1,37 @@
+{
+  "slug": "kenanbalija-islamic-statuses",
+  "name": "Islamic Statuses for Claude Code",
+  "repo": "https://github.com/kenanbalija/claude-islamic-statuses",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "Animated Claude Code status line that displays a spinner while Claude is working, with rotating authentic hadiths sourced from Sahih al-Bukhari and Sahih Muslim. Runs entirely offline after initial setup and supports customizable display modes.",
+  "description_fr": "Barre de statut animée pour Claude Code affichant un spinner pendant que Claude travaille, avec rotation de hadiths authentiques issus de Sahih al-Bukhari et Sahih Muslim. Fonctionne entièrement hors ligne après l'installation initiale et supporte des modes d'affichage personnalisables.",
+  "description_ja": "Claude Codeの動作中にスピナーを表示し、サヒーフ・アル=ブハーリーとサヒーフ・ムスリムからの本物のハディースをローテーション表示するアニメーション付きステータスラインです。初期セットアップ後は完全オフラインで動作し、表示モードをカスタマイズできます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "novelty",
+    "statusline",
+    "terminal",
+    "offline",
+    "claude"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

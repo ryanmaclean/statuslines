@@ -1,0 +1,37 @@
+{
+  "slug": "codyslater-ccstatusline-retro-hud",
+  "name": "ccstatusline retro-hud",
+  "repo": "https://github.com/codyslater/ccstatusline_retro-hud",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Python",
+  "description": "A retro sci-fi HUD status line theme for Claude Code that renders a two-row terminal display showing model name, working directory, git branch, context usage, token I/O ratios, rate limits, session duration, and cost tracking with neon wireframe aesthetics and fractional-block progress bars.",
+  "description_fr": "Un thème de barre de statut HUD rétro-futuriste pour Claude Code qui affiche sur deux lignes le nom du modèle, le répertoire de travail, la branche git, l'utilisation du contexte, les ratios de tokens, les limites de débit, la durée de session et le coût, avec une esthétique néon et des barres de progression par blocs fractionnels.",
+  "description_ja": "Claude Code向けのレトロSF風HUDステータスラインテーマで、モデル名、作業ディレクトリ、gitブランチ、コンテキスト使用率、トークンI/O比率、レート制限、セッション時間、コストをネオンワイヤーフレーム風の美観と分数ブロック進捗バーで2行表示します。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "themes",
+    "tokens",
+    "cost",
+    "rate-limits",
+    "git",
+    "statusline"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
