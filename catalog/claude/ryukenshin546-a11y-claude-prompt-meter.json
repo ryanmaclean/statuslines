@@ -26,7 +26,7 @@
     "billing"
   ],
   "capabilities": {
-    "network": false,
+    "network": true,
     "child_process": false,
     "filesystem_write": false,
     "env_read": [
