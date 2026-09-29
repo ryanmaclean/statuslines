@@ -1,0 +1,40 @@
+{
+  "slug": "zyx1121-claude-statusline",
+  "name": "claude-statusline",
+  "repo": "https://github.com/zyx1121/claude-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "TypeScript",
+  "description": "A modular statusline plugin for Claude Code that lets users compose self-contained widgets (model, context, cost, rate limits, git, now-playing, stocks, and more) into configurable profiles via a federated marketplace.",
+  "description_fr": "Un plugin de barre d'état modulaire pour Claude Code permettant de composer des widgets autonomes (modèle, contexte, coût, limites de débit, git, lecture en cours, bourse, etc.) en profils configurables via un marketplace fédéré.",
+  "description_ja": "Claude Code 向けのモジュール式ステータスラインプラグインで、モデル・コンテキスト・コスト・レート制限・git・再生中の曲・株価などの自己完結型ウィジェットをフェデレーテッドマーケットプレイス経由で設定可能なプロファイルに組み合わせられる。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "tokens",
+    "cost",
+    "rate-limits",
+    "git",
+    "themes",
+    "statusline",
+    "marketplace",
+    "composable",
+    "widgets"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

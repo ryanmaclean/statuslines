@@ -1,0 +1,41 @@
+{
+  "slug": "victory-c-fitpet",
+  "name": "FitPet",
+  "repo": "https://github.com/victory-c/fitpet",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "TypeScript",
+  "description": "A Claude Code statusline companion that renders a virtual pet whose vitality is driven by Garmin fitness data and whose reactions are triggered by coding hook events such as test passes and errors. The pet evolves through vitality tiers synced via a Garmin MCP skill, with all quip responses handled locally without model calls.",
+  "description_fr": "Un compagnon de barre d'état pour Claude Code qui affiche un animal virtuel dont la vitalité est alimentée par les données fitness Garmin et dont les réactions sont déclenchées par des événements de hooks de codage tels que les réussites de tests et les erreurs. L'animal évolue selon des niveaux de vitalité synchronisés via une compétence MCP Garmin, toutes les réponses étant gérées localement sans appels au modèle.",
+  "description_ja": "Garminのフィットネスデータによってバイタリティが決まり、テスト成功やエラーなどのコーディングフックイベントに反応するバーチャルペットをステータスラインに表示するClaude Codeコンパニオン。ペットはGarmin MCPスキル経由で同期されたバイタリティ段階を通じて進化し、すべての反応はモデル呼び出しなしにローカルで処理される。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "statusline",
+    "hooks",
+    "gamification",
+    "fitness",
+    "garmin",
+    "mcp",
+    "virtual-pet",
+    "novelty",
+    "agents",
+    "themes"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "ffontenit-claude-usage-statusline",
+  "name": "claude-usage-statusline",
+  "repo": "https://github.com/ffontenit/claude-usage-statusline",
+  "license": "MIT",
+  "redistributable": true,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "Displays Claude Code real /usage rate-limit percentages (5-hour and 7-day windows) directly in your statusline, along with context window utilization and current model — with no API token or network calls required.",
+  "description_fr": "Affiche les pourcentages d'utilisation réels de /usage de Claude Code (fenêtres de 5 heures et 7 jours) directement dans votre barre d'état, ainsi que l'utilisation de la fenêtre de contexte et le modèle actif — sans token API ni appel réseau.",
+  "description_ja": "APIトークンやネットワーク呼び出し不要で、Claude Codeの実際の/usage制限（5時間・7日間ウィンドウ）の使用率をステータスラインに直接表示し、コンテキストウィンドウ使用量と現在のモデル情報も確認できます。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "rate-limits",
+    "statusline",
+    "claude",
+    "usage",
+    "cli",
+    "bash",
+    "git",
+    "no-token",
+    "context-window"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "snackdriven-claude-statusline",
+  "name": "claude-statusline",
+  "repo": "https://github.com/snackdriven/claude-statusline",
+  "license": "unknown",
+  "redistributable": false,
+  "host_clis": [
+    "claude"
+  ],
+  "language": "Shell",
+  "description": "A multi-region statusline composer for Claude Code that forks parallel producer scripts, manages TTL-based region caching, applies priority sorting, and renders colored output rows within terminal width constraints. It includes a conscience system with rule-hint matching and optional integrations for context window usage, active tickets, and external services.",
+  "description_fr": "Un compositeur de barre d'état multi-région pour Claude Code qui exécute des scripts producteurs en parallèle, gère un cache de régions basé sur le TTL, applique un tri par priorité et affiche des lignes colorées dans les limites de largeur du terminal. Il comprend un système de règles de conscience et des intégrations optionnelles pour l'utilisation de la fenêtre de contexte, les tickets actifs et des services externes.",
+  "description_ja": "Claude Code向けのマルチリージョン・ステータスライン・コンポーザーで、プロデューサースクリプトを並列実行し、TTLベースのリージョンキャッシュを管理し、優先度でソートしてターミナル幅内に色付きの行をレンダリングします。コンシエンス・ルールヒントシステムと、コンテキストウィンドウ使用状況やアクティブチケット、外部サービスとのオプション統合も備えています。",
+  "install": {
+    "type": "manual"
+  },
+  "configs": {},
+  "tags": [
+    "statusline",
+    "claude",
+    "agents",
+    "terminal",
+    "parallel",
+    "ttl",
+    "themes",
+    "productivity"
+  ],
+  "capabilities": {
+    "network": false,
+    "child_process": false,
+    "filesystem_write": false,
+    "env_read": [
+      "HOME",
+      "PATH"
+    ],
+    "verified_at": null,
+    "verification_method": "declared"
+  }
+}
