@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-18T00:34:08.601Z",
+  "generated_at": "2026-07-18T00:29:52.223Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -41,6 +41,9 @@
       "slug": "aneeshtigga-ministats",
       "path": "catalog/claude/aneeshtigga-ministats.json",
       "sha256": "2bc9fb95cf3ddc49a98283f62c643bb57ecea6c26c2704558fbbc76d9a08ba6e"
+      "slug": "amirlehmam-ocstatusline",
+      "path": "catalog/opencode/amirlehmam-ocstatusline.json",
+      "sha256": "2a3048a63478580c0969b4b9ccf414aebc71c02187f6349f7ba638d521e7496f"
     },
     {
       "slug": "anirudhmkumar-claude-code-statusline",
