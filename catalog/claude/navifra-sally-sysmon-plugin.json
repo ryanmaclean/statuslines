@@ -27,8 +27,8 @@
     "claude"
   ],
   "capabilities": {
-    "network": false,
-    "child_process": false,
+    "network": true,
+    "child_process": true,
     "filesystem_write": false,
     "env_read": [
       "HOME",
