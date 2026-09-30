@@ -22,7 +22,7 @@
     "package": "ccstatusline-usage",
     "version": "2.4.10",
     "integrity": "sha512-6dMniffBoIYWkVUqXX9kbPBX/c7QD1toEJuX6mXk/T0KR3aSWVaOQnJZbwd8CmbuPpsWXnNTd7G6zRZgn1Xpig==",
-    "deps_lock_sha256": "e18e75c58134997bdf991aaf936b25aec0dea1a0bf80337913006b0c5ac17c9e"
+    "deps_lock_sha256": "327cd7b2f560e70b361c4ee0d6e227c13e44f43520391bb6f1d6436dd8ac255c"
   },
   "configs": {
     "claude": {
