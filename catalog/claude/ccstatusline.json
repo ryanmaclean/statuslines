@@ -45,7 +45,7 @@
     "last_audit": "2026-07-18",
     "attestation": {
       "available": true,
-      "checked_at": "2026-09-24T09:51:41.196Z",
+      "checked_at": "2026-10-01T09:54:21.271Z",
       "predicate_type": "https://slsa.dev/provenance/v1",
       "issuer": "https://github.com/actions/runner/github-hosted",
       "build_workflow": "github.com/sirmalloc/ccstatusline/.github/workflows/publish.yml@refs/tags/v2.2.23",
