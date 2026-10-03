@@ -561,7 +561,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** opencode
 - **説明:** サブエージェントのアクティビティ・経過時間・トークン／コンテキスト使用量を表示する OpenCode TUI サイドバープラグイン（statusLine.command ではない）。
 - **備考:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
-- **インストール:** OpenCode がセッション開始時に `opencode-subagent-statusline@1.2.1` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
+- **インストール:** OpenCode がセッション開始時に `opencode-subagent-statusline@1.3.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 
 ### `kamranahmedse-claude-statusline` — [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline)
 
@@ -814,7 +814,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** opencode
 - **説明:** セッションのトークン使用量とコストを詳細な内訳とともに分析する OpenCode プラグイン（statusline ではない）。
 - **備考:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@1.8.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
+- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@1.8.1` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 - **設定:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)

@@ -184,6 +184,11 @@ function payloadFor(entry) {
   if (t === "git") {
     return `git clone --depth 1 ${entry.repo} repo && ls repo`;
   }
+  if (t === "plugin" && entry.repo) {
+    // Claude Code plugins install via `claude plugin marketplace add <repo>`,
+    // which clones the repository; sandbox that same fetch.
+    return `git clone --depth 1 ${entry.repo} repo && ls repo`;
+  }
   return null;
 }
 
@@ -200,8 +205,10 @@ function verify(slug, opts) {
   }
 
   const t = entry.install?.type;
-  // Skip types we don't sandbox.
-  if (["manual", "brew", "cargo"].includes(t)) {
+  // Skip types we don't sandbox. `curl` entries record no installer URL
+  // in the catalog schema, and piping a remote installer to a shell is not
+  // something this verifier executes.
+  if (["manual", "brew", "cargo", "curl"].includes(t)) {
     const report = {
       slug,
       install_type: t,
@@ -227,8 +234,22 @@ function verify(slug, opts) {
   const straceLog = join(tmpCache, "strace.log");
   const payload = payloadFor(entry);
   if (!payload) {
+    // Always emit a parseable report: exit 3 = verifier could not run (not a
+    // capability violation, which is exit 1).
     process.stderr.write(`no payload for install.type=${t}; aborting\n`);
-    process.exit(1);
+    process.stdout.write(JSON.stringify({
+      slug,
+      install_type: t,
+      sandbox: "error",
+      verification_method: "error",
+      observed: null,
+      exceeds_declared: false,
+      violations: [],
+      error: `no payload for install.type=${t}`,
+    }, null, 2) + "\n");
+    try { rmSync(tmpHome, { recursive: true, force: true }); } catch { /* noop */ }
+    try { rmSync(tmpCache, { recursive: true, force: true }); } catch { /* noop */ }
+    process.exit(3);
   }
 
   const allowedWriteRoots = [tmpHome, tmpCache, "/tmp/", "/dev/null", "/dev/urandom"];
