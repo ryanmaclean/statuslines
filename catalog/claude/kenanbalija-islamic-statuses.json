@@ -11,6 +11,12 @@
   "description": "Animated Claude Code status line that displays a spinner while Claude is working, with rotating authentic hadiths sourced from Sahih al-Bukhari and Sahih Muslim. Runs entirely offline after initial setup and supports customizable display modes.",
   "description_fr": "Barre de statut animée pour Claude Code affichant un spinner pendant que Claude travaille, avec rotation de hadiths authentiques issus de Sahih al-Bukhari et Sahih Muslim. Fonctionne entièrement hors ligne après l'installation initiale et supporte des modes d'affichage personnalisables.",
   "description_ja": "Claude Codeの動作中にスピナーを表示し、サヒーフ・アル=ブハーリーとサヒーフ・ムスリムからの本物のハディースをローテーション表示するアニメーション付きステータスラインです。初期セットアップ後は完全オフラインで動作し、表示モードをカスタマイズできます。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/kenanbalija/claude-islamic-statuses",
+    "alt": "kenanbalija/claude-islamic-statuses repository preview",
+    "source": "og-fallback",
+    "local": "images/kenanbalija-islamic-statuses.webp"
+  },
   "install": {
     "type": "manual"
   },

@@ -11,6 +11,12 @@
   "description": "A Claude Code plugin that adds a live statusline showing CPU load, memory, disk, and network health, plus a /sysmon slash command that runs a full read-only system diagnosis (routing, DNS, disk usage, top processes, open listeners) and has Claude summarize what is wrong and what to do.",
   "description_fr": "Un plugin Claude Code qui affiche en temps réel l'état du système (charge CPU, mémoire, disque, réseau) dans la barre de statut, et fournit une commande /sysmon pour effectuer un diagnostic complet en lecture seule et obtenir des recommandations directement dans le terminal.",
   "description_ja": "CPU負荷・メモリ・ディスク・ネットワークの状態をステータスバーにリアルタイム表示し、/sysmonコマンドで読み取り専用の完全なシステム診断（ルーティング、DNS、ディスク使用量、プロセス、リスナー）を実行してClaudeが問題と対処法を要約するClaude Codeプラグイン。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/Navifra-Sally/sysmon-plugin",
+    "alt": "Navifra-Sally/sysmon-plugin repository preview",
+    "source": "og-fallback",
+    "local": "images/navifra-sally-sysmon-plugin.webp"
+  },
   "install": {
     "type": "plugin"
   },

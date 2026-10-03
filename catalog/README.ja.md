@@ -136,12 +136,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `akkaz-ccstatusline-gradient` — [ccstatusline-gradient](https://github.com/akkaz/ccstatusline-gradient)
 
+<a href="https://github.com/akkaz/ccstatusline-gradient"><img alt="akkaz/ccstatusline-gradient repository preview" src="images/akkaz-ccstatusline-gradient.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** ccstatuslineのフォークで、Claude Codeのステータスラインテキストに文字ごとにグラデーションカラーをスイープ表示する機能と、ウィジェット値に基づく動的な色変化を追加します。7つの組み込みプリセットと、単一のnpxコマンドによるインタラクティブなオンボーディングUIを提供します。
 - **インストール:** 上流を参照
 
 ### `alequip-ccstatusline-tokyonight` — [ccstatusline Tokyo Night Theme](https://github.com/Alequip/ccstatusline-tokyonight)
+
+<a href="https://github.com/Alequip/ccstatusline-tokyonight"><img alt="Alequip/ccstatusline-tokyonight repository preview" src="images/alequip-ccstatusline-tokyonight.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -159,6 +163,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** `npx --ignore-scripts -y ocstatusline@0.1.0`
 
 ### `aneeshtigga-ministats` — [ministats](https://github.com/aneeshtigga/ministats)
+
+<a href="https://github.com/aneeshtigga/ministats"><img alt="aneeshtigga/ministats repository preview" src="images/aneeshtigga-ministats.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -178,12 +184,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `anthonybaldwin-claude-statusline` — [claude-statusline](https://github.com/anthonybaldwin/claude-statusline)
 
+<a href="https://github.com/anthonybaldwin/claude-statusline"><img alt="anthonybaldwin/claude-statusline repository preview" src="images/anthonybaldwin-claude-statusline.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Code 向けのゼロ依存 Bun 製ステータスラインで、コンテキスト使用量・API コスト（消費率付き）・レートリミットウィンドウ・git/PR 状態・アクティブなサブエージェントを多行ターミナルダッシュボードとして表示します。リポジトリをクローンして bun install.js を実行するだけで ~/.claude/settings.json が自動設定されます。
 - **インストール:** 上流を参照
 
 ### `asaberui1-ccstatusline4deepseek` — [CCStatusline4DeepSeek](https://github.com/asaberui1/CCStatusline4DeepSeek)
+
+<a href="https://github.com/asaberui1/CCStatusline4DeepSeek"><img alt="asaberui1/CCStatusline4DeepSeek repository preview" src="images/asaberui1-ccstatusline4deepseek.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -202,12 +212,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `assenav-gnuj-cc-petline` — [cc-petline](https://github.com/Assenav-Gnuj/cc-petline)
 
+<a href="https://github.com/Assenav-Gnuj/cc-petline"><img alt="Assenav-Gnuj/cc-petline repository preview" src="images/assenav-gnuj-cc-petline.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Rustで書かれたClaude Code用のアニメーションスプライトマスコット（キツネ）で、フックイベント（思考中、作業中、休眠中など）に反応し、モデル・git状態・トークン使用量・コスト/予算追跡を表示するCharmbracelet風ステータスラインと組み合わせて動作します。~3fpsのステータスラインカラムモードと25fpsのスムーズなratatuiTUIペインモードの両方をサポートします。
 - **インストール:** `cargo install undefined`
 
 ### `assenav-gnuj-ccstatusline-charm` — [ccstatusline-charm](https://github.com/Assenav-Gnuj/ccstatusline-charm)
+
+<a href="https://github.com/Assenav-Gnuj/ccstatusline-charm"><img alt="Assenav-Gnuj/ccstatusline-charm repository preview" src="images/assenav-gnuj-ccstatusline-charm.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -227,12 +241,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `bawstosai-fun-fact` — [fun-fact-bawstos](https://github.com/BawstosAI/fun-fact-bawstos)
 
+<a href="https://github.com/BawstosAI/fun-fact-bawstos"><img alt="BawstosAI/fun-fact-bawstos repository preview" src="images/bawstosai-fun-fact.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeのステータスラインに400以上のトピック別ランダムなトリビアを自動でローテーション表示します。npxでインストールし、~/.claude/settings.jsonにstatusLineエントリを追加して統合されます。
 - **インストール:** 上流を参照
 
 ### `blazemalan-claude-plan-statusline` — [claude-code-plan-statusline](https://github.com/blazemalan/claude-code-plan-statusline)
+
+<a href="https://github.com/blazemalan/claude-code-plan-statusline"><img alt="blazemalan/claude-code-plan-statusline repository preview" src="images/blazemalan-claude-plan-statusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -261,6 +279,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **設定:** `node bin/statuslines.js configure briansmith80-claude-code-status-bar --cli=<claude>`
 
 ### `callmemorgan-claude-statusline` — [claude-statusline](https://github.com/callmemorgan/claude-statusline)
+
+<a href="https://github.com/callmemorgan/claude-statusline"><img alt="callmemorgan/claude-statusline repository preview" src="images/callmemorgan-claude-statusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude, codex, gemini
@@ -319,6 +339,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `codyslater-ccstatusline-retro-hud` — [ccstatusline retro-hud](https://github.com/codyslater/ccstatusline_retro-hud)
 
+<a href="https://github.com/codyslater/ccstatusline_retro-hud"><img alt="codyslater/ccstatusline_retro-hud repository preview" src="images/codyslater-ccstatusline-retro-hud.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Code向けのレトロSF風HUDステータスラインテーマで、モデル名、作業ディレクトリ、gitブランチ、コンテキスト使用率、トークンI/O比率、レート制限、セッション時間、コストをネオンワイヤーフレーム風の美観と分数ブロック進捗バーで2行表示します。
@@ -356,12 +378,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `deluo-glm-quota-line` — [glm-quota-line](https://github.com/deluo/glm-quota-line)
 
+<a href="https://github.com/deluo/glm-quota-line"><img alt="deluo/glm-quota-line repository preview" src="images/deluo-glm-quota-line.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Zhipu GLM Coding PlanのAPIクォータ使用状況（残高、週次消費量、コンテキストウィンドウ使用率、リセットまでの時間）をClaude Codeのステータスラインに直接表示します。
 - **インストール:** 上流を参照
 
 ### `dpc00-ccstatusline-editor` — [ccstatusline-editor](https://github.com/dpc00/ccstatusline-editor)
+
+<a href="https://github.com/dpc00/ccstatusline-editor"><img alt="dpc00/ccstatusline-editor repository preview" src="images/dpc00-ccstatusline-editor.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -380,12 +406,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `entrolution-quotaline` — [quotaline](https://github.com/Entrolution/quotaline)
 
+<a href="https://github.com/Entrolution/quotaline"><img alt="Entrolution/quotaline repository preview" src="images/entrolution-quotaline.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeのステータスラインプラグインで、APIコールや認証情報不要でClaude Codeのstdinから直接データを読み取り、アカウント全体の5時間・週次使用制限をリアルタイムの消費レートと上限警告とともに表示します。
 - **インストール:** 上流を参照
 
 ### `entrolution-vastline` — [vastline](https://github.com/Entrolution/vastline)
+
+<a href="https://github.com/Entrolution/vastline"><img alt="Entrolution/vastline repository preview" src="images/entrolution-vastline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -404,6 +434,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **設定:** `node bin/statuslines.js configure felipeelias-claude-statusline --cli=<claude>`
 
 ### `ffontenit-claude-usage-statusline` — [claude-usage-statusline](https://github.com/ffontenit/claude-usage-statusline)
+
+<a href="https://github.com/ffontenit/claude-usage-statusline"><img alt="ffontenit/claude-usage-statusline repository preview" src="images/ffontenit-claude-usage-statusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -487,6 +519,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** 上流を参照
 
 ### `haigle0127-ccstatusline-kimi` — [ccstatusline-kimi](https://github.com/haigle0127/ccstatusline-kimi)
+
+<a href="https://github.com/haigle0127/ccstatusline-kimi"><img alt="haigle0127/ccstatusline-kimi repository preview" src="images/haigle0127-ccstatusline-kimi.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** kimi
@@ -576,6 +610,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `kenanbalija-islamic-statuses` — [Islamic Statuses for Claude Code](https://github.com/kenanbalija/claude-islamic-statuses)
 
+<a href="https://github.com/kenanbalija/claude-islamic-statuses"><img alt="kenanbalija/claude-islamic-statuses repository preview" src="images/kenanbalija-islamic-statuses.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeの動作中にスピナーを表示し、サヒーフ・アル=ブハーリーとサヒーフ・ムスリムからの本物のハディースをローテーション表示するアニメーション付きステータスラインです。初期セットアップ後は完全オフラインで動作し、表示モードをカスタマイズできます。
@@ -658,12 +694,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `maximocorrea1-dumbometer` — [Dumbometer](https://github.com/MaximoCorrea1/dumbometer)
 
+<a href="https://github.com/MaximoCorrea1/dumbometer"><img alt="MaximoCorrea1/dumbometer repository preview" src="images/maximocorrea1-dumbometer.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeのステータスラインゲージで、コンテキストウィンドウの充填レベルを追跡し、セッションの品質が劣化し始めると色分けされた「賢い→バカ」スケールで警告を表示します。依存関係ゼロで、トークンコストなしにNode.jsで動作します。
 - **インストール:** 上流を参照
 
 ### `mengfanlu1-opendoor-statusline` — [OpenDoor StatusLine](https://github.com/MengFanLu1/opendoor-statusline)
+
+<a href="https://github.com/MengFanLu1/opendoor-statusline"><img alt="MengFanLu1/opendoor-statusline repository preview" src="images/mengfanlu1-opendoor-statusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude, codex, gemini
@@ -693,6 +733,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** 上流を参照
 
 ### `navifra-sally-sysmon-plugin` — [sysmon](https://github.com/Navifra-Sally/sysmon-plugin)
+
+<a href="https://github.com/Navifra-Sally/sysmon-plugin"><img alt="Navifra-Sally/sysmon-plugin repository preview" src="images/navifra-sally-sysmon-plugin.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -761,6 +803,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `padenot-foxtail` — [foxtail](https://github.com/padenot/foxtail)
 
+<a href="https://github.com/padenot/foxtail"><img alt="padenot/foxtail repository preview" src="images/padenot-foxtail.webp" width="480"></a>
+
 - **ライセンス:** Apache-2.0
 - **対象:** claude
 - **説明:** Mozilla/Firefoxの開発者向けのClaude Codeステータスラインツールで、モデル、作業ディレクトリ、時刻、コンテキスト使用量、gitステータス、セッション統計、コスト、キャッシュ情報を整形出力します。RustとTOML設定で実装され、Claude CodeのstatusLineコマンドフックと統合されます。
@@ -819,6 +863,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)
 
+<a href="https://github.com/ratelworks/token-horse"><img alt="ratelworks/token-horse repository preview" src="images/ratelworks-token-horse.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude CodeまたはCodex CLIセッションのトークン消費速度に応じて速く駆けるターミナル用ピクセル馬ペットで、セッションのJSONLトランスクリプトを読み取ってリアルタイムのトークンスループットを計測し、ステータスラインコマンドとして組み込めます。
@@ -856,6 +902,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `ryukenshin546-a11y-claude-prompt-meter` — [Claude Prompt Meter](https://github.com/ryukenshin546-a11y/claude-prompt-meter)
 
+<a href="https://github.com/ryukenshin546-a11y/claude-prompt-meter"><img alt="ryukenshin546-a11y/claude-prompt-meter repository preview" src="images/ryukenshin546-a11y-claude-prompt-meter.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** ローカルログを読み取ってClaude Codeセッションのプロンプトごとのトークン使用量とUSDコストを追跡するVS Code拡張機能で、タイ語または英語で支出ヒートマップと設定可能な日次予算アラートを含むライブステータスバーメーターを表示します。
@@ -883,6 +931,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** 上流を参照
 
 ### `sirmalloc-ccstatusline` — [ccstatusline](https://github.com/sirmalloc/ccstatusline)
+
+<a href="https://github.com/sirmalloc/ccstatusline"><img alt="sirmalloc/ccstatusline repository preview" src="images/sirmalloc-ccstatusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -929,6 +979,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `soulagent-claude-duck` — [claude-duck](https://github.com/soulagent/claude-duck)
 
+<a href="https://github.com/soulagent/claude-duck"><img alt="soulagent/claude-duck repository preview" src="images/soulagent-claude-duck.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeのステータスラインで3行の池をアニメーション表示する水泳ASCIIアヒるを提供し、モデル名・セッション/週次使用量・コンテキスト・コスト・Gitブランチを虹色のバーで表示します。依存関係のないNode.jsスクリプトで、Claude Codeプラグインとしてインストールできます。
@@ -948,12 +1000,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `squanchymnonm-claudecode-statusbar` — [ClaudeCodeStatusBar](https://github.com/squanchymnonm/ClaudeCodeStatusBar)
 
+<a href="https://github.com/squanchymnonm/ClaudeCodeStatusBar"><img alt="squanchymnonm/ClaudeCodeStatusBar repository preview" src="images/squanchymnonm-claudecode-statusbar.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** コンテキストウィンドウの使用状況、トークン数、セッション/週間レート制限をカラーコードアラート付きでリアルタイム表示するステータスラインを追加するClaude Codeプラグイン。実行中のサブエージェントとそのトークン消費速度を表示するライブサブエージェントパネルも含む。
 - **インストール:** 上流を参照
 
 ### `srdarf-xclaudeusage` — [XClaudeUsage](https://github.com/SrDarf/XClaudeUsage)
+
+<a href="https://github.com/SrDarf/XClaudeUsage"><img alt="SrDarf/XClaudeUsage repository preview" src="images/srdarf-xclaudeusage.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude
@@ -1004,12 +1060,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `victory-c-fitpet` — [FitPet](https://github.com/victory-c/fitpet)
 
+<a href="https://github.com/victory-c/fitpet"><img alt="victory-c/fitpet repository preview" src="images/victory-c-fitpet.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Garminのフィットネスデータによってバイタリティが決まり、テスト成功やエラーなどのコーディングフックイベントに反応するバーチャルペットをステータスラインに表示するClaude Codeコンパニオン。ペットはGarmin MCPスキル経由で同期されたバイタリティ段階を通じて進化し、すべての反応はモデル呼び出しなしにローカルで処理される。
 - **インストール:** 上流を参照
 
 ### `xicv-codexbar-hub` — [codexbar-hub](https://github.com/xicv/codexbar-hub)
+
+<a href="https://github.com/xicv/codexbar-hub"><img alt="xicv/codexbar-hub repository preview" src="images/xicv-codexbar-hub.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude, codex, gemini
@@ -1038,6 +1098,8 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `young1lin-claude-token-monitor` — [claude-token-monitor](https://github.com/young1lin/claude-token-monitor)
 
+<a href="https://github.com/young1lin/claude-token-monitor"><img alt="young1lin/claude-token-monitor repository preview" src="images/young1lin-claude-token-monitor.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Goで書かれたClaude Codeのステータスラインプラグインで、コンテキストトークンの使用状況、Anthropic Pro/Teamの5時間・7日間クォータカウントダウン、Z.ai/GLMコーディングプランのクォータをリアルタイム表示し、gitブランチや思考モード表示にも対応したシングルバイナリ。
@@ -1045,12 +1107,16 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 
 ### `zrawday-bmad-statusline` — [bmad-statusline](https://github.com/zRawday/bmad-statusline)
 
+<a href="https://github.com/zRawday/bmad-statusline"><img alt="zRawday/bmad-statusline repository preview" src="images/zrawday-bmad-statusline.webp" width="480"></a>
+
 - **ライセンス:** MIT
 - **対象:** claude
 - **説明:** Claude Codeのライフサイクルフックを通じてアクティブなスキル、ストーリーの進捗、ステップの状態を自動検出し、BMADワークフローのアクティビティをClaude Codeでパッシブに追跡するccstatuslineウィジェットパックです。11個のカスタマイズ可能なウィジェットと134種類のワークフローをサポートするインタラクティブなTUIコンフィギュレーターを含みます。
 - **インストール:** 上流を参照
 
 ### `zyx1121-claude-statusline` — [claude-statusline](https://github.com/zyx1121/claude-statusline)
+
+<a href="https://github.com/zyx1121/claude-statusline"><img alt="zyx1121/claude-statusline repository preview" src="images/zyx1121-claude-statusline.webp" width="480"></a>
 
 - **ライセンス:** MIT
 - **対象:** claude

@@ -11,6 +11,12 @@
   "description": "A Claude Code statusline plugin that displays account-wide 5-hour and weekly usage limits with live burn rates and cap warnings, reading directly from Claude Code's stdin with no API calls or credentials required.",
   "description_fr": "Un plugin de barre de statut pour Claude Code qui affiche les limites d'utilisation sur 5 heures et hebdomadaires à l'échelle du compte, avec les taux de consommation en temps réel et des avertissements de dépassement, en lisant directement depuis le stdin de Claude Code sans appel API ni identifiants.",
   "description_ja": "Claude Codeのステータスラインプラグインで、APIコールや認証情報不要でClaude Codeのstdinから直接データを読み取り、アカウント全体の5時間・週次使用制限をリアルタイムの消費レートと上限警告とともに表示します。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/Entrolution/quotaline",
+    "alt": "Entrolution/quotaline repository preview",
+    "source": "og-fallback",
+    "local": "images/entrolution-quotaline.webp"
+  },
   "install": {
     "type": "curl"
   },
