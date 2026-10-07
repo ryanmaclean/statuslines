@@ -37,6 +37,12 @@ function listEntryFiles() {
   if (!existsSync(CATALOG)) return out;
   for (const group of readdirSync(CATALOG, { withFileTypes: true })) {
     if (!group.isDirectory()) continue;
+    // locks/ holds per-entry transitive-dep lockfiles (which also carry a
+    // slug) and images/ holds screenshots; neither are catalog entries.
+    // Without this, findEntry() returned catalog/locks/<slug>.json for any
+    // entry whose group dir sorts after locks/ (multi/, opencode/, ...),
+    // which has no install block (install.type=undefined).
+    if (group.name === "locks" || group.name === "images") continue;
     const dir = join(CATALOG, group.name);
     for (const f of readdirSync(dir)) {
       if (f.endsWith(".json")) out.push(join(dir, f));
