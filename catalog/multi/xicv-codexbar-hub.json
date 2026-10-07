@@ -13,6 +13,12 @@
   "description": "A Claude Code statusline tool that renders a claude-hud segment, a caffeinate indicator, and Codex/Claude usage pace-bars sourced from CodexBar. Designed for terminal statuslines to surface real-time AI usage metrics and system state.",
   "description_fr": "Un outil de ligne de statut pour Claude Code qui affiche un segment claude-hud, un indicateur caffeinate et des barres de progression d'utilisation Codex/Claude issues de CodexBar. Conçu pour les lignes de statut de terminal afin de présenter en temps réel les métriques d'utilisation de l'IA et l'état du système.",
   "description_ja": "claude-hudセグメント、caffeinateインジケーター、CodexBarから取得したCodex/Claude使用量ペースバーをレンダリングするClaude Code用ステータスラインツール。ターミナルのステータスラインでAI使用量メトリクスとシステム状態をリアルタイムに表示するために設計されています。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/xicv/codexbar-hub",
+    "alt": "xicv/codexbar-hub repository preview",
+    "source": "og-fallback",
+    "local": "images/xicv-codexbar-hub.webp"
+  },
   "install": {
     "type": "manual"
   },

@@ -11,6 +11,12 @@
   "description": "A dual-line Claude Code statusline script that displays a 16-block context-window progress bar, cumulative session cost in CNY (¥), token usage metrics, and live DeepSeek account balance fetched via API.",
   "description_fr": "Un script de barre d'état Claude Code sur deux lignes affichant une barre de progression de fenêtre de contexte à 16 blocs, le coût cumulé de la session en CNY (¥), les métriques d'utilisation des tokens et le solde DeepSeek en temps réel récupéré via API.",
   "description_ja": "16ブロックのコンテキストウィンドウ進捗バー、セッション累積コスト（CNY/¥）、トークン使用量メトリクス、APIで取得したDeepSeekリアルタイム残高を表示する、Claude Code用2行ステータスラインスクリプト。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/asaberui1/CCStatusline4DeepSeek",
+    "alt": "asaberui1/CCStatusline4DeepSeek repository preview",
+    "source": "og-fallback",
+    "local": "images/asaberui1-ccstatusline4deepseek.webp"
+  },
   "install": {
     "type": "manual"
   },

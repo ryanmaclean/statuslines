@@ -6,9 +6,15 @@
 // syscalls via strace, and emits a JSON report comparing observed
 // behavior against the entry's declared `capabilities` block.
 //
-// Exit 0 when observed ⊆ declared. Exit 1 when observed exceeds declared
-// (e.g. a network call we didn't allow, a child_process spawn we didn't
-// declare). Exit 2 on argument/usage errors.
+// Exit status (stdout always carries a JSON report except for exit 2):
+//   0  observed ⊆ declared, or the entry was skipped as unverifiable
+//      (report.sandbox === "skipped"; see SKIPPED_TYPES and plugin_host).
+//   1  observed exceeds declared (e.g. a network call we didn't allow, a
+//      child_process spawn we didn't declare) — a capability violation.
+//   2  argument/usage error.
+//   3  verifier/infrastructure failure: the entry could not be verified at
+//      all (e.g. no payload for its install type). NOT a capability
+//      violation; callers must not quarantine on it.
 //
 // On a host without firejail OR bubblewrap, falls back to strace-only
 // (warns loudly about reduced isolation). The CI runner provisions
@@ -37,6 +43,12 @@ function listEntryFiles() {
   if (!existsSync(CATALOG)) return out;
   for (const group of readdirSync(CATALOG, { withFileTypes: true })) {
     if (!group.isDirectory()) continue;
+    // locks/ holds per-entry transitive-dep lockfiles (which also carry a
+    // slug) and images/ holds screenshots; neither are catalog entries.
+    // Without this, findEntry() returned catalog/locks/<slug>.json for any
+    // entry whose group dir sorts after locks/ (multi/, opencode/, ...),
+    // which has no install block (install.type=undefined).
+    if (group.name === "locks" || group.name === "images") continue;
     const dir = join(CATALOG, group.name);
     for (const f of readdirSync(dir)) {
       if (f.endsWith(".json")) out.push(join(dir, f));
@@ -167,6 +179,19 @@ function buildSandboxCmd(sandbox, mode, tmpHome, tmpCache, straceLog, payloadCmd
   return ["sh", ["-c", inner]];
 }
 
+// Install types we never sandbox. `curl` entries record no installer URL in
+// the catalog schema, and piping a remote installer to a shell is not
+// something this verifier executes.
+const SKIPPED_TYPES = ["manual", "brew", "cargo", "curl"];
+
+// install.type=plugin is a Claude Code plugin by default (catalog/SCHEMA.md).
+// Entries for other editors' plugin systems set install.plugin_host; we have
+// no sandboxable installer for those (a git clone would measure git, not the
+// IDE's extension loader), so they are reported as unverifiable.
+function pluginHost(entry) {
+  return entry?.install?.plugin_host ?? "claude";
+}
+
 function payloadFor(entry) {
   const t = entry?.install?.type;
   const pkg = entry?.install?.package;
@@ -181,8 +206,15 @@ function payloadFor(entry) {
   if (t === "opencode-plugin") {
     return `npm pack ${pkg}@${ver} --silent || true`;
   }
+  // Clone under $TMPDIR (an allowed write root, see catalog/CAPABILITIES.md)
+  // so the clone's own writes are not counted as filesystem_write.
   if (t === "git") {
-    return `git clone --depth 1 ${entry.repo} repo && ls repo`;
+    return `git clone --depth 1 ${entry.repo} "$TMPDIR/src" && ls "$TMPDIR/src"`;
+  }
+  if (t === "plugin" && pluginHost(entry) === "claude" && entry.repo) {
+    // Claude Code plugins install via `claude plugin marketplace add <repo>`,
+    // which clones the repository; sandbox that same fetch.
+    return `git clone --depth 1 ${entry.repo} "$TMPDIR/src" && ls "$TMPDIR/src"`;
   }
   return null;
 }
@@ -200,8 +232,8 @@ function verify(slug, opts) {
   }
 
   const t = entry.install?.type;
-  // Skip types we don't sandbox.
-  if (["manual", "brew", "cargo"].includes(t)) {
+  const nonClaudePlugin = t === "plugin" && pluginHost(entry) !== "claude";
+  if (SKIPPED_TYPES.includes(t) || nonClaudePlugin) {
     const report = {
       slug,
       install_type: t,
@@ -210,8 +242,11 @@ function verify(slug, opts) {
       observed: null,
       exceeds_declared: false,
       violations: [],
-      note: `install.type=${t} is not sandboxed by verify-capabilities`,
+      note: nonClaudePlugin
+        ? `unverifiable: ${pluginHost(entry)} plugin (no sandboxable installer)`
+        : `unverifiable: install.type=${t} is not sandboxed by verify-capabilities`,
     };
+    if (nonClaudePlugin) report.plugin_host = pluginHost(entry);
     process.stdout.write(JSON.stringify(report, null, 2) + "\n");
     process.exit(0);
   }
@@ -227,8 +262,22 @@ function verify(slug, opts) {
   const straceLog = join(tmpCache, "strace.log");
   const payload = payloadFor(entry);
   if (!payload) {
+    // Always emit a parseable report: exit 3 = verifier could not run (not a
+    // capability violation, which is exit 1).
     process.stderr.write(`no payload for install.type=${t}; aborting\n`);
-    process.exit(1);
+    process.stdout.write(JSON.stringify({
+      slug,
+      install_type: t,
+      sandbox: "error",
+      verification_method: "error",
+      observed: null,
+      exceeds_declared: false,
+      violations: [],
+      error: `no payload for install.type=${t}`,
+    }, null, 2) + "\n");
+    try { rmSync(tmpHome, { recursive: true, force: true }); } catch { /* noop */ }
+    try { rmSync(tmpCache, { recursive: true, force: true }); } catch { /* noop */ }
+    process.exit(3);
   }
 
   const allowedWriteRoots = [tmpHome, tmpCache, "/tmp/", "/dev/null", "/dev/urandom"];

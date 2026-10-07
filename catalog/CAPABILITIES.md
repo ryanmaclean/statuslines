@@ -26,14 +26,14 @@ Each redistributable entry's JSON carries a `capabilities` block:
 | `filesystem_write` | `boolean` | The entry writes files **outside** the safe roots: `$HOME/.cache`, `$TMPDIR`, the install dir. Writes inside those are allowed by default and are not flagged. Set to `true` if the entry persists state to `$HOME/<dotfile>` or similar. |
 | `env_read` | `string[]` | Names of environment variables the entry expects to read. Conservative default: `["HOME", "PATH"]`. Use `["*"]` to mean "any" — and add a `notes` field justifying it. |
 | `verified_at` | `string \| null` | ISO date of the last sandbox observation that matched the declarations. `null` = declared but not yet verified. |
-| `verification_method` | `"declared" \| "sandbox-strace" \| "sandbox-bpf" \| "skipped"` | How the verification was performed. `declared` = self-attestation only; `sandbox-strace` = observed under strace inside firejail/bubblewrap; `skipped` = the install type (`manual`, `brew`, `cargo`) is not yet sandboxed. |
+| `verification_method` | `"declared" \| "sandbox-strace" \| "sandbox-bpf" \| "skipped"` | How the verification was performed. `declared` = self-attestation only; `sandbox-strace` = observed under strace inside firejail/bubblewrap; `skipped` = the install is unverifiable by the sandbox: install type `manual`, `brew`, `cargo`, or `curl`, or a `plugin` whose `install.plugin_host` is `vscode` or `jetbrains`. Skipped entries are left untouched (their `verified_at` is not refreshed). |
 
 ## What each enforces
 
 The capability declaration is enforced in two places:
 
 1. **`bin/statuslines.js doctor`** — the schema validator emits a *warning* when `capabilities` is missing on a redistributable entry. The warning will become a hard error once every entry has been backfilled (rollout: see SECURITY.md).
-2. **`catalog-capabilities` workflow** — runs `node scripts/verify-capabilities.mjs <slug>` for each redistributable entry that has an automatable install (`npx`, `npm-global`, `opencode-plugin`, `git`). If observed behavior exceeds the declaration, the entry is quarantined (`security.quarantined: true`) with a reason recorded under `security.quarantine_reason`. Entries that match get their `verified_at` and `verification_method` refreshed.
+2. **`catalog-capabilities` workflow** — runs `node scripts/verify-capabilities.mjs <slug>` for each redistributable entry that has an automatable install (`npx`, `npm-global`, `opencode-plugin`, `git`, and `plugin` with `plugin_host` `claude`, the default). If observed behavior exceeds the declaration, the entry is quarantined (`security.quarantined: true`) with a reason recorded under `security.quarantine_reason`. Entries that match get their `verified_at` and `verification_method` refreshed.
 
 The "safe roots" for `filesystem_write` are intentionally narrow:
 

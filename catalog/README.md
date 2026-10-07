@@ -54,7 +54,6 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 | `hanbu97-tokenusage` | [tokenusage (hanbu97)](https://github.com/hanbu97/tokenusage) | claude, codex | MIT | rust | ok | npx |
 | `haunchen-claude-code-statusline` | [claude-code-statusline](https://github.com/haunchen/claude-code-statusline) | claude | MIT | javascript | ok | manual |
 | `hstojanovic-claude-vibeline` | [claude-vibeline](https://github.com/hstojanovic/claude-vibeline) | claude | MIT | python | ok | manual |
-| `ilia-pluzhnikov-claude-code-statusline` | [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline) | claude | MIT | javascript | ok | git |
 | `intertechinc-claude-code-context-meter` | [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter) | claude | unknown | Shell | ref | manual |
 | `jacsuper-codex-statusline-vscode` | [codex-statusline-vscode](https://github.com/jacsuper/codex-statusline-vscode) | vscode | MIT | typescript | ok | manual |
 | `joaquinvesapa-sub-agent-statusline` | [opencode-subagent-statusline](https://github.com/Joaquinvesapa/sub-agent-statusline) | opencode | MIT | typescript | ok | opencode-plugin |
@@ -93,7 +92,6 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 | `shallow-dusty-horologium` | [horologium](https://github.com/Shallow-dusty/horologium) | claude | MIT | rust | ok | manual |
 | `sirmalloc-ccstatusline` | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | claude | MIT | TypeScript | ok | manual |
 | `siropkin-budi-jetbrains` | [budi — JetBrains plugin](https://github.com/siropkin/budi-jetbrains) | jetbrains | MIT | kotlin | ok | plugin |
-| `sleighmaster99-claudecodestatusbar` | [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar) | claude | MIT | powershell | ok | git |
 | `snackdriven-claude-statusline` | [claude-statusline](https://github.com/snackdriven/claude-statusline) | claude | unknown | Shell | ref | manual |
 | `sotayamashita-claude-code-statusline` | [claude-code-statusline (Sam Yamashita)](https://github.com/sotayamashita/claude-code-statusline) | claude | MIT | rust | ok | manual |
 | `soulagent-claude-duck` | [claude-duck](https://github.com/soulagent/claude-duck) | claude | MIT | JavaScript | ok | manual |
@@ -136,12 +134,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `akkaz-ccstatusline-gradient` — [ccstatusline-gradient](https://github.com/akkaz/ccstatusline-gradient)
 
+<a href="https://github.com/akkaz/ccstatusline-gradient"><img alt="akkaz/ccstatusline-gradient repository preview" src="images/akkaz-ccstatusline-gradient.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A fork of ccstatusline that adds gradient colors sweeping across status line text character-by-character, plus dynamic value-based color shifting for Claude Code widgets. Ships seven built-in presets and an interactive onboarding UI via a single npx command.
 - **Install:** see upstream
 
 ### `alequip-ccstatusline-tokyonight` — [ccstatusline Tokyo Night Theme](https://github.com/Alequip/ccstatusline-tokyonight)
+
+<a href="https://github.com/Alequip/ccstatusline-tokyonight"><img alt="Alequip/ccstatusline-tokyonight repository preview" src="images/alequip-ccstatusline-tokyonight.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -159,6 +161,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** `npx --ignore-scripts -y ocstatusline@0.1.0`
 
 ### `aneeshtigga-ministats` — [ministats](https://github.com/aneeshtigga/ministats)
+
+<a href="https://github.com/aneeshtigga/ministats"><img alt="aneeshtigga/ministats repository preview" src="images/aneeshtigga-ministats.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -178,12 +182,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `anthonybaldwin-claude-statusline` — [claude-statusline](https://github.com/anthonybaldwin/claude-statusline)
 
+<a href="https://github.com/anthonybaldwin/claude-statusline"><img alt="anthonybaldwin/claude-statusline repository preview" src="images/anthonybaldwin-claude-statusline.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A zero-dependency Bun-powered statusline for Claude Code that renders a multi-row terminal dashboard showing context usage, API cost with burn rate, rate-limit windows, git/PR status, and active sub-agents. Installs by cloning and running bun install.js, which auto-configures ~/.claude/settings.json.
 - **Install:** see upstream
 
 ### `asaberui1-ccstatusline4deepseek` — [CCStatusline4DeepSeek](https://github.com/asaberui1/CCStatusline4DeepSeek)
+
+<a href="https://github.com/asaberui1/CCStatusline4DeepSeek"><img alt="asaberui1/CCStatusline4DeepSeek repository preview" src="images/asaberui1-ccstatusline4deepseek.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -202,12 +210,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `assenav-gnuj-cc-petline` — [cc-petline](https://github.com/Assenav-Gnuj/cc-petline)
 
+<a href="https://github.com/Assenav-Gnuj/cc-petline"><img alt="Assenav-Gnuj/cc-petline repository preview" src="images/assenav-gnuj-cc-petline.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Rust-based animated sprite mascot (Fox) for Claude Code that reacts to hook events (thinking, working, sleepy, etc.) and pairs with a Charmbracelet-styled statusline showing model, git status, token usage, and cost/budget tracking. Supports both a ~3fps statusline column mode and a smooth 25fps ratatui TUI pane mode.
 - **Install:** `cargo install undefined`
 
 ### `assenav-gnuj-ccstatusline-charm` — [ccstatusline-charm](https://github.com/Assenav-Gnuj/ccstatusline-charm)
+
+<a href="https://github.com/Assenav-Gnuj/ccstatusline-charm"><img alt="Assenav-Gnuj/ccstatusline-charm repository preview" src="images/assenav-gnuj-ccstatusline-charm.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -227,12 +239,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `bawstosai-fun-fact` — [fun-fact-bawstos](https://github.com/BawstosAI/fun-fact-bawstos)
 
+<a href="https://github.com/BawstosAI/fun-fact-bawstos"><img alt="BawstosAI/fun-fact-bawstos repository preview" src="images/bawstosai-fun-fact.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Displays rotating random fun facts in the Claude Code status line, cycling through 400+ topic-tagged facts that refresh automatically. Installs via npx and integrates by adding a statusLine entry to ~/.claude/settings.json.
 - **Install:** see upstream
 
 ### `blazemalan-claude-plan-statusline` — [claude-code-plan-statusline](https://github.com/blazemalan/claude-code-plan-statusline)
+
+<a href="https://github.com/blazemalan/claude-code-plan-statusline"><img alt="blazemalan/claude-code-plan-statusline repository preview" src="images/blazemalan-claude-plan-statusline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -261,6 +277,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure briansmith80-claude-code-status-bar --cli=<claude>`
 
 ### `callmemorgan-claude-statusline` — [claude-statusline](https://github.com/callmemorgan/claude-statusline)
+
+<a href="https://github.com/callmemorgan/claude-statusline"><img alt="callmemorgan/claude-statusline repository preview" src="images/callmemorgan-claude-statusline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, codex, gemini
@@ -319,6 +337,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `codyslater-ccstatusline-retro-hud` — [ccstatusline retro-hud](https://github.com/codyslater/ccstatusline_retro-hud)
 
+<a href="https://github.com/codyslater/ccstatusline_retro-hud"><img alt="codyslater/ccstatusline_retro-hud repository preview" src="images/codyslater-ccstatusline-retro-hud.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A retro sci-fi HUD status line theme for Claude Code that renders a two-row terminal display showing model name, working directory, git branch, context usage, token I/O ratios, rate limits, session duration, and cost tracking with neon wireframe aesthetics and fractional-block progress bars.
@@ -356,12 +376,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `deluo-glm-quota-line` — [glm-quota-line](https://github.com/deluo/glm-quota-line)
 
+<a href="https://github.com/deluo/glm-quota-line"><img alt="deluo/glm-quota-line repository preview" src="images/deluo-glm-quota-line.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** Displays Zhipu GLM Coding Plan API quota usage directly in the Claude Code status line, showing balance, weekly consumption, context window utilization, and time until reset with color-coded alerts.
 - **Install:** see upstream
 
 ### `dpc00-ccstatusline-editor` — [ccstatusline-editor](https://github.com/dpc00/ccstatusline-editor)
+
+<a href="https://github.com/dpc00/ccstatusline-editor"><img alt="dpc00/ccstatusline-editor repository preview" src="images/dpc00-ccstatusline-editor.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -380,12 +404,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `entrolution-quotaline` — [quotaline](https://github.com/Entrolution/quotaline)
 
+<a href="https://github.com/Entrolution/quotaline"><img alt="Entrolution/quotaline repository preview" src="images/entrolution-quotaline.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Claude Code statusline plugin that displays account-wide 5-hour and weekly usage limits with live burn rates and cap warnings, reading directly from Claude Code's stdin with no API calls or credentials required.
 - **Install:** see upstream
 
 ### `entrolution-vastline` — [vastline](https://github.com/Entrolution/vastline)
+
+<a href="https://github.com/Entrolution/vastline"><img alt="Entrolution/vastline repository preview" src="images/entrolution-vastline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -404,6 +432,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure felipeelias-claude-statusline --cli=<claude>`
 
 ### `ffontenit-claude-usage-statusline` — [claude-usage-statusline](https://github.com/ffontenit/claude-usage-statusline)
+
+<a href="https://github.com/ffontenit/claude-usage-statusline"><img alt="ffontenit/claude-usage-statusline repository preview" src="images/ffontenit-claude-usage-statusline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -488,6 +518,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `haigle0127-ccstatusline-kimi` — [ccstatusline-kimi](https://github.com/haigle0127/ccstatusline-kimi)
 
+<a href="https://github.com/haigle0127/ccstatusline-kimi"><img alt="haigle0127/ccstatusline-kimi repository preview" src="images/haigle0127-ccstatusline-kimi.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** kimi
 - **Description:** A VSCode status bar extension that displays real-time Claude Code session metrics (model, tokens, cost, Git branch, context) alongside Kimi (Moonshot AI) integration. It reads local Claude Code state files to surface live usage data in the editor's bottom bar.
@@ -525,17 +557,6 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 - **Configure:** `node bin/statuslines.js configure hstojanovic-claude-vibeline --cli=<claude>`
 
-### `ilia-pluzhnikov-claude-code-statusline` — [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline)
-
-<a href="https://github.com/ilia-pluzhnikov/claude-code-statusline"><img alt="ilia-pluzhnikov claude-code-statusline GitHub preview" src="images/ilia-pluzhnikov-claude-code-statusline.png" width="480"></a>
-
-- **License:** MIT
-- **Targets:** claude
-- **Description:** Feature-rich single-file Node.js statusline showing model, active task, git branch status, context window usage, prompt-cache hit rate, 5-hour and 7-day rate limits, and peak-hours indicator with color-coded urgency.
-- **Notes:** No npm dependencies or build step required. The script reads Claude Code statusline JSON from stdin and writes one ANSI-coloured line to stdout. Requires Claude Code ≥2.1.97 for refreshInterval support.
-- **Install:** `git clone` (handled by `bin/statuslines.js configure`)
-- **Configure:** `node bin/statuslines.js configure ilia-pluzhnikov-claude-code-statusline --cli=<claude>`
-
 ### `intertechinc-claude-code-context-meter` — [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter)
 
 - **License:** unknown (not redistributable; reference only)
@@ -561,7 +582,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** opencode
 - **Description:** OpenCode TUI sidebar plugin (not a statusLine.command line) that shows subagent activity, elapsed time, and token/context usage.
 - **Notes:** Configures via OpenCode's TUI config (~/.config/opencode/tui.json), not opencode.json. Add manually: {"$schema":"https://opencode.ai/tui.json","plugin":["opencode-subagent-statusline"]}. We don't auto-merge because that target file isn't supported by `bin/statuslines.js configure` yet.
-- **Install:** OpenCode loads `opencode-subagent-statusline@1.2.1` from npm at session start (added via `opencode.json` `plugin` array)
+- **Install:** OpenCode loads `opencode-subagent-statusline@1.3.0` from npm at session start (added via `opencode.json` `plugin` array)
 
 ### `kamranahmedse-claude-statusline` — [claude-statusline (Kamran Ahmed)](https://github.com/kamranahmedse/claude-statusline)
 
@@ -575,6 +596,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Configure:** `node bin/statuslines.js configure kamranahmedse-claude-statusline --cli=<claude>`
 
 ### `kenanbalija-islamic-statuses` — [Islamic Statuses for Claude Code](https://github.com/kenanbalija/claude-islamic-statuses)
+
+<a href="https://github.com/kenanbalija/claude-islamic-statuses"><img alt="kenanbalija/claude-islamic-statuses repository preview" src="images/kenanbalija-islamic-statuses.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -658,12 +681,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `maximocorrea1-dumbometer` — [Dumbometer](https://github.com/MaximoCorrea1/dumbometer)
 
+<a href="https://github.com/MaximoCorrea1/dumbometer"><img alt="MaximoCorrea1/dumbometer repository preview" src="images/maximocorrea1-dumbometer.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Claude Code statusline gauge that tracks context window fill level and displays a color-coded Smart-to-Dumb scale, warning users when session quality is likely degrading. Zero dependencies, runs via Node.js with no token cost.
 - **Install:** see upstream
 
 ### `mengfanlu1-opendoor-statusline` — [OpenDoor StatusLine](https://github.com/MengFanLu1/opendoor-statusline)
+
+<a href="https://github.com/MengFanLu1/opendoor-statusline"><img alt="MengFanLu1/opendoor-statusline repository preview" src="images/mengfanlu1-opendoor-statusline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, codex, gemini
@@ -693,6 +720,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Install:** see upstream
 
 ### `navifra-sally-sysmon-plugin` — [sysmon](https://github.com/Navifra-Sally/sysmon-plugin)
+
+<a href="https://github.com/Navifra-Sally/sysmon-plugin"><img alt="Navifra-Sally/sysmon-plugin repository preview" src="images/navifra-sally-sysmon-plugin.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -761,6 +790,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `padenot-foxtail` — [foxtail](https://github.com/padenot/foxtail)
 
+<a href="https://github.com/padenot/foxtail"><img alt="padenot/foxtail repository preview" src="images/padenot-foxtail.webp" width="480"></a>
+
 - **License:** Apache-2.0
 - **Targets:** claude
 - **Description:** A Claude Code statusline for Mozilla/Firefox developers that displays model, working directory, time, context window usage, git status, session statistics, cost, and cache details in a formatted two-line output. Implemented in Rust and configured via TOML, it integrates with Claude Code's statusLine command hook.
@@ -814,10 +845,12 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** opencode
 - **Description:** OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@1.8.0` from npm at session start (added via `opencode.json` `plugin` array)
+- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@1.8.1` from npm at session start (added via `opencode.json` `plugin` array)
 - **Configure:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)
+
+<a href="https://github.com/ratelworks/token-horse"><img alt="ratelworks/token-horse repository preview" src="images/ratelworks-token-horse.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -856,6 +889,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `ryukenshin546-a11y-claude-prompt-meter` — [Claude Prompt Meter](https://github.com/ryukenshin546-a11y/claude-prompt-meter)
 
+<a href="https://github.com/ryukenshin546-a11y/claude-prompt-meter"><img alt="ryukenshin546-a11y/claude-prompt-meter repository preview" src="images/ryukenshin546-a11y-claude-prompt-meter.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A VS Code extension that tracks per-prompt token usage and USD costs for Claude Code sessions by reading local logs, displaying a live status-bar meter alongside a spend heatmap and configurable daily budget alerts in Thai or English.
@@ -884,6 +919,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `sirmalloc-ccstatusline` — [ccstatusline](https://github.com/sirmalloc/ccstatusline)
 
+<a href="https://github.com/sirmalloc/ccstatusline"><img alt="sirmalloc/ccstatusline repository preview" src="images/sirmalloc-ccstatusline.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A highly customizable status line formatter for Claude Code CLI with Powerline support, multiple themes, real-time token/session metrics, and an interactive TUI configuration interface.
@@ -898,17 +935,6 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Description:** JetBrains IDE status-bar widget that shows AI coding spend (1d/7d/30d) for the current IDE surface by querying a local budi daemon running on 127.0.0.1:7878.
 - **Notes:** Requires the budi daemon; reads AI session data from local logs. JetBrains IDE status bar, not a terminal statusline.
 - **Install:** see upstream
-
-### `sleighmaster99-claudecodestatusbar` — [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar)
-
-<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="images/sleighmaster99-claudecodestatusbar.svg" width="480"></a>
-
-- **License:** MIT
-- **Targets:** claude
-- **Description:** Windows-only WinForms GUI editor for Claude Code multi-line statuslines — drag-and-drop layout builder with PowerShell runtime, usage tracking, and git/context/cost widgets.
-- **Notes:** Windows-only — requires PowerShell 5+ and WinForms (.NET), which are built into Windows 10/11. Does not run on macOS or Linux. Launch Edit-StatusBar.vbs to open the GUI; click Save & Apply to write config.json and update ~/.claude/settings.json automatically.
-- **Install:** `git clone` (handled by `bin/statuslines.js configure`)
-- **Configure:** `node bin/statuslines.js configure sleighmaster99-claudecodestatusbar --cli=<claude>`
 
 ### `snackdriven-claude-statusline` — [claude-statusline](https://github.com/snackdriven/claude-statusline)
 
@@ -929,6 +955,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `soulagent-claude-duck` — [claude-duck](https://github.com/soulagent/claude-duck)
 
+<a href="https://github.com/soulagent/claude-duck"><img alt="soulagent/claude-duck repository preview" src="images/soulagent-claude-duck.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A swimming ASCII duck that animates across a 3-row pond in the Claude Code status line, paired with a rainbow truecolor bar showing model, session/weekly usage, context, cost, and git branch. It is a dependency-free Node.js script installable as a Claude Code plugin.
@@ -948,12 +976,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `squanchymnonm-claudecode-statusbar` — [ClaudeCodeStatusBar](https://github.com/squanchymnonm/ClaudeCodeStatusBar)
 
+<a href="https://github.com/squanchymnonm/ClaudeCodeStatusBar"><img alt="squanchymnonm/ClaudeCodeStatusBar repository preview" src="images/squanchymnonm-claudecode-statusbar.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Claude Code plugin that adds a real-time statusline showing context window usage, token counts, and session/weekly rate limits with color-coded alerts. Includes a live subagent panel displaying running subagents with their token consumption speed.
 - **Install:** see upstream
 
 ### `srdarf-xclaudeusage` — [XClaudeUsage](https://github.com/SrDarf/XClaudeUsage)
+
+<a href="https://github.com/SrDarf/XClaudeUsage"><img alt="SrDarf/XClaudeUsage repository preview" src="images/srdarf-xclaudeusage.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude
@@ -1004,12 +1036,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `victory-c-fitpet` — [FitPet](https://github.com/victory-c/fitpet)
 
+<a href="https://github.com/victory-c/fitpet"><img alt="victory-c/fitpet repository preview" src="images/victory-c-fitpet.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Claude Code statusline companion that renders a virtual pet whose vitality is driven by Garmin fitness data and whose reactions are triggered by coding hook events such as test passes and errors. The pet evolves through vitality tiers synced via a Garmin MCP skill, with all quip responses handled locally without model calls.
 - **Install:** see upstream
 
 ### `xicv-codexbar-hub` — [codexbar-hub](https://github.com/xicv/codexbar-hub)
+
+<a href="https://github.com/xicv/codexbar-hub"><img alt="xicv/codexbar-hub repository preview" src="images/xicv-codexbar-hub.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude, codex, gemini
@@ -1038,6 +1074,8 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `young1lin-claude-token-monitor` — [claude-token-monitor](https://github.com/young1lin/claude-token-monitor)
 
+<a href="https://github.com/young1lin/claude-token-monitor"><img alt="young1lin/claude-token-monitor repository preview" src="images/young1lin-claude-token-monitor.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A Claude Code statusline plugin written in Go that displays real-time context token usage, Anthropic Pro/Team 5-hour and 7-day quota countdowns, and Z.ai/GLM Coding Plan quota — all with git branch, thinking-mode indicators, and a single cross-platform binary.
@@ -1045,12 +1083,16 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 
 ### `zrawday-bmad-statusline` — [bmad-statusline](https://github.com/zRawday/bmad-statusline)
 
+<a href="https://github.com/zRawday/bmad-statusline"><img alt="zRawday/bmad-statusline repository preview" src="images/zrawday-bmad-statusline.webp" width="480"></a>
+
 - **License:** MIT
 - **Targets:** claude
 - **Description:** A ccstatusline widget pack that passively tracks BMAD workflow activity in Claude Code, automatically detecting active skills, story progress, and step state via Claude Code lifecycle hooks. Includes an interactive TUI configurator with 11 customizable widgets and support for 134 recognized workflows.
 - **Install:** see upstream
 
 ### `zyx1121-claude-statusline` — [claude-statusline](https://github.com/zyx1121/claude-statusline)
+
+<a href="https://github.com/zyx1121/claude-statusline"><img alt="zyx1121/claude-statusline repository preview" src="images/zyx1121-claude-statusline.webp" width="480"></a>
 
 - **License:** MIT
 - **Targets:** claude

@@ -111,6 +111,23 @@ function buildManifestObject() {
 // ---------- commands ----------
 function cmdBuild() {
   const obj = buildManifestObject();
+  // Keep the build idempotent: when the entry set and hashes are unchanged,
+  // keep the existing generated_at so an unchanged catalog produces a
+  // byte-identical MANIFEST.json (no spurious drift, no needless re-sign).
+  if (existsSync(MANIFEST_PATH)) {
+    try {
+      const prev = JSON.parse(readFileSync(MANIFEST_PATH, "utf8"));
+      if (
+        prev.schema_version === obj.schema_version &&
+        typeof prev.generated_at === "string" &&
+        JSON.stringify(prev.entries) === JSON.stringify(obj.entries)
+      ) {
+        obj.generated_at = prev.generated_at;
+      }
+    } catch {
+      // Unreadable previous manifest: write a fresh one.
+    }
+  }
   // Pretty-print (2-space) for human review; canonical form is what gets signed.
   writeFileSync(MANIFEST_PATH, JSON.stringify(obj, null, 2) + "\n");
   process.stdout.write(`wrote ${MANIFEST_PATH} (${obj.entries.length} entries)\n`);
