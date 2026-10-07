@@ -11,7 +11,7 @@
 ![license: MIT](https://img.shields.io/badge/license-MIT-blue)
 ![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen)
 <!-- count:start -->
-![entries](https://img.shields.io/badge/catalog%20entries-103-orange)
+![entries](https://img.shields.io/badge/catalog%20entries-101-orange)
 <!-- count:end -->
 ![CLIs covered](https://img.shields.io/badge/CLIs-Claude%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex-informational)
 
@@ -308,12 +308,6 @@ Statusline Claude Code multiplateforme affichant les fenêtres de limite de déb
 
 Ligne de statut Python pour Claude Code qui lit les données d'utilisation réelles via l'API OAuth d'Anthropic — limites par modèle Opus/Sonnet, dépenses supplémentaires, TTL du cache de prompt et limites de taux session/hebdomadaires.
 
-#### [**claude-code-statusline**](https://github.com/ilia-pluzhnikov/claude-code-statusline) · MIT
-
-<a href="https://github.com/ilia-pluzhnikov/claude-code-statusline"><img alt="ilia-pluzhnikov claude-code-statusline GitHub preview" src="./catalog/images/ilia-pluzhnikov-claude-code-statusline.png" width="800"></a>
-
-Ligne de statut Node.js en fichier unique très complète, affichant le modèle, la tâche active, l'état Git, l'utilisation du contexte, le taux de cache, les limites 5h/7j et un indicateur d'heures de pointe avec code couleur d'urgence.
-
 #### [**claude-code-context-meter**](https://github.com/IntertechInc/claude-code-context-meter) · unknown `(ref)`
 
 Un script de ligne de statut Bash pour Claude Code qui affiche le pourcentage de remplissage de la fenêtre de contexte, le delta de tokens par tour, un sparkline de la croissance récente et l'utilisation des limites de débit sur 5 heures et 7 jours après chaque message de l'assistant.
@@ -491,12 +485,6 @@ Binaire Rust unifié combinant un statusline Claude Code sub-milliseconde avec d
 <a href="https://github.com/sirmalloc/ccstatusline"><img alt="sirmalloc/ccstatusline repository preview" src="./catalog/images/sirmalloc-ccstatusline.webp" width="800"></a>
 
 Un formateur de barre d'état hautement personnalisable pour le CLI Claude Code, avec support Powerline, plusieurs thèmes, métriques en temps réel (tokens, session) et une interface TUI interactive.
-
-#### [**ClaudeCodeStatusBar**](https://github.com/SleighMaster99/ClaudeCodeStatusBar) · MIT
-
-<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="./catalog/images/sleighmaster99-claudecodestatusbar.svg" width="800"></a>
-
-Éditeur GUI WinForms exclusif à Windows pour les statuslines multi-lignes de Claude Code — constructeur de mise en page par glisser-déposer avec runtime PowerShell, suivi d'utilisation et widgets git, contexte et coût.
 
 #### [**claude-statusline**](https://github.com/snackdriven/claude-statusline) · unknown `(ref)`
 

@@ -54,7 +54,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `hanbu97-tokenusage` | [tokenusage (hanbu97)](https://github.com/hanbu97/tokenusage) | claude, codex | MIT | rust | ok | npx |
 | `haunchen-claude-code-statusline` | [claude-code-statusline](https://github.com/haunchen/claude-code-statusline) | claude | MIT | javascript | ok | manual |
 | `hstojanovic-claude-vibeline` | [claude-vibeline](https://github.com/hstojanovic/claude-vibeline) | claude | MIT | python | ok | manual |
-| `ilia-pluzhnikov-claude-code-statusline` | [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline) | claude | MIT | javascript | ok | git |
 | `intertechinc-claude-code-context-meter` | [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter) | claude | unknown | Shell | ref | manual |
 | `jacsuper-codex-statusline-vscode` | [codex-statusline-vscode](https://github.com/jacsuper/codex-statusline-vscode) | vscode | MIT | typescript | ok | manual |
 | `joaquinvesapa-sub-agent-statusline` | [opencode-subagent-statusline](https://github.com/Joaquinvesapa/sub-agent-statusline) | opencode | MIT | typescript | ok | opencode-plugin |
@@ -93,7 +92,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `shallow-dusty-horologium` | [horologium](https://github.com/Shallow-dusty/horologium) | claude | MIT | rust | ok | manual |
 | `sirmalloc-ccstatusline` | [ccstatusline](https://github.com/sirmalloc/ccstatusline) | claude | MIT | TypeScript | ok | manual |
 | `siropkin-budi-jetbrains` | [budi — JetBrains plugin](https://github.com/siropkin/budi-jetbrains) | jetbrains | MIT | kotlin | ok | plugin |
-| `sleighmaster99-claudecodestatusbar` | [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar) | claude | MIT | powershell | ok | git |
 | `snackdriven-claude-statusline` | [claude-statusline](https://github.com/snackdriven/claude-statusline) | claude | unknown | Shell | ref | manual |
 | `sotayamashita-claude-code-statusline` | [claude-code-statusline (Sam Yamashita)](https://github.com/sotayamashita/claude-code-statusline) | claude | MIT | rust | ok | manual |
 | `soulagent-claude-duck` | [claude-duck](https://github.com/soulagent/claude-duck) | claude | MIT | JavaScript | ok | manual |
@@ -559,17 +557,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **インストール:** 上流を参照
 - **設定:** `node bin/statuslines.js configure hstojanovic-claude-vibeline --cli=<claude>`
 
-### `ilia-pluzhnikov-claude-code-statusline` — [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline)
-
-<a href="https://github.com/ilia-pluzhnikov/claude-code-statusline"><img alt="ilia-pluzhnikov claude-code-statusline GitHub preview" src="images/ilia-pluzhnikov-claude-code-statusline.png" width="480"></a>
-
-- **ライセンス:** MIT
-- **対象:** claude
-- **説明:** モデル、アクティブタスク、Gitブランチ状態、コンテキストウィンドウ使用量、プロンプトキャッシュヒット率、5時間/7日レート制限、ピーク時間インジケーターをカラーコードで表示する高機能な単一ファイルNode.jsステータスライン。
-- **備考:** No npm dependencies or build step required. The script reads Claude Code statusline JSON from stdin and writes one ANSI-coloured line to stdout. Requires Claude Code ≥2.1.97 for refreshInterval support.
-- **インストール:** `git clone`（`bin/statuslines.js configure` で処理）
-- **設定:** `node bin/statuslines.js configure ilia-pluzhnikov-claude-code-statusline --cli=<claude>`
-
 ### `intertechinc-claude-code-context-meter` — [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter)
 
 - **ライセンス:** unknown（再配布不可。参照のみ）
@@ -948,17 +935,6 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **説明:** JetBrains IDEのステータスバーウィジェット。127.0.0.1:7878で動作するローカルbudiデーモンに問い合わせ、現在のIDE画面のAIコーディングコスト（1日/7日/30日）を表示する。
 - **備考:** Requires the budi daemon; reads AI session data from local logs. JetBrains IDE status bar, not a terminal statusline.
 - **インストール:** 上流を参照
-
-### `sleighmaster99-claudecodestatusbar` — [ClaudeCodeStatusBar](https://github.com/SleighMaster99/ClaudeCodeStatusBar)
-
-<a href="https://github.com/SleighMaster99/ClaudeCodeStatusBar"><img alt="ClaudeCodeStatusBar synthetic preview — model, context bar, cost, git branch" src="images/sleighmaster99-claudecodestatusbar.svg" width="480"></a>
-
-- **ライセンス:** MIT
-- **対象:** claude
-- **説明:** Windows専用のWinForms GUIエディタ。Claude Codeの複数行ステータスラインをドラッグ＆ドロップで構築でき、PowerShellランタイム、使用量トラッキング、Git・コンテキスト・コストウィジェットを備える。
-- **備考:** Windows-only — requires PowerShell 5+ and WinForms (.NET), which are built into Windows 10/11. Does not run on macOS or Linux. Launch Edit-StatusBar.vbs to open the GUI; click Save & Apply to write config.json and update ~/.claude/settings.json automatically.
-- **インストール:** `git clone`（`bin/statuslines.js configure` で処理）
-- **設定:** `node bin/statuslines.js configure sleighmaster99-claudecodestatusbar --cli=<claude>`
 
 ### `snackdriven-claude-statusline` — [claude-statusline](https://github.com/snackdriven/claude-statusline)
 
