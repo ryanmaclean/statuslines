@@ -18,7 +18,8 @@
     "local": "images/ryukenshin546-a11y-claude-prompt-meter.webp"
   },
   "install": {
-    "type": "plugin"
+    "type": "plugin",
+    "plugin_host": "vscode"
   },
   "configs": {},
   "tags": [

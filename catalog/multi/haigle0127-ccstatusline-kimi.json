@@ -18,7 +18,8 @@
     "local": "images/haigle0127-ccstatusline-kimi.webp"
   },
   "install": {
-    "type": "plugin"
+    "type": "plugin",
+    "plugin_host": "vscode"
   },
   "configs": {},
   "tags": [

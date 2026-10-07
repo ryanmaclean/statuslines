@@ -89,6 +89,7 @@ Each `catalog/<cli>/<slug>.json` is a single entry.
 Some statuslines distribute as Claude Code plugins (loaded from `~/.claude/plugins/` via `.claude-plugin/plugin.json`) rather than standalone scripts or npm packages.
 
 - **install.type: `"plugin"`** — repo is a Claude Code plugin. Distinct from `"manual"` (bare script), `"npx"`/`"cargo"` (package manager). The plugin loader handles wiring; no explicit install command beyond `claude plugin install`.
+- **install.plugin_host** (optional, `install.type: "plugin"` only) — which plugin system loads the entry: `"claude"` (default when omitted), `"vscode"` (VS Code extension), or `"jetbrains"` (JetBrains IDE plugin). `catalog-capabilities` sandboxes only `claude` plugins; the others are reported as `unverifiable`.
 - **slash_commands** (array of strings, optional) — slash commands registered by the plugin, e.g. `["/setup", "/configure"]`. Omit when the plugin registers none.
 - **hooks** (array of strings, optional) — Claude Code hook events wired by the plugin, e.g. `["PreToolUse", "PostToolUse", "SessionStart"]`. Omit when the plugin wires no hooks.
 

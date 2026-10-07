@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-03T21:21:55.418Z",
+  "generated_at": "2026-10-07T06:55:23.963Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -240,7 +240,7 @@
     {
       "slug": "haigle0127-ccstatusline-kimi",
       "path": "catalog/multi/haigle0127-ccstatusline-kimi.json",
-      "sha256": "b7e58ef4895d142df927adeb152376a8241967802fb265280ff975b46c6daf9c"
+      "sha256": "b58698d7a4425b4e38f0fce43cba5b05d2ad61735759aadd43b8e432605ff674"
     },
     {
       "slug": "hanbu97-tokenusage",
@@ -430,7 +430,7 @@
     {
       "slug": "ryukenshin546-a11y-claude-prompt-meter",
       "path": "catalog/claude/ryukenshin546-a11y-claude-prompt-meter.json",
-      "sha256": "f740477f056f5db8ab67d0b72003cb197c23f1a5593c177e3a9be3466410a030"
+      "sha256": "850f92fec65ea2af2bc6faadc72241ff4211a9c0d3fbcea8c5b3df2fafe50aae"
     },
     {
       "slug": "rz1989s-claude-code-statusline",
@@ -450,7 +450,7 @@
     {
       "slug": "siropkin-budi-jetbrains",
       "path": "catalog/jetbrains/siropkin-budi-jetbrains.json",
-      "sha256": "08e47e178661d97a79683bfb760702e921d33d76cdef493c695fd4b3ac4b028a"
+      "sha256": "37ba33da9e55043c1ae900e31e7b5aea44425cb3cfd58ef7c98ab0ff50e2955a"
     },
     {
       "slug": "sleighmaster99-claudecodestatusbar",
