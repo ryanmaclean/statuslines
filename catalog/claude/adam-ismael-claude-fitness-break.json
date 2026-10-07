@@ -20,7 +20,10 @@
   "install": {
     "type": "plugin"
   },
-  "hooks": ["SubagentStart", "PreToolUse"],
+  "hooks": [
+    "SubagentStart",
+    "PreToolUse"
+  ],
   "configs": {},
   "tags": [
     "agents",
@@ -38,7 +41,7 @@
       "PATH",
       "CLAUDE_PLUGIN_ROOT"
     ],
-    "verified_at": null,
-    "verification_method": "declared"
+    "verified_at": "2026-10-07",
+    "verification_method": "sandbox-strace"
   }
 }
