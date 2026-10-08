@@ -64,7 +64,7 @@
     "quarantined_at": null,
     "attestation": {
       "available": true,
-      "checked_at": "2026-09-24T09:51:41.196Z",
+      "checked_at": "2026-10-08T09:56:46.210Z",
       "predicate_type": "https://slsa.dev/provenance/v1",
       "issuer": "https://github.com/actions/runner/github-hosted",
       "build_workflow": "github.com/laveez/ccsl/.github/workflows/release.yml@refs/tags/v0.3.1",
