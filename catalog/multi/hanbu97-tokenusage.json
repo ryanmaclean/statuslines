@@ -23,7 +23,7 @@
     "package": "tokenusage",
     "version": "1.5.2",
     "integrity": "sha512-TQyzHwIEXGn+61ZhAXPE55UILqP1MABLOhosKZW8PPPLy/XghspUt4VLXyT9CcbGz++A0JtsdYNW1u/mG7CEaQ==",
-    "deps_lock_sha256": "1f068bf2792f070bd54da05ca034bac605a4fff778c6c25aacd8d4e07864b541"
+    "deps_lock_sha256": "5b412f562c74f971f9aac38a898088b2e81e7e79a407262f31aa02a33636d35d"
   },
   "configs": {},
   "tags": [
