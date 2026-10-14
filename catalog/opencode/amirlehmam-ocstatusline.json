@@ -22,7 +22,7 @@
     "package": "ocstatusline",
     "version": "0.1.0",
     "integrity": "sha512-p4zsoHAx9/dPYEauvImuMWSe6HbxHbMufp1legtBfy5Gl2V4oPYc3HagnZKx89Z1kReBm9jquUJIIpiWQhjWkA==",
-    "deps_lock_sha256": "c878aee79e70c9d53e9b8b444f5637a89276072f0494218591e6b9a3ed22b928"
+    "deps_lock_sha256": "4ea4cff92d38431ef1db6b640ea3c237c0c34248c5870dc6aeee47e7956ef867"
   },
   "configs": {},
   "tags": [
