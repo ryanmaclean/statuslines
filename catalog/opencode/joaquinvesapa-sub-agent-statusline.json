@@ -22,7 +22,7 @@
     "package": "opencode-subagent-statusline",
     "version": "1.3.0",
     "integrity": "sha512-YmCwC8cFe0WZmm9GWskmR2QspS11GMtUf8DflqnFplRPT+nxhlEGV8IOHLo4sFuRGRkThloB++XKo8DvCQfnaw==",
-    "deps_lock_sha256": "91cee44da52833f347407f99cd2f9049ad0dc0aee6a7c9e6a89994670594f603"
+    "deps_lock_sha256": "c474037c9f53582ab1c378846389d7f7b8452c5df1618faa651d306ad3ecd637"
   },
   "configs": {},
   "tags": [
