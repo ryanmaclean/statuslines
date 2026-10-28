@@ -22,7 +22,7 @@
     "package": "@kamranahmedse/claude-statusline",
     "version": "1.0.6",
     "integrity": "sha512-7hDEVBXRg99YZZakAyHf72ANs/pKqm1erH8pVBspwl2wbYatAuI237AX2jAFjL0UxG8Wsl9KQJnwz0Wzwbisxg==",
-    "deps_lock_sha256": "028d91e1b47ac715962898b51e3bf4cec2c54fdedf308669f2a83aede053bdcb"
+    "deps_lock_sha256": "7101aa9f44c518bba92ff406c83499ffadf728421a618d349fae0ca3fdc2bdeb"
   },
   "configs": {
     "claude": {
