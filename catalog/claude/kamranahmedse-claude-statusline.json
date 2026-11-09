@@ -20,8 +20,8 @@
   "install": {
     "type": "npx",
     "package": "@kamranahmedse/claude-statusline",
-    "version": "1.0.6",
-    "integrity": "sha512-7hDEVBXRg99YZZakAyHf72ANs/pKqm1erH8pVBspwl2wbYatAuI237AX2jAFjL0UxG8Wsl9KQJnwz0Wzwbisxg==",
+    "version": "1.0.7",
+    "integrity": "sha512-1Vld8Uu5ISttDVh3+RUSN94cCNtlPv2RSZ7e65F4dYkfpZVuBdBiVnZ9CmF0O7uZzl7uEK3l1NG0RLUayyos0Q==",
     "deps_lock_sha256": "028d91e1b47ac715962898b51e3bf4cec2c54fdedf308669f2a83aede053bdcb"
   },
   "configs": {
@@ -44,7 +44,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-05-06",
+    "last_audit": "2026-11-09",
     "attestation": {
       "available": false,
       "checked_at": "2026-09-24T09:51:41.196Z",
