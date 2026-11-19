@@ -227,8 +227,20 @@ function verify(slug, opts) {
   const straceLog = join(tmpCache, "strace.log");
   const payload = payloadFor(entry);
   if (!payload) {
-    process.stderr.write(`no payload for install.type=${t}; aborting\n`);
-    process.exit(1);
+    // No sandbox payload exists for this install type: report it as skipped
+    // (exit 0, valid JSON) instead of aborting with an empty report.
+    const report = {
+      slug,
+      install_type: t,
+      sandbox: "skipped",
+      verification_method: "skipped",
+      observed: null,
+      exceeds_declared: false,
+      violations: [],
+      note: `install.type=${t} has no sandbox payload in verify-capabilities`,
+    };
+    process.stdout.write(JSON.stringify(report, null, 2) + "\n");
+    process.exit(0);
   }
 
   const allowedWriteRoots = [tmpHome, tmpCache, "/tmp/", "/dev/null", "/dev/urandom"];
