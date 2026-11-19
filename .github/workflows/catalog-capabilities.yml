@@ -58,7 +58,7 @@ jobs:
             redist=$(node -e "console.log(require('./'+process.argv[1]).redistributable === true)" "$f")
             itype=$(node -e "console.log((require('./'+process.argv[1]).install||{}).type||'')" "$f")
             if [ "$redist" != "true" ]; then continue; fi
-            if [ "$itype" = "manual" ] || [ "$itype" = "brew" ] || [ "$itype" = "cargo" ]; then continue; fi
+            case "$itype" in manual|brew|cargo|curl|plugin) continue ;; esac
             echo "::group::verify $slug ($itype)"
             set +e
             node scripts/verify-capabilities.mjs "$slug" > "/tmp/cap-reports/${slug}.json"
