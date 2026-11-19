@@ -62,7 +62,7 @@
       "HOME",
       "PATH"
     ],
-    "verified_at": null,
-    "verification_method": "declared"
+    "verified_at": "2026-11-19",
+    "verification_method": "sandbox-strace"
   }
 }
