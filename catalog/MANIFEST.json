@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T18:37:25.663Z",
+  "generated_at": "2026-11-22T19:44:35.140Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -260,7 +260,7 @@
     {
       "slug": "ilia-pluzhnikov-claude-code-statusline",
       "path": "catalog/claude/ilia-pluzhnikov-claude-code-statusline.json",
-      "sha256": "d2859da2b76b67f0c77aa1dee3c71ef836fc52ff0cabac90dc4fbe89cc35c20a"
+      "sha256": "e09bf4b2fb00b25030e983922e742dfdd8ff67dcb7b87d5b22cbc772315eb550"
     },
     {
       "slug": "intertechinc-claude-code-context-meter",
@@ -455,7 +455,7 @@
     {
       "slug": "sleighmaster99-claudecodestatusbar",
       "path": "catalog/claude/sleighmaster99-claudecodestatusbar.json",
-      "sha256": "b4640114047e4d366d605114d360cd2905f0351054dea40db4d63ae5f55ad4c7"
+      "sha256": "f34a8fbec3c21b51d038e1f289a99305c80142e65e3313b1e52a12c69514fd29"
     },
     {
       "slug": "snackdriven-claude-statusline",
