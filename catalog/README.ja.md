@@ -54,6 +54,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 | `hanbu97-tokenusage` | [tokenusage (hanbu97)](https://github.com/hanbu97/tokenusage) | claude, codex | MIT | rust | ok | npx |
 | `haunchen-claude-code-statusline` | [claude-code-statusline](https://github.com/haunchen/claude-code-statusline) | claude | MIT | javascript | ok | manual |
 | `hstojanovic-claude-vibeline` | [claude-vibeline](https://github.com/hstojanovic/claude-vibeline) | claude | MIT | python | ok | manual |
+| `ilia-pluzhnikov-claude-code-statusline` | [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline) | claude | MIT | javascript | ok | git |
 | `intertechinc-claude-code-context-meter` | [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter) | claude | unknown | Shell | ref | manual |
 | `jacsuper-codex-statusline-vscode` | [codex-statusline-vscode](https://github.com/jacsuper/codex-statusline-vscode) | vscode | MIT | typescript | ok | manual |
 | `joaquinvesapa-sub-agent-statusline` | [opencode-subagent-statusline](https://github.com/Joaquinvesapa/sub-agent-statusline) | opencode | MIT | typescript | ok | opencode-plugin |
@@ -556,6 +557,17 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **備考:** Install via `uv tool install claude-vibeline`. Per-model and extra-usage sections require `--usage-api` plus at least one of `--opus`, `--sonnet`, or `--extra`; these fetch from an undocumented Anthropic OAuth endpoint — responses cached 60 s locally. Base sections (session limit, weekly limit, context window, prompt cache) are read from stdin JSON with no network call needed.
 - **インストール:** 上流を参照
 - **設定:** `node bin/statuslines.js configure hstojanovic-claude-vibeline --cli=<claude>`
+
+### `ilia-pluzhnikov-claude-code-statusline` — [claude-code-statusline](https://github.com/ilia-pluzhnikov/claude-code-statusline)
+
+<a href="https://github.com/ilia-pluzhnikov/claude-code-statusline"><img alt="ilia-pluzhnikov claude-code-statusline GitHub preview" src="images/ilia-pluzhnikov-claude-code-statusline.png" width="480"></a>
+
+- **ライセンス:** MIT
+- **対象:** claude
+- **説明:** モデル、アクティブタスク、Gitブランチ状態、コンテキストウィンドウ使用量、プロンプトキャッシュヒット率、5時間/7日レート制限、ピーク時間インジケーターをカラーコードで表示する高機能な単一ファイルNode.jsステータスライン。
+- **備考:** No npm dependencies or build step required. The script reads Claude Code statusline JSON from stdin and writes one ANSI-coloured line to stdout. Requires Claude Code ≥2.1.97 for refreshInterval support.
+- **インストール:** `git clone`（`bin/statuslines.js configure` で処理）
+- **設定:** `node bin/statuslines.js configure ilia-pluzhnikov-claude-code-statusline --cli=<claude>`
 
 ### `intertechinc-claude-code-context-meter` — [claude-code-context-meter](https://github.com/IntertechInc/claude-code-context-meter)
 
