@@ -56,6 +56,6 @@
     "last_audit": "2026-05-12",
     "quarantined": true,
     "quarantine_reason": "capabilities: observed {\"network\":true,\"child_process\":false,\"filesystem_write\":false} exceeds declared {\"network\":false,\"child_process\":true,\"filesystem_write\":false}",
-    "quarantined_at": "2026-10-07"
+    "quarantined_at": "2026-11-22"
   }
 }

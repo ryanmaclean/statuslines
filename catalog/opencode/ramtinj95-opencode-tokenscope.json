@@ -58,7 +58,7 @@
       "HOME",
       "PATH"
     ],
-    "verified_at": "2026-10-07",
-    "verification_method": "sandbox-strace"
+    "verified_at": "2026-11-22",
+    "verification_method": "skipped"
   }
 }
