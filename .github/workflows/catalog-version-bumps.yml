@@ -39,6 +39,15 @@ jobs:
       - name: Run version-bumps
         run: node scripts/version-bumps.mjs
 
+      # catalog-doctor fails on push to main when the generated docs lag the
+      # catalog JSON, and bot PRs opened with GITHUB_TOKEN do not trigger it
+      # on the PR itself, so re-render here (2026-09-29 #39 merged out of sync).
+      - name: Re-render generated docs
+        run: |
+          node bin/statuslines.js render-readme
+          node bin/statuslines.js render-top-readme
+          node bin/statuslines.js render-quarantine
+
       - name: Detect catalog changes
         id: changed
         run: |

@@ -50,8 +50,17 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      # On a PR the checkout is a detached merge commit, so a bot PR cannot be
+      # opened from it; the PR author has to commit the rebuilt manifest.
+      - name: Require rebuilt manifest on PRs
+        if: github.event_name == 'pull_request' && steps.drift.outputs.changed == 'true'
+        run: |
+          echo "::error::catalog/MANIFEST.json is out of date for this PR's catalog changes. Run: node scripts/manifest.mjs build  (then commit catalog/MANIFEST.json)"
+          git --no-pager diff --stat -- catalog/MANIFEST.json
+          exit 1
+
       - name: Open rebuild PR
-        if: steps.drift.outputs.changed == 'true'
+        if: github.event_name == 'push' && steps.drift.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           branch: bot/manifest-rebuild

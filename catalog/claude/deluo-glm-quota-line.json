@@ -11,6 +11,12 @@
   "description": "Displays Zhipu GLM Coding Plan API quota usage directly in the Claude Code status line, showing balance, weekly consumption, context window utilization, and time until reset with color-coded alerts.",
   "description_fr": "Affiche l'utilisation du quota API du plan GLM Coding de Zhipu directement dans la barre de statut de Claude Code, avec la balance, la consommation hebdomadaire, l'utilisation de la fenêtre de contexte et le temps jusqu'à la réinitialisation.",
   "description_ja": "Zhipu GLM Coding PlanのAPIクォータ使用状況（残高、週次消費量、コンテキストウィンドウ使用率、リセットまでの時間）をClaude Codeのステータスラインに直接表示します。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/deluo/glm-quota-line",
+    "alt": "deluo/glm-quota-line repository preview",
+    "source": "og-fallback",
+    "local": "images/deluo-glm-quota-line.webp"
+  },
   "install": {
     "type": "manual"
   },

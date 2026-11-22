@@ -11,6 +11,12 @@
   "description": "Displays rotating random fun facts in the Claude Code status line, cycling through 400+ topic-tagged facts that refresh automatically. Installs via npx and integrates by adding a statusLine entry to ~/.claude/settings.json.",
   "description_fr": "Affiche des faits amusants aléatoires en rotation dans la barre de statut de Claude Code, parcourant plus de 400 faits classés par thème qui se rafraîchissent automatiquement. S'installe via npx en ajoutant une entrée statusLine dans ~/.claude/settings.json.",
   "description_ja": "Claude Codeのステータスラインに400以上のトピック別ランダムなトリビアを自動でローテーション表示します。npxでインストールし、~/.claude/settings.jsonにstatusLineエントリを追加して統合されます。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/BawstosAI/fun-fact-bawstos",
+    "alt": "BawstosAI/fun-fact-bawstos repository preview",
+    "source": "og-fallback",
+    "local": "images/bawstosai-fun-fact.webp"
+  },
   "install": {
     "type": "manual"
   },

@@ -16,7 +16,8 @@
     "local": "images/siropkin-budi-jetbrains.png"
   },
   "install": {
-    "type": "plugin"
+    "type": "plugin",
+    "plugin_host": "jetbrains"
   },
   "configs": {},
   "tags": ["cost", "daemon", "tools"],

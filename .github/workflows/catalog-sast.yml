@@ -59,8 +59,13 @@ jobs:
           set -euo pipefail
           mkdir -p "$HOME/.local/bin"
           # Resolve the latest release tag (no auth needed for public releases).
-          tag=$(curl -fsSL https://api.github.com/repos/DataDog/datadog-static-analyzer/releases/latest \
-                 | grep -m1 '"tag_name"' | sed -E 's/.*"tag_name":[[:space:]]*"([^"]+)".*/\1/')
+          # Download the release JSON to a file first: piping curl into
+          # `grep -m1` closes the pipe as soon as tag_name matches, curl then
+          # fails writing the rest (exit 23) and pipefail aborts the step.
+          rel_json=$(mktemp)
+          curl -fsSL -o "$rel_json" https://api.github.com/repos/DataDog/datadog-static-analyzer/releases/latest
+          tag=$(jq -r '.tag_name // empty' "$rel_json")
+          rm -f "$rel_json"
           if [ -z "$tag" ]; then
             echo "::error::could not resolve datadog-static-analyzer release tag"
             exit 1

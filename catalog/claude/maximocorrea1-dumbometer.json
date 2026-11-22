@@ -11,6 +11,12 @@
   "description": "A Claude Code statusline gauge that tracks context window fill level and displays a color-coded Smart-to-Dumb scale, warning users when session quality is likely degrading. Zero dependencies, runs via Node.js with no token cost.",
   "description_fr": "Une jauge de barre de statut pour Claude Code qui suit le remplissage de la fenêtre de contexte et affiche une échelle colorée de Intelligent à Stupide, avertissant les utilisateurs lorsque la qualité de session se dégrade. Aucune dépendance, fonctionne via Node.js sans coût de tokens.",
   "description_ja": "Claude Codeのステータスラインゲージで、コンテキストウィンドウの充填レベルを追跡し、セッションの品質が劣化し始めると色分けされた「賢い→バカ」スケールで警告を表示します。依存関係ゼロで、トークンコストなしにNode.jsで動作します。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/MaximoCorrea1/dumbometer",
+    "alt": "MaximoCorrea1/dumbometer repository preview",
+    "source": "og-fallback",
+    "local": "images/maximocorrea1-dumbometer.webp"
+  },
   "install": {
     "type": "manual"
   },

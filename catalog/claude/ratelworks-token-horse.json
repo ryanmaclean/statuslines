@@ -11,6 +11,12 @@
   "description": "A terminal pixel-horse pet that gallops faster as your Claude Code or Codex CLI session burns more tokens per second, wired into the statusline via a command that reads the session transcript JSONL to measure live token throughput.",
   "description_fr": "Un animal de compagnie en pixels pour terminal qui galope plus vite à mesure que votre session Claude Code ou Codex CLI consomme davantage de tokens par seconde, intégré à la barre de statut via une commande qui lit le journal JSONL de session pour mesurer le débit de tokens en temps réel.",
   "description_ja": "Claude CodeまたはCodex CLIセッションのトークン消費速度に応じて速く駆けるターミナル用ピクセル馬ペットで、セッションのJSONLトランスクリプトを読み取ってリアルタイムのトークンスループットを計測し、ステータスラインコマンドとして組み込めます。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/ratelworks/token-horse",
+    "alt": "ratelworks/token-horse repository preview",
+    "source": "og-fallback",
+    "local": "images/ratelworks-token-horse.webp"
+  },
   "install": {
     "type": "manual"
   },

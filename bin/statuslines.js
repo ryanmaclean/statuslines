@@ -86,6 +86,10 @@ function validate(entry) {
     const ok = ["npx", "npm-global", "cargo", "brew", "git", "manual", "opencode-plugin", "plugin", "curl"];
     if (!ok.includes(entry.install.type)) errs.push(`invalid install.type: ${entry.install.type}`);
     if (entry.install.type === "git" && !entry.install.clone_dir) errs.push("install.type=git requires clone_dir");
+    if (entry.install.plugin_host !== undefined) {
+      if (entry.install.type !== "plugin") errs.push("install.plugin_host is only valid with install.type=plugin");
+      else if (!["claude", "vscode", "jetbrains"].includes(entry.install.plugin_host)) errs.push(`invalid install.plugin_host: ${entry.install.plugin_host}`);
+    }
     if (["npx","npm-global","opencode-plugin"].includes(entry.install.type) && !entry.install.package) errs.push("install.type=npx/npm-global/opencode-plugin requires package");
 
     if (entry.redistributable && PINNED_INSTALL_TYPES.has(entry.install.type)) {

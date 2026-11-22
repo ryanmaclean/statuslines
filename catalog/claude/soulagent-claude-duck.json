@@ -11,6 +11,12 @@
   "description": "A swimming ASCII duck that animates across a 3-row pond in the Claude Code status line, paired with a rainbow truecolor bar showing model, session/weekly usage, context, cost, and git branch. It is a dependency-free Node.js script installable as a Claude Code plugin.",
   "description_fr": "Un canard ASCII animé qui se déplace sur un étang de 3 lignes dans la barre de statut de Claude Code, accompagné d'une barre colorée affichant le modèle, l'utilisation de session/hebdomadaire, le contexte, le coût et la branche git. C'est un script Node.js sans dépendances, installable comme plugin Claude Code.",
   "description_ja": "Claude Codeのステータスラインで3行の池をアニメーション表示する水泳ASCIIアヒるを提供し、モデル名・セッション/週次使用量・コンテキスト・コスト・Gitブランチを虹色のバーで表示します。依存関係のないNode.jsスクリプトで、Claude Codeプラグインとしてインストールできます。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/soulagent/claude-duck",
+    "alt": "soulagent/claude-duck repository preview",
+    "source": "og-fallback",
+    "local": "images/soulagent-claude-duck.webp"
+  },
   "install": {
     "type": "manual"
   },

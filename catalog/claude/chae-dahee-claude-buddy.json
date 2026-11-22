@@ -59,7 +59,7 @@
       "HOME",
       "CLAUDE_BUDDY_STATE_DIR"
     ],
-    "verified_at": null,
-    "verification_method": "declared"
+    "verified_at": "2026-10-07",
+    "verification_method": "sandbox-strace"
   }
 }

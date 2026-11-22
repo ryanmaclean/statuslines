@@ -11,8 +11,15 @@
   "description": "A VSCode status bar extension that displays real-time Claude Code session metrics (model, tokens, cost, Git branch, context) alongside Kimi (Moonshot AI) integration. It reads local Claude Code state files to surface live usage data in the editor's bottom bar.",
   "description_fr": "Une extension de barre d'état VSCode qui affiche en temps réel les métriques de session Claude Code (modèle, tokens, coût, branche Git, contexte) avec intégration Kimi (Moonshot AI). Elle lit les fichiers d'état locaux de Claude Code pour afficher les données d'utilisation dans la barre inférieure de l'éditeur.",
   "description_ja": "VSCodeのステータスバー拡張機能で、Claude Codeのセッションメトリクス（モデル、トークン、コスト、Gitブランチ、コンテキスト）をKimi（Moonshot AI）と統合してリアルタイムで表示します。ローカルのClaude Codeステートファイルを読み取り、エディタ下部バーに使用状況データを表示します。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/haigle0127/ccstatusline-kimi",
+    "alt": "haigle0127/ccstatusline-kimi repository preview",
+    "source": "og-fallback",
+    "local": "images/haigle0127-ccstatusline-kimi.webp"
+  },
   "install": {
-    "type": "plugin"
+    "type": "plugin",
+    "plugin_host": "vscode"
   },
   "configs": {},
   "tags": [

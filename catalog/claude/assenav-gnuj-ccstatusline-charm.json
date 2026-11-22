@@ -11,6 +11,12 @@
   "description": "A ccstatusline configuration for Claude Code styled with the Charm/lipgloss color palette, displaying a compact status line with model info, context usage, session cost, and token limits. Includes automated install scripts for macOS/Linux and Windows.",
   "description_fr": "Une configuration ccstatusline pour Claude Code stylisée avec la palette de couleurs Charm/lipgloss, affichant une barre d'état compacte avec les informations sur le modèle, l'utilisation du contexte, le coût de la session et les limites de jetons.",
   "description_ja": "Charm/lipglossカラーパレットでスタイリングされたClaude Code向けccstatusline設定で、モデル情報・コンテキスト使用量・セッションコスト・トークン制限をコンパクトなステータスラインに表示します。",
+  "image": {
+    "url": "https://opengraph.githubassets.com/1/Assenav-Gnuj/ccstatusline-charm",
+    "alt": "Assenav-Gnuj/ccstatusline-charm repository preview",
+    "source": "og-fallback",
+    "local": "images/assenav-gnuj-ccstatusline-charm.webp"
+  },
   "install": {
     "type": "manual"
   },
