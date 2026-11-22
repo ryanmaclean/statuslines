@@ -101,7 +101,7 @@ function parseStraceProcess(text) {
   return { childProcessObserved: execMatches.length > 1 || cloneMatches.length > 0 };
 }
 
-function parseStraceWrite(text, allowedRoots) {
+function parseStraceWrite(text, allowedRoots, relativeIsAllowed = false) {
   // openat(..., O_WRONLY|O_CREAT|...) with path outside the allowlist.
   const re = /openat\([^,]+,\s*"([^"]+)",\s*([^)]+)\)/g;
   let m;
@@ -110,6 +110,7 @@ function parseStraceWrite(text, allowedRoots) {
     const path = m[1];
     const flags = m[2];
     if (!/O_WRONLY|O_RDWR|O_CREAT|O_TRUNC|O_APPEND/.test(flags)) continue;
+    if (relativeIsAllowed && !path.startsWith("/")) continue;
     const inAllowed = allowedRoots.some((root) => path.startsWith(root));
     if (!inAllowed) { writeOutside = true; break; }
   }
@@ -155,6 +156,9 @@ function buildSandboxCmd(sandbox, mode, tmpHome, tmpCache, straceLog, payloadCmd
       "--ro-bind", "/lib", "/lib",
       "--ro-bind", "/lib64", "/lib64",
       "--ro-bind", "/etc", "/etc",
+      // /etc/resolv.conf is a symlink into /run/systemd/resolve on systemd-resolved
+      // hosts (incl. GitHub runners); without it DNS fails and git installs abort.
+      ...(existsSync("/run/systemd/resolve") ? ["--ro-bind", "/run/systemd/resolve", "/run/systemd/resolve"] : []),
       "--bind", tmpHome, tmpHome,
       "--bind", tmpCache, tmpCache,
       "--proc", "/proc",
@@ -182,7 +186,10 @@ function payloadFor(entry) {
     return `npm pack ${pkg}@${ver} --silent || true`;
   }
   if (t === "git") {
-    return `git clone --depth 1 ${entry.repo} repo && ls repo`;
+    // Clone from inside $TMPDIR: the sandbox cwd is not writable. git chdirs
+    // into the clone and writes relative paths, which parseStraceWrite accepts
+    // for git installs (cwd is the allowed $TMPDIR).
+    return `cd "$TMPDIR" && git clone --depth 1 ${entry.repo} repo && ls repo`;
   }
   return null;
 }
@@ -262,10 +269,15 @@ function verify(slug, opts) {
 
   const net = parseStraceNetwork(straceText);
   const proc = parseStraceProcess(straceText);
-  const fsw = parseStraceWrite(straceText, allowedWriteRoots);
+  const fsw = parseStraceWrite(straceText, allowedWriteRoots, t === "git");
 
+  // git installs only run `git clone` in the sandbox, so the only network
+  // traffic measured is the install step itself (fetching the repo), not the
+  // entry at runtime. That is expected for every git entry and says nothing
+  // about the declared runtime network capability, so it is exempt.
+  const installStepNetworkExempt = t === "git";
   const observed = {
-    network: net.networkObserved || noNetFailed,
+    network: installStepNetworkExempt ? false : (net.networkObserved || noNetFailed),
     child_process: proc.childProcessObserved,
     filesystem_write: fsw.filesystemWriteObserved,
   };
@@ -288,6 +300,7 @@ function verify(slug, opts) {
     verification_method: sandbox ? "sandbox-strace" : "strace-only",
     observed,
     domains_contacted: net.hosts,
+    install_step_network_exempt: installStepNetworkExempt,
     no_net_pass: !noNetFailed,
     sandbox_status: r2.status,
     exceeds_declared: violations.length > 0,
