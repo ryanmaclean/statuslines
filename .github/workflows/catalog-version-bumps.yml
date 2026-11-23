@@ -48,6 +48,14 @@ jobs:
           node bin/statuslines.js render-top-readme
           node bin/statuslines.js render-quarantine
 
+      - name: Install dependencies
+        run: npm ci
+
+      # Keep catalog/MANIFEST.json in step with the bumped entries so the PR
+      # passes catalog-manifest-verify on its own.
+      - name: Rebuild manifest
+        run: node scripts/manifest.mjs build
+
       - name: Detect catalog changes
         id: changed
         run: |
