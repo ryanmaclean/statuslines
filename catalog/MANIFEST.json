@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T19:44:35.140Z",
+  "generated_at": "2026-11-23T19:20:18.208Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -280,7 +280,7 @@
     {
       "slug": "kamranahmedse-claude-statusline",
       "path": "catalog/claude/kamranahmedse-claude-statusline.json",
-      "sha256": "a57075d56a1027a19f992ac8d87f7365dc3e06a0709ffb7ed99786760155f88a"
+      "sha256": "0c3c386ccb1de826eceac0f558a4c8a1728800e3845ee481624708f1ce9b1338"
     },
     {
       "slug": "kenanbalija-islamic-statuses",
@@ -300,7 +300,7 @@
     {
       "slug": "laveez-ccsl",
       "path": "catalog/claude/laveez-ccsl.json",
-      "sha256": "13f5c6124177c68a5fc30896685e7230ffcde06343d1defac977088f8d1c1dc3"
+      "sha256": "190ee5ee6bd5e3f3878ea36a66d1647ec5e9d1223367ee350c2d3e46eb1840f8"
     },
     {
       "slug": "leeguooooo-claude-code-usage-bar",
@@ -405,7 +405,7 @@
     {
       "slug": "ramtinj95-opencode-tokenscope",
       "path": "catalog/opencode/ramtinj95-opencode-tokenscope.json",
-      "sha256": "41166ae70e79b92d25ee8e27aa91962ca78ec0fa4f7d8cfac2b0c2d7ae98b0d0"
+      "sha256": "bd3aed5c6f6b88686807b6cf6571c6a9b161e0cd0730d3045b7240be181dafbf"
     },
     {
       "slug": "ratelworks-token-horse",
@@ -505,7 +505,7 @@
     {
       "slug": "tokscale",
       "path": "catalog/multi/tokscale.json",
-      "sha256": "6bbd4a939a3663284b8a5a938aa04458c79a5f69baec490b1ead4aed8c0066d7"
+      "sha256": "ff73cd97c31860a6478522e5735c50e62dbd3a95dd378c1ceba1856c78bb2735"
     },
     {
       "slug": "victory-c-fitpet",

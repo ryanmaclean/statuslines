@@ -604,7 +604,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** claude
 - **Description:** Statusline Claude Code minimaliste affichant le modèle, le pourcentage d'utilisation du contexte, le répertoire courant, la branche git, le minuteur de session, le niveau d'effort et les barres de limites de débit en temps réel depuis l'API Anthropic.
 - **Notes:** Run `npx @kamranahmedse/claude-statusline@1.0.6` once to install. The installer copies statusline.sh to ~/.claude/statusline.sh and patches ~/.claude/settings.json automatically. Requires jq, curl, and git on PATH. Uninstall with `npx @kamranahmedse/claude-statusline --uninstall`.
-- **Installation:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.6`
+- **Installation:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.7`
 - **Configurer:** `node bin/statuslines.js configure kamranahmedse-claude-statusline --cli=<claude>`
 
 ### `kenanbalija-islamic-statuses` — [Islamic Statuses for Claude Code](https://github.com/kenanbalija/claude-islamic-statuses)
@@ -645,7 +645,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** claude
 - **Description:** Ligne de statut ANSI dense et colorée pour Claude Code affichant le modèle, le coût, l'utilisation du contexte, l'état Git, les liens PR, les outils actifs, les sous-agents, la progression des tâches et des barres de limite API optionnelles.
 - **Notes:** Run `ccsl setup` for an interactive configuration wizard. Usage rate-limit badge requires `features.usage: true` in ~/.claude/statusline-config.json; disabled by default for privacy.
-- **Installation:** `npm i -g --ignore-scripts ccsl@0.3.1`
+- **Installation:** `npm i -g --ignore-scripts ccsl@0.4.1`
 - **Configurer:** `node bin/statuslines.js configure laveez-ccsl --cli=<claude>`
 
 ### `leeguooooo-claude-code-usage-bar` — [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar)
@@ -857,7 +857,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** opencode
 - **Description:** Plugin OpenCode (pas une statusline) fournissant l'analyse de l'usage des jetons et des coûts pour les sessions avec des ventilations détaillées.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **Installation:** OpenCode charge `@ramtinj95/opencode-tokenscope@1.8.1` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
+- **Installation:** OpenCode charge `@ramtinj95/opencode-tokenscope@2.1.0` depuis npm au démarrage de la session (ajouté via le tableau `plugin` de `opencode.json`)
 - **Configurer:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)
@@ -1044,7 +1044,7 @@ Légende : **ok** = licence OSI-permissive, recettes d'installation/configuratio
 - **Cibles:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **Description:** Traqueur d'usage de jetons multi-CLI qui lit les données de session locales de nombreux outils de codage IA (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, et d'autres) avec une tarification alimentée par LiteLLM.
 - **Notes:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **Installation:** `npx --ignore-scripts -y tokscale@4.5.3`
+- **Installation:** `npx --ignore-scripts -y tokscale@4.23.1`
 
 ### `victory-c-fitpet` — [FitPet](https://github.com/victory-c/fitpet)
 
