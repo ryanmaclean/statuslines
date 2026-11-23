@@ -604,7 +604,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** claude
 - **Description:** Minimal Claude Code statusline showing model, context usage percentage, current directory, git branch, session timer, effort level, and live rate-limit bars fetched from the Anthropic API.
 - **Notes:** Run `npx @kamranahmedse/claude-statusline@1.0.6` once to install. The installer copies statusline.sh to ~/.claude/statusline.sh and patches ~/.claude/settings.json automatically. Requires jq, curl, and git on PATH. Uninstall with `npx @kamranahmedse/claude-statusline --uninstall`.
-- **Install:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.6`
+- **Install:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.7`
 - **Configure:** `node bin/statuslines.js configure kamranahmedse-claude-statusline --cli=<claude>`
 
 ### `kenanbalija-islamic-statuses` — [Islamic Statuses for Claude Code](https://github.com/kenanbalija/claude-islamic-statuses)
@@ -645,7 +645,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** claude
 - **Description:** Dense, color-coded ANSI statusline for Claude Code showing model, cost, context usage, git state, PR links, active tools, subagents, task progress, and optional API rate-limit bars.
 - **Notes:** Run `ccsl setup` for an interactive configuration wizard. Usage rate-limit badge requires `features.usage: true` in ~/.claude/statusline-config.json; disabled by default for privacy.
-- **Install:** `npm i -g --ignore-scripts ccsl@0.3.1`
+- **Install:** `npm i -g --ignore-scripts ccsl@0.4.1`
 - **Configure:** `node bin/statuslines.js configure laveez-ccsl --cli=<claude>`
 
 ### `leeguooooo-claude-code-usage-bar` — [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar)
@@ -857,7 +857,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** opencode
 - **Description:** OpenCode plugin (not a statusline) providing token usage and cost analysis for sessions with detailed breakdowns.
 - **Notes:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@1.8.1` from npm at session start (added via `opencode.json` `plugin` array)
+- **Install:** OpenCode loads `@ramtinj95/opencode-tokenscope@2.1.0` from npm at session start (added via `opencode.json` `plugin` array)
 - **Configure:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)
@@ -1044,7 +1044,7 @@ Legend: **ok** = OSI-permissive license, install/configure recipes shipped. **re
 - **Targets:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **Description:** Cross-CLI token-usage tracker that reads local session data from many AI coding tools (Claude Code, OpenCode, Codex, Gemini, Cursor, Amp, Kimi, and more) with LiteLLM-fed pricing.
 - **Notes:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **Install:** `npx --ignore-scripts -y tokscale@4.5.3`
+- **Install:** `npx --ignore-scripts -y tokscale@4.23.1`
 
 ### `victory-c-fitpet` — [FitPet](https://github.com/victory-c/fitpet)
 

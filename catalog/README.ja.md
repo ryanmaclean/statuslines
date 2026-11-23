@@ -604,7 +604,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** claude
 - **説明:** モデル・コンテキスト使用率・カレントディレクトリ・git ブランチ・セッションタイマー・エフォートレベル、および Anthropic API から取得したリアルタイムのレート制限バーを表示するミニマルな Claude Code statusline。
 - **備考:** Run `npx @kamranahmedse/claude-statusline@1.0.6` once to install. The installer copies statusline.sh to ~/.claude/statusline.sh and patches ~/.claude/settings.json automatically. Requires jq, curl, and git on PATH. Uninstall with `npx @kamranahmedse/claude-statusline --uninstall`.
-- **インストール:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.6`
+- **インストール:** `npx --ignore-scripts -y @kamranahmedse/claude-statusline@1.0.7`
 - **設定:** `node bin/statuslines.js configure kamranahmedse-claude-statusline --cli=<claude>`
 
 ### `kenanbalija-islamic-statuses` — [Islamic Statuses for Claude Code](https://github.com/kenanbalija/claude-islamic-statuses)
@@ -645,7 +645,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** claude
 - **説明:** モデル、コスト、コンテキスト使用量、Git状態、PRリンク、アクティブツール、サブエージェント、タスク進捗、オプションのAPIレート制限バーを表示する高密度カラーコードANSIステータスライン。
 - **備考:** Run `ccsl setup` for an interactive configuration wizard. Usage rate-limit badge requires `features.usage: true` in ~/.claude/statusline-config.json; disabled by default for privacy.
-- **インストール:** `npm i -g --ignore-scripts ccsl@0.3.1`
+- **インストール:** `npm i -g --ignore-scripts ccsl@0.4.1`
 - **設定:** `node bin/statuslines.js configure laveez-ccsl --cli=<claude>`
 
 ### `leeguooooo-claude-code-usage-bar` — [claude-code-usage-bar](https://github.com/leeguooooo/claude-code-usage-bar)
@@ -857,7 +857,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** opencode
 - **説明:** セッションのトークン使用量とコストを詳細な内訳とともに分析する OpenCode プラグイン（statusline ではない）。
 - **備考:** Upstream is ramtinJ95/opencode-tokenscope; pantheon-org/opencode-tokenscope-plugin is a downstream fork that uses the same npm package.
-- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@1.8.1` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
+- **インストール:** OpenCode がセッション開始時に `@ramtinj95/opencode-tokenscope@2.1.0` を npm からロードします（`opencode.json` の `plugin` 配列に追加）
 - **設定:** `node bin/statuslines.js configure ramtinj95-opencode-tokenscope --cli=<opencode>`
 
 ### `ratelworks-token-horse` — [Token Horse](https://github.com/ratelworks/token-horse)
@@ -1044,7 +1044,7 @@ Claude Code、OpenCode、Gemini CLI、Codex CLI 向けのサードパーティ s
 - **対象:** claude, opencode, gemini, codex, amp, cursor, kimi
 - **説明:** Claude Code・OpenCode・Codex・Gemini・Cursor・Amp・Kimi など多数の AI コーディングツールのローカルセッションデータを読み取り、LiteLLM から取得した価格情報でトークン使用量を追跡するクロス CLI 対応ツール。
 - **備考:** Use as a data source for a custom statusline (e.g. `npx -y tokscale@latest --json`) rather than as the statusline itself.
-- **インストール:** `npx --ignore-scripts -y tokscale@4.5.3`
+- **インストール:** `npx --ignore-scripts -y tokscale@4.23.1`
 
 ### `victory-c-fitpet` — [FitPet](https://github.com/victory-c/fitpet)
 

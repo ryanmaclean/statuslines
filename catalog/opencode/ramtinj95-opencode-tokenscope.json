@@ -20,8 +20,8 @@
   "install": {
     "type": "opencode-plugin",
     "package": "@ramtinj95/opencode-tokenscope",
-    "version": "1.8.1",
-    "integrity": "sha512-D9+sCen7S1F7MMUEmEJxN8gU67lubenepYR4CCfjQHaHf3rSBBB/AmVmyjitaCcnlpHf1jLZ79yzK3rz6dbjbw==",
+    "version": "2.1.0",
+    "integrity": "sha512-0Px3VXUknXIME0irtGpApcmS7a2N8E5T7dcKmNkvTLsXYdK5ba0e2L4VcxUoWlWVDVF4po8yhS9i4eV/04AQ6w==",
     "deps_lock_sha256": "0a5c4a1c15ae6e8e2ef41de1b5a2d1f98e82a7c65a80d7ef4e90a7939f6e9832"
   },
   "configs": {
@@ -40,7 +40,7 @@
   "security": {
     "has_install_scripts": false,
     "license_observed": "MIT",
-    "last_audit": "2026-09-28",
+    "last_audit": "2026-11-23",
     "attestation": {
       "available": false,
       "checked_at": "2026-11-19T09:50:41.770Z",
