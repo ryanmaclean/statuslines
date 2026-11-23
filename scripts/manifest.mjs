@@ -231,7 +231,7 @@ function isTemplateValue(s) {
 }
 
 // ---------- verify ----------
-function cmdVerify({ silent = false } = {}) {
+function cmdVerify({ silent = false, allowUnsigned = false } = {}) {
   const errors = [];
 
   // 1. Manifest consistency: walk catalog, recompute, compare.
@@ -280,6 +280,16 @@ function cmdVerify({ silent = false } = {}) {
   const maintainers = parseMaintainers(maintainersRaw);
 
   if (sigIsTemplate) {
+    if (allowUnsigned) {
+      // Bootstrap state with no maintainer key yet: the hash checks above are
+      // still enforced, but the missing signature is reported, not failed.
+      // A non-template signature always gets the full hybrid verification below.
+      if (errors.length === 0 && !silent) {
+        process.stdout.write("manifest verify: hashes ok; signature is a bootstrap placeholder (UNSIGNED)\n");
+        process.stdout.write("::warning::catalog/MANIFEST.sig.json is unsigned: a maintainer must sign (see catalog/MAINTAINERS.md)\n");
+      }
+      return finalize(errors, silent);
+    }
     errors.push(
       "MANIFEST.sig.json contains TEMPLATE placeholders — bootstrap signature, not a real one. " +
       "Run `node scripts/keygen.mjs --id <your-id>`, paste the printed row into catalog/MAINTAINERS.md, " +
@@ -357,7 +367,7 @@ async function main() {
       cmdSign(rest);
       break;
     case "verify": {
-      const code = cmdVerify();
+      const code = cmdVerify({ allowUnsigned: rest.includes("--allow-unsigned") });
       process.exit(code);
     }
     case "help":
@@ -371,8 +381,12 @@ Commands:
   sign --key <path>     Sign MANIFEST.json with a maintainer private key
                         produced by scripts/keygen.mjs. Writes
                         catalog/MANIFEST.sig.json.
-  verify                Recompute hashes, check signature against
+  verify [--allow-unsigned]
+                        Recompute hashes, check signature against
                         catalog/MAINTAINERS.md. Exits 0 on success.
+                        --allow-unsigned: while MANIFEST.sig.json is still the
+                        bootstrap placeholder, enforce hashes only and warn.
+                        A real signature is always fully verified.
                         Used by .github/workflows/catalog-manifest-verify.yml.
 `);
       break;
