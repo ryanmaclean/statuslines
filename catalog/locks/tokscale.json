@@ -2,10 +2,10 @@
   "schema_version": 1,
   "slug": "tokscale",
   "package": "tokscale",
-  "version": "4.5.3",
-  "captured_at": "2026-11-18",
+  "version": "4.23.1",
+  "captured_at": "2026-11-25",
   "deps": {
-    "@tokscale/cli@4.5.3": "sha512-UpmZNHZCMTQtQn8KTJstWrhtvLVOI2dbXWgm43sFvnCPfxFDh0qNoNsY1RZsaDijw4/Eglv/udzvZOgbrMji/A==",
-    "tokscale@4.5.3": "sha512-yR2ssSK+omkezZw98RW1Npxkycyw/5T8MhjG5wwFZvK6hVbiHUw8hnWDokaBCTYC5Mhf2bf3QpPfKUhzGK0Y7g=="
+    "@tokscale/cli@4.23.1": "sha512-ueFyAZUrS+PPMn3KSlE5GB2mNgjb8b97KXiNRr39NWvHvM8AJ32Ni/vd6lKa4xEjyMY8QF9Xur0d8WT12MKyAA==",
+    "tokscale@4.23.1": "sha512-mSZAGT24apdt8mESc4+d4LX1x2GTBwjrxWjI7fP8NwWqvDsM2nASvJyePC7DwAZpimH2cIJ3XMaEkwwz3t15cg=="
   }
 }

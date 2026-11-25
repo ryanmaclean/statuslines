@@ -22,7 +22,7 @@
     "package": "claude-statusline-powerline",
     "version": "0.0.19",
     "integrity": "sha512-R4TiMbjgT7EUio6CMjLfc+bMW1mLcEsbWJf9imXJKLcEWPYqXLtZk3ikVk6MXTgGPlgvkkgkefLIQtUB9nbP1A==",
-    "deps_lock_sha256": "abafd9b3291c07149a0b65160939755353a397b3253940ae4c2cc365580feff9"
+    "deps_lock_sha256": "b4dba6945863441db08468a76ad4c51d0fffde6e10b3ab417e6d74f119d14b41"
   },
   "configs": {
     "claude": {

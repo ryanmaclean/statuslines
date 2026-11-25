@@ -2,9 +2,9 @@
   "schema_version": 1,
   "slug": "kamranahmedse-claude-statusline",
   "package": "@kamranahmedse/claude-statusline",
-  "version": "1.0.6",
-  "captured_at": "2026-11-18",
+  "version": "1.0.7",
+  "captured_at": "2026-11-25",
   "deps": {
-    "@kamranahmedse/claude-statusline@1.0.6": "sha512-7hDEVBXRg99YZZakAyHf72ANs/pKqm1erH8pVBspwl2wbYatAuI237AX2jAFjL0UxG8Wsl9KQJnwz0Wzwbisxg=="
+    "@kamranahmedse/claude-statusline@1.0.7": "sha512-1Vld8Uu5ISttDVh3+RUSN94cCNtlPv2RSZ7e65F4dYkfpZVuBdBiVnZ9CmF0O7uZzl7uEK3l1NG0RLUayyos0Q=="
   }
 }
