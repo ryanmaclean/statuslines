@@ -3,7 +3,7 @@
   "slug": "amirlehmam-ocstatusline",
   "package": "ocstatusline",
   "version": "0.1.0",
-  "captured_at": "2026-11-18",
+  "captured_at": "2026-11-25",
   "deps": {
     "@alcalzone/ansi-tokenize@0.3.2": "sha512-GZdcaU9RV2Gn9SAg1hcsSoQ4nIWZfutPqIvxayUYsOzfBPJioJ+aQIXnMJiGDz+35Gg2pskkPxioYnSblPELEw==",
     "@opencode-ai/sdk@1.19.6": "sha512-jYV7s+Tlc5jDILOyWFIgISkPlfk7z3ByqeC8/T9aESZBgSZosQR784U2UoM3ZrJ8S0LJ2cB+IA9xZN7Jj8tnhQ==",

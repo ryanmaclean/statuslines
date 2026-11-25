@@ -22,7 +22,7 @@
     "package": "@this-dot/claude-code-context-status-line",
     "version": "0.2.2",
     "integrity": "sha512-Bf1FS9RRQaTrOYVWJncEgfMPLYMCzVT83H9P6q4KaQMi9GlhQLt3IxV/AzvsaicKZ5KLzGARD1ebdttjGI6aig==",
-    "deps_lock_sha256": "fce06d64ebc2cda0f88025a4dd16d4c2edad9f70fa00214c0653ce0b8354a588"
+    "deps_lock_sha256": "a893c0f00e13a62c02ccea5d5426b256d7dfbbaec93042ea8f2ad398c29ba43d"
   },
   "configs": {
     "claude": {
