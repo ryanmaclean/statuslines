@@ -43,7 +43,7 @@
     "last_audit": "2026-11-23",
     "attestation": {
       "available": false,
-      "checked_at": "2026-11-19T09:50:41.770Z",
+      "checked_at": "2026-11-26T09:50:46.167Z",
       "predicate_type": null,
       "issuer": null,
       "build_workflow": null,
