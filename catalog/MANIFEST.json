@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T19:20:18.208Z",
+  "generated_at": "2026-11-26T18:59:36.943Z",
   "entries": [
     {
       "slug": "0xhanniba1-cc-codex-statusline",
@@ -35,7 +35,7 @@
     {
       "slug": "amirlehmam-ocstatusline",
       "path": "catalog/opencode/amirlehmam-ocstatusline.json",
-      "sha256": "17e181b6d4e98557815d514efa29427adfc859df86364147ad8e3e1aa6a41ec2"
+      "sha256": "f0136d34bea162d97dca64db5c4e5d70aacb257e4699a4b15c6d171988f43d28"
     },
     {
       "slug": "aneeshtigga-ministats",
@@ -80,7 +80,7 @@
     {
       "slug": "b-open-statusline",
       "path": "catalog/claude/b-open-statusline.json",
-      "sha256": "e163d8cb9619ec49508a44166fce88e501203f9a5f8e944d1b55409f96225f97"
+      "sha256": "9238d31a1d0affdcc5123cfc6890b16c65d1bd10969f572c14bfbeae1dcd7e9f"
     },
     {
       "slug": "bawstosai-fun-fact",
@@ -120,7 +120,7 @@
     {
       "slug": "ccstatusline",
       "path": "catalog/claude/ccstatusline.json",
-      "sha256": "37bf69da8c55d999c16bc49c4fd61697b488aa5c16961915e005a3a0104310bb"
+      "sha256": "fae863dffd43017731eb687ea35d78ef126640cacf030af77ee3c718039db76f"
     },
     {
       "slug": "ccusage",
@@ -130,7 +130,7 @@
     {
       "slug": "chae-dahee-claude-buddy",
       "path": "catalog/claude/chae-dahee-claude-buddy.json",
-      "sha256": "631b145b37fa24238b9a00ab426029e72c58e4f0cb3af82076aee2e95c0a401a"
+      "sha256": "0d86939219079a91b0875db360d66eac22113b37804bcd9c89fa7eb38dda6002"
     },
     {
       "slug": "claude-hud",
@@ -245,7 +245,7 @@
     {
       "slug": "hanbu97-tokenusage",
       "path": "catalog/multi/hanbu97-tokenusage.json",
-      "sha256": "487157401a94599001ef1a9dc98c57d870fbd9a9891f5fdaefad4e381a9614b2"
+      "sha256": "80c1204fd1a24e8c12aa0e0b81bf22df5811dcceaf69a0ecf5d2a1c3811ba419"
     },
     {
       "slug": "haunchen-claude-code-statusline",
@@ -260,7 +260,7 @@
     {
       "slug": "ilia-pluzhnikov-claude-code-statusline",
       "path": "catalog/claude/ilia-pluzhnikov-claude-code-statusline.json",
-      "sha256": "e09bf4b2fb00b25030e983922e742dfdd8ff67dcb7b87d5b22cbc772315eb550"
+      "sha256": "5a549a083afc96914a64e10cb3f1683d8edbc7edaeba310873f50c9361c7a546"
     },
     {
       "slug": "intertechinc-claude-code-context-meter",
@@ -275,12 +275,12 @@
     {
       "slug": "joaquinvesapa-sub-agent-statusline",
       "path": "catalog/opencode/joaquinvesapa-sub-agent-statusline.json",
-      "sha256": "447d2e07511427ad45d615e193e2255ceaa64f3fa0603f4dae80c00a79705a2c"
+      "sha256": "85a3f9bc9e0f4a03730abbcd8a0c823dbcd2b01a73500bf9561fe5dcc14fff71"
     },
     {
       "slug": "kamranahmedse-claude-statusline",
       "path": "catalog/claude/kamranahmedse-claude-statusline.json",
-      "sha256": "0c3c386ccb1de826eceac0f558a4c8a1728800e3845ee481624708f1ce9b1338"
+      "sha256": "7835ca62e62123744b4f4724f4702de14b2266ff6e0164d19a281b65470401b8"
     },
     {
       "slug": "kenanbalija-islamic-statuses",
@@ -300,7 +300,7 @@
     {
       "slug": "laveez-ccsl",
       "path": "catalog/claude/laveez-ccsl.json",
-      "sha256": "190ee5ee6bd5e3f3878ea36a66d1647ec5e9d1223367ee350c2d3e46eb1840f8"
+      "sha256": "de28c132c28beb20a41472b9d0ebb28288c938eda219ad41b5fcea7355133c2b"
     },
     {
       "slug": "leeguooooo-claude-code-usage-bar",
@@ -315,12 +315,12 @@
     {
       "slug": "lucasilverentand-claudeline",
       "path": "catalog/claude/lucasilverentand-claudeline.json",
-      "sha256": "c782e4fbb533ea4fc264c798029b1edf6767b86e240a8cd6b8aca670b227e73f"
+      "sha256": "e8ad63627f91321fa49809d06161b7b39fe05002e73bc9a69d64f64fee731b3f"
     },
     {
       "slug": "markwilkening-opencode-status-line",
       "path": "catalog/opencode/markwilkening-opencode-status-line.json",
-      "sha256": "aeab53770228e22004b77c00e4dac8871bfc652a0bcc42974d9b16e8e6c37a68"
+      "sha256": "538a36c5be0e4bbf9f5ef7243cc318e084ef2a03f38bf58d5444a5c8fb38cb03"
     },
     {
       "slug": "maximocorrea1-dumbometer",
@@ -375,7 +375,7 @@
     {
       "slug": "owloops-claude-powerline",
       "path": "catalog/claude/owloops-claude-powerline.json",
-      "sha256": "903aaf350983de33d6fee6be5b598449d7e0f0d8396d3f4c242b57f6e355b059"
+      "sha256": "967a062bacb78a39b7c29eae289d6f57840cff7e02d48f1e08842a21983996a3"
     },
     {
       "slug": "padenot-foxtail",
@@ -385,7 +385,7 @@
     {
       "slug": "pcvelz-ccstatusline-usage",
       "path": "catalog/claude/pcvelz-ccstatusline-usage.json",
-      "sha256": "c762b2826bba1b28ed45c85baaa3eb49435488e9628e43aa7866646c9d3a3116"
+      "sha256": "c0419bf57da03f6c615080c6cf2a53ebe4e104babc5faeb4bede6cbbe1dca9e9"
     },
     {
       "slug": "postmodum37-simple-claude-code-statusline",
@@ -405,7 +405,7 @@
     {
       "slug": "ramtinj95-opencode-tokenscope",
       "path": "catalog/opencode/ramtinj95-opencode-tokenscope.json",
-      "sha256": "bd3aed5c6f6b88686807b6cf6571c6a9b161e0cd0730d3045b7240be181dafbf"
+      "sha256": "34d8e026a3ef9c7eddf189772dadfc190c58a7c9b0d1ae7b535c0c09eb9f451f"
     },
     {
       "slug": "ratelworks-token-horse",
@@ -455,7 +455,7 @@
     {
       "slug": "sleighmaster99-claudecodestatusbar",
       "path": "catalog/claude/sleighmaster99-claudecodestatusbar.json",
-      "sha256": "f34a8fbec3c21b51d038e1f289a99305c80142e65e3313b1e52a12c69514fd29"
+      "sha256": "17aeb4a195d99608318b932a95eea239d121d08a75daf88c2334c33463597a8d"
     },
     {
       "slug": "snackdriven-claude-statusline",
@@ -475,7 +475,7 @@
     {
       "slug": "spences10-claude-statusline-powerline",
       "path": "catalog/claude/spences10-claude-statusline-powerline.json",
-      "sha256": "8e0550673ac1059ba52048ead54bee83d5276e5e27d776ba44e5f64acf40e3e2"
+      "sha256": "bf4a8ee0314126ef402e765d911d2a6597a1f6e16be1a07c0f54be50a86429d4"
     },
     {
       "slug": "squanchymnonm-claudecode-statusbar",
@@ -500,12 +500,12 @@
     {
       "slug": "thisdot-context-statusline",
       "path": "catalog/claude/thisdot-context-statusline.json",
-      "sha256": "ef1e0b3f123fae0dedaddf345e9222efd015591cf6282bd07222ca11f50f91f0"
+      "sha256": "4cafc2bb041e9b4ea60aaefff261e19185568c45a4669fee86e44d12c68b2b59"
     },
     {
       "slug": "tokscale",
       "path": "catalog/multi/tokscale.json",
-      "sha256": "ff73cd97c31860a6478522e5735c50e62dbd3a95dd378c1ceba1856c78bb2735"
+      "sha256": "14c9cfda7022957f10ed4f4af0bc37e09af24375892103ae364d088f8ec89746"
     },
     {
       "slug": "victory-c-fitpet",
